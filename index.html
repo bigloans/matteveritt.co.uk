@@ -173,9 +173,9 @@ nav span{color:#9fb0c8}
 .bcol.win p{color:#b9c6d8;font-size:14.5px}
 .wins{display:grid;gap:16px}
 .wins > div{display:flex;gap:14px}
-.funnel{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:20px}
+.funnel{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:20px}
 .fun{padding:20px 22px;border-radius:14px;background:var(--tint)}
-.fun b{display:block;font:600 22px Poppins;color:var(--navy);margin-bottom:6px}
+.fun b{display:block;font:600 22px Poppins;color:var(--navy);margin-bottom:6px;overflow-wrap:anywhere}
 .fun span{font-size:14px;color:var(--mute)}
 .fun.prod{background:var(--navy);box-shadow:0 0 0 2px var(--teal)}
 .fun.prod b{color:#fff}.fun.prod span{color:#b9c6d8}.fun.prod .kicker{color:var(--teal)}
@@ -415,7 +415,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
   .proof .arrow span{transform:rotate(90deg)}
   .hero-in{padding:40px 0 80px;gap:48px}
   .grid3,.learn,.glance,.status{grid-template-columns:1fr}
-  .funnel{grid-template-columns:1fr 1fr}
+  .funnel{grid-template-columns:repeat(2,minmax(0,1fr))}
   .log div{grid-template-columns:1fr;gap:0}
   .flow{grid-template-columns:1fr 1fr}
   .fstep:after{display:none}
@@ -717,7 +717,7 @@ warning: draft pictogram in review, not blocking.
     <p class="lede">Until then, the spec had only been checked by reading it. So I tested it the way teams would use it, by building from it.</p>
     <div class="exp">
       <div class="reveal"><small>01 · BUILD</small><h3>Three fresh sessions</h3><p>Each AI session got only the pinned spec and built the same components from scratch.</p></div>
-      <div class="reveal"><small>02 · MEASURE</small><h3>Same failure, three times</h3><p>All <span data-fact="F14">3 of 3</span> failed the rendered gate on one button state. Every token was valid, so no static check could see it.</p></div>
+      <div class="reveal"><small>02 · MEASURE</small><h3>Same failure, three times</h3><p>All three failed the rendered gate on one button state. Every token was valid, so no static check could see it.</p></div>
       <div class="reveal"><small>03 · FIX</small><h3>Rule fixed, process changed</h3><p>I corrected the rule. Any release that changes a rule now gets the same test.</p></div>
     </div>
     <div class="proof reveal" data-illustrative>
