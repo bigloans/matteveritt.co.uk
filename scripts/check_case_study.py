@@ -34,6 +34,7 @@ ALLOW = [
     r"(?:\b\d{1,2}\s+)?\b" + MONTHS + r"\s+\d{4}\b",
     r"\bArticle\s+50\b",
     r"\b[vV]1\b",
+    r"\bW3C\b",
     r"\b\d+\s+min read\b",
 ]
 

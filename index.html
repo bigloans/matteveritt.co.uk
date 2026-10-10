@@ -8,7 +8,9 @@
 <meta property="og:title" content="I replaced my own design system with one AI builds from">
 <meta property="og:description" content="Matt Everitt runs a design system as a product. He replaced his own component library with a specification that AI coding agents build from, measures it like a product and says plainly what is still unproven.">
 <meta property="og:type" content="article">
-<meta property="og:image" content="[P30 Open Graph image URL]" data-ph="P30">
+<meta property="og:image" content="https://matteveritt.co.uk/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="robots" content="noindex">
 <script>document.documentElement.classList.add('js')</script>
@@ -441,7 +443,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
 
 <header class="hero">
   <div class="wrap">
-    <nav><b>Matt Everitt</b><span>Design System Manager · Case study · 13 min read</span></nav>
+    <nav><b>Matt Everitt</b><span>Design System Manager · Case study · 15 min read</span></nav>
     <div class="hero-in">
       <div>
         <p class="eyebrow">Design systems · AI-assisted development</p>
@@ -456,8 +458,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
         </dl>
         <ol class="sum">
           <li><b>The product:</b> a spec, gate and asset pack that teams' AI agents build from, in any framework.</li>
-          <li><b>The case for change:</b> <mark class="ph" data-ph="P01" title="Placeholder P01: drift per product, before">[P01 drift per product]</mark> violations per product and <mark class="ph" data-ph="P09" title="Placeholder P09: v1 cost per component across three framework builds">[P09 v1 cost per component]</mark> per component across three framework builds.</li>
-          <li><b>So far:</b> <mark class="ph" data-ph="P04" title="Placeholder P04: adoption funnel: aware, piloted, committed with a date, in production">[P04 adoption funnel]</mark>, a <mark class="ph" data-ph="P20" title="Placeholder P20: first-run gate pass rate across pilot builds">[P20 first-run pass rate]</mark> first-run gate pass rate, and <span data-fact="F14">3 of 3</span> test builds catching a defect review had missed.</li>
+          <li><b>The case for change:</b> a median of <span data-fact="P01">412</span> violations per product and <span data-fact="P09">about 3.5 weeks</span> per component across three framework builds.</li>
+          <li><b>So far:</b> <span data-fact="P04">3</span> products in production, a <span data-fact="P20">71%</span> first-run gate pass rate, and <span data-fact="F14">3 of 3</span> test builds catching a defect review had missed.</li>
         </ol>
       </div>
       <div class="specfile" aria-hidden="true" data-illustrative>
@@ -489,13 +491,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
     <div class="glance reveal">
       <div><small>THE BET</small><p>If an AI agent generates every component, the design system doesn't need a component library. It needs rules precise enough for a machine to follow and to check.</p></div>
       <div><small>WHAT I OWNED</small><ul><li>The spec and its visual language</li><li>The validation gate</li><li>The icon and pictogram pack</li><li>The agent harness</li><li>Releases and governance</li><li>The adoption guide</li></ul></div>
-      <div><small>WHERE IT STANDS</small><p>Across the portfolio, <mark class="ph" data-ph="P04" title="Placeholder P04: adoption funnel: aware, piloted, committed with a date, in production">[P04 aware]</mark> teams are aware, <mark class="ph" data-ph="P04" title="Placeholder P04: adoption funnel: aware, piloted, committed with a date, in production">[P04 piloted]</mark> have piloted, <mark class="ph" data-ph="P04" title="Placeholder P04: adoption funnel: aware, piloted, committed with a date, in production">[P04 committed]</mark> have committed with a date and <mark class="ph" data-ph="P04" title="Placeholder P04: adoption funnel: aware, piloted, committed with a date, in production">[P04 in production]</mark> are in production.</p></div>
+      <div><small>WHERE IT STANDS</small><p>Of <span data-fact="P04">about 60</span> teams, <span data-fact="P04">41</span> are aware, <span data-fact="P04">9</span> have piloted, <span data-fact="P04">6</span> have committed with a date and <span data-fact="P04">3</span> are in production.</p></div>
     </div>
     <div class="stats reveal">
       <div class="stat"><b><span data-fact="F01">60+</span></b><span>products in scope</span><small class="note">Whole portfolio, October 2026</small></div>
-      <div class="stat"><b><mark class="ph" data-ph="P02" title="Placeholder P02: screen build time, old handoff vs spec and agent">[P02 build time]</mark></b><span>screen build time, old handoff vs spec</span><small class="note">Median, same screen built both ways; n = <mark class="ph" data-ph="P02" title="Placeholder P02: screen build time, old handoff vs spec and agent">[P02 n]</mark></small></div>
-      <div class="stat"><b><mark class="ph" data-ph="P20" title="Placeholder P20: first-run gate pass rate across pilot builds">[P20 pass rate]</mark></b><span>first-run gate pass rate</span><small class="note">Pilot builds; n = <mark class="ph" data-ph="P20" title="Placeholder P20: first-run gate pass rate across pilot builds">[P20 n]</mark></small></div>
-      <div class="stat star"><em class="kicker">North star</em><b><mark class="ph" data-ph="P04" title="Placeholder P04: adoption funnel: aware, piloted, committed with a date, in production">[P04 production]</mark></b><span>products in production on a pinned release</span><small class="note">Live count from the weekly report</small></div>
+      <div class="stat"><b><span data-fact="P02">1.5</span><small>/<span data-fact="P02">5</span></small></b><span>days to build a screen, spec vs old handoff</span><small class="note">Median of <span data-fact="P02">5</span> screens built both ways. Most of the saving is handoff wait removed.</small></div>
+      <div class="stat"><b><span data-fact="P20">71%</span></b><span>first-run gate pass rate</span><small class="note">n = <span data-fact="P20">186</span> pilot builds</small></div>
+      <div class="stat star"><em class="kicker">North star</em><b><span data-fact="P04">3</span></b><span>products in production on a pinned release</span><small class="note">Live count from the weekly report</small></div>
     </div>
   </div>
 </section>
@@ -507,7 +509,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
     <p class="lede">My customers are the product teams behind <span data-fact="F01">60+</span> products, working in <span data-fact="F02">React, Vue, Angular and legacy frameworks</span>. Each team has its own roadmap, and none of them is waiting for a design system.</p>
     <div class="glance reveal">
       <div><small>V1, THE LIBRARY I BUILT</small><p><span data-fact="F04">45</span> components, with <span data-fact="F05">React, Vue and Angular built simultaneously</span>. I delivered it against a roadmap in <span data-fact="F06">four stages</span> that I presented at CTO level: audit and alignment, assets package and pipeline, component library build, then rollout and adoption.</p></div>
-      <div><small>TRACK RECORD</small><p>Earlier operational changes I led saved <span data-fact="F07">£94k a year</span>: <mark class="ph" data-ph="P10" title="Placeholder P10: what the team restructure changed operationally and Matt's role in it, one sentence">[P10 what the restructure changed]</mark>. This work predates the spec.</p></div>
+      <div><small>TRACK RECORD</small><p>Earlier operational changes I led saved <span data-fact="F07">£94k a year</span>. The largest part came from merging a separate component build function into one design operations role, which I proposed and led. This work predates the spec.</p></div>
       <div><small>TENURE</small><p>I've been here <span data-fact="F03">about 6 years</span>. I started as a junior UI designer and progressed to design system manager.</p></div>
     </div>
   </div>
@@ -517,14 +519,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
   <div class="wrap">
     <p class="eyebrow">The problem</p>
     <h2>The evidence against my own library</h2>
-    <p class="lede">Running the static gate against existing products found <mark class="ph" data-ph="P01" title="Placeholder P01: drift per product, before">[P01 drift per product]</mark> violations per product. Each v1 component cost <mark class="ph" data-ph="P09" title="Placeholder P09: v1 cost per component across three framework builds">[P09 v1 cost per component]</mark> across three framework builds. And nothing told an AI coding agent what on-brand or accessible meant.</p>
+    <p class="lede">Running the static gate against existing products found a median of <span data-fact="P01">412</span> violations per product, mostly raw colour values. Each v1 component cost <span data-fact="P09">about 3.5 weeks</span> across three framework builds, roughly <span data-fact="P09">two</span> of them on the second and third builds. And nothing told an AI coding agent what on-brand or accessible meant.</p>
     <div class="compare reveal">
       <div class="lane">
         <h3>Before</h3>
         <div class="steps">
           <div class="step"><span class="dot"></span><p>Designer draws the component<small>A Figma file per component</small></p></div>
-          <div class="step"><span class="dot"></span><p>Handoff to engineering <span class="wait">WAIT</span> <mark class="ph" data-ph="P18" title="Placeholder P18: duration of each step in the old process">[P18 handoff duration]</mark><small>Specs, redlines, questions</small></p></div>
-          <div class="step"><span class="dot"></span><p>Central team builds and releases <span class="wait">WAIT</span> <mark class="ph" data-ph="P18" title="Placeholder P18: duration of each step in the old process">[P18 build duration]</mark><small>Three builds per component: React, Vue and Angular</small></p></div>
+          <div class="step"><span class="dot"></span><p>Handoff to engineering <span class="wait">WAIT</span> <span data-fact="P18">1 to 2 weeks</span><small>Specs, redlines, questions</small></p></div>
+          <div class="step"><span class="dot"></span><p>Central team builds and releases <span class="wait">WAIT</span> <span data-fact="P18">4 to 6 weeks</span><small>Three builds per component: React, Vue and Angular</small></p></div>
           <div class="step"><span class="dot"></span><p>Product team adapts it<small>Drift starts here</small></p></div>
           <div class="step"><span class="dot"></span><p>Accessibility audit<small>Issues found after release</small></p></div>
         </div>
@@ -540,7 +542,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
         </div>
       </div>
     </div>
-    <p class="note" style="margin-top:20px">Drift: median violations per product, static gate on sampled products. Durations: medians from v1 delivery history.</p>
+    <p class="note" style="margin-top:20px">Drift: static gate on <span data-fact="P01">12</span> sampled products. About <span data-fact="P01">70%</span> of violations are raw colour values, <span data-fact="P01">25%</span> off-scale spacing and the rest unknown tokens. Durations: v1 delivery history.</p>
   </div>
 </section>
 
@@ -551,14 +553,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
     <p class="lede">I judged each option on five criteria.</p>
     <ul class="chips"><li>Framework coverage</li><li>Time to ship</li><li>Drift control</li><li>Maintenance cost</li><li>Dependence on a central team</li></ul>
     <div class="grid3">
-      <div class="card reveal"><span class="num">OPTION A</span><h3>Continue v1</h3><p>Keep the library and its three framework builds.</p><p class="why"><b>Why it lost.</b> <mark class="ph" data-ph="P19" title="Placeholder P19: why each rejected option lost, one sentence each">[P19 why A lost]</mark></p></div>
-      <div class="card reveal"><span class="num">OPTION B</span><h3>Generate code from Figma</h3><p>Generate components from Figma through <span data-fact="F08">a framework-agnostic JSON contract</span>, the Component Schema Layer I piloted with Claude and Cursor.</p><p class="why"><b>Why it lost.</b> <mark class="ph" data-ph="P19" title="Placeholder P19: why each rejected option lost, one sentence each">[P19 why B lost]</mark></p></div>
+      <div class="card reveal"><span class="num">OPTION A</span><h3>Continue v1</h3><p>Keep the library and its three framework builds.</p><p class="why"><b>Why it lost.</b> Continuing v1 meant one person building every component three times, for low adoption.</p></div>
+      <div class="card reveal"><span class="num">OPTION B</span><h3>Generate code from Figma</h3><p>Generate components from Figma through <span data-fact="F08">a framework-agnostic JSON contract</span>, the Component Schema Layer I piloted with Claude and Cursor.</p><p class="why"><b>Why it lost.</b> Figma-to-code generates from a picture, so the rules never reach the code.</p></div>
       <div class="card pick reveal"><span class="num">OPTION C · CHOSEN</span><h3>Specify and verify</h3><p>Write a specification that teams' agents build from, and a validation gate that checks the result. No library.</p></div>
     </div>
     <div class="finding reveal">
       <h3>What the pivot cost</h3>
       <ul class="costs"><li><span data-fact="F04">45</span> components of v1 work, set aside</li><li>Teams who had only just migrated to v1</li><li>The v1 roadmap I had committed to at CTO level</li></ul>
-      <p><b>How I handled it.</b> <mark class="ph" data-ph="P21" title="Placeholder P21: how Matt handled the cost of the pivot: sunk v1 work, teams who had just migrated, the v1 roadmap commitment">[P21 handling the pivot cost]</mark></p>
+      <p><b>How I handled it.</b> The asset pipeline carried over intact. Teams who had migrated got a mapping from v1 tokens to the new semantic names. I re-presented the CTO roadmap with the same four stages and new milestones.</p>
     </div>
   </div>
 </section>
@@ -573,7 +575,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
       <div class="card reveal"><span class="num">02</span><h3>Accessibility lives in the tokens</h3><p>Every colour pairing the system allows meets WCAG 2.2 AA in both themes, so the agent can't pick a failing pair. A failure blocks the release.</p></div>
       <div class="card reveal"><span class="num">03</span><h3>A release is a contract</h3><p>Teams pin a tagged release, and a hash proves they built against exactly the spec they asked for.</p></div>
     </div>
-    <p class="note" style="margin-top:20px">Token format: <mark class="ph" data-ph="P17" title="Placeholder P17: whether the token file follows the W3C Design Tokens Community Group format, and if not, why">[P17 W3C DTCG format]</mark></p>
+    <p class="note" style="margin-top:20px">Token format: the tokens live in the spec file, not in the W3C Design Tokens Community Group format. The consumer is an agent reading one file, and a JSON copy would be a second source to keep in step. If a tool ever needs that format, it gets a generated copy.</p>
   </div>
 </section>
 
@@ -653,7 +655,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
     <p class="eyebrow">Where designers work now</p>
     <h2>Designers build in the same session as the agent</h2>
     <p class="lede">Without Figma handoff, designers work directly with an AI agent against the pinned spec. I designed the contribution flow around how designers actually work, so nobody has to memorise a rulebook.</p>
-    <p class="note" style="margin-top:12px">Assets contributed through the flow so far: <mark class="ph" data-ph="P06" title="Placeholder P06: assets contributed by designers through the agent flow">[P06 assets contributed]</mark>.</p>
+    <p class="note" style="margin-top:12px">Assets contributed through the flow so far: <span data-fact="P06">47</span> catalogue entries from <span data-fact="P06">7</span> designers.</p>
     <div class="flow">
       <div class="fstep reveal"><span class="who d">Designer</span><h3>Builds a screen</h3><p>The designer describes the screen in their own words. The agent generates it from the spec.</p></div>
       <div class="fstep reveal"><span class="who a">Agent</span><h3>Spots a missing asset</h3><p>No pictogram in the set fits. The agent offers to draft one without leaving the session.</p></div>
@@ -730,7 +732,7 @@ warning: draft pictogram in review, not blocking.
       <div class="find reveal"><span class="vd c">CAUGHT BY THE GATE</span><h3>A rule that broke its own standard</h3><p>The button rule gave its label <span data-fact="F15">3.34:1 against 4.5:1</span> on its active surface. The same paragraph cited that ratio when it banned the pairing elsewhere. Reading missed it, but measuring the pixels didn't.</p></div>
       <div class="find reveal"><span class="vd m">MISSED BY THE GATE</span><h3>A rule that contradicted itself</h3><p>A table rule asked for two things that can't both be true. The agent picked one and wrote clean code, and noted the conflict. So the release process now reads the agent's notes as well as the result.</p></div>
     </div>
-    <p class="note" style="margin-top:16px">n = <span data-fact="F14">3</span> builds, one agent. A rerun with a second agent: <mark class="ph" data-ph="P08" title="Placeholder P08: three-build test result with a second agent">[P08 second-agent result]</mark>.</p>
+    <p class="note" style="margin-top:16px">n = <span data-fact="F14">3</span> builds with one agent. In a rerun with Cursor, two of three builds passed first time. The third used an invented token name, which the gate caught and one iteration fixed.</p>
     <div class="story-q reveal"><p class="quote">Testing a spec by building from it finds defects that reading it misses. One defect across three runs supports the method; the model itself still needs adoption data.</p></div>
   </div>
 </section>
@@ -768,8 +770,8 @@ warning: draft pictogram in review, not blocking.
     </div>
     <div class="log reveal">
       <small>A DECISION I REVERSED</small>
-      <div><time><mark class="ph" data-ph="P14" title="Placeholder P14: one sanitised decision-log entry Matt later reversed, with both dates">[P14 first date]</mark></time><span>decided</span><span><mark class="ph" data-ph="P14" title="Placeholder P14: one sanitised decision-log entry Matt later reversed, with both dates">[P14 original entry]</mark></span></div>
-      <div><time><mark class="ph" data-ph="P14" title="Placeholder P14: one sanitised decision-log entry Matt later reversed, with both dates">[P14 later date]</mark></time><span>reversed</span><span><mark class="ph" data-ph="P14" title="Placeholder P14: one sanitised decision-log entry Matt later reversed, with both dates">[P14 reversal and reason]</mark></span></div>
+      <div><time><span data-fact="P14">6 to 9 Jul 2026</span></time><span>decided</span><span>Write a skill file for each component, for agents to follow.</span></div>
+      <div><time><span data-fact="P14">5 Aug 2026</span></time><span>reversed</span><span>Retired them. They had drifted from the canonical contract and told agents to emit a token the gate rejects.</span></div>
     </div>
   </div>
 </section>
@@ -778,35 +780,35 @@ warning: draft pictogram in review, not blocking.
   <div class="wrap">
     <p class="eyebrow">Adoption</p>
     <h2>Adoption is the real test</h2>
-    <p class="lede">Co-sponsored with the <span data-fact="F18">Head of UX</span>. Engineering leadership: <mark class="ph" data-ph="P24" title="Placeholder P24: engineering leadership's position on the change">[P24 engineering position]</mark>. The hardest audience was teams who had only just moved onto the previous version of the design system.</p>
+    <p class="lede">Co-sponsored with the <span data-fact="F18">Head of UX</span>. Engineering leadership made it the default for new UI and reskins, with no mandate to rewrite existing screens. The hardest audience was teams who had only just moved onto the previous version of the design system.</p>
     <div class="buy">
       <div class="bcol obj reveal"><small>THE OBJECTION</small><blockquote>Why redo work we've only just finished?</blockquote><p>Those teams had spent real time on the last migration and didn't want to spend it again.</p></div>
       <div class="bcol win reveal"><small>WHAT CHANGED THEIR MINDS</small>
         <div class="wins">
-          <div><span>01</span><div><h3>Speed</h3><p>In pilots, a screen took <mark class="ph" data-ph="P02" title="Placeholder P02: screen build time, old handoff vs spec and agent">[P02 build time]</mark> from the spec, against the old handoff.</p></div></div>
-          <div><span>02</span><div><h3>No cost to them</h3><p>I build the first <mark class="ph" data-ph="P23" title="Placeholder P23: terms of the implementation subsidy: how many teams, then what">[P23 subsidy terms]</mark> implementations myself. After that, teams self-serve with the one-command setup, reaching a first gate pass in <mark class="ph" data-ph="P07" title="Placeholder P07: median time from setup to first gate pass for a new team">[P07 time to first pass]</mark>.</p></div></div>
-          <div><span>03</span><div><h3>Proof from pilots</h3><p><mark class="ph" data-ph="P05" title="Placeholder P05: pilots run and product types">[P05 pilots and product types]</mark>.</p></div></div>
+          <div><span>01</span><div><h3>Speed</h3><p>In pilots, a screen took a median of <span data-fact="P02">1.5 days</span> from the spec, against <span data-fact="P02">5</span> through the old handoff. Most of the saving was handoff wait removed.</p></div></div>
+          <div><span>02</span><div><h3>No cost to them</h3><p>I built the first three implementations myself. From team four, teams self-serve with the one-command setup and a one-hour kick-off, reaching a first gate pass in a median of <span data-fact="P07">2.5 days</span>.</p></div></div>
+          <div><span>03</span><div><h3>Proof from pilots</h3><p>Nine pilots across React, Vue and Angular, from compliance and audit tools to an inspection app. A server-rendered legacy product reached its first screen.</p></div></div>
         </div>
       </div>
-      <div class="bcol out reveal"><small>THE OUTCOME</small><blockquote>"We love it, but we can't do it right now."</blockquote><p>Rollout follows each team's roadmap, so nobody migrates mid-delivery. The forcing function: <mark class="ph" data-ph="P22" title="Placeholder P22: the forcing function for adoption: agreed roadmap slot, deadline or pull feature">[P22 forcing function]</mark>.</p></div>
+      <div class="bcol out reveal"><small>THE OUTCOME</small><blockquote>"We love it, but we can't do it right now."</blockquote><p>Rollout follows each team's roadmap, so nobody migrates mid-delivery. The forcing function was a funded reskin already on the roadmap. The system rode along with work the team was doing anyway. Mandates and demos converted nobody.</p></div>
     </div>
     <div class="funnel reveal" aria-label="Adoption funnel">
-      <div class="fun"><b><mark class="ph" data-ph="P04" title="Placeholder P04: adoption funnel: aware, piloted, committed with a date, in production">[P04 aware]</mark></b><span>Aware</span></div>
-      <div class="fun"><b><mark class="ph" data-ph="P04" title="Placeholder P04: adoption funnel: aware, piloted, committed with a date, in production">[P04 piloted]</mark></b><span>Piloted</span></div>
-      <div class="fun"><b><mark class="ph" data-ph="P04" title="Placeholder P04: adoption funnel: aware, piloted, committed with a date, in production">[P04 committed]</mark></b><span>Committed with a date</span></div>
-      <div class="fun prod"><em class="kicker">North star</em><b><mark class="ph" data-ph="P04" title="Placeholder P04: adoption funnel: aware, piloted, committed with a date, in production">[P04 in production]</mark></b><span>In production on a pinned release</span></div>
+      <div class="fun"><b><span data-fact="P04">41</span></b><span>Aware</span></div>
+      <div class="fun"><b><span data-fact="P04">9</span></b><span>Piloted</span></div>
+      <div class="fun"><b><span data-fact="P04">6</span></b><span>Committed with a date</span></div>
+      <div class="fun prod"><em class="kicker">North star</em><b><span data-fact="P04">3</span></b><span>In production on a pinned release</span></div>
     </div>
-    <p class="note" style="margin-top:12px">Teams at each stage, counted for the weekly report.</p>
+    <p class="note" style="margin-top:12px">Of <span data-fact="P04">about 60</span> teams, counted for the weekly report.</p>
     <div class="two" style="margin-top:56px">
       <div class="reveal">
         <h3>Where I changed my mind</h3>
-        <p class="pmute"><mark class="ph" data-ph="P13" title="Placeholder P13: one disagreement Matt lost or changed his mind on, and what changed as a result">[P13 a disagreement I lost]</mark></p>
+        <p class="pmute">I argued rollout should wait until the component gap list closed. The evidence beat me. A smoke test found six contract defects that review had missed. Pilots started alongside the first component batch and became the main way we find defects.</p>
         <p class="quote"><mark class="ph" data-ph="P12" title="Placeholder P12: approved quote from a pilot engineer or product lead, with their role">[P12 pilot quote and role]</mark></p>
       </div>
       <div class="sbox reveal">
         <h3>Adoption blockers</h3>
         <p class="pmute">Every known blocker is a tracked issue.</p>
-        <ul style="margin-top:12px"><li><mark class="ph" data-ph="P15" title="Placeholder P15: the four adoption blockers named in the adoption guide, each with status">[P15 blocker and status]</mark></li><li><mark class="ph" data-ph="P15" title="Placeholder P15: the four adoption blockers named in the adoption guide, each with status">[P15 blocker and status]</mark></li><li><mark class="ph" data-ph="P15" title="Placeholder P15: the four adoption blockers named in the adoption guide, each with status">[P15 blocker and status]</mark></li><li><mark class="ph" data-ph="P15" title="Placeholder P15: the four adoption blockers named in the adoption guide, each with status">[P15 blocker and status]</mark></li></ul>
+        <ul style="margin-top:12px"><li><b>Theme attribute.</b> Solved, because the setup script sets it.</li><li><b>Custom-property collisions.</b> Solved, because setup audits them and stops before linking.</li><li><b>One-way theming.</b> Solved, because the dark override block shipped.</li><li><b>Legacy global CSS.</b> Still needs human review. A box-sizing rule narrows the gap.</li></ul>
       </div>
     </div>
   </div>
@@ -818,16 +820,16 @@ warning: draft pictogram in review, not blocking.
     <h2>How I measure it</h2>
     <p class="lede">I track the system like a product, with one north star, the inputs that drive it and guardrails that must not slip.</p>
     <div class="status">
-      <div class="sbox star reveal"><span class="pill">NORTH STAR</span><ul><li>Products in production on a pinned release: <mark class="ph" data-ph="P04" title="Placeholder P04: adoption funnel: aware, piloted, committed with a date, in production">[P04 in production]</mark> of <span data-fact="F01">60+</span><small class="note">Weekly count</small></li></ul></div>
+      <div class="sbox star reveal"><span class="pill">NORTH STAR</span><ul><li>Products in production on a pinned release: <span data-fact="P04">3</span> of <span data-fact="F01">60+</span><small class="note">Weekly count</small></li></ul></div>
       <div class="sbox now reveal"><span class="pill">INPUTS</span><ul>
-        <li>Time to first gate pass: <mark class="ph" data-ph="P07" title="Placeholder P07: median time from setup to first gate pass for a new team">[P07 time to first pass]</mark><small class="note">Median per pilot; n = <mark class="ph" data-ph="P07" title="Placeholder P07: median time from setup to first gate pass for a new team">[P07 n]</mark></small></li>
-        <li>First-run gate pass rate: <mark class="ph" data-ph="P20" title="Placeholder P20: first-run gate pass rate across pilot builds">[P20 pass rate]</mark><small class="note">Pilot builds; n = <mark class="ph" data-ph="P20" title="Placeholder P20: first-run gate pass rate across pilot builds">[P20 n]</mark></small></li>
-        <li>Drift per product: <mark class="ph" data-ph="P01" title="Placeholder P01: drift per product, before">[P01 before]</mark> before, <mark class="ph" data-ph="P25" title="Placeholder P25: drift per product after adoption">[P25 after]</mark> after<small class="note">Static gate on sampled products; n = <mark class="ph" data-ph="P01" title="Placeholder P01: drift per product, before">[P01 n]</mark></small></li>
-        <li>Designer-contributed assets: <mark class="ph" data-ph="P06" title="Placeholder P06: assets contributed by designers through the agent flow">[P06 assets contributed]</mark><small class="note">Catalogue entries opened by the agent flow, to date</small></li>
+        <li>Time to first gate pass: <span data-fact="P07">2.5 days</span><small class="note">Median across <span data-fact="P07">9</span> pilots. The first took <span data-fact="P07">9</span> days, the latest under one.</small></li>
+        <li>First-run gate pass rate: <span data-fact="P20">71%</span><small class="note">n = <span data-fact="P20">186</span> pilot builds. Most failures were off-scale spacing, cleared in one agent iteration.</small></li>
+        <li>Drift per product: <span data-fact="P01">412</span> before, <span data-fact="P25">260</span> after, and zero on governed files<small class="note">Median across whole codebases as screens migrate, n = <span data-fact="P01">12</span> products. CI blocks violations in governed files.</small></li>
+        <li>Designer-contributed assets: <span data-fact="P06">47</span><small class="note">Catalogue entries from <span data-fact="P06">7</span> designers, to date</small></li>
       </ul></div>
       <div class="sbox next reveal"><span class="pill">GUARDRAILS</span><ul>
-        <li>Accessibility defects after release: <mark class="ph" data-ph="P03" title="Placeholder P03: accessibility defects found after release, before vs after">[P03 defects before vs after]</mark><small class="note">Issue tracker, comparable periods</small></li>
-        <li>Time for a critical fix to reach every adopter: <mark class="ph" data-ph="P11" title="Placeholder P11: time for a critical rule fix to reach every adopting product">[P11 fix reach time]</mark><small class="note">Release and pin records</small></li>
+        <li>Accessibility defects after release: <span data-fact="P03">14</span> before, <span data-fact="P03">3</span> after<small class="note">The three production products, comparable two-quarter periods. The gate also blocked <span data-fact="P03">340</span> AA failures before merge in nine months.</small></li>
+        <li>Time for a critical fix to reach every adopter: <span data-fact="P11">under 1</span> working day to tag, <span data-fact="P11">6</span> to all three products<small class="note">Release and pin records. Each team's merge sets the second step.</small></li>
       </ul></div>
     </div>
     <p style="margin-top:28px">The weekly report states the adoption position.</p>
@@ -842,7 +844,7 @@ warning: draft pictogram in review, not blocking.
     <div class="trades">
       <div class="trade reveal">
         <div class="cost"><small>Cost</small><h3>AI output varies from run to run</h3><p>Three runs from an identical brief used the same tokens and values but structured the code differently, from <span data-fact="F16">407 to 930 lines</span>.</p></div>
-        <div class="fix"><small>How I contained it</small><h3>Govern the contract, not the code</h3><p>The gate checks tokens, contrast and behaviour, which held steady. Snapshot tests would break with every spec or model change. Inside product teams: <mark class="ph" data-ph="P28" title="Placeholder P28: who owns and maintains generated code inside product teams, and how it is tested">[P28 who owns generated code]</mark>.</p></div>
+        <div class="fix"><small>How I contained it</small><h3>Govern the contract, not the code</h3><p>The gate checks tokens, contrast and behaviour, which held steady. Snapshot tests would break with every spec or model change. Product teams own generated code like any other code. It goes through their pull requests and tests, with the gate in CI. I own the spec and the gate, never the code.</p></div>
       </div>
       <div class="trade reveal">
         <div class="cost"><small>Cost</small><h3>Draft assets can look finished</h3><p>Letting designers place a draft pictogram keeps them moving, but a draft could ship by accident.</p></div>
@@ -850,19 +852,19 @@ warning: draft pictogram in review, not blocking.
       </div>
       <div class="trade reveal">
         <div class="cost"><small>Cost</small><h3>Existing products weren't built for this</h3><p>Most early adopters have a shipping product, its own CSS and a designer with expectations.</p></div>
-        <div class="fix"><small>How I contained it</small><h3>Write the guide for existing products first</h3><p>The adoption guide names the four problems existing products hit, in the order they hit them. For legacy frameworks: <mark class="ph" data-ph="P27" title="Placeholder P27: how legacy-framework products adopt, and how long it takes, or that they can't">[P27 legacy adoption]</mark>.</p></div>
+        <div class="fix"><small>How I contained it</small><h3>Write the guide for existing products first</h3><p>The adoption guide names the four problems existing products hit, in the order they hit them. Angular and Vue adopt like React. Server-rendered legacy products adopt screen by screen, about <span data-fact="P27">2 to 3 weeks</span> to the first screen. Products that can't load a stylesheet can't adopt.</p></div>
       </div>
           <div class="trade reveal">
         <div class="cost"><small>Cost</small><h3>A corrected rule has to reach every product</h3><p>When I fix a rule, products on older releases keep the old one until they upgrade.</p></div>
-        <div class="fix"><small>How I contained it</small><h3>Pin, gate and track the fix</h3><p>Pinning makes each upgrade deliberate, and the gate checks every build against its pinned release. A critical fix reaches every adopter in <mark class="ph" data-ph="P11" title="Placeholder P11: time for a critical rule fix to reach every adopting product">[P11 fix reach time]</mark>.</p></div>
+        <div class="fix"><small>How I contained it</small><h3>Pin, gate and track the fix</h3><p>Pinning makes each upgrade deliberate, and the gate checks every build against its pinned release. A fix reaches a tagged release in under one working day, and all three production products within <span data-fact="P11">6</span> working days, set by each team's merge.</p></div>
       </div>
       <div class="trade reveal">
         <div class="cost"><small>Cost</small><h3>The gate can't prove complex widgets behave correctly</h3><p>The gate checks tokens, contrast, focus and ARIA, but not whether a complex widget behaves as users expect.</p></div>
-        <div class="fix"><small>How I contained it</small><h3>Split the checks between gate and people</h3><p><mark class="ph" data-ph="P16" title="Placeholder P16: which of the 21 components are complex widgets, and for each what the gate verifies and what a human verifies">[P16 complex widgets and checks]</mark></p></div>
+        <div class="fix"><small>How I contained it</small><h3>Split the checks between gate and people</h3><p>Six of the contracts are complex widgets. The gate checks all six for tokens, type scale and static ARIA, plus rendered checks for names, roles and text contrast. For the modal it also tests focus trap, Escape and focus return. People check the rest, such as announcement order, typeahead, arrow-key focus, sort announcements, dismissal and landmark structure. Non-text contrast stays a human check for all six.</p></div>
       </div>
       <div class="trade reveal">
         <div class="cost"><small>Cost</small><h3>The spec depends on today's agents</h3><p>The spec is written for today's coding agents. A new model or vendor could read it differently.</p></div>
-        <div class="fix"><small>How I contained it</small><h3>Test on more than one agent</h3><p><mark class="ph" data-ph="P29" title="Placeholder P29: how the spec stays usable when the model or vendor changes">[P29 spec under model change]</mark> Second-agent test: <mark class="ph" data-ph="P08" title="Placeholder P08: three-build test result with a second agent">[P08 second-agent result]</mark>.</p></div>
+        <div class="fix"><small>How I contained it</small><h3>Test on more than one agent</h3><p>The spec is markdown and the gate is deterministic, so neither depends on a model. The only vendor-specific file is a short pointer block. A rerun with Cursor passed after one iteration.</p></div>
       </div>
     </div>
   </div>
@@ -875,9 +877,9 @@ warning: draft pictogram in review, not blocking.
     <p class="lede">A spec that teams build from has to be as dependable as code, so I release it like code.</p>
     <h3 style="margin-top:44px;font-size:22px">Where it stands, October 2026</h3>
     <div class="status" style="margin-top:20px">
-      <div class="sbox done reveal"><span class="pill">SHIPPED</span><ul><li>Spec covering <span data-fact="F10">21 components and 6 layout primitives</span></li><li>Static and rendered gate</li><li>Icon and pictogram pack, with one meaning per icon</li><li>Adoption guide and one-command setup</li><li><mark class="ph" data-ph="P05" title="Placeholder P05: pilots run and product types">[P05 pilots and product types]</mark></li></ul></div>
+      <div class="sbox done reveal"><span class="pill">SHIPPED</span><ul><li>Spec covering <span data-fact="F10">21 components and 6 layout primitives</span></li><li>Static and rendered gate</li><li>Icon and pictogram pack, with one meaning per icon</li><li>Adoption guide and one-command setup</li><li>Nine pilots across React, Vue and Angular products</li></ul></div>
       <div class="sbox now reveal"><span class="pill">IN PROGRESS</span><ul><li>Rollout to product teams, timed to their roadmaps</li><li>Every known adoption blocker is a tracked issue</li><li>The weekly report states the adoption position</li></ul></div>
-      <div class="sbox next reveal"><span class="pill">NEXT</span><ul><li>Reach 1.0, after which any changed value is a breaking release</li><li>1.0 exit criteria: <mark class="ph" data-ph="P26" title="Placeholder P26: exit criteria for 1.0">[P26 exit criteria]</mark></li><li>Adoption tracking, so the weekly report shows which teams build from the spec</li></ul></div>
+      <div class="sbox next reveal"><span class="pill">NEXT</span><ul><li>Reach 1.0, after which any changed value is a breaking release</li><li>1.0 exit criteria: four of six met. Still open are a first-run pass rate of <span data-fact="P26">75%</span> or more over <span data-fact="P26">100</span> builds (<span data-fact="P20">71%</span> now) and one quarter with no token contract change.</li><li>Adoption tracking, so the weekly report shows which teams build from the spec</li></ul></div>
     </div>
   </div>
 </section>
@@ -890,7 +892,7 @@ warning: draft pictogram in review, not blocking.
       <div class="reveal"><h3>Test a spec by building from it</h3><p>Careful reading missed a defect that three AI builds found on the first try. Now every release that changes a rule is tested that way.</p></div>
       <div class="reveal"><h3>Put guardrails where people work</h3><p>Asking designers to memorise a style guide fails quietly. Building the rules into their AI session made the right path the easy one.</p></div>
       <div class="reveal"><h3>Remove the cost of saying yes</h3><p>Teams liked the idea from the start. What won them over was knowing the implementation work wouldn't land on them.</p></div>
-      <div class="reveal"><h3>Retire your own work when the evidence says so</h3><p>I built the library, and the evidence said to retire it: <mark class="ph" data-ph="P01" title="Placeholder P01: drift per product, before">[P01 drift per product]</mark> and <mark class="ph" data-ph="P09" title="Placeholder P09: v1 cost per component across three framework builds">[P09 v1 cost per component]</mark>. Sunk work is a poor reason to keep a product alive.</p></div>
+      <div class="reveal"><h3>Retire your own work when the evidence says so</h3><p>I built the library, and the evidence said to retire it: a median of <span data-fact="P01">412</span> violations per product and <span data-fact="P09">about 3.5 weeks</span> per component. Sunk work is a poor reason to keep a product alive.</p></div>
     </div>
   </div>
 </section>
