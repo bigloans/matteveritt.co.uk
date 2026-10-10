@@ -1,0 +1,4 @@
+# GitHub Pages build. Keep tooling and briefs off the public site.
+exclude:
+  - scripts
+  - case-study-brief.md

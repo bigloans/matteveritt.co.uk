@@ -10,6 +10,7 @@
 <meta property="og:type" content="article">
 <meta property="og:image" content="[P30 Open Graph image URL]" data-ph="P30">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="noindex">
 <script>document.documentElement.classList.add('js')</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Poppins:wght@300;500;600;700&display=swap" rel="stylesheet">
@@ -41,6 +42,13 @@ section{padding:110px 0}
 .skip{position:absolute;left:16px;top:-60px;z-index:20;background:var(--teal);color:var(--navy);font:600 14px Inter;padding:10px 16px;border-radius:10px;text-decoration:none}
 .skip:focus{top:16px;outline:2px solid #fff;outline-offset:2px}
 .note{font-size:13px;color:var(--mute)}
+
+/* placeholders and draft state */
+.ph{background:#fff4e0;color:#9a6200;outline:1px dashed #9a6200;border-radius:4px;padding:0 4px;font:inherit}
+.dark .ph,.hero .ph,.contact .ph,.bcol.win .ph,.callout .ph,.proof .ph{background:rgba(255,180,60,.18);color:#ffd27a;outline-color:#ffd27a}
+.draft-banner{position:fixed;top:0;left:0;right:0;z-index:30;background:#fff4e0;color:#7a4d00;font:600 13px Inter;text-align:center;padding:8px 16px;border-bottom:1px solid #9a6200}
+.draft body{padding-top:37px}
+.draft .skip:focus{top:53px}
 
 /* hero */
 .hero{background:radial-gradient(1200px 600px at 85% -10%,rgba(46,196,182,.28),transparent 60%),radial-gradient(900px 500px at -10% 110%,rgba(59,123,234,.22),transparent 60%),var(--navy);color:#fff;overflow:hidden;position:relative}
@@ -758,6 +766,17 @@ warning: draft pictogram in review, not blocking.
 
 <script>
 (function(){
+  // Draft banner while placeholders remain
+  var ph=document.querySelectorAll('[data-ph]').length;
+  if(ph){
+    var banner=document.createElement('div');
+    banner.className='draft-banner';
+    banner.setAttribute('role','status');
+    banner.textContent='Draft: '+ph+' placeholder'+(ph===1?'':'s')+' unresolved';
+    document.body.prepend(banner);
+    document.documentElement.classList.add('draft');
+  }
+
   // Theme toggle for the demo
   var stage=document.getElementById('stage');
   document.querySelectorAll('[data-set]').forEach(function(b){
