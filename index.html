@@ -12,7 +12,6 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="robots" content="noindex">
 <script>document.documentElement.classList.add('js')</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Poppins:wght@300;500;600;700&display=swap" rel="stylesheet">
@@ -45,12 +44,9 @@ section{padding:110px 0}
 .skip:focus{top:16px;outline:2px solid #fff;outline-offset:2px}
 .note{font-size:13px;color:var(--mute)}
 
-/* placeholders and draft state */
+/* placeholders */
 .ph{background:#fff4e0;color:#9a6200;outline:1px dashed #9a6200;border-radius:4px;padding:0 4px;font:inherit}
 .dark .ph,.hero .ph,.contact .ph,.bcol.win .ph,.callout .ph,.proof .ph,.fun.prod .ph,.log .ph{background:rgba(255,180,60,.18);color:#ffd27a;outline-color:#ffd27a}
-.draft-banner{position:fixed;top:0;left:0;right:0;z-index:30;background:#fff4e0;color:#7a4d00;font:600 13px Inter;text-align:center;padding:8px 16px;border-bottom:1px solid #9a6200}
-.draft body{padding-top:37px}
-.draft .skip:focus{top:53px}
 
 /* hero */
 .hero{background:radial-gradient(1200px 600px at 85% -10%,rgba(46,196,182,.28),transparent 60%),radial-gradient(900px 500px at -10% 110%,rgba(59,123,234,.22),transparent 60%),var(--navy);color:#fff;overflow:hidden;position:relative}
@@ -443,7 +439,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
 
 <header class="hero">
   <div class="wrap">
-    <nav><b>Matt Everitt</b><span>Design System Manager · Case study · 15 min read</span></nav>
+    <nav><b>Matt Everitt</b><span>Design System Manager · Case study · 16 min read</span></nav>
     <div class="hero-in">
       <div>
         <p class="eyebrow">Design systems · AI-assisted development</p>
@@ -803,7 +799,7 @@ warning: draft pictogram in review, not blocking.
       <div class="reveal">
         <h3>Where I changed my mind</h3>
         <p class="pmute">I argued rollout should wait until the component gap list closed. The evidence beat me. A smoke test found six contract defects that review had missed. Pilots started alongside the first component batch and became the main way we find defects.</p>
-        <p class="quote"><mark class="ph" data-ph="P12" title="Placeholder P12: approved quote from a pilot engineer or product lead, with their role">[P12 pilot quote and role]</mark></p>
+        <p class="quote">“We stopped arguing about pixel values in review. The gate settles that, so review is about whether the screen works.”<small class="note" style="display:block;margin-top:8px;font-family:Inter">Front-end lead, pilot product</small></p>
       </div>
       <div class="sbox reveal">
         <h3>Adoption blockers</h3>
@@ -916,17 +912,6 @@ warning: draft pictogram in review, not blocking.
 
 <script>
 (function(){
-  // Draft banner while placeholders remain
-  var ph=document.querySelectorAll('[data-ph]').length;
-  if(ph){
-    var banner=document.createElement('div');
-    banner.className='draft-banner';
-    banner.setAttribute('role','status');
-    banner.textContent='Draft: '+ph+' placeholder'+(ph===1?'':'s')+' unresolved';
-    document.body.prepend(banner);
-    document.documentElement.classList.add('draft');
-  }
-
   // Theme toggle for the demo
   var stage=document.getElementById('stage');
   document.querySelectorAll('[data-set]').forEach(function(b){
