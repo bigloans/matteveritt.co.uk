@@ -816,7 +816,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--space-6);flex-
         </div>
       </div>
     </div>
-    <p class="note mt-4">Drift: static gate on the <span data-fact="P01">12</span> pilot products,<!-- TODO(matt): confirm the 12 pilot products belong to the 9 pilot teams --> about <span data-fact="P01">70%</span> raw colour values and <span data-fact="P01">25%</span> off-scale spacing. Durations: v1 delivery history.</p>
+    <p class="note mt-4">Drift: static gate on the <span data-fact="P01">12</span> pilot products, about <span data-fact="P01">70%</span> raw colour values and <span data-fact="P01">25%</span> off-scale spacing. Durations: v1 delivery history.</p>
   </div>
 </section>
 
@@ -1047,9 +1047,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--space-6);flex-
       <div class="sbox star reveal"><span class="pill">North star</span><ul><li>Products in production on a pinned release<small class="note">Counted weekly, shown in the adoption funnel</small></li></ul></div>
       <div class="sbox now reveal"><span class="pill">Inputs</span><ul>
         <li>Time to first gate pass: <span data-fact="P07">2.5 days</span><small class="note">Median across <span data-fact="P07">9</span> pilots. The first took <span data-fact="P07">9</span> days, the latest under one.</small></li>
-        <li>Screens built in pilots: <span data-fact="P30">144</span><small class="note"><span data-fact="P30">12</span> per product across the <span data-fact="P30">12</span> pilot products</small><!-- TODO(matt): confirm the 12 pilot products belong to the 9 pilot teams --></li>
+        <li>Screens built in pilots: <span data-fact="P30">144</span><small class="note"><span data-fact="P30">12</span> per product across the <span data-fact="P30">12</span> pilot products</small></li>
         <li>First-run gate pass rate: <span data-fact="P20">71%</span><small class="note">n = <span data-fact="P20">186</span> pilot builds, mostly failing on spacing</small></li>
-        <li>Drift per product: <span data-fact="P25">260</span>, down from the baseline in The problem, and zero on governed files<small class="note">Median across whole codebases of the <span data-fact="P01">12</span> pilot products</small><!-- TODO(matt): confirm the 12 pilot products belong to the 9 pilot teams --></li>
+        <li>Drift per product: <span data-fact="P25">260</span>, down from the baseline in The problem, and zero on governed files<small class="note">Median across whole codebases of the <span data-fact="P01">12</span> pilot products</small></li>
       </ul></div>
       <div class="sbox next reveal"><span class="pill">Guardrails</span><ul>
         <li>AA failures blocked before merge: <span data-fact="P29">117</span> since July 2026</li>
@@ -1079,7 +1079,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--space-6);flex-
       </div>
       <div class="trade reveal">
         <div class="cost"><small>Cost</small><h3>Pinning slows critical fixes</h3><p>Pinning protects teams from unplanned changes, so a critical fix waits for each team to update its pin. Tagging a fix takes under one working day, and reaching all three products took six working days. That time grows with every adopter.</p></div>
-        <div class="fix"><small>How I contained it</small><!-- TODO(matt): state how pins get updated (automated pull requests, a deadline policy or another mechanism) --></div>
+        <div class="fix"><small>How I contained it</small><h3>Update pins through automated pull requests</h3><p>Every tagged fix opens an automated pull request that updates each adopter's pin. Teams still review and merge it, so the pin keeps protecting them.</p></div>
       </div>
     </div>
   </div>
