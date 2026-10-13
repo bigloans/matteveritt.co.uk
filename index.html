@@ -1052,11 +1052,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--space-6);flex-
   <div class="wrap">
     <p class="eyebrow">Trade-offs</p>
     <h2>What this approach costs, and how I contained it</h2>
-    <p class="lede">The decision log records what each major choice costs. Here are three.</p>
+    <p class="lede">The decision log records what each major choice costs. Here are four.</p>
     <div class="trades">
       <div class="trade reveal">
         <div class="cost"><small>Cost</small><h3>AI output varies from run to run</h3><p>Three runs from one brief used the same tokens and values but structured the code differently, from <span data-fact="F16">407 to 930 lines</span>.</p></div>
-        <div class="fix"><small>How I contained it</small><h3>Govern the contract, not the code</h3><p>The gate checks tokens, contrast and behaviour, which held steady. Product teams own generated code through their own reviews and tests, which costs them little and gives them more freedom to customise. I own the spec and the gate.</p></div>
+        <div class="fix"><small>How I contained it</small><h3>Govern the contract, not the code</h3><p>The gate checks tokens, contrast and behaviour, which held steady. Product teams own generated code through their own reviews and tests. I own the spec and the gate.</p></div>
       </div>
       <div class="trade reveal">
         <div class="cost"><small>Cost</small><h3>Existing products weren't built for this</h3><p>Most early adopters have a shipping product, its own CSS and a designer with expectations.</p></div>
@@ -1065,6 +1065,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--space-6);flex-
       <div class="trade reveal">
         <div class="cost"><small>Cost</small><h3>The gate can't prove complex widgets behave correctly</h3><p>It can't tell whether a complex widget behaves as users expect.</p></div>
         <div class="fix"><small>How I contained it</small><h3>Split the checks between gate and people</h3><p>For the six complex widgets, the gate checks tokens, ARIA, names, roles and text contrast, plus the modal's focus handling. People check behaviour such as announcement order and arrow-key focus.</p></div>
+      </div>
+      <div class="trade reveal">
+        <div class="cost"><small>Cost</small><h3>Pinning slows critical fixes</h3><p>Pinning protects teams from unplanned changes, so a critical fix waits for each team to update its pin. Tagging a fix takes under one working day, and reaching all three products took six working days. That time grows with every adopter.</p></div>
+        <div class="fix"><small>How I contained it</small><!-- TODO(matt): state how pins get updated (automated pull requests, a deadline policy or another mechanism) --></div>
       </div>
     </div>
   </div>
