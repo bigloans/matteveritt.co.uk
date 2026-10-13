@@ -340,7 +340,7 @@ try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.docu
   --shadow-icon:none;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 body{font-family:var(--font-body);font-size:var(--text-lg);line-height:1.65;color:var(--color-text);background:var(--color-bg);-webkit-font-smoothing:antialiased}
 a{color:inherit}
 .wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--space-6)}
@@ -373,9 +373,9 @@ section{padding:var(--space-28) 0}
 /* hero */
 .hero{background:var(--bg-hero);color:var(--inverse-text);overflow:hidden;position:relative}
 .hero:after{content:"";position:absolute;inset:0;background-image:var(--bg-hero-grid);background-size:var(--size-grid) var(--size-grid);mask-image:var(--bg-hero-fade);-webkit-mask-image:var(--bg-hero-fade);pointer-events:none}
-nav{display:flex;justify-content:space-between;align-items:center;padding:var(--space-7) 0;position:relative;z-index:1;font-size:var(--text-sm)}
-nav b{font-family:var(--font-display);font-weight:600;letter-spacing:.02em}
-nav span{color:var(--inverse-text-muted)}
+.hero nav{display:flex;justify-content:space-between;align-items:center;padding:var(--space-7) 0;position:relative;z-index:1;font-size:var(--text-sm)}
+.hero nav b{font-family:var(--font-display);font-weight:600;letter-spacing:.02em}
+.hero nav span{color:var(--inverse-text-muted)}
 .nav-end{display:flex;align-items:center;gap:var(--space-4)}
 .theme-toggle{display:inline-flex;align-items:center;gap:var(--space-2);font:500 var(--text-sm) var(--font-body);color:var(--inverse-text);background:var(--inverse-fill-3);border:var(--border-1) solid var(--inverse-border);border-radius:var(--radius-pill);padding:var(--space-1) var(--space-3);cursor:pointer}
 .theme-toggle:before{content:"";width:var(--size-bullet);height:var(--size-bullet);border-radius:var(--radius-circle);border:var(--border-1) solid currentColor}
@@ -410,6 +410,25 @@ nav span{color:var(--inverse-text-muted)}
 .specfile .bar span{margin-left:var(--space-3);color:var(--inverse-text-muted);font-size:var(--text-sm)}
 .specfile pre{padding:var(--space-4) var(--space-5);line-height:1.75;color:var(--inverse-text-body);white-space:pre-wrap}
 .k{color:var(--code-key)}.s{color:var(--code-string)}.c{color:var(--code-comment)}.n{color:var(--code-number)}
+
+/* table of contents */
+.toc{position:relative;z-index:10;background:var(--color-bg);border-bottom:var(--border-1) solid var(--color-border)}
+.toc-details{max-width:var(--wrap);margin:0 auto;padding:0 var(--space-6)}
+.toc summary{cursor:pointer;padding:var(--space-3) 0;font:600 var(--text-sm) var(--font-body);color:var(--color-text)}
+.toc summary:focus-visible,.toc a:focus-visible{outline:var(--focus-width) solid var(--color-interactive);outline-offset:var(--focus-offset)}
+.toc ol{list-style:none;display:grid;gap:var(--space-1);padding-bottom:var(--space-3)}
+.toc a{display:block;padding:var(--space-1) 0;font-size:var(--text-sm);color:var(--color-text-muted);text-decoration:none}
+.toc a:hover{color:var(--color-text);text-decoration:underline}
+.toc a[aria-current="true"]{color:var(--color-interactive);font-weight:600}
+@media (min-width:901px){
+  html{scroll-padding-top:var(--space-12)}
+  .toc{position:sticky;top:0}
+  .toc summary{display:none}
+  .toc ol{display:flex;gap:var(--space-5);overflow-x:auto;padding:0;scrollbar-width:thin}
+  .toc li{flex:none}
+  .toc a{padding:var(--space-3) 0;border-bottom:var(--border-2) solid transparent}
+  .toc a[aria-current="true"]{border-bottom-color:var(--color-interactive)}
+}
 
 /* at a glance */
 .glance{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-5);margin-top:var(--space-12)}
@@ -773,7 +792,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--space-6);flex-
   .stage{padding:var(--space-5)}
   .contrast{position:static}
   .trade .fix{border-left:0;border-top:var(--border-1) solid var(--inverse-fill-3)}
-  nav span{display:none}
+  .hero nav span{display:none}
 }
 @media (max-width:520px){
   .flow,.icons,.depth,.aid{grid-template-columns:1fr}
@@ -829,7 +848,31 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--space-6);flex-
 
 <main id="main" tabindex="-1">
 
-<section>
+<nav class="toc" aria-label="Contents">
+  <details class="toc-details" open>
+    <summary>Contents</summary>
+    <ol>
+      <li><a href="#glance">At a glance</a></li>
+      <li><a href="#customers">Customers</a></li>
+      <li><a href="#problem">The problem</a></li>
+      <li><a href="#options">Options</a></li>
+      <li><a href="#product">The product</a></li>
+      <li><a href="#visual-language">Visual language</a></li>
+      <li><a href="#designers">Where designers work</a></li>
+      <li><a href="#gate">The gate</a></li>
+      <li><a href="#story">First evidence</a></li>
+      <li><a href="#team">Team of one</a></li>
+      <li><a href="#adoption">Adoption</a></li>
+      <li><a href="#metrics">Metrics</a></li>
+      <li><a href="#trade-offs">Trade-offs</a></li>
+      <li><a href="#roadmap">Roadmap</a></li>
+      <li><a href="#reflection">Reflection</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ol>
+  </details>
+</nav>
+
+<section id="glance">
   <div class="wrap">
     <p class="eyebrow">At a glance</p>
     <h2>The specification is the product</h2>
@@ -847,7 +890,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--space-6);flex-
   </div>
 </section>
 
-<section class="tight">
+<section id="customers" class="tight">
   <div class="wrap">
     <p class="eyebrow">Customers</p>
     <h2>The customers and the product I'd built</h2>
@@ -860,7 +903,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--space-6);flex-
   </div>
 </section>
 
-<section class="dark">
+<section id="problem" class="dark">
   <div class="wrap">
     <p class="eyebrow">The problem</p>
     <h2>The evidence against my own library</h2>
@@ -910,7 +953,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--space-6);flex-
   </div>
 </section>
 
-<section class="dark">
+<section id="product" class="dark">
   <div class="wrap">
     <p class="eyebrow">The product</p>
     <h2>Remove the library and keep the contract</h2>
@@ -924,7 +967,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--space-6);flex-
   </div>
 </section>
 
-<section>
+<section id="visual-language">
   <div class="wrap">
     <p class="eyebrow">Visual language</p>
     <h2>Every visual choice is a rule the agent can follow</h2>
@@ -996,7 +1039,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--space-6);flex-
   </div>
 </section>
 
-<section class="bg-sunken">
+<section id="designers" class="bg-sunken">
   <div class="wrap">
     <p class="eyebrow">Where designers work now</p>
     <h2>Designers build in the same session as the agent</h2>
@@ -1015,7 +1058,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--space-6);flex-
   </div>
 </section>
 
-<section class="dark">
+<section id="gate" class="dark">
   <div class="wrap gate">
     <div class="reveal">
       <p class="eyebrow">The gate</p>
@@ -1083,7 +1126,7 @@ warning: draft pictogram in review, not blocking.
   </div>
 </section>
 
-<section class="dark">
+<section id="team" class="dark">
   <div class="wrap">
     <p class="eyebrow">Team of one</p>
     <h2>Running a product with a team of one</h2>
@@ -1122,7 +1165,7 @@ warning: draft pictogram in review, not blocking.
   </div>
 </section>
 
-<section>
+<section id="adoption">
   <div class="wrap">
     <p class="eyebrow">Adoption</p>
     <h2>Adoption is the real test</h2>
@@ -1160,7 +1203,7 @@ warning: draft pictogram in review, not blocking.
   </div>
 </section>
 
-<section class="bg-sunken">
+<section id="metrics" class="bg-sunken">
   <div class="wrap">
     <p class="eyebrow">Metrics</p>
     <h2>How I measure it</h2>
@@ -1182,7 +1225,7 @@ warning: draft pictogram in review, not blocking.
   </div>
 </section>
 
-<section class="dark">
+<section id="trade-offs" class="dark">
   <div class="wrap">
     <p class="eyebrow">Trade-offs</p>
     <h2>What this approach costs, and how I contained it</h2>
@@ -1216,7 +1259,7 @@ warning: draft pictogram in review, not blocking.
   </div>
 </section>
 
-<section class="bg-sunken">
+<section id="roadmap" class="bg-sunken">
   <div class="wrap">
     <p class="eyebrow">Roadmap</p>
     <h2>Shipping a design system like software</h2>
@@ -1230,7 +1273,7 @@ warning: draft pictogram in review, not blocking.
   </div>
 </section>
 
-<section class="dark">
+<section id="reflection" class="dark">
   <div class="wrap">
     <p class="eyebrow">Reflection</p>
     <h2>What I'd tell the next team</h2>
@@ -1243,7 +1286,7 @@ warning: draft pictogram in review, not blocking.
   </div>
 </section>
 
-<section class="contact">
+<section id="contact" class="contact">
   <div class="wrap">
     <h2>Let's talk about your design system</h2>
     <p>I'm looking for a principal design systems, principal designer or product owner role, where a design system is run as a product.</p>
@@ -1276,6 +1319,31 @@ warning: draft pictogram in review, not blocking.
     try{localStorage.setItem('theme',t)}catch(e){}
     syncTheme();
   });
+
+  // Contents: open on wide screens, collapsed on narrow ones, current section marked.
+  var toc=document.querySelector('.toc-details'),tocList=toc.querySelector('ol');
+  var tocLinks=[].slice.call(toc.querySelectorAll('a'));
+  var tocTargets=tocLinks.map(function(a){return document.getElementById(a.hash.slice(1))});
+  var wide=window.matchMedia('(min-width: 901px)');
+  function syncToc(){toc.open=wide.matches}
+  syncToc();
+  if(wide.addEventListener)wide.addEventListener('change',syncToc);
+  var current=null,ticking=false;
+  function markCurrent(){
+    ticking=false;
+    var line=window.innerHeight*.3,idx=-1;
+    tocTargets.forEach(function(t,i){if(t&&t.getBoundingClientRect().top<=line)idx=i});
+    if(idx===current)return;
+    current=idx;
+    tocLinks.forEach(function(a,i){if(i===idx)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current')});
+    var a=tocLinks[idx];
+    if(a&&wide.matches){
+      var l=a.offsetLeft-tocList.offsetLeft,r=l+a.offsetWidth;
+      if(l<tocList.scrollLeft||r>tocList.scrollLeft+tocList.clientWidth)tocList.scrollLeft=l-tocList.clientWidth/3;
+    }
+  }
+  window.addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(markCurrent)}},{passive:true});
+  markCurrent();
 
   // Demo theme toggle. It changes the preview only, never the page.
   var stage=document.getElementById('stage');
