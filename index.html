@@ -12,11 +12,16 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<script>document.documentElement.classList.add('js')</script>
+<script>
+document.documentElement.classList.add('js');
+try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Poppins:wght@300;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
+  color-scheme:light;
+
   /* type */
   --font-body:Inter,system-ui,sans-serif;
   --font-display:Poppins,sans-serif;
@@ -253,6 +258,87 @@
   --bg-demo-dark:radial-gradient(500px 300px at 70% 0,rgba(46,196,182,.18),transparent 70%),#0b1628;
   --bg-demo-canvas:radial-gradient(400px 220px at 70% 0,rgba(46,196,182,.14),transparent 70%),#0b1628;
 }
+/* dark theme: same roles, navy surface and teal interactive */
+@media (prefers-color-scheme:dark){
+:root:not([data-theme="light"]){
+  color-scheme:dark;
+  --color-bg:#0b1628;
+  --color-surface:#111f36;
+  --color-sunken:#111f36;
+  --color-text:#e6edf6;
+  --color-text-strong:#ffffff;
+  --color-text-muted:#b9c6d8;
+  --color-border:rgba(255,255,255,.12);
+  --color-brand:#2ec4b6;
+  --color-interactive:#2ec4b6;
+  --color-on-interactive:#0b1628;
+  --color-interactive-subtle:rgba(46,196,182,.16);
+  --color-highlight:rgba(46,196,182,.08);
+  --color-pass-text:#7ff0c0;
+  --color-pass-subtle:rgba(31,157,107,.22);
+  --color-fail:#ff8197;
+  --color-fail-text:#ff9fb0;
+  --color-fail-subtle:rgba(214,69,93,.12);
+  --color-fail-border:rgba(214,69,93,.35);
+  --color-fail-border-strong:rgba(214,69,93,.5);
+  --color-info-text:#a8c3ff;
+  --color-info-subtle:rgba(59,123,234,.2);
+  --color-accent-text:#f5a3c7;
+  --color-accent-subtle:rgba(236,92,154,.18);
+  --color-warn-text:#ffd27a;
+  --color-warn-subtle:rgba(255,180,60,.16);
+  --color-neutral-subtle:rgba(255,255,255,.08);
+  --color-shadow:rgba(0,0,0,.3);
+  --color-shadow-soft:rgba(0,0,0,.2);
+  --inverse-bg:#060d19;
+  --inverse-bg-raised:#060d19;
+  --inverse-bg-deep:#03070e;
+  --ph-bg:rgba(255,180,60,.18);
+  --ph-text:#ffd27a;
+  --shadow-card:0 18px 40px rgba(0,0,0,.3);
+  --shadow-card-pick:0 0 0 1px #2ec4b6,0 0 40px rgba(46,196,182,.15);
+  --shadow-icon:none;
+}
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --color-bg:#0b1628;
+  --color-surface:#111f36;
+  --color-sunken:#111f36;
+  --color-text:#e6edf6;
+  --color-text-strong:#ffffff;
+  --color-text-muted:#b9c6d8;
+  --color-border:rgba(255,255,255,.12);
+  --color-brand:#2ec4b6;
+  --color-interactive:#2ec4b6;
+  --color-on-interactive:#0b1628;
+  --color-interactive-subtle:rgba(46,196,182,.16);
+  --color-highlight:rgba(46,196,182,.08);
+  --color-pass-text:#7ff0c0;
+  --color-pass-subtle:rgba(31,157,107,.22);
+  --color-fail:#ff8197;
+  --color-fail-text:#ff9fb0;
+  --color-fail-subtle:rgba(214,69,93,.12);
+  --color-fail-border:rgba(214,69,93,.35);
+  --color-fail-border-strong:rgba(214,69,93,.5);
+  --color-info-text:#a8c3ff;
+  --color-info-subtle:rgba(59,123,234,.2);
+  --color-accent-text:#f5a3c7;
+  --color-accent-subtle:rgba(236,92,154,.18);
+  --color-warn-text:#ffd27a;
+  --color-warn-subtle:rgba(255,180,60,.16);
+  --color-neutral-subtle:rgba(255,255,255,.08);
+  --color-shadow:rgba(0,0,0,.3);
+  --color-shadow-soft:rgba(0,0,0,.2);
+  --inverse-bg:#060d19;
+  --inverse-bg-raised:#060d19;
+  --inverse-bg-deep:#03070e;
+  --ph-bg:rgba(255,180,60,.18);
+  --ph-text:#ffd27a;
+  --shadow-card:0 18px 40px rgba(0,0,0,.3);
+  --shadow-card-pick:0 0 0 1px #2ec4b6,0 0 40px rgba(46,196,182,.15);
+  --shadow-icon:none;
+}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:var(--font-body);font-size:var(--text-lg);line-height:1.65;color:var(--color-text);background:var(--color-bg);-webkit-font-smoothing:antialiased}
@@ -290,6 +376,13 @@ section{padding:var(--space-28) 0}
 nav{display:flex;justify-content:space-between;align-items:center;padding:var(--space-7) 0;position:relative;z-index:1;font-size:var(--text-sm)}
 nav b{font-family:var(--font-display);font-weight:600;letter-spacing:.02em}
 nav span{color:var(--inverse-text-muted)}
+.nav-end{display:flex;align-items:center;gap:var(--space-4)}
+.theme-toggle{display:inline-flex;align-items:center;gap:var(--space-2);font:500 var(--text-sm) var(--font-body);color:var(--inverse-text);background:var(--inverse-fill-3);border:var(--border-1) solid var(--inverse-border);border-radius:var(--radius-pill);padding:var(--space-1) var(--space-3);cursor:pointer}
+.theme-toggle:before{content:"";width:var(--size-bullet);height:var(--size-bullet);border-radius:var(--radius-circle);border:var(--border-1) solid currentColor}
+.theme-toggle[aria-pressed="true"]:before{background:var(--inverse-accent);border-color:var(--inverse-accent)}
+.theme-toggle:focus-visible{outline:var(--focus-width) solid var(--inverse-accent);outline-offset:var(--focus-offset)}
+.theme-toggle[hidden]{display:none}
+.toggle-label{margin-top:var(--space-6);font-size:var(--text-sm);font-weight:600;color:var(--color-text)}
 .hero-in{position:relative;z-index:1;padding:var(--space-20) 0 var(--space-28);display:grid;grid-template-columns:1.15fr .85fr;gap:var(--space-14);align-items:center}
 .hero .eyebrow{color:var(--inverse-accent)}
 .hero h1{font-size:var(--text-4xl);font-weight:700;margin-bottom:var(--space-6)}
@@ -469,7 +562,7 @@ nav span{color:var(--inverse-text-muted)}
 .demo-side{padding:var(--space-8);background:var(--color-sunken)}
 .demo-side .eyebrow{margin-bottom:var(--space-3)}
 .demo-side p{font-size:var(--text-md);color:var(--color-text-muted)}
-.toggle{display:inline-flex;margin-top:var(--space-6);background:var(--color-surface);border:var(--border-1) solid var(--color-border);border-radius:var(--radius-pill);padding:var(--space-1)}
+.toggle{display:inline-flex;margin-top:var(--space-2);background:var(--color-surface);border:var(--border-1) solid var(--color-border);border-radius:var(--radius-pill);padding:var(--space-1)}
 .toggle button{font:500 var(--text-sm) var(--font-body);border:0;background:transparent;padding:var(--space-2) var(--space-4);border-radius:var(--radius-pill);cursor:pointer;color:var(--color-text-muted)}
 .toggle button[aria-pressed="true"]{background:var(--inverse-bg);color:var(--inverse-text)}
 .toggle button:focus-visible{outline:var(--focus-width) solid var(--color-brand);outline-offset:var(--focus-offset)}
@@ -687,7 +780,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--space-6);flex-
 
 <header class="hero">
   <div class="wrap">
-    <nav><b>Matt Everitt</b><span>Design System Manager · Case study · 16 min read</span></nav>
+    <nav><b>Matt Everitt</b><div class="nav-end"><span>Design System Manager · Case study · 16 min read</span><button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false" hidden>Dark theme</button></div></nav>
     <div class="hero-in">
       <div>
         <p class="eyebrow">Design systems · AI-assisted development</p>
@@ -833,7 +926,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--space-6);flex-
         <p class="eyebrow">Two themes</p>
         <h3>Brand energy where it counts</h3>
         <p>Dark is the signature theme, with deep navy, luminous teal and depth expressed through light. Light is the working surface, restrained and precise for dense enterprise workflows. The same tokens drive both.</p>
-        <div class="toggle" role="group" aria-label="Theme">
+        <p class="toggle-label" id="demo-theme-label">Demo theme, this preview only</p>
+        <div class="toggle" role="group" aria-labelledby="demo-theme-label">
           <button type="button" aria-pressed="true" data-set="dark">Dark</button>
           <button type="button" aria-pressed="false" data-set="light">Light</button>
         </div>
@@ -1160,7 +1254,22 @@ warning: draft pictogram in review, not blocking.
 
 <script>
 (function(){
-  // Theme toggle for the demo
+  // Page theme toggle. An explicit choice is stored; otherwise the system preference applies.
+  var root=document.documentElement,themeBtn=document.getElementById('theme-toggle');
+  var systemDark=window.matchMedia('(prefers-color-scheme: dark)');
+  function pageIsDark(){var t=root.getAttribute('data-theme');return t?t==='dark':systemDark.matches}
+  function syncTheme(){themeBtn.setAttribute('aria-pressed',pageIsDark())}
+  themeBtn.hidden=false;
+  syncTheme();
+  if(systemDark.addEventListener)systemDark.addEventListener('change',syncTheme);
+  themeBtn.addEventListener('click',function(){
+    var t=pageIsDark()?'light':'dark';
+    root.setAttribute('data-theme',t);
+    try{localStorage.setItem('theme',t)}catch(e){}
+    syncTheme();
+  });
+
+  // Demo theme toggle. It changes the preview only, never the page.
   var stage=document.getElementById('stage');
   document.querySelectorAll('[data-set]').forEach(function(b){
     b.addEventListener('click',function(){
