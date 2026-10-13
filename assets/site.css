@@ -297,7 +297,6 @@ button { padding: 0; }
 /* Case study parts */
 
 .figures { list-style: none; padding: 0; display: grid; gap: var(--space-16); font-size: var(--text-18); }
-.north-star { padding-top: var(--space-24); border-top: var(--size-hairline) solid var(--color-hairline); }
 .north-star-figure { display: block; font-size: var(--text-40); font-weight: var(--weight-bold); line-height: var(--leading-tight); }
 .north-star p + p { margin-top: var(--space-8); }
 .compare { display: grid; gap: var(--space-24); }
@@ -346,7 +345,7 @@ blockquote footer { margin-top: var(--space-8); font-size: var(--text-14); color
 
 /* Visual rules recreations */
 
-.demo { display: grid; border-radius: var(--radius-surface); overflow: hidden; background: var(--color-surface-alt); }
+.demo { display: grid; border: var(--size-hairline) solid var(--color-hairline); border-radius: var(--radius-surface); overflow: hidden; background: var(--color-surface-alt); }
 .demo-side { padding: var(--space-24); }
 .demo-side p { margin-top: var(--space-8); }
 .toggle-label { margin-top: var(--space-16); font-size: var(--text-14); font-weight: var(--weight-semibold); }
@@ -392,7 +391,7 @@ blockquote footer { margin-top: var(--space-8); font-size: var(--text-14); color
 [data-reg="light"] .demo-btn.p { background: var(--demo-teal-deep); color: var(--demo-on-teal-deep); }
 [data-reg="light"] .demo-btn.g { background: transparent; color: var(--demo-teal-deep); }
 
-.canvas { display: grid; place-items: center; min-height: var(--size-demo-canvas); padding: var(--space-32) var(--space-16); border-radius: var(--radius-surface); background: var(--demo-light-stage); }
+.canvas { display: grid; place-items: center; min-height: var(--size-demo-canvas); padding: var(--space-32) var(--space-16); border: var(--size-hairline) solid var(--color-hairline); border-radius: var(--radius-surface); background: var(--demo-light-stage); }
 .canvas.flush { padding: 0; overflow: hidden; }
 .rr-modal { position: relative; width: 100%; max-width: var(--size-demo-modal); padding: var(--space-16); border-radius: var(--radius-modal); background: var(--demo-light-surface); color: var(--demo-light-text); }
 .rr-card { display: flex; justify-content: space-between; align-items: center; gap: var(--space-12); padding: var(--space-16); border: var(--size-hairline) solid var(--demo-light-border); border-radius: var(--radius-surface); }

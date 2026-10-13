@@ -297,4 +297,14 @@ Every choice below would appear on a generic portfolio. Each is revised or justi
 
 ## Post-build review (phase 9)
 
-Filled in after the screenshot review.
+Screenshots of every page at 1444 and 390 in both themes, plus the landing page with "Show the spec" on, were reviewed against the design direction.
+
+| Finding | Change |
+| --- | --- |
+| The hairline above the North star separated two figures of the same kind, so it was decoration | Removed |
+| In dark theme, the navy half of the AI disclosure recreation merged with the page and its clipped corner showed as a stray arc | Recreation frames get a 1px hairline, which separates product recreations from prose |
+| Redline labels sat on top of text when placed above an element | Labels try the space right of the text first, then above, then below. Colour labels shorten when wider than the viewport |
+| The 64px statement broke after "design" at 14ch | Measure widened to 18ch, so it sets on two lines |
+| The gate output pushed the landing page wider than 390px | Grid children get `min-width: 0`, so the output scrolls inside its own box |
+| The decision log table overflowed at 320px | Rows stack below 520px |
+| The intentional 3.34:1 ghost button label failed Lighthouse colour contrast | The visible label is SVG text with a screen reader label, so the demo stays visible and the page audit still lists it |
