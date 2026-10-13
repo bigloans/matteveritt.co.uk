@@ -52,7 +52,7 @@ document.documentElement.classList.add('js');
 <p class="meta-line" data-spec="color" data-spec-priority="3">Short read, 2 minutes</p>
 <!-- /build:meta -->
   <dl class="summary three" data-spec="space" data-spec-prop="margin-top" data-spec-priority="2">
-    <div><dt data-spec="color" data-spec-priority="3">Role</dt><dd data-spec="type" data-spec-priority="2">Product owner, designer and front-end lead</dd></div>
+    <div data-spec-component="Tile / Summary" data-spec-priority="2"><dt>Role</dt><dd>Product owner, designer and front-end lead</dd></div>
     <div><dt>Scope</dt><dd>Solo, with a 15-agent harness and 7 contributing designers</dd></div>
     <div><dt>Timeline</dt><dd>Spec work from Jul 2026</dd></div>
   </dl>
@@ -98,7 +98,7 @@ document.documentElement.classList.add('js');
       <h2 id="designers-h">Where designers work now</h2>
       <p>Without Figma handoff, designers build in the same session as an AI agent, against the pinned spec, so nobody has to memorise a rulebook. So far, 7 designers have contributed 47 catalogue entries.</p>
       <ol class="steps-row four block">
-        <li class="card lift spot reveal"><p class="pill teal">Designer</p><h3>Builds a screen</h3><p>The agent generates it from the designer&#39;s description.</p></li>
+        <li class="card lift spot reveal" data-spec-component="Card / Step" data-spec-priority="3"><p class="pill teal">Designer</p><h3>Builds a screen</h3><p>The agent generates it from the designer&#39;s description.</p></li>
         <li class="card lift spot reveal" style="--i:1"><p class="pill blue">Agent</p><h3>Spots a missing asset</h3><p>No pictogram fits, so the agent offers to draft one in the session.</p></li>
         <li class="card lift spot reveal" style="--i:2"><p class="pill blue">Agent</p><h3>Applies the rules</h3><p>It checks for duplicates, follows the style guide and opens a review.</p></li>
         <li class="card lift spot reveal" style="--i:3"><p class="pill pink">Gate</p><h3>Flags the draft</h3><p>It lists the draft without failing the build, so nothing ships unseen.</p></li>

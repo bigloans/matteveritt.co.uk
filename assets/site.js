@@ -111,64 +111,116 @@
 
   function round(n) { return Math.round(n * 100) / 100; }
 
+  // Every line box of an element's text, one rect per line.
+
+  function lineBoxes(el) {
+    var range = document.createRange();
+    range.selectNodeContents(el);
+    var rows = [];
+    [].forEach.call(range.getClientRects(), function (r) {
+      if (!r.width) return;
+      var row = rows.filter(function (x) { return Math.abs(x.top - r.top) < 2; })[0];
+      if (row) { row.left = Math.min(row.left, r.left); row.right = Math.max(row.right, r.right); row.bottom = Math.max(row.bottom, r.bottom); }
+      else rows.push({ left: r.left, right: r.right, top: r.top, bottom: r.bottom });
+    });
+    return rows;
+  }
+
+  // Real ascent, cap height and x-height for the element's font, measured on a canvas.
+
+  var metricCtx = document.createElement("canvas").getContext("2d");
+  function fontMetrics(cs) {
+    metricCtx.font = cs.fontWeight + " " + cs.fontSize + " " + cs.fontFamily;
+    var H = metricCtx.measureText("H"), x = metricCtx.measureText("x");
+    return { ascent: H.fontBoundingBoxAscent, cap: H.actualBoundingBoxAscent, x: x.actualBoundingBoxAscent };
+  }
+
+  // What to draw for one element. Each element becomes one group of parts.
+
   function describe(el, find) {
     var cs = getComputedStyle(el);
     var kind = el.getAttribute("data-spec");
     var prop = el.getAttribute("data-spec-prop");
     var rect = el.getBoundingClientRect();
-    var a = { el: el, kind: kind, priority: +el.getAttribute("data-spec-priority") || 2, rect: rect };
+    var g = { el: el, priority: +el.getAttribute("data-spec-priority") || 2, rect: rect, parts: [], ok: true, top: rect.top };
+    var component = el.getAttribute("data-spec-component");
+    if (component) g.parts.push({ type: "frame", box: rect, name: component });
 
     if (kind === "type") {
-      var size = parseFloat(cs.fontSize), lead = round(parseFloat(cs.lineHeight) / size);
+      var size = parseFloat(cs.fontSize), lh = parseFloat(cs.lineHeight), lead = round(lh / size);
       var st = find.px("text", size), lt = find.leading(lead);
-      a.ok = !!(st && lt);
-      a.text = (st ? st.name : "untokenised") + ": " + size + " / " + lead + " / " + cs.fontWeight;
-      a.box = textBox(el, true) || rect;
+      g.ok = !!(st && lt);
+      var rows = lineBoxes(el).slice(0, 3);
+      if (!rows.length) return null;
+      g.parts.push({ type: "type", rows: rows, size: size, lh: lh, metrics: fontMetrics(cs) });
+      var last = rows[rows.length - 1];
+      g.label = { text: (st ? st.name : "untokenised") + ": " + size + " / " + lead + " / " + cs.fontWeight, near: { left: rows[0].left, top: rows[0].top, width: rows[0].right - rows[0].left, height: rows[0].bottom - rows[0].top }, tail: { left: last.right + 12, top: last.top + (last.bottom - last.top) / 2 - 12 } };
     } else if (kind === "space") {
       var key = prop.replace(/-([a-z])/g, function (_, c) { return c.toUpperCase(); });
-      var px = parseFloat(cs[key]);
-      var t = find.px("space", px);
-      a.ok = !!t;
-      a.text = (t ? t.name : "untokenised") + ": " + px + "px";
-      a.px = px;
-      a.name = t ? t.name : "untokenised";
+      var px = parseFloat(cs[key]), t = find.px("space", px);
+      g.ok = !!t;
       var kids = [].filter.call(el.children, function (c) { return c.getBoundingClientRect().width > 0; });
-      var x = rect.left + Math.min(24, rect.width / 2);
-      if (prop === "margin-top") a.line = { v: true, x: x, y: rect.top - px, len: px };
-      else if (prop === "padding-top") a.line = { v: true, x: x, y: rect.top, len: px };
-      else if (prop === "padding-left") a.line = { v: false, x: rect.left, y: rect.top + Math.min(24, rect.height / 2), len: px };
-      else if (prop === "row-gap" && kids[1]) {
-        var b1 = kids[0].getBoundingClientRect();
-        a.line = { v: true, x: b1.left + Math.min(24, b1.width / 2), y: b1.bottom, len: kids[1].getBoundingClientRect().top - b1.bottom };
+      var area = null, line = null;
+      if (prop === "margin-top") {
+        area = { left: rect.left, top: rect.top - px, width: rect.width, height: px };
+        line = { v: true, x: rect.left + Math.min(32, rect.width / 2), y: rect.top - px, len: px };
+      } else if (prop === "padding-top") {
+        area = { left: rect.left, top: rect.top, width: rect.width, height: px };
+        line = { v: true, x: rect.left + Math.min(96, rect.width / 4), y: rect.top, len: px };
       } else if (prop === "column-gap" && kids[1]) {
-        var c1 = kids[0].getBoundingClientRect();
-        a.line = { v: false, x: c1.right, y: c1.bottom + 8, len: kids[1].getBoundingClientRect().left - c1.right };
+        var c1 = kids[0].getBoundingClientRect(), c2 = kids[1].getBoundingClientRect();
+        if (c2.left - c1.right <= 0) return null;
+        area = { left: c1.right, top: Math.max(c1.top, c2.top), width: c2.left - c1.right, height: Math.min(c1.bottom, c2.bottom) - Math.max(c1.top, c2.top) };
+        line = { v: false, x: c1.right, y: area.top + area.height / 2, len: c2.left - c1.right };
+      } else if (prop === "row-gap" && kids[1]) {
+        var r1 = kids[0].getBoundingClientRect(), r2 = kids[1].getBoundingClientRect();
+        if (r2.top - r1.bottom <= 0) return null;
+        area = { left: r1.left, top: r1.bottom, width: r1.width, height: r2.top - r1.bottom };
+        line = { v: true, x: r1.left + Math.min(32, r1.width / 2), y: r1.bottom, len: r2.top - r1.bottom };
       }
-      if (!a.line || a.line.len <= 0) return null;
+      if (!area || area.height <= 0 || area.width <= 0) return null;
+      g.top = area.top;
+      g.parts.push({ type: "space", area: area, line: line });
+      g.label = { text: (t ? t.name : "untokenised") + ": " + px + "px", count: { name: t ? t.name : "untokenised", px: px }, line: line };
     } else if (kind === "radius") {
       var r = cs.borderTopLeftRadius, rt = find.radius(r);
-      a.ok = !!rt;
-      a.text = (rt ? rt.name : "untokenised") + ": " + r;
-      a.box = rect;
+      g.ok = !!rt;
+      var rpx = r.indexOf("%") > 0 ? Math.min(rect.width, rect.height) / 2 : parseFloat(r);
+      g.parts.push({ type: "radius", box: rect, r: Math.min(rpx, rect.height / 2) });
+      g.label = { text: (rt ? rt.name : "untokenised") + ": " + r, near: rect, above: true };
     } else if (kind === "color") {
       var use = prop === "background-color" ? "background" : "text";
       var fg = parseRgb(cs.color), bg = backgroundOf(el);
-      var own = use === "background" ? bg : fg;
-      var other = use === "background" ? fg : bg;
+      var own = use === "background" ? bg : fg, other = use === "background" ? fg : bg;
       var ct = find.color(own, use), ot = find.color(other, use === "background" ? "text" : "background");
-      a.ok = !!(ct && ot);
-      a.text = (ct ? ct.name : "untokenised") + ", " + contrast(fg, bg).toFixed(2) + ":1 " + (use === "background" ? "with " : "on ") + (ot ? ot.name : "untokenised");
-      a.short = (ct ? ct.name : "untokenised") + ", " + contrast(fg, bg).toFixed(2) + ":1";
-      a.box = use === "background" ? rect : textBox(el, false) || rect;
-    } else return null;
-    return a;
+      g.ok = !!(ct && ot);
+      var near = use === "background" ? rect : textBox(el, false) || rect;
+      g.label = { text: (ct ? ct.name : "untokenised") + ", " + contrast(fg, bg).toFixed(2) + ":1", swatch: "rgb(" + own.slice(0, 3).join(",") + ")", near: near, side: true };
+    } else if (!component) return null;
+    return g;
   }
 
-  function overlaps(r, list) {
+  function overlaps(r, list, gap) {
+    var m = gap == null ? 4 : gap;
     return list.some(function (o) {
-      return r.left < o.right + 4 && r.right + 4 > o.left && r.top < o.bottom + 4 && r.bottom + 4 > o.top;
+      return r.left < o.right + m && r.right + m > o.left && r.top < o.bottom + m && r.bottom + m > o.top;
     });
   }
+
+  function piece(cls, box, parent) {
+    var n = document.createElement("span");
+    n.className = cls;
+    if (box) {
+      n.style.left = box.left + "px";
+      n.style.top = box.top + "px";
+      if (box.width != null) n.style.width = box.width + "px";
+      if (box.height != null) n.style.height = box.height + "px";
+    }
+    (parent || layer).appendChild(n);
+    return n;
+  }
+
+  // Draw the canvas: rulers, the layout grid, then one group per annotated element.
 
   function draw() {
     if (!layer) {
@@ -178,104 +230,213 @@
       document.body.appendChild(layer);
     }
     layer.textContent = "";
-    layer.style.height = root.scrollHeight + "px";
+    var docH = root.scrollHeight;
+    layer.style.height = docH + "px";
     var tokens = readTokens(), find = finder(tokens);
-    var narrow = window.innerWidth < 520;
+    var narrow = window.innerWidth < 520, wide = window.innerWidth >= 900;
     var vw = root.clientWidth, sx = window.scrollX, sy = window.scrollY;
-    var items = [].map.call(document.querySelectorAll("[data-spec]"), function (el) {
-      return el.getBoundingClientRect().width ? describe(el, find) : null;
-    }).filter(function (a) { return a && (!narrow || a.priority === 1); });
-    items.sort(function (x, y) { return x.priority - y.priority; });
+    var toDoc = function (b) { return { left: b.left + sx, top: b.top + sy, width: b.width, height: b.height }; };
+    var header = document.querySelector(".site-header");
+    var headH = header ? header.offsetHeight : 0;
 
-    var placed = [], shown = 0, untokenised = 0;
-    var obstacles = items.map(function (a) {
-      var r = a.box || a.rect;
-      return { owner: a, left: r.left, top: r.top, right: r.left + r.width, bottom: r.top + r.height };
+    var placed = [];
+
+    // Layout grid, read from the page container.
+
+    var pageEl = document.querySelector("main .page");
+    if (pageEl) {
+      var pr = pageEl.getBoundingClientRect(), pcs = getComputedStyle(pageEl);
+      var gl = pr.left + parseFloat(pcs.paddingLeft), gw = pr.width - parseFloat(pcs.paddingLeft) - parseFloat(pcs.paddingRight);
+      var cols = wide ? 12 : 4;
+      var grid = piece("sp-grid", { left: gl + sx, top: 0, width: gw, height: docH });
+      grid.style.gridTemplateColumns = "repeat(" + cols + ", minmax(0, 1fr))";
+      grid.style.columnGap = getComputedStyle(root).getPropertyValue(wide ? "--space-32" : "--space-16");
+      for (var c = 0; c < cols; c++) piece("sp-col", null, grid).style.setProperty("--c", c);
+      if (!narrow) {
+        var gt = piece("sp-tag sp-grid-tag", { left: 0, top: 0 });
+        gt.textContent = "Layout grid, " + cols + " columns, " + (wide ? "--space-32" : "--space-16") + " gutters";
+        gt.style.left = gl + gw - gt.offsetWidth + sx + "px";
+        gt.style.top = headH + 32 + "px";
+        placed.push({ left: gl + gw - gt.offsetWidth, top: headH + 32 - sy, right: gl + gw, bottom: headH + 32 - sy + gt.offsetHeight });
+      }
+
+      // Rulers, with the grid's left edge as zero.
+
+      if (!narrow) {
+        var top = piece("sp-ruler sp-ruler-top", { left: 0, top: headH, width: vw, height: null });
+        var left = piece("sp-ruler sp-ruler-left", { left: 0, top: headH, width: null, height: docH - headH });
+        top.style.backgroundPositionX = gl + "px";
+        for (var x = 0; gl + x < vw; x += 128) piece("sp-tick-n", { left: gl + x + 4, top: 0 }, top).textContent = x;
+        for (var y = 0; y < docH - headH; y += 128) piece("sp-tick-n v", { left: 0, top: y + 4 }, left).textContent = y;
+      }
+    }
+
+    var els = [].slice.call(document.querySelectorAll("[data-spec], [data-spec-component]"));
+    var groups = els.map(function (el) {
+      return el.getBoundingClientRect().width ? describe(el, find) : null;
+    }).filter(function (g) { return g && (!narrow || g.priority === 1); });
+    groups.sort(function (x, y) { return x.priority - y.priority; });
+
+    // Obstacles are the shapes each group draws, not whole elements, so a section's padding doesn't block its neighbours.
+
+    var obstacles = [];
+    groups.forEach(function (g) {
+      g.parts.forEach(function (p) {
+        if (p.type === "frame") return;
+        var r = p.type === "radius" ? { left: p.box.left, top: p.box.top, width: Math.max(16, p.r * 2), height: Math.max(16, p.r * 2) } : p.area;
+        if (p.rows) r = { left: p.rows[0].left, top: p.rows[0].top, width: Math.max.apply(null, p.rows.map(function (x) { return x.right; })) - p.rows[0].left, height: p.rows[p.rows.length - 1].bottom - p.rows[0].top };
+        if (r) obstacles.push({ owner: g, left: r.left, top: r.top, right: r.left + r.width, bottom: r.top + r.height });
+      });
+      if (g.label && g.label.near) { var n = g.label.near; obstacles.push({ owner: g, left: n.left, top: n.top, right: n.left + n.width, bottom: n.top + n.height }); }
     });
-    items.forEach(function (a) {
-      var label = document.createElement("span");
-      label.className = "spec-label" + (a.ok ? "" : " is-untokenised");
-      label.textContent = a.text;
-      if (a.kind === "space" && a.ok) {
-        label.setAttribute("data-px", a.px);
-        label.setAttribute("data-name", a.name);
-      }
-      layer.appendChild(label);
-      if (a.short && label.offsetWidth > vw - 8) label.textContent = a.short;
-      var w = label.offsetWidth, h = label.offsetHeight;
-      var spots = [];
-      var b = a.box;
-      if (a.line && a.line.v) {
-        var mid = a.line.y + a.line.len / 2 - h / 2;
-        spots.push({ left: a.line.x + 8, top: mid }, { left: a.line.x - w - 8, top: mid }, { left: a.line.x + 8, top: mid - h - 4 });
-      } else if (a.line) {
-        spots.push({ left: a.line.x, top: a.line.y + 6 }, { left: a.line.x + a.line.len - w, top: a.line.y + 6 });
-      } else if (a.kind === "radius") {
-        spots.push({ left: b.left, top: b.top - h - 4 }, { left: b.left, top: b.top + b.height + 4 }, { left: b.left + b.width + 8, top: b.top, fit: true });
-      } else {
-        spots.push({ left: b.left + b.width + 8, top: b.top, fit: true }, { left: b.left, top: b.top - h - 4 }, { left: b.left, top: b.top + b.height + 4 });
-      }
-      var spot = null;
+    var shown = 0, untokenised = 0;
+    var tryPlace = function (node, spots, owner, avoidOthers) {
+      var w = node.offsetWidth, h = node.offsetHeight;
       for (var i = 0; i < spots.length; i++) {
         var s = spots[i];
         if (s.fit && s.left + w > vw - 4) continue;
-        if (s.fit && overlaps({ left: s.left, top: s.top, right: s.left + w, bottom: s.top + h }, obstacles.filter(function (o) { return o.owner !== a; }))) continue;
-        s.left = Math.max(4, Math.min(s.left, vw - w - 4));
-        var box = { left: s.left, top: s.top, right: s.left + w, bottom: s.top + h };
-        if (!overlaps(box, placed)) { spot = box; break; }
+        var l = Math.max(4, Math.min(s.left, vw - w - 4));
+        var box = { left: l, top: s.top, right: l + w, bottom: s.top + h };
+        if (overlaps(box, placed)) continue;
+        if (avoidOthers && overlaps(box, obstacles.filter(function (o) { return o.owner !== owner; }), 0)) continue;
+        placed.push(box);
+        node.style.left = l + sx + "px";
+        node.style.top = s.top + sy + "px";
+        return true;
       }
-      if (!spot) { layer.removeChild(label); return; }
-      placed.push(spot);
-      label.style.left = spot.left + sx + "px";
-      label.style.top = spot.top + sy + "px";
-      var mark = document.createElement("span");
-      if (a.line) {
-        mark.className = "spec-line " + (a.line.v ? "v" : "h");
-        mark.style.left = a.line.x + sx + "px";
-        mark.style.top = a.line.y + sy + "px";
-        mark.style[a.line.v ? "height" : "width"] = a.line.len + "px";
-      } else {
-        mark.className = "spec-box";
-        mark.style.left = a.box.left + sx + "px";
-        mark.style.top = a.box.top + sy + "px";
-        mark.style.width = a.box.width + "px";
-        mark.style.height = a.box.height + "px";
-      }
-      layer.insertBefore(mark, label);
-      shown++;
-      if (!a.ok) untokenised++;
-    });
-    // Stagger top to bottom, so the page reads like it's being measured.
+      return false;
+    };
 
-    var marks = [].slice.call(layer.children).filter(function (n) { return !n.classList.contains("spec-label"); });
-    marks.sort(function (x, y) { return parseFloat(x.style.top) - parseFloat(y.style.top); });
-    marks.forEach(function (m, i) {
-      var d = Math.min(i, 18) * stagger + "ms";
-      m.style.setProperty("--d", d);
-      if (m.nextSibling) m.nextSibling.style.setProperty("--d", d);
+    groups.forEach(function (g) {
+      var group = piece("spec-g");
+      g.node = group;
+      g.counters = [];
+      g.parts.forEach(function (p) {
+        if (p.type === "frame") {
+          var f = piece("sp-frame", toDoc(p.box), group);
+          ["tl", "tr", "bl", "br"].forEach(function (k) { piece("sp-handle " + k, null, f); });
+          var tag = piece("sp-tag", null, group);
+          tag.textContent = "◇ " + p.name;
+          if (!tryPlace(tag, [{ left: p.box.left, top: p.box.top - tag.offsetHeight - 6 }, { left: p.box.right - tag.offsetWidth, top: p.box.top - tag.offsetHeight - 6 }, { left: p.box.left, top: p.box.top + 6 }], g)) group.removeChild(tag);
+          var dims = piece("sp-dims", null, group);
+          var W = Math.round(p.box.width), H = Math.round(p.box.height);
+          dims.textContent = W + " × " + H;
+          if (tryPlace(dims, [{ left: p.box.left + p.box.width / 2 - dims.offsetWidth / 2, top: p.box.bottom + 6 }, { left: p.box.right - dims.offsetWidth, top: p.box.bottom - dims.offsetHeight - 6 }], g)) {
+            g.counters.push({ node: dims, fmt: function (k) { return Math.round(W * k) + " × " + Math.round(H * k); } });
+          } else group.removeChild(dims);
+        } else if (p.type === "space") {
+          piece("sp-hatch", toDoc(p.area), group);
+          var L = p.line;
+          var m = piece("sp-measure " + (L.v ? "v" : "h"), L.v ? { left: L.x + sx, top: L.y + sy, height: L.len } : { left: L.x + sx, top: L.y + sy, width: L.len }, group);
+          m.style[L.v ? "height" : "width"] = L.len + "px";
+        } else if (p.type === "type") {
+          p.rows.forEach(function (row, i) {
+            var band = piece("sp-band" + (i % 2 ? " alt" : ""), toDoc({ left: row.left, top: row.top, width: row.right - row.left, height: row.bottom - row.top }), group);
+            band.style.setProperty("--r", i);
+            piece("sp-guide base", null, band).style.top = p.metrics.ascent + "px";
+            piece("sp-guide cap", null, band).style.top = p.metrics.ascent - p.metrics.cap + "px";
+            piece("sp-guide x", null, band).style.top = p.metrics.ascent - p.metrics.x + "px";
+          });
+        } else if (p.type === "radius") {
+          var size = Math.max(16, p.r * 2);
+          var arc = piece("sp-arc", toDoc({ left: p.box.left, top: p.box.top, width: size, height: size }), group);
+          arc.style.borderTopLeftRadius = p.r + "px";
+        }
+      });
+
+      if (g.label) {
+        var lab = piece("spec-label" + (g.ok ? "" : " is-untokenised"), null, group);
+        if (g.label.swatch) { var sw = document.createElement("i"); sw.className = "sp-swatch"; sw.style.background = g.label.swatch; lab.appendChild(sw); }
+        lab.appendChild(document.createTextNode(g.label.text));
+        var w = lab.offsetWidth, h = lab.offsetHeight, spots = [];
+        if (g.label.line && g.label.line.v) {
+          var L2 = g.label.line, mid = L2.y + L2.len / 2 - h / 2;
+          spots.push({ left: L2.x + 10, top: mid }, { left: L2.x - w - 10, top: mid });
+        } else if (g.label.line) {
+          var L3 = g.label.line;
+          var below = g.parts[0].area.top + g.parts[0].area.height + 8;
+          spots.push({ left: L3.x + L3.len / 2 - w / 2, top: below }, { left: L3.x + L3.len / 2 - w / 2, top: g.parts[0].area.top - h - 8 });
+        } else {
+          var b = g.label.near, bb = { left: b.left, top: b.top, right: b.left + b.width, bottom: b.top + b.height };
+          if (g.label.tail) spots.push({ left: bb.right + 10, top: bb.top, fit: true }, { left: g.label.tail.left, top: g.label.tail.top, fit: true });
+          if (g.label.above) spots.push({ left: bb.left, top: bb.top - h - 6 }, { left: bb.left, top: bb.bottom + 6 });
+          spots.push({ left: bb.right + 10, top: bb.top + (bb.bottom - bb.top - h) / 2, fit: true }, { left: bb.left, top: bb.top - h - 6 }, { left: bb.left, top: bb.bottom + 6 });
+        }
+        var spotOk = false;
+        for (var i = 0; i < spots.length && !spotOk; i++) spotOk = tryPlace(lab, [spots[i]], g, !!spots[i].fit);
+        if (!spotOk) group.removeChild(lab);
+        else if (g.label.count && g.ok) {
+          var C = g.label.count;
+          g.counters.push({ node: lab, fmt: function (k) { return C.name + ": " + Math.round(C.px * k) + "px"; } });
+        }
+      }
+      if (!group.children.length) { layer.removeChild(group); return; }
+      shown++;
+      if (!g.ok) untokenised++;
     });
+
     layer.setAttribute("data-count", shown);
     layer.setAttribute("data-untokenised", untokenised);
-    return shown;
+    return groups.filter(function (g) { return g.node && g.node.parentNode; });
   }
 
-  // Measurements count up from zero while their lines draw.
+  // Choreography. A scan line sweeps the viewport and each group draws as the line reaches it.
+  // Groups further down draw when they scroll into view.
 
-  function countLabels() {
+  var scanMs = 1000, scanDelay = 250, groupIO = null, live = [];
+
+  function runCounters(g, delay) {
     if (still) return;
-    [].forEach.call(layer.querySelectorAll(".spec-label[data-px]"), function (label) {
-      var end = +label.getAttribute("data-px"), name = label.getAttribute("data-name");
-      var delay = parseFloat(label.style.getPropertyValue("--d")) || 0, t0 = null;
+    g.counters.forEach(function (c) {
+      var t0 = null, final = c.node.textContent;
+      c.node.textContent = c.fmt(0);
       var step = function (t) {
         if (!specOn) return;
         if (t0 === null) t0 = t + delay;
         var k = Math.max(0, Math.min(1, (t - t0) / drawMs));
-        label.textContent = name + ": " + Math.round(end * (1 - Math.pow(1 - k, 3))) + "px";
+        c.node.textContent = k >= 1 ? final : c.fmt(1 - Math.pow(1 - k, 3));
         if (k < 1) requestAnimationFrame(step);
       };
-      label.textContent = name + ": 0px";
       requestAnimationFrame(step);
     });
+  }
+
+  function reveal(g, delay) {
+    g.node.style.setProperty("--d", delay + "ms");
+    g.node.classList.add("on");
+    runCounters(g, delay);
+  }
+
+  function scan() {
+    if (still) return;
+    var line = document.createElement("span");
+    line.className = "sp-scan";
+    line.setAttribute("aria-hidden", "true");
+    line.style.setProperty("--scan", scanMs + "ms");
+    line.style.animationDelay = scanDelay + "ms";
+    document.body.appendChild(line);
+    setTimeout(function () { if (line.parentNode) line.parentNode.removeChild(line); }, scanDelay + scanMs + 400);
+  }
+
+  function choreograph(instant) {
+    if (groupIO) { groupIO.disconnect(); groupIO = null; }
+    var vh = window.innerHeight;
+    if (instant || still) { live.forEach(function (g) { g.node.classList.add("on"); }); return; }
+    var later = [];
+    live.forEach(function (g) {
+      if (g.top < vh) reveal(g, scanDelay + Math.max(0, g.top) / vh * scanMs);
+      else later.push(g);
+    });
+    if (!later.length || !("IntersectionObserver" in window)) { later.forEach(function (g) { reveal(g, 0); }); return; }
+    groupIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        groupIO.unobserve(e.target);
+        var g = later.filter(function (x) { return x.node === e.target.parentNode; })[0];
+        if (g) reveal(g, 80);
+      });
+    }, { rootMargin: "0px 0px -10% 0px" });
+    later.forEach(function (g) { if (g.node.firstChild) groupIO.observe(g.node.firstChild); });
   }
 
   var hideTimer = null;
@@ -285,17 +446,31 @@
     specBtn.lastChild.textContent = on ? "Hide the spec" : "Show the spec";
     clearTimeout(hideTimer);
     if (on) {
-      if (layer) layer.classList.remove("is-on");
-      var n = draw();
+      if (layer) layer.className = "spec-layer";
+
+      // Measure the final layout: finish every reveal and drop any tilt first.
+
+      root.classList.add("spec-measure");
+      [].forEach.call(document.querySelectorAll(".reveal, .typed, .funnel-bars"), function (el) { el.classList.add("in"); });
+      [].forEach.call(document.querySelectorAll("[data-tilt]"), function (el) { el.style.transform = ""; });
+      root.getBoundingClientRect();
+      live = draw();
+      requestAnimationFrame(function () { root.classList.remove("spec-measure"); });
       layer.getBoundingClientRect();
       requestAnimationFrame(function () {
-        requestAnimationFrame(function () { if (specOn) { layer.classList.add("is-on"); countLabels(); } });
+        requestAnimationFrame(function () {
+          if (!specOn) return;
+          layer.classList.add("is-on");
+          scan();
+          choreograph(false);
+        });
       });
-      specStatus.textContent = "Showing " + n + " spec annotations. Press Escape to hide.";
+      specStatus.textContent = "Showing " + live.length + " spec annotations. Press Escape to hide.";
     } else {
+      if (groupIO) { groupIO.disconnect(); groupIO = null; }
       if (layer) {
-        layer.classList.remove("is-on");
-        hideTimer = setTimeout(function () { if (!specOn) layer.textContent = ""; }, still ? 0 : 320);
+        layer.classList.add("is-leaving");
+        hideTimer = setTimeout(function () { if (!specOn) { layer.textContent = ""; layer.className = "spec-layer"; } }, still ? 0 : 360);
       }
       specStatus.textContent = "";
     }
@@ -308,7 +483,14 @@
     var redraw = function () {
       if (!specOn || queued) return;
       queued = true;
-      requestAnimationFrame(function () { queued = false; if (specOn) draw(); });
+      requestAnimationFrame(function () {
+        queued = false;
+        if (!specOn) return;
+        layer.classList.add("instant");
+        live = draw();
+        choreograph(true);
+        requestAnimationFrame(function () { layer.classList.remove("instant"); });
+      });
     };
     window.addEventListener("resize", redraw);
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(redraw);

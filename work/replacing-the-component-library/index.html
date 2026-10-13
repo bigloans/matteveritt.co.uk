@@ -52,7 +52,7 @@ document.documentElement.classList.add('js');
 <p class="meta-line" data-spec="color" data-spec-priority="3">Case study, 2026, 7 minute read</p>
 <!-- /build:meta -->
   <dl class="summary reveal" style="--i:2" data-spec="space" data-spec-prop="margin-top" data-spec-priority="2">
-    <div><dt data-spec="color" data-spec-priority="3">Role</dt><dd data-spec="type" data-spec-priority="2">Product owner, designer and front-end lead</dd></div>
+    <div data-spec-component="Tile / Summary" data-spec-priority="2"><dt>Role</dt><dd>Product owner, designer and front-end lead</dd></div>
     <div><dt>Team</dt><dd>Solo, with a 15-agent harness and 7 contributing designers</dd></div>
     <div><dt>Scope</dt><dd>60+ products in React, Vue, Angular and legacy frameworks</dd></div>
     <div><dt>Timeline</dt><dd>Spec work from Jul 2026</dd></div>
@@ -62,7 +62,7 @@ document.documentElement.classList.add('js');
 <!-- /words -->
 
 <div class="article-body page">
-  <nav class="contents" aria-labelledby="contents-label">
+  <nav class="contents" aria-labelledby="contents-label" data-spec-component="Nav / Contents" data-spec-priority="3">
     <button class="contents-button" type="button" aria-expanded="false" aria-controls="contents-sheet">Contents</button>
     <div class="contents-sheet" id="contents-sheet">
       <div class="contents-head"><p class="contents-title" id="contents-label">Contents</p><button class="contents-close" type="button">Close</button></div>
@@ -86,7 +86,7 @@ document.documentElement.classList.add('js');
       <h2 id="glance-h" class="reveal">At a glance</h2>
       <p class="figures-intro reveal">I bet that if AI agents generate every component, a design system needs no component library. It needs rules precise enough for a machine to follow and check.</p>
       <ul class="stat-grid three block">
-        <li class="card stat spot reveal"><span class="stat-figure grad-text" data-count="117">117</span><p>accessibility failures blocked before merge, since July 2026</p></li>
+        <li class="card stat spot reveal" data-spec-component="Card / Stat" data-spec-priority="3"><span class="stat-figure grad-text" data-count="117">117</span><p>accessibility failures blocked before merge, since July 2026</p></li>
         <li class="card stat spot reveal" style="--i:1"><span class="stat-figure grad-text">&lt;1 day</span><p>Time to first gate pass fell from 9 days for the first pilot to under 1 for the latest (median 2.5 across 9 pilots)</p></li>
         <li class="card stat spot reveal" style="--i:2"><span class="stat-figure grad-text" data-count="71" data-suffix="%">71%</span><p>first-run gate pass rate, n = 186 pilot builds</p></li>
         <li class="panel stat stat-wide reveal">

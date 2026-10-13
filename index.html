@@ -54,12 +54,12 @@ document.documentElement.classList.add('js');
       <h1 class="display reveal blur" id="hero-h" style="--i:1" data-spec="type" data-spec-priority="1">I run design systems <span class="grad-text">as products.</span></h1>
       <p class="hero-lede reveal" style="--i:2" data-spec="space" data-spec-prop="margin-top" data-spec-priority="1">My latest replaced a component library with a specification that AI coding agents build from, across a portfolio of 60+ products.</p>
       <div class="actions reveal" style="--i:3" data-spec="space" data-spec-prop="column-gap" data-spec-priority="3">
-        <a class="btn btn-primary" href="/work/replacing-the-component-library/" data-spec="radius" data-spec-priority="1">Read the case study</a>
+        <a class="btn btn-primary" href="/work/replacing-the-component-library/" data-spec="radius" data-spec-component="Button / Primary" data-spec-priority="1">Read the case study</a>
         <a class="btn btn-secondary" href="mailto:matt.m.everitt@gmail.com">Email me</a>
       </div>
     </div>
     <figure class="hero-visual reveal" style="--i:2">
-      <div class="window" aria-hidden="true" data-spec="radius" data-spec-priority="2">
+      <div class="window" aria-hidden="true" data-spec="radius" data-spec-component="Window / Code" data-spec-priority="2">
         <div class="window-bar"><i></i><i></i><i></i><span>tokens.json</span></div>
 <pre class="typed"><span class="ln" style="--i:0"><span class="c">{</span></span><span class="ln" style="--i:1">  <span class="k">"interactive"</span>: {</span><span class="ln" style="--i:2">    <span class="k">"light"</span>: <span class="s">"#0B6B63"</span>,</span><span class="ln" style="--i:3">    <span class="k">"dark"</span>:  <span class="s">"#2EC4B6"</span></span><span class="ln" style="--i:4">  },</span><span class="ln" style="--i:5">  <span class="k">"radius"</span>: { <span class="k">"control"</span>: <span class="n">"10px"</span> },</span><span class="ln" style="--i:6">  <span class="k">"space"</span>: [<span class="n">4, 8, 12, 16, 24, 32, 48</span>]</span><span class="ln" style="--i:7"><span class="c">}</span><span class="caret"></span></span></pre>
       </div>
@@ -69,8 +69,8 @@ document.documentElement.classList.add('js');
     </figure>
   </div>
   <div class="page">
-    <ul class="stat-grid four" aria-label="Headline figures">
-      <li class="card stat spot reveal" style="--i:0"><span class="stat-figure" data-count="60" data-suffix="+">60+</span><p>products in the portfolio the spec serves</p></li>
+    <ul class="stat-grid four" aria-label="Headline figures" data-spec="space" data-spec-prop="column-gap" data-spec-priority="3">
+      <li class="card stat spot reveal" style="--i:0" data-spec-component="Card / Stat" data-spec-priority="2"><span class="stat-figure" data-count="60" data-suffix="+">60+</span><p>products in the portfolio the spec serves</p></li>
       <li class="card stat spot reveal" style="--i:1"><span class="stat-figure" data-count="117">117</span><p>accessibility failures blocked before merge since July 2026</p></li>
       <li class="card stat spot reveal" style="--i:2"><span class="stat-figure" data-count="71" data-suffix="%">71%</span><p>first-run gate pass rate across 186 pilot builds</p></li>
       <li class="card stat spot reveal" style="--i:3"><span class="stat-figure" data-count="3">3</span><p>products in production on a pinned release</p></li>
@@ -83,7 +83,7 @@ document.documentElement.classList.add('js');
     <h2 id="work-h" data-spec="type" data-spec-priority="2">Work</h2>
     <p>One case study and two short reads, all from the same project.</p>
   </div>
-  <article class="feature-card glow-border reveal" data-tilt>
+  <article class="feature-card glow-border reveal" data-tilt data-spec-component="Card / Feature" data-spec-priority="2">
     <div class="work-text">
       <!-- build:work-feature -->
 <h3 class="work-title"><a href="/work/replacing-the-component-library/" data-spec="color" data-spec-priority="1">I replaced my own component library with a spec AI builds from</a></h3>
@@ -103,7 +103,7 @@ document.documentElement.classList.add('js');
   </article>
   <ul class="read-cards" data-spec="space" data-spec-prop="column-gap" data-spec-priority="3">
       <!-- build:work-reads -->
-<li class="read-card card lift spot reveal" style="--i:0">
+<li class="read-card card lift spot reveal" style="--i:0" data-spec-component="Card / Read" data-spec-priority="3">
         <div class="read-art" aria-hidden="true"><div class="art-radius"><span></span><span></span><span></span></div></div>
         <h3 class="read-title"><a href="/work/visual-rules-for-agents/">Visual rules an AI agent can follow</a></h3>
         <p class="read-summary">Radius by role, two themes from one set of tokens and an AI disclosure component designed for the EU AI Act.</p>
@@ -135,7 +135,7 @@ document.documentElement.classList.add('js');
       </ul>
       <p class="cv-link"><a class="btn btn-secondary" href="/assets/matt-everitt-cv.pdf">Download my CV</a></p>
     </div>
-    <div class="card spot reveal" style="--i:1">
+    <div class="card spot reveal" style="--i:1" data-spec-component="Card / Timeline" data-spec-priority="3">
       <h3>From first component to running the system</h3>
       <ol class="timeline">
         <li><span class="year">March 2020</span><p class="what">Junior UI designer</p><p class="muted">Started the company design system</p></li>
@@ -150,7 +150,7 @@ document.documentElement.classList.add('js');
   <div class="page flow reveal">
     <h2 id="contact-h">Fancy a <span class="grad-text">chat?</span></h2>
     <p>I'm always happy to talk about anything in product design, development or management.</p>
-    <div class="actions"><a class="btn btn-primary" href="mailto:matt.m.everitt@gmail.com" data-spec="color" data-spec-prop="background-color" data-spec-priority="2">Email me</a><a class="btn btn-secondary" href="https://www.linkedin.com/in/matteveritt92/" data-spec="radius" data-spec-priority="3">LinkedIn</a></div>
+    <div class="actions"><a class="btn btn-primary" href="mailto:matt.m.everitt@gmail.com" data-spec="color" data-spec-prop="background-color" data-spec-component="Button / Primary" data-spec-priority="2">Email me</a><a class="btn btn-secondary" href="https://www.linkedin.com/in/matteveritt92/" data-spec="radius" data-spec-priority="3">LinkedIn</a></div>
   </div>
 </section>
 </main>

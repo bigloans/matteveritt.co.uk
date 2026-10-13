@@ -90,13 +90,13 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 557,
+    "words": 636,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
     "docH": 3155,
-    "specShown": 15,
+    "specShown": 20,
     "untokenised": 0,
     "fold": true,
     "contentsReachable": false
@@ -188,7 +188,7 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 516,
+    "words": 521,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
@@ -286,7 +286,7 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 516,
+    "words": 521,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
@@ -394,13 +394,13 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 1655,
+    "words": 1758,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
     "docH": 9356,
-    "specShown": 6,
+    "specShown": 8,
     "untokenised": 0,
     "fold": true,
     "contentsReachable": true
@@ -700,13 +700,13 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 713,
+    "words": 766,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
     "docH": 3761,
-    "specShown": 6,
+    "specShown": 7,
     "untokenised": 0,
     "fold": true,
     "contentsReachable": false
@@ -976,6 +976,7 @@
       "10px",
       "16px",
       "20px",
+      "50%",
       "999px"
     ],
     "small": [],
@@ -986,13 +987,13 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 397,
+    "words": 441,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
     "docH": 2731,
-    "specShown": 6,
+    "specShown": 7,
     "untokenised": 0,
     "fold": true,
     "contentsReachable": false
@@ -1278,7 +1279,7 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 794,
+    "words": 864,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"

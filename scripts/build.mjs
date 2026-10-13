@@ -133,7 +133,7 @@ const art = {
   agents: `<div class="read-art" aria-hidden="true"><div class="art-agents">${Array.from({ length: 15 }, (_, i) => `<i style="--d:${(i * 7) % 15}"></i>`).join("")}</div></div>`,
 };
 const workReads = reads
-  .map((p, i) => `<li class="read-card card lift spot reveal" style="--i:${i}">
+  .map((p, i) => `<li class="read-card card lift spot reveal" style="--i:${i}"${i === 0 ? ' data-spec-component="Card / Read" data-spec-priority="3"' : ""}>
         ${art[p.art] || ""}
         <h3 class="read-title"><a href="${p.url}">${p.title}</a></h3>
         <p class="read-summary">${p.summary}</p>

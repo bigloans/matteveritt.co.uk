@@ -322,3 +322,21 @@ Matt reviewed v2 live and found it too quiet. It read like a blog, not a portfol
 | Visual blocks for lanes, options, the gate layers, steps, the funnel, metrics and trade-offs | No JavaScript needed for content |
 | Scroll reveals, typed windows and animated card art | Reduced motion stops all of it |
 | Sticky glass header and a reading progress bar | Lighthouse 98 or more on every page |
+
+## "Show the spec" as inspect mode (13 October 2026)
+
+| Step | What happens |
+| --- | --- |
+| 1 | The canvas dims and a blueprint grid fades in |
+| 2 | Rulers slide in from the top and left, with the layout grid's left edge as zero |
+| 3 | The 12-column layout grid rises column by column, with a tag naming the columns and gutter token |
+| 4 | A scan line sweeps the viewport. Each group draws as the line reaches it |
+| 5 | Components get a solid frame, corner handles, a violet name tag and a size badge that counts up |
+| 6 | Spacing gets a hatched area, a measure line and a value that counts up from 0px |
+| 7 | Type gets line bands with baseline, cap-height and x-height guides from real font metrics |
+| 8 | Radius gets a corner arc. Colour gets a swatch chip with its contrast ratio |
+| 9 | Groups below the fold draw as they scroll into view |
+
+- Every value still comes from `getComputedStyle` and the token names from `tokens.css`.
+- About 20 groups on the landing page and 8 to 10 per article. Below 520px, priority 1 only and no rulers.
+- Hiding fades the whole canvas out. Reduced motion shows the final state at once.

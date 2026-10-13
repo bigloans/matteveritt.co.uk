@@ -52,7 +52,7 @@ document.documentElement.classList.add('js');
 <p class="meta-line" data-spec="color" data-spec-priority="3">Short read, 3 minutes</p>
 <!-- /build:meta -->
   <dl class="summary three" data-spec="space" data-spec-prop="margin-top" data-spec-priority="2">
-    <div><dt data-spec="color" data-spec-priority="3">Role</dt><dd data-spec="type" data-spec-priority="2">Product owner, designer and front-end lead</dd></div>
+    <div data-spec-component="Tile / Summary" data-spec-priority="2"><dt>Role</dt><dd>Product owner, designer and front-end lead</dd></div>
     <div><dt>Scope</dt><dd>The visual language of a spec for 60+ products</dd></div>
     <div><dt>Timeline</dt><dd>Spec work from Jul 2026</dd></div>
   </dl>
@@ -124,7 +124,7 @@ document.documentElement.classList.add('js');
       <p>The gradient is a brand device, but the badge has to stay legible and can never rely on colour alone. Accessibility settled it. The text label carries the meaning, the gradient is decoration hidden from assistive technology, and a badge that relied on colour alone would fail WCAG 1.4.1.</p>
       <h3>Three options</h3>
       <div class="option-grid block">
-        <div class="card lift spot glow-border reveal"><p class="pill teal">Option A, chosen</p><h4>Gradient on the border and dot only</h4><p>The label sits in the text colour on a neutral fill, so no text ever sits on the gradient.</p></div>
+        <div class="card lift spot glow-border reveal" data-spec-component="Card / Option, chosen" data-spec-priority="3"><p class="pill teal">Option A, chosen</p><h4>Gradient on the border and dot only</h4><p>The label sits in the text colour on a neutral fill, so no text ever sits on the gradient.</p></div>
         <div class="card lift spot reveal" style="--i:1"><p class="pill">Option B</p><h4>Gradient fill with dark text</h4><p>It passed AA at both ends of the gradient, but the worst case was about 4.72:1 at the pink end, a thin margin. The gate can&#39;t check text over a gradient either, so this option looks worse now than it did then.</p></div>
         <div class="card lift spot reveal" style="--i:2"><p class="pill pink">Option C</p><h4>Gradient fill with white text</h4><p>It fails contrast at the light teal end.</p></div>
       </div>

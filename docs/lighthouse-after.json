@@ -1,7 +1,7 @@
 [
   {
     "url": "/",
-    "performance": 99,
+    "performance": 98,
     "accessibility": 100,
     "bestPractices": 100,
     "seo": 100,
@@ -25,7 +25,7 @@
   },
   {
     "url": "/work/design-system-with-agents/",
-    "performance": 100,
+    "performance": 99,
     "accessibility": 100,
     "bestPractices": 100,
     "seo": 100,
