@@ -45,11 +45,94 @@ try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.docu
 <!-- /build:header -->
 
 <main id="main" tabindex="-1">
-<h1>Running a design system with 15 agents</h1>
-<section id="team" aria-labelledby="team-h"><h2 id="team-h">A team of one</h2></section>
-<section id="designers" aria-labelledby="designers-h"><h2 id="designers-h">Where designers work now</h2></section>
-<section id="continuity" aria-labelledby="continuity-h"><h2 id="continuity-h">Continuity</h2></section>
-<section id="reversed" aria-labelledby="reversed-h"><h2 id="reversed-h">A decision I reversed</h2></section>
+<!-- words -->
+<div class="article-hero page" data-spec="space" data-spec-prop="padding-top" data-spec-priority="2">
+  <h1 class="article-title" data-spec="type" data-spec-priority="1">Running a design system with 15 agents</h1>
+  <p class="article-lede" data-spec="space" data-spec-prop="margin-top" data-spec-priority="1">I run the design system as a team of one, with a harness of 15 specialist agents and 7 contributing designers. Agents do measurable work, but spec and release decisions stay with me.</p>
+  <!-- build:meta -->
+<p class="meta-line" data-spec="color" data-spec-priority="3">Short read, 2 minutes</p>
+<!-- /build:meta -->
+  <dl class="summary three" data-spec="space" data-spec-prop="margin-top" data-spec-priority="2">
+    <div><dt data-spec="color" data-spec-priority="3">Role</dt><dd data-spec="type" data-spec-priority="2">Product owner, designer and front-end lead</dd></div>
+    <div><dt>Scope</dt><dd>Solo, with a 15-agent harness and 7 contributing designers; co-sponsored by the Head of UX</dd></div>
+    <div><dt>Timeline</dt><dd>Spec work from Jul 2026</dd></div>
+  </dl>
+</div>
+
+<div class="article-body no-contents page">
+  <article class="article-main">
+    <section id="team" class="flow" aria-labelledby="team-h">
+      <h2 id="team-h">A team of one</h2>
+      <p>Each agent in the harness has one job and a written standard. Any edit that moves a brand value stops until it is explained, and no bug is fixed until one agent reproduces it and another checks the fix.</p>
+      <details class="agents block">
+        <summary>The 15 agents</summary>
+        <div class="agent-groups">
+          <div><h3>Design</h3><dl>
+            <div><dt>System architect</dt><dd>Is this token the right shape?</dd></div>
+            <div><dt>Agent-experience designer</dt><dd>Can a rule be read two ways?</dd></div>
+            <div><dt>Adoption designer</dt><dd>Is the route in easy for teams?</dd></div>
+            <div><dt>Prior-art researcher</dt><dd>What do standards say?</dd></div>
+          </dl></div>
+          <div><h3>Quality</h3><dl>
+            <div><dt>Accessibility gatekeeper</dt><dd>Does it meet WCAG 2.2 AA?</dd></div>
+            <div><dt>Generation prober</dt><dd>Does the spec build correctly?</dd></div>
+            <div><dt>Spec auditor</dt><dd>Does it match the spec?</dd></div>
+            <div><dt>Verifier</dt><dd>Does the fix fix the defect?</dd></div>
+          </dl></div>
+          <div><h3>Delivery</h3><dl>
+            <div><dt>Check author</dt><dd>Writes the failing test first</dd></div>
+            <div><dt>Reproduction writer</dt><dd>Proves a bug before anyone fixes it</dd></div>
+            <div><dt>Scope warden</dt><dd>Is this the smallest fix?</dd></div>
+            <div><dt>Cross-repo porter</dt><dd>Keeps both repos in step</dd></div>
+          </dl></div>
+          <div><h3>Release</h3><dl>
+            <div><dt>Release steward</dt><dd>Was the procedure followed?</dd></div>
+            <div><dt>Consumer-impact assessor</dt><dd>What changes for teams?</dd></div>
+            <div><dt>Dependency steward</dt><dd>Are dependencies safe?</dd></div>
+          </dl></div>
+        </div>
+      </details>
+    </section>
+
+    <section id="designers" class="flow" aria-labelledby="designers-h">
+      <h2 id="designers-h">Where designers work now</h2>
+      <p>Without Figma handoff, designers build in the same session as an AI agent, against the pinned spec, so nobody has to memorise a rulebook. So far, 7 designers have contributed 47 catalogue entries.</p>
+      <ol class="steps">
+        <li><strong>The designer builds a screen.</strong> The agent generates it from the designer&#39;s description.</li>
+        <li><strong>The agent spots a missing asset.</strong> No pictogram fits, so the agent offers to draft one in the session.</li>
+        <li><strong>The agent applies the rules.</strong> It checks for duplicates, follows the style guide and opens a review.</li>
+        <li><strong>The gate flags the draft.</strong> It lists the draft without failing the build, so nothing ships unseen.</li>
+      </ol>
+      <h3>Put guardrails where people work</h3>
+      <p>Rules in the AI session beat a style guide nobody memorises. The agent enforces the style guide, so designers judge meaning.</p>
+    </section>
+
+    <section id="continuity" class="flow" aria-labelledby="continuity-h">
+      <h2 id="continuity-h">Continuity</h2>
+      <p>I designed a plan covering two months of extended leave, so the system ran without me.</p>
+      <p>The dated decision log holds 150+ entries. A mistake gets corrected in a new entry, never erased.</p>
+    </section>
+
+    <section id="reversed" class="flow" aria-labelledby="reversed-h">
+      <h2 id="reversed-h">A decision I reversed</h2>
+      <table class="log">
+        <caption class="sr-only">Two decision log entries</caption>
+        <tbody>
+          <tr><th scope="row">6 to 9 Jul 2026</th><td>Decided</td><td>Write a skill file for each component, for agents to follow.</td></tr>
+          <tr><th scope="row">5 Aug 2026</th><td>Reversed</td><td>Retired them. They had drifted from the canonical contract and told agents to emit a token the gate rejects.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <div class="article-end flow">
+      <p>This read comes from <a href="/work/replacing-the-component-library/">I replaced my own component library with a spec AI builds from</a>, the full case study.</p>
+    </div>
+<!-- /words -->
+    <!-- build:next -->
+<p class="next"><a href="/work/replacing-the-component-library/">Next: I replaced my own component library with a spec AI builds from</a></p>
+<!-- /build:next -->
+  </article>
+</div>
 </main>
 
 <!-- build:footer -->

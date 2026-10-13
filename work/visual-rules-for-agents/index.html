@@ -45,10 +45,93 @@ try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.docu
 <!-- /build:header -->
 
 <main id="main" tabindex="-1">
-<h1>Visual rules an AI agent can follow</h1>
-<section id="visual-language" aria-labelledby="visual-language-h"><h2 id="visual-language-h">Two themes from one set of tokens</h2></section>
-<section id="radius" aria-labelledby="radius-h"><h2 id="radius-h">Radius by role</h2></section>
-<section id="disclosure" aria-labelledby="disclosure-h"><h2 id="disclosure-h">AI disclosure, designed for regulation</h2></section>
+<!-- words -->
+<div class="article-hero page" data-spec="space" data-spec-prop="padding-top" data-spec-priority="2">
+  <h1 class="article-title" data-spec="type" data-spec-priority="1">Visual rules an AI agent can follow</h1>
+  <p class="article-lede" data-spec="space" data-spec-prop="margin-top" data-spec-priority="1">An agent can&#39;t interpret &ldquo;make it feel premium&rdquo;, so each aesthetic decision in the spec is a named rule with a token behind it. These are three of them.</p>
+  <!-- build:meta -->
+<p class="meta-line" data-spec="color" data-spec-priority="3">Short read, 1 minute</p>
+<!-- /build:meta -->
+  <dl class="summary three" data-spec="space" data-spec-prop="margin-top" data-spec-priority="2">
+    <div><dt data-spec="color" data-spec-priority="3">Role</dt><dd data-spec="type" data-spec-priority="2">Product owner, designer and front-end lead</dd></div>
+    <div><dt>Scope</dt><dd>The visual language of a spec for 60+ products</dd></div>
+    <div><dt>Timeline</dt><dd>Spec work from Jul 2026</dd></div>
+  </dl>
+</div>
+
+<div class="article-body no-contents page">
+  <article class="article-main">
+    <section id="visual-language" class="flow" aria-labelledby="visual">
+      <h2 id="visual">Two themes from one set of tokens</h2>
+      <p>Dark is the signature theme. Light is the working surface. The same tokens drive both, so an agent never picks colours for a theme. It picks a role, and the theme supplies the value.</p>
+      <figure class="demo recreation block" data-illustrative>
+        <div class="demo-side">
+          <h3>Brand energy where it counts</h3>
+          <p>Switch the preview between the two themes.</p>
+          <p class="toggle-label" id="demo-theme-label">Demo theme, this preview only</p>
+          <div class="toggle" role="group" aria-labelledby="demo-theme-label">
+            <button type="button" aria-pressed="true" data-set="dark">Dark</button>
+            <button type="button" aria-pressed="false" data-set="light">Light</button>
+          </div>
+        </div>
+        <div class="stage" data-reg="dark" id="stage">
+          <div class="ui">
+            <div class="ui-top"><b>Sprint overview</b><span class="chip">On track</span></div>
+            <div class="rows">
+              <div class="row"><span>Research synthesis</span><span class="bar-s"><i style="width:82%"></i></span></div>
+              <div class="row"><span>Prototypes</span><span class="bar-s"><i style="width:64%"></i></span></div>
+              <div class="row"><span>Usability tests</span><span class="bar-s"><i style="width:38%"></i></span></div>
+            </div>
+            <div class="btns"><button class="demo-btn p" type="button" tabindex="-1">Approve</button><button class="demo-btn g" type="button" tabindex="-1">View details</button></div>
+          </div>
+        </div>
+      </figure>
+    </section>
+
+    <section id="radius" class="flow" aria-labelledby="radius-h">
+      <h2 id="radius-h">Radius by role</h2>
+      <p>Components reference a role, never a raw value, so one edit changes every card&#39;s corner. A modal, a surface, a control and a pill each get their own radius, so hierarchy shows in the corners.</p>
+      <figure class="recreation block" data-illustrative>
+        <div class="canvas">
+          <div class="rr-modal">
+            <span class="rr-tag top">modal 20</span>
+            <div class="rr-card"><div><i></i><i></i></div><span class="rr-ctrl">Assign</span></div>
+            <span class="rr-pill">In review</span>
+            <span class="rr-tag bottom">surface 16, control 10, pill</span>
+          </div>
+        </div>
+        <figcaption class="note">Recreation of the spec&#39;s radius roles.</figcaption>
+      </figure>
+    </section>
+
+    <section id="disclosure" class="flow" aria-labelledby="disclosure-h">
+      <h2 id="disclosure-h">AI disclosure, designed for regulation</h2>
+      <p>The AI disclosure component marks AI-produced content and supports disclosure under Article 50 of the EU AI Act, applicable since 2 August 2026. It doesn&#39;t cover machine-readable marking.</p>
+      <ul>
+        <li>Always visible, never dismissible</li>
+        <li>Always labelled in text, never colour alone</li>
+      </ul>
+      <figure class="recreation block" data-illustrative>
+        <div class="canvas flush">
+          <div class="aid">
+            <div class="l"><div class="field"><small>Suggested category</small><b>Maintenance</b><span class="badge"><i></i>AI-generated</span></div></div>
+            <div class="d"><div class="field"><small>Suggested category</small><b>Maintenance</b><span class="badge"><i></i>AI-generated</span></div></div>
+          </div>
+        </div>
+        <figcaption class="note">Recreation of the disclosure badge in both themes.</figcaption>
+      </figure>
+      <!-- TODO(matt): the design reasoning behind the AI disclosure component (alternatives considered, states, any research or legal input) would make this a full case study. -->
+    </section>
+
+    <div class="article-end flow">
+      <p>This read comes from <a href="/work/replacing-the-component-library/">I replaced my own component library with a spec AI builds from</a>, the full case study.</p>
+    </div>
+<!-- /words -->
+    <!-- build:next -->
+<p class="next"><a href="/work/design-system-with-agents/">Next: Running a design system with 15 agents</a></p>
+<!-- /build:next -->
+  </article>
+</div>
 </main>
 
 <!-- build:footer -->
