@@ -8,7 +8,6 @@
 <meta property="og:title" content="I replaced my own component library with a spec AI builds from">
 <meta property="og:description" content="Matt Everitt replaced his own component library with a specification that AI coding agents build from. He runs it as a product, measures it like one and says plainly what is still unproven.">
 <meta property="og:type" content="article">
-<!-- TODO(matt): og-image.png still shows the old headline, "I replaced my own design system with one AI builds from", with its gradient phrase. Regenerate it with the new headline? -->
 <meta property="og:image" content="https://matteveritt.co.uk/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -698,7 +697,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--space-6);flex-
         <h1>I replaced my own component library with a spec AI builds from</h1>
       </div>
       <div class="hero-copy">
-        <p class="lede">I built the component library behind <span data-fact="F01">60+</span> products. The evidence said it couldn't keep up, so I replaced it with a versioned specification that teams' AI coding agents build from, and a gate that checks the result. I run it as a product, and strategy, roadmap, releases and adoption are mine.</p>
+        <p class="lede">I built the component library for a portfolio of <span data-fact="F01">60+</span> products. The evidence said it couldn't keep up, so I replaced it with a versioned specification that teams' AI coding agents build from, and a gate that checks the result. I run it as a product, and strategy, roadmap, releases and adoption are mine.</p>
         <a class="teaser" href="#options"><b>Highlight</b>How I decided to retire my own library</a>
       </div>
       <dl class="meta">
@@ -773,9 +772,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--space-6);flex-
     <p class="lede">My customers are the product teams behind those products. Each has its own roadmap, and none is waiting for a design system.</p>
     <div class="glance reveal">
       <div><small>v1, the library I built</small><p><span data-fact="F04">45</span> components, with <span data-fact="F05">React, Vue and Angular built simultaneously</span>. I delivered it in <span data-fact="F06">four stages</span> against a roadmap I presented at CTO level.</p></div>
-      <!-- TODO(matt): Did the role merge behind the £94k remove headcount or redeploy it? -->
-      <div><small>Track record</small><p>Earlier operational changes I led saved <span data-fact="F07">£94k a year</span>, mostly by merging a separate component build function into one design operations role.</p></div>
-      <!-- TODO(matt): For manager readers, what evidence is there of hiring, coaching or leading people? -->
+      <div><small>Track record</small><p>Earlier operational changes I led saved <span data-fact="F07">£94k a year</span>, mostly by merging a separate component build function into one design operations role, which removed headcount.</p></div>
       <div><small>Tenure</small><p><span data-fact="F03">About 6 years</span>, from junior UI designer to design system manager.</p></div>
     </div>
   </div>
@@ -785,8 +782,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--space-6);flex-
   <div class="wrap">
     <p class="eyebrow">The problem</p>
     <h2>The evidence against my own library</h2>
-    <!-- TODO(matt): The Problem section has no v1 adoption baseline. How many products adopted v1? -->
-    <p class="lede">Running the static gate against existing products found a median of <span data-fact="P01">412</span> violations per product. Each v1 component cost <span data-fact="P09">about 3.5 weeks</span> across three framework builds, roughly <span data-fact="P09">two</span> of them on the second and third builds. And nothing told an AI coding agent what on-brand or accessible meant.</p>
+    <p class="lede">Running the static gate against existing products found a median of <span data-fact="P01">412</span> violations per product. Only <span data-fact="P28">6</span> products adopted v1, to varying degrees, across three frameworks. Each v1 component cost <span data-fact="P09">about 3.5 weeks</span> across three framework builds, roughly <span data-fact="P09">two</span> of them on the second and third builds. And nothing told an AI coding agent what on-brand or accessible meant.</p>
     <div class="compare reveal">
       <div class="lane">
         <h3>Before</h3>
@@ -988,7 +984,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--space-6);flex-
     </details>
     <h3 class="mt-12">Continuity</h3>
     <div class="layers">
-      <!-- TODO(matt): The seven-month leave plan conflicts with spec work from July to October, 90 releases and "I built the first three implementations myself". What ran during the leave, and who did it? -->
+      <!-- TODO(matt): The plan says seven months of leave, but the leave ran April to July, about four. Which is right? -->
       <div class="layer reveal"><span class="tag">Plan</span><p>I designed a plan covering <span data-fact="F17">seven months</span> of extended leave, so the system ran without me.</p></div>
       <div class="layer reveal"><span class="tag">Log</span><p>The dated decision log holds <span data-fact="F12">150+</span> entries. A mistake gets corrected in a new entry, never erased.</p></div>
     </div>
@@ -1014,6 +1010,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--space-6);flex-
       </div>
       <div class="bcol out reveal"><small>The outcome</small><blockquote>"We love it, but we can't do it right now."</blockquote><p>Rollout follows each team's roadmap. A funded reskin was the forcing function, and mandates and demos converted nobody.</p></div>
     </div>
+    <!-- TODO(matt): You said no product has gone live, but the page claims 3 in production on a pinned release (here, the At a glance north star and Metrics). Does "in production" mean shipped to end users? -->
     <ol class="funnel reveal" aria-label="Adoption funnel">
       <li><b><span data-fact="P04">9</span></b> piloted</li>
       <li><b><span data-fact="P04">6</span></b> committed with a date</li>
@@ -1045,17 +1042,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--space-6);flex-
         <li>Drift per product: <span data-fact="P25">260</span>, down from the baseline in The problem, and zero on governed files<small class="note">Median across whole codebases, n = <span data-fact="P01">12</span> products</small></li>
       </ul></div>
       <div class="sbox next reveal"><span class="pill">Guardrails</span><ul>
-        <!-- TODO(matt): Gate history. "Blocked 340 AA failures before merge in nine months", but spec work started in July 2026. When did the gate start? Correct the period or state the start date. -->
-        <!-- TODO(matt): Defect comparison. "14 before, 3 after" uses comparable two-quarter periods, but these products reached production in or after July. Correct the period or remove the claim. -->
-        <li>Accessibility defects after release: <span data-fact="P03">14</span> before, <span data-fact="P03">3</span> after<small class="note">The three production products, comparable two-quarter periods. The gate also blocked <span data-fact="P03">340</span> AA failures before merge in nine months.</small></li>
+        <li>AA failures blocked before merge: <span data-fact="P29">117</span> since July 2026</li>
         <li>Time for a critical fix to reach every adopter: <span data-fact="P11">under 1</span> working day to tag, <span data-fact="P11">6</span> to all three products<small class="note">Release and pin records</small></li>
       </ul></div>
     </div>
-    <!-- TODO(matt): Confirm this applies to all three production products. -->
-    <p class="note mt-5">These products were also mid-reskin, which reduces defects independently.</p>
-    <!-- TODO(matt): Engineering cost avoided. What loaded day rate should the calculation use? -->
-    <!-- Calculation once the rate is known: (3.5 weeks × components delivered) and ((5 − 1.5) days × screens built), each times the loaded day rate. -->
-    <!-- TODO(matt): For product manager readers, is there an end-user or commercial outcome to report? -->
   </div>
 </section>
 
@@ -1067,8 +1057,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--space-6);flex-
     <div class="trades">
       <div class="trade reveal">
         <div class="cost"><small>Cost</small><h3>AI output varies from run to run</h3><p>Three runs from one brief used the same tokens and values but structured the code differently, from <span data-fact="F16">407 to 930 lines</span>.</p></div>
-        <!-- TODO(matt): What does it cost for every team to own its own generated code? -->
-        <div class="fix"><small>How I contained it</small><h3>Govern the contract, not the code</h3><p>The gate checks tokens, contrast and behaviour, which held steady. Product teams own generated code through their own reviews and tests. I own the spec and the gate.</p></div>
+        <div class="fix"><small>How I contained it</small><h3>Govern the contract, not the code</h3><p>The gate checks tokens, contrast and behaviour, which held steady. Product teams own generated code through their own reviews and tests, which costs them little and gives them more freedom to customise. I own the spec and the gate.</p></div>
       </div>
       <div class="trade reveal">
         <div class="cost"><small>Cost</small><h3>Existing products weren't built for this</h3><p>Most early adopters have a shipping product, its own CSS and a designer with expectations.</p></div>
