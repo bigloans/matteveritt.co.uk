@@ -3,11 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Design system case study · Matt Everitt</title>
-<meta name="description" content="Matt Everitt runs a design system as a product. He replaced his own component library with a specification that AI coding agents build from, measures it like a product and says plainly what is still unproven.">
-<meta property="og:title" content="I replaced my own design system with one AI builds from">
-<meta property="og:description" content="Matt Everitt runs a design system as a product. He replaced his own component library with a specification that AI coding agents build from, measures it like a product and says plainly what is still unproven.">
+<title>Component library case study · Matt Everitt</title>
+<meta name="description" content="Matt Everitt replaced his own component library with a specification that AI coding agents build from. He runs it as a product, measures it like one and says plainly what is still unproven.">
+<meta property="og:title" content="I replaced my own component library with a spec AI builds from">
+<meta property="og:description" content="Matt Everitt replaced his own component library with a specification that AI coding agents build from. He runs it as a product, measures it like one and says plainly what is still unproven.">
 <meta property="og:type" content="article">
+<!-- TODO(matt): og-image.png still shows the old headline, "I replaced my own design system with one AI builds from", with its gradient phrase. Regenerate it with the new headline? -->
 <meta property="og:image" content="https://matteveritt.co.uk/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -523,7 +524,7 @@ section{padding:var(--space-28) 0}
 .bcol.win p{color:var(--inverse-text-soft);font-size:var(--text-sm)}
 .wins{display:grid;gap:var(--space-4)}
 .wins > div{display:flex;gap:var(--space-4)}
-.funnel{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-3);margin-top:var(--space-5)}
+.funnel{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-3);margin-top:var(--space-5)}
 .fun{padding:var(--space-5) var(--space-6);border-radius:var(--radius-surface);background:var(--color-sunken)}
 .fun b{display:block;font:600 var(--text-xl) var(--font-display);color:var(--color-text-strong);margin-bottom:var(--space-2);overflow-wrap:anywhere}
 .fun > span{font-size:var(--text-sm);color:var(--color-text-muted)}
@@ -779,7 +780,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--space-6);flex-
   .hero h1{margin-bottom:0}
   .hero .specfile{margin-top:0}
   .grid3,.learn,.glance,.status{grid-template-columns:1fr}
-  .funnel{grid-template-columns:repeat(2,minmax(0,1fr))}
   .log div{grid-template-columns:1fr;gap:0}
   .flow{grid-template-columns:1fr 1fr}
   .fstep:after{display:none}
@@ -796,6 +796,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--space-6);flex-
 }
 @media (max-width:520px){
   .flow,.icons,.depth,.aid{grid-template-columns:1fr}
+  .funnel{grid-template-columns:1fr}
   .stat b{font-size:var(--text-2xl)}
 }
 </style>
@@ -809,7 +810,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--space-6);flex-
     <div class="hero-in">
       <div class="hero-title">
         <p class="eyebrow">Design systems · AI-assisted development</p>
-        <h1>I replaced my own design system with <em>one AI builds from</em></h1>
+        <h1>I replaced my own component library with <em>a spec AI builds from</em></h1>
       </div>
       <div class="hero-copy">
         <p class="lede">I built the component library behind <span data-fact="F01">60+</span> products in <span data-fact="F02">React, Vue, Angular and legacy frameworks</span>. The evidence said it couldn't keep up, so I replaced it with a versioned specification that teams' AI coding agents build from, and a gate that checks the result. I run it as a product: strategy, roadmap, releases and adoption are mine.</p>
@@ -879,11 +880,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--space-6);flex-
     <div class="glance reveal">
       <div><small>THE BET</small><p>If an AI agent generates every component, the design system doesn't need a component library. It needs rules precise enough for a machine to follow and to check.</p></div>
       <div><small>WHAT I OWNED</small><ul><li>The spec and its visual language</li><li>The validation gate</li><li>The icon and pictogram pack</li><li>The agent harness</li><li>Releases and governance</li><li>The adoption guide</li></ul></div>
-      <div><small>WHERE IT STANDS</small><p>Of <span data-fact="P04">about 60</span> teams, <span data-fact="P04">41</span> are aware, <span data-fact="P04">9</span> have piloted, <span data-fact="P04">6</span> have committed with a date and <span data-fact="P04">3</span> are in production.</p></div>
+      <div><small>WHERE IT STANDS</small><p>Of <span data-fact="P04">about 60</span> teams, <span data-fact="P04">9</span> have piloted, <span data-fact="P04">6</span> have committed with a date and <span data-fact="P04">3</span> are in production.</p></div>
     </div>
     <div class="stats reveal">
       <div class="stat"><b><span data-fact="F01">60+</span></b><span>products in scope</span><small class="note">Whole portfolio, October 2026</small></div>
-      <div class="stat"><b><span data-fact="P02">1.5</span><small>/<span data-fact="P02">5</span></small></b><span>days to build a screen, spec vs old handoff</span><small class="note">Median of <span data-fact="P02">5</span> screens built both ways. Most of the saving is handoff wait removed.</small></div>
+      <div class="stat"><b><span data-fact="P02">1.5</span><small> days vs <span data-fact="P02">5</span></small></b><span>to build a screen from the spec, against the old handoff</span><small class="note">Median of <span data-fact="P02">5</span> screens built both ways. Most of the saving is handoff wait removed.</small></div>
       <div class="stat"><b><span data-fact="P20">71%</span></b><span>first-run gate pass rate</span><small class="note">n = <span data-fact="P20">186</span> pilot builds</small></div>
       <div class="stat star"><em class="kicker">North star</em><b><span data-fact="P04">3</span></b><span>products in production on a pinned release</span><small class="note">Live count from the weekly report</small></div>
     </div>
@@ -960,8 +961,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--space-6);flex-
     <p class="lede">The spec covers <span data-fact="F10">21 components and 6 layout primitives</span>. Before 1.0 I ship small and often, with <span data-fact="F11">90 releases in 14 weeks</span>. Teams pin a release, so nothing changes in a product until its team upgrades.</p>
     <div class="grid3">
       <div class="card reveal"><span class="num">01</span><h3>One spec, any framework</h3><p>Tokens, component rules and the definition of done live in three plain-text files that work with React, Vue or plain HTML.</p></div>
-      <div class="card reveal"><span class="num">02</span><h3>Accessibility lives in the tokens</h3><p>Every colour pairing the system allows meets WCAG 2.2 AA in both themes, so the agent can't pick a failing pair. A failure blocks the release.</p></div>
-      <div class="card reveal"><span class="num">03</span><h3>A release is a contract</h3><p>Teams pin a tagged release, and a hash proves they built against exactly the spec they asked for.</p></div>
+      <div class="card reveal"><span class="num">02</span><h3>Accessibility lives in the tokens</h3><p>Every colour pairing the spec allows is tested against WCAG 2.2 AA in both themes, and a failing pair blocks the release. Test builds once caught a rule that broke this (see <a href="#story">First evidence</a>).</p></div>
+      <div class="card reveal"><span class="num">03</span><h3>A release is a contract</h3><p>Teams pin a tagged release, and a hash records exactly which spec they pinned. The gate checks every build against it.</p></div>
     </div>
     <p class="note mt-5">Token format: the tokens live in the spec file, not in the W3C Design Tokens Community Group format. The consumer is an agent reading one file, and a JSON copy would be a second source to keep in step. If a tool ever needs that format, it gets a generated copy.</p>
   </div>
@@ -1181,8 +1182,7 @@ warning: draft pictogram in review, not blocking.
       </div>
       <div class="bcol out reveal"><small>THE OUTCOME</small><blockquote>"We love it, but we can't do it right now."</blockquote><p>Rollout follows each team's roadmap, so nobody migrates mid-delivery. The forcing function was a funded reskin already on the roadmap. The system rode along with work the team was doing anyway. Mandates and demos converted nobody.</p></div>
     </div>
-    <div class="funnel reveal" aria-label="Adoption funnel">
-      <div class="fun"><b><span data-fact="P04">41</span></b><span>Aware</span></div>
+    <div class="funnel reveal" role="group" aria-label="Adoption funnel">
       <div class="fun"><b><span data-fact="P04">9</span></b><span>Piloted</span></div>
       <div class="fun"><b><span data-fact="P04">6</span></b><span>Committed with a date</span></div>
       <div class="fun prod"><em class="kicker">North star</em><b><span data-fact="P04">3</span></b><span>In production on a pinned release</span></div>
@@ -1289,7 +1289,8 @@ warning: draft pictogram in review, not blocking.
 <section id="contact" class="contact">
   <div class="wrap">
     <h2>Let's talk about your design system</h2>
-    <p>I'm looking for a principal design systems, principal designer or product owner role, where a design system is run as a product.</p>
+    <!-- TODO(matt): confirm role list -->
+    <p>I'm looking for a role as a principal designer, design systems principal, product owner or product manager, where a design system is run as a product.</p>
     <div class="cta"><a class="p" href="mailto:matt.m.everitt@gmail.com">Email me</a><a class="g" href="https://www.linkedin.com/in/matteveritt92/">LinkedIn</a></div>
   </div>
 </section>
