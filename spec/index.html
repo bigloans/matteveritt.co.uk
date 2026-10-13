@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>This site's spec, Matt Everitt</title>
+<meta name="description" content="The tokens behind matteveritt.co.uk: colour roles with contrast in both themes, the type scale, spacing, radius roles, elevation and motion.">
+<meta property="og:title" content="This site's spec">
+<meta property="og:description" content="The tokens behind matteveritt.co.uk: colour roles with contrast in both themes, the type scale, spacing, radius roles, elevation and motion.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://matteveritt.co.uk/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<!-- build:head -->
+<link rel="preload" href="/fonts/atkinson-hyperlegible-next-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/atkinson-hyperlegible-next-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/tokens.css">
+<link rel="stylesheet" href="/assets/site.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='10' fill='%230B6B63'/%3E%3C/svg%3E">
+<script>
+document.documentElement.classList.add('js');
+try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}
+</script>
+<script src="/assets/site.js" defer></script>
+<!-- /build:head -->
+</head>
+<body>
+<!-- build:header -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-header-in">
+    <a class="site-name" href="/">Matt Everitt</a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="/#work">Work</a>
+      <a href="/#about">About</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <div class="site-tools">
+      <button class="spec-toggle" type="button" aria-pressed="false" data-spec-toggle hidden>Show the spec</button>
+      <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Dark theme" data-theme-toggle hidden><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg></button>
+    </div>
+  </div>
+</header>
+<!-- /build:header -->
+
+<main id="main" tabindex="-1">
+<h1>This site's spec</h1>
+<!-- build:spec -->
+<section id="colour" aria-labelledby="colour-h">
+      <h2 id="colour-h">Colour</h2>
+      <p>Each role has one value per theme. The dark theme follows the system setting until you choose one with the theme toggle.</p>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="Colour roles">
+        <table>
+          <thead><tr><th scope="col">Role</th><th scope="col">Light</th><th scope="col">Dark</th><th scope="col">Use</th></tr></thead>
+          <tbody>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-surface)"></span><code>--color-surface</code></th><td><code>#FFFFFF</code></td><td><code>#0B1628</code></td><td>Page background</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-surface-alt)"></span><code>--color-surface-alt</code></th><td><code>#F3F5F8</code></td><td><code>#12223A</code></td><td>Gate output, contents sheet, tables</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-text)"></span><code>--color-text</code></th><td><code>#0B1628</code></td><td><code>#E8EDF4</code></td><td>Text and headings</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-text-muted)"></span><code>--color-text-muted</code></th><td><code>#5D6878</code></td><td><code>#B9C6D8</code></td><td>Metadata and notes</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-interactive)"></span><code>--color-interactive</code></th><td><code>#0B6B63</code></td><td><code>#2EC4B6</code></td><td>Links, primary buttons and focus</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-on-interactive)"></span><code>--color-on-interactive</code></th><td><code>#FFFFFF</code></td><td><code>#0B1628</code></td><td>Text on primary buttons</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-redline)"></span><code>--color-redline</code></th><td><code>#C2185B</code></td><td><code>#FF7AB6</code></td><td>Spec annotations only</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-hairline)"></span><code>--color-hairline</code></th><td><code>#D3D9E1</code></td><td><code>#2A3B57</code></td><td>1px separators</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Contrast</h3>
+      <p>The build fails if any of these pairs drops below 4.5:1, the WCAG 2.2 AA minimum for body text.</p>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="Contrast pairs">
+        <table>
+          <thead><tr><th scope="col">Pair</th><th scope="col">Light</th><th scope="col">Dark</th></tr></thead>
+          <tbody>
+          <tr><th scope="row"><code>text</code> on <code>surface</code></th><td>18.11:1</td><td>15.39:1</td></tr>
+          <tr><th scope="row"><code>text</code> on <code>surface-alt</code></th><td>16.58:1</td><td>13.57:1</td></tr>
+          <tr><th scope="row"><code>text-muted</code> on <code>surface</code></th><td>5.65:1</td><td>10.46:1</td></tr>
+          <tr><th scope="row"><code>text-muted</code> on <code>surface-alt</code></th><td>5.17:1</td><td>9.22:1</td></tr>
+          <tr><th scope="row"><code>interactive</code> on <code>surface</code></th><td>6.37:1</td><td>8.35:1</td></tr>
+          <tr><th scope="row"><code>interactive</code> on <code>surface-alt</code></th><td>5.83:1</td><td>7.36:1</td></tr>
+          <tr><th scope="row"><code>on-interactive</code> on <code>interactive</code></th><td>6.37:1</td><td>8.35:1</td></tr>
+          <tr><th scope="row"><code>redline</code> on <code>surface</code></th><td>5.87:1</td><td>7.51:1</td></tr>
+          <tr><th scope="row"><code>redline</code> on <code>surface-alt</code></th><td>5.38:1</td><td>6.62:1</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Recreations of product screens use 30 further <code>--demo-</code> colours. They show the product's brand and stay inside the recreations.</p>
+    </section>
+
+    <section id="type" aria-labelledby="type-h">
+      <h2 id="type-h">Type</h2>
+      <p>Atkinson Hyperlegible Next sets all text. Atkinson Hyperlegible Mono sets code, gate output and spec annotations. Body text is 18px with line-height 1.55 at 900px and above, and 16px with 1.5 below.</p>
+      <ul class="spec-list">
+        <li class="spec-type"><code>--text-64: 64px</code><span style="font-size:var(--text-64)">I run design systems as products.</span></li>
+        <li class="spec-type"><code>--text-40: 40px</code><span style="font-size:var(--text-40)">I run design systems as products.</span></li>
+        <li class="spec-type"><code>--text-28: 28px</code><span style="font-size:var(--text-28)">I run design systems as products.</span></li>
+        <li class="spec-type"><code>--text-20: 20px</code><span style="font-size:var(--text-20)">I run design systems as products.</span></li>
+        <li class="spec-type"><code>--text-18: 18px</code><span style="font-size:var(--text-18)">I run design systems as products.</span></li>
+        <li class="spec-type"><code>--text-16: 16px</code><span style="font-size:var(--text-16)">I run design systems as products.</span></li>
+        <li class="spec-type"><code>--text-14: 14px</code><span style="font-size:var(--text-14)">I run design systems as products.</span></li>
+      </ul>
+      <div class="spec-pair">
+        <div class="table-scroll" tabindex="0" role="region" aria-label="Line heights">
+          <table>
+            <thead><tr><th scope="col">Line height</th><th scope="col">Value</th></tr></thead>
+            <tbody>
+          <tr><th scope="row"><code>--leading-tight</code></th><td>1.05</td></tr>
+          <tr><th scope="row"><code>--leading-snug</code></th><td>1.15</td></tr>
+          <tr><th scope="row"><code>--leading-body</code></th><td>1.55</td></tr>
+          <tr><th scope="row"><code>--leading-body-compact</code></th><td>1.5</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="table-scroll" tabindex="0" role="region" aria-label="Weights">
+          <table>
+            <thead><tr><th scope="col">Weight</th><th scope="col">Value</th></tr></thead>
+            <tbody>
+          <tr><th scope="row"><code>--weight-regular</code></th><td>400</td></tr>
+          <tr><th scope="row"><code>--weight-medium</code></th><td>500</td></tr>
+          <tr><th scope="row"><code>--weight-semibold</code></th><td>600</td></tr>
+          <tr><th scope="row"><code>--weight-bold</code></th><td>700</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="spacing" aria-labelledby="spacing-h">
+      <h2 id="spacing-h">Spacing</h2>
+      <p>Every margin, padding and gap uses one of these steps. Below 900px, the gap between sections steps down from 96 to 64 and the gap between blocks from 48 to 32.</p>
+      <ul class="spec-list">
+        <li class="spec-space"><code>--space-4: 4px</code><span style="width:var(--space-4)"></span></li>
+        <li class="spec-space"><code>--space-8: 8px</code><span style="width:var(--space-8)"></span></li>
+        <li class="spec-space"><code>--space-12: 12px</code><span style="width:var(--space-12)"></span></li>
+        <li class="spec-space"><code>--space-16: 16px</code><span style="width:var(--space-16)"></span></li>
+        <li class="spec-space"><code>--space-24: 24px</code><span style="width:var(--space-24)"></span></li>
+        <li class="spec-space"><code>--space-32: 32px</code><span style="width:var(--space-32)"></span></li>
+        <li class="spec-space"><code>--space-48: 48px</code><span style="width:var(--space-48)"></span></li>
+        <li class="spec-space"><code>--space-64: 64px</code><span style="width:var(--space-64)"></span></li>
+        <li class="spec-space"><code>--space-96: 96px</code><span style="width:var(--space-96)"></span></li>
+      </ul>
+    </section>
+
+    <section id="radius" aria-labelledby="radius-h">
+      <h2 id="radius-h">Radius</h2>
+      <p>Radius follows the role an element plays, so hierarchy shows in its corners.</p>
+      <ul class="spec-list">
+        <li class="spec-radius"><span style="border-radius:var(--radius-control)"></span><code>--radius-control: 10px</code><span class="spec-note">Buttons, inputs, contents button</span></li>
+        <li class="spec-radius"><span style="border-radius:var(--radius-surface)"></span><code>--radius-surface: 16px</code><span class="spec-note">Gate output, recreation frames, tables</span></li>
+        <li class="spec-radius"><span style="border-radius:var(--radius-modal)"></span><code>--radius-modal: 20px</code><span class="spec-note">Contents sheet, recreated modal</span></li>
+        <li class="spec-radius"><span style="border-radius:var(--radius-pill)"></span><code>--radius-pill: 999px</code><span class="spec-note">Status and disclosure labels</span></li>
+        <li class="spec-radius"><span style="border-radius:var(--radius-circle)"></span><code>--radius-circle: 50%</code><span class="spec-note">Theme toggle</span></li>
+      </ul>
+    </section>
+
+    <section id="elevation" aria-labelledby="elevation-h">
+      <h2 id="elevation-h">Elevation and borders</h2>
+      <p>One shadow, <code>--shadow-overlay</code>, lifts the contents sheet above the page. Content surfaces get none. A 1px <code>--color-hairline</code> border separates the header, the footer and the two kinds of work on the landing page.</p>
+      <div class="spec-shadow"><code>--shadow-overlay</code></div>
+    </section>
+
+    <section id="motion" aria-labelledby="motion-h">
+      <h2 id="motion-h">Motion</h2>
+      <p>Motion only follows something you do. "Show the spec" fades its annotations in over <code>--motion-fast</code>, 200ms, and the contents sheet opens at the same speed. Nothing animates on scroll or on hover. With reduced motion set, <code>--motion-fast</code> becomes 0ms.</p>
+    </section>
+<!-- /build:spec -->
+</main>
+
+<!-- build:footer -->
+<footer class="site-footer">
+  <div class="site-footer-in">
+    <p>Figures are published with my employer's permission. Interface visuals are recreations.</p>
+    <p>Set in Atkinson Hyperlegible Next, a typeface from the Braille Institute built for low-vision readers.</p>
+    <p><a href="/spec/">Read this site's spec</a></p>
+  </div>
+</footer>
+<p class="sr-only" role="status" aria-live="polite" data-spec-status></p>
+<!-- /build:footer -->
+</body>
+</html>
