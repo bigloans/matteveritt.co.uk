@@ -159,7 +159,7 @@ a:hover { text-decoration-thickness: var(--size-rule); }
   font-size: var(--text-40);
   line-height: var(--leading-tight);
   font-weight: var(--weight-bold);
-  max-width: 14ch;
+  max-width: 18ch;
 }
 .hero-lede { margin-top: var(--space-16); font-size: var(--text-18); max-width: var(--size-measure); }
 .hero-roles { margin-top: var(--space-12); color: var(--color-text-muted); font-size: var(--text-16); }
@@ -168,6 +168,7 @@ a:hover { text-decoration-thickness: var(--size-rule); }
 .landing-section > h2 + * { margin-top: var(--space-24); }
 
 .work-feature { display: grid; row-gap: var(--space-24); }
+.work-feature > *, .gate-figure, .article-main > * { min-width: 0; }
 .work-title { font-size: var(--text-20); font-weight: var(--weight-bold); }
 .work-title a { text-decoration-thickness: var(--size-hairline); }
 .work-summary { margin-top: var(--space-12); }

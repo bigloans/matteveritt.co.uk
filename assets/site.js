@@ -108,6 +108,24 @@
     };
   }
 
+  // The text's own extent: its first line, or the union of every line.
+
+  function textBox(el, firstLine) {
+    var range = document.createRange();
+    range.selectNodeContents(el);
+    var rects = [].filter.call(range.getClientRects(), function (r) { return r.width > 0; });
+    if (!rects.length) return null;
+    if (firstLine) {
+      var top = rects[0].top;
+      rects = rects.filter(function (r) { return Math.abs(r.top - top) < 2; });
+    }
+    var l = Math.min.apply(null, rects.map(function (r) { return r.left; }));
+    var t = Math.min.apply(null, rects.map(function (r) { return r.top; }));
+    var r = Math.max.apply(null, rects.map(function (r) { return r.right; }));
+    var b = Math.max.apply(null, rects.map(function (r) { return r.bottom; }));
+    return { left: l, top: t, width: r - l, height: b - t };
+  }
+
   function round(n) { return Math.round(n * 100) / 100; }
 
   function describe(el, find) {
@@ -122,10 +140,7 @@
       var st = find.px("text", size), lt = find.leading(lead);
       a.ok = !!(st && lt);
       a.text = (st ? st.name : "untokenised") + ": " + size + " / " + lead + " / " + cs.fontWeight;
-      var range = document.createRange();
-      range.selectNodeContents(el);
-      a.box = range.getClientRects()[0] || rect;
-      a.box = { left: rect.left, top: a.box.top, width: rect.width, height: a.box.height };
+      a.box = textBox(el, true) || rect;
     } else if (kind === "space") {
       var key = prop.replace(/-([a-z])/g, function (_, c) { return c.toUpperCase(); });
       var px = parseFloat(cs[key]);
@@ -142,7 +157,7 @@
         a.line = { v: true, x: b1.left + Math.min(24, b1.width / 2), y: b1.bottom, len: kids[1].getBoundingClientRect().top - b1.bottom };
       } else if (prop === "column-gap" && kids[1]) {
         var c1 = kids[0].getBoundingClientRect();
-        a.line = { v: false, x: c1.right, y: c1.top + 12, len: kids[1].getBoundingClientRect().left - c1.right };
+        a.line = { v: false, x: c1.right, y: c1.bottom + 8, len: kids[1].getBoundingClientRect().left - c1.right };
       }
       if (!a.line || a.line.len <= 0) return null;
     } else if (kind === "radius") {
@@ -158,7 +173,8 @@
       var ct = find.color(own, use), ot = find.color(other, use === "background" ? "text" : "background");
       a.ok = !!(ct && ot);
       a.text = (ct ? ct.name : "untokenised") + ", " + contrast(fg, bg).toFixed(2) + ":1 " + (use === "background" ? "with " : "on ") + (ot ? ot.name : "untokenised");
-      a.box = rect;
+      a.short = (ct ? ct.name : "untokenised") + ", " + contrast(fg, bg).toFixed(2) + ":1";
+      a.box = use === "background" ? rect : textBox(el, false) || rect;
     } else return null;
     return a;
   }
@@ -192,19 +208,24 @@
       label.className = "spec-label" + (a.ok ? "" : " is-untokenised");
       label.textContent = a.text;
       layer.appendChild(label);
+      if (a.short && label.offsetWidth > vw - 8) label.textContent = a.short;
       var w = label.offsetWidth, h = label.offsetHeight;
       var spots = [];
-      if (a.line) {
-        var mid = a.line.v ? a.line.y + a.line.len / 2 - h / 2 : a.line.y + 6;
-        var lx = a.line.v ? a.line.x : a.line.x + a.line.len;
-        spots.push({ left: lx + 8, top: mid }, { left: a.line.x - w - 8, top: mid }, { left: lx + 8, top: mid - h - 4 });
+      var b = a.box;
+      if (a.line && a.line.v) {
+        var mid = a.line.y + a.line.len / 2 - h / 2;
+        spots.push({ left: a.line.x + 8, top: mid }, { left: a.line.x - w - 8, top: mid }, { left: a.line.x + 8, top: mid - h - 4 });
+      } else if (a.line) {
+        spots.push({ left: a.line.x, top: a.line.y + 6 }, { left: a.line.x + a.line.len - w, top: a.line.y + 6 });
+      } else if (a.kind === "radius") {
+        spots.push({ left: b.left, top: b.top - h - 4 }, { left: b.left, top: b.top + b.height + 4 }, { left: b.left + b.width + 8, top: b.top, fit: true });
       } else {
-        var b = a.box;
-        spots.push({ left: b.left, top: b.top - h - 4 }, { left: b.left, top: b.top + b.height + 4 }, { left: b.left + b.width - w, top: b.top - h - 4 });
+        spots.push({ left: b.left + b.width + 8, top: b.top, fit: true }, { left: b.left, top: b.top - h - 4 }, { left: b.left, top: b.top + b.height + 4 });
       }
       var spot = null;
       for (var i = 0; i < spots.length; i++) {
         var s = spots[i];
+        if (s.fit && s.left + w > vw - 4) continue;
         s.left = Math.max(4, Math.min(s.left, vw - w - 4));
         var box = { left: s.left, top: s.top, right: s.left + w, bottom: s.top + h };
         if (!overlaps(box, placed)) { spot = box; break; }
