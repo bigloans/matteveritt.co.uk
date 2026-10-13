@@ -169,18 +169,24 @@ button { padding: 0; }
 
 .band {
   position: relative;
+  z-index: 0;
   isolation: isolate;
-  overflow: hidden;
-  background: var(--color-inverse-surface);
+  overflow-x: clip;
   color: var(--color-inverse-muted);
 }
+
+/* The aurora spills past the band's edges and fades out, so bands flow into the page */
+
 .band::before {
   content: "";
   position: absolute;
-  inset: -20%;
+  inset: -35% -10%;
   z-index: -2;
   background: var(--gradient-aurora);
+  mask-image: linear-gradient(to bottom, transparent, #000 25%, #000 70%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 25%, #000 70%, transparent);
   animation: drift var(--motion-ambient) var(--motion-ease) infinite alternate;
+  pointer-events: none;
 }
 .band::after {
   content: "";
@@ -190,8 +196,8 @@ button { padding: 0; }
   background-image: linear-gradient(var(--color-inverse-line) var(--size-hairline), transparent var(--size-hairline)), linear-gradient(90deg, var(--color-inverse-line) var(--size-hairline), transparent var(--size-hairline));
   background-size: var(--space-48) var(--space-48);
   opacity: 0.35;
-  mask-image: radial-gradient(70% 80% at 70% 20%, #000, transparent);
-  -webkit-mask-image: radial-gradient(70% 80% at 70% 20%, #000, transparent);
+  mask-image: radial-gradient(70% 70% at 70% 30%, #000, transparent 85%);
+  -webkit-mask-image: radial-gradient(70% 70% at 70% 30%, #000, transparent 85%);
 }
 .band h1, .band h2, .band h3, .band h4, .band strong, .band b { color: var(--color-inverse-text); }
 .band a:not(.btn) { color: var(--color-inverse-accent); }
@@ -835,7 +841,6 @@ blockquote.panel { border-left: 0; }
 .panel, .feature-card { border: var(--size-hairline) solid var(--color-inverse-line); }
 .feature-card.glow-border { border: var(--size-rule) solid transparent; }
 .hero-grid > *, .feature-card > *, .about-grid > * { min-width: 0; }
-.band { border-bottom: var(--size-hairline) solid var(--color-inverse-line); }
 .feature-card.glow-border, .card.glow-border { background-color: var(--color-inverse-raised); }
 .card.glow-border:not(.band .card):not(.panel .card) { background-color: var(--color-surface-alt); }
 
@@ -967,3 +972,33 @@ blockquote.panel { border-left: 0; }
 .about-grid > .card { align-self: start; }
 .sp-guide.x { border-top: var(--size-hairline) dotted var(--color-accent-blue); }
 .spec-measure .reveal, .spec-measure .typed .ln, .spec-measure [data-tilt] { transition: none !important; }
+
+/* Flowing page: faint glows run the whole length, and content sits above any aurora spill */
+
+main { background: var(--gradient-page-glow); background-repeat: no-repeat; }
+main > .section, main > .article-body, main > section:not(.band) { position: relative; z-index: 1; }
+
+/* Feature card: the gradient border slowly travels round */
+
+@property --angle { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
+.feature-card.glow-border {
+  background: linear-gradient(var(--color-inverse-raised), var(--color-inverse-raised)) padding-box, conic-gradient(from var(--angle), var(--color-inverse-accent), var(--color-inverse-blue), var(--color-inverse-pink), var(--color-inverse-accent)) border-box;
+  background-color: var(--color-inverse-raised);
+  animation: orbit 8s linear infinite;
+}
+@keyframes orbit { to { --angle: 360deg; } }
+
+/* Terminal output wraps at the window edge, as a terminal does */
+
+.gate-out { white-space: pre-wrap; overflow-wrap: anywhere; }
+@media (min-width: 900px) {
+  .feature-card { grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); }
+}
+
+/* The pink pill drifts to the edge of its box nearest the pointer */
+
+.art-radius span:nth-child(3) { left: 50%; top: 50%; right: auto; bottom: auto; margin: calc(var(--space-12) * -1) 0 0 calc(var(--space-24) * -1); transform: translate(var(--px, 32px), var(--py, 12px)); transition: border-radius var(--motion-medium) var(--motion-ease); }
+.read-card:hover .art-radius span:nth-child(3) { transform: translate(var(--px, 32px), var(--py, 12px)); }
+
+.timeline-cv { margin-top: var(--space-24); padding-top: var(--space-24); border-top: var(--size-hairline) solid var(--color-hairline); }
+.facts { margin-top: var(--space-24); }

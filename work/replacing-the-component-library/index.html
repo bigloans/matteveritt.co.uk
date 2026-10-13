@@ -94,7 +94,7 @@ document.documentElement.classList.add('js');
           <div>
             <p class="pill teal">North star</p>
             <p class="mt">products in production on a pinned release, including the AI agent and home hub, the entry point to every product</p>
-            <p class="note">v1 reached 6 products in over six years. The spec inherited v1's asset pipeline, and the AI coding agents it depends on arrived late in v1's six years.</p>
+            <p class="note">The first design system reached 6 products in over six years. The spec inherited its asset pipeline, and the AI coding agents the spec depends on arrived late in those six years.</p>
           </div>
         </li>
       </ul>
@@ -102,8 +102,8 @@ document.documentElement.classList.add('js');
 
     <section id="problem" class="flow" aria-labelledby="problem-h">
       <h2 id="problem-h" class="reveal">The problem</h2>
-      <p id="customers" class="reveal">v1 was the library I built. It had 45 components, with React, Vue and Angular built simultaneously. I delivered it in four stages against a roadmap I presented at CTO level.</p>
-      <p class="reveal">Running the static gate against existing products found a median of 412 violations per product. Over six years, 6 products adopted v1, to varying degrees, across three frameworks. Each v1 component cost about 3.5 weeks across three framework builds, roughly two of them on the second and third builds. And nothing told an AI coding agent what on-brand or accessible meant.</p>
+      <p id="customers" class="reveal">My first design system was a component library I built. It had 45 components, with React, Vue and Angular built simultaneously. I delivered it in four stages against a roadmap I presented at CTO level.</p>
+      <p class="reveal">Running the static gate against existing products found a median of 412 violations per product. Over six years, 6 products adopted it, to varying degrees, across three frameworks. Each of its components cost about 3.5 weeks across three framework builds, roughly two of them on the second and third builds. And nothing told an AI coding agent what on-brand or accessible meant.</p>
       <div class="panel lanes block reveal">
         <div class="card lane">
           <h3>Before</h3>
@@ -126,24 +126,24 @@ document.documentElement.classList.add('js');
           </ol>
         </div>
       </div>
-      <p class="note">Drift: static gate on the 12 pilot products, about 70% raw colour values and 25% off-scale spacing. Durations: v1 delivery history.</p>
+      <p class="note">Drift: static gate on the 12 pilot products, about 70% raw colour values and 25% off-scale spacing. Durations: delivery history of the first design system.</p>
     </section>
 
     <section id="options" class="flow" aria-labelledby="options-h">
       <h2 id="options-h" class="reveal">Options</h2>
       <p class="reveal">I judged three options on five criteria: framework coverage, time to ship, drift control, maintenance cost and dependence on a central team.</p>
       <div class="option-grid block">
-        <div class="card lift spot reveal"><p class="pill">Option A</p><h3>Continue v1</h3><p>Keep the library and its three framework builds.</p><p><strong>Why it lost.</strong> One person would build every component three times, for low adoption.</p></div>
+        <div class="card lift spot reveal"><p class="pill">Option A</p><h3>Keep the first design system</h3><p>Keep the library and its three framework builds.</p><p><strong>Why it lost.</strong> One person would build every component three times, for low adoption.</p></div>
         <div class="card lift spot reveal" style="--i:1"><p class="pill">Option B</p><h3>Generate code from Figma</h3><p>Generate components from Figma through a framework-agnostic JSON contract I piloted.</p><p><strong>Why it lost.</strong> It generates from a picture, so the rules never reach the code.</p></div>
         <div class="card lift spot glow-border reveal" style="--i:2"><p class="pill teal">Option C, chosen</p><h3>Specify and verify</h3><p>A specification that teams' agents build from, and a gate that checks the result.</p></div>
       </div>
       <h3>What the pivot cost</h3>
       <ul>
-        <li>45 components of v1 work, set aside</li>
-        <li>Teams who had only just migrated to v1</li>
-        <li>The v1 roadmap I had committed to at CTO level</li>
+        <li>45 components of work on the first design system, set aside</li>
+        <li>Teams who had only just migrated to it</li>
+        <li>Its roadmap, which I had committed to at CTO level</li>
       </ul>
-      <p><strong>How I handled it.</strong> The asset pipeline carried over intact and migrated teams got a v1 token mapping. I re-presented the CTO roadmap with new milestones.</p>
+      <p><strong>How I handled it.</strong> The asset pipeline carried over intact and migrated teams got a token mapping from the first system. I re-presented the CTO roadmap with new milestones.</p>
     </section>
 
     <section id="product" class="flow" aria-labelledby="product-h">
@@ -235,7 +235,7 @@ Exceptions applied (1) — auditable, deliberate opt-outs:
       <p class="reveal">Engineering leadership made the spec the default for new UI and reskins, with no mandate to rewrite existing screens.</p>
       <div class="panel block reveal">
         <p class="big-quote">Why redo work we've only just finished?</p>
-        <footer>Teams who had only just moved onto v1</footer>
+        <footer>Teams who had only just moved onto the first design system</footer>
       </div>
       <h3>What changed their minds</h3>
       <div class="find-grid">

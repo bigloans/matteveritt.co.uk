@@ -610,6 +610,40 @@
     el.addEventListener("pointerleave", function () { el.style.transform = ""; });
   });
 
+  // The pink pill in the radius art follows the pointer to the nearest edge of its box.
+
+  var pills = [].slice.call(document.querySelectorAll(".art-radius"));
+  if (pills.length && !still) {
+    var pillState = pills.map(function (art) {
+      return { art: art, box: art.children[1], pill: art.children[2], x: 32, y: 12, tx: 32, ty: 12 };
+    });
+    var animating = false;
+    var tick = function () {
+      animating = false;
+      pillState.forEach(function (p) {
+        p.x += (p.tx - p.x) * 0.14;
+        p.y += (p.ty - p.y) * 0.14;
+        p.pill.style.setProperty("--px", p.x.toFixed(2) + "px");
+        p.pill.style.setProperty("--py", p.y.toFixed(2) + "px");
+        if (Math.abs(p.tx - p.x) > 0.2 || Math.abs(p.ty - p.y) > 0.2) animating = true;
+      });
+      if (animating) requestAnimationFrame(tick);
+    };
+    document.addEventListener("pointermove", function (e) {
+      pillState.forEach(function (p) {
+        var b = p.box.getBoundingClientRect(), pr = p.pill.getBoundingClientRect();
+        var cx = b.left + b.width / 2, cy = b.top + b.height / 2;
+        var dx = e.clientX - cx, dy = e.clientY - cy, len = Math.hypot(dx, dy) || 1;
+        var ux = dx / len, uy = dy / len, pad = 6;
+        var ax = Math.max(0, (b.width - pr.width) / 2 - pad), ay = Math.max(0, (b.height - pr.height) / 2 - pad);
+        var t = Math.min(ux ? ax / Math.abs(ux) : Infinity, uy ? ay / Math.abs(uy) : Infinity);
+        p.tx = ux * t;
+        p.ty = uy * t;
+      });
+      if (!animating) { animating = true; requestAnimationFrame(tick); }
+    }, { passive: true });
+  }
+
   // Reading progress in the contents list.
 
   var progress = document.querySelector(".contents-progress");

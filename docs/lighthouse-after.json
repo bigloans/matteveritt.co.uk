@@ -1,7 +1,7 @@
 [
   {
     "url": "/",
-    "performance": 98,
+    "performance": 26,
     "accessibility": 100,
     "bestPractices": 100,
     "seo": 100,
@@ -9,7 +9,7 @@
   },
   {
     "url": "/work/replacing-the-component-library/",
-    "performance": 99,
+    "performance": 98,
     "accessibility": 100,
     "bestPractices": 100,
     "seo": 100,

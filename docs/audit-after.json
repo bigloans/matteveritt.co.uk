@@ -14,6 +14,7 @@
       "64px"
     ],
     "spacing": [
+      "-12px",
       "4px",
       "8px",
       "12px",
@@ -39,12 +40,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 501,
+    "words": 460,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 3155,
+    "docH": 3321,
     "specShown": 0,
     "untokenised": 0,
     "fold": true,
@@ -65,6 +66,7 @@
       "64px"
     ],
     "spacing": [
+      "-12px",
       "4px",
       "8px",
       "12px",
@@ -90,12 +92,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 636,
+    "words": 596,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 3155,
+    "docH": 3321,
     "specShown": 20,
     "untokenised": 0,
     "fold": true,
@@ -115,6 +117,7 @@
       "40px"
     ],
     "spacing": [
+      "-12px",
       "4px",
       "8px",
       "12px",
@@ -139,12 +142,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 496,
+    "words": 455,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 5332,
+    "docH": 5797,
     "specShown": 0,
     "untokenised": 0,
     "fold": true,
@@ -164,6 +167,7 @@
       "40px"
     ],
     "spacing": [
+      "-12px",
       "4px",
       "8px",
       "12px",
@@ -188,12 +192,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 521,
+    "words": 480,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 5332,
+    "docH": 5797,
     "specShown": 4,
     "untokenised": 0,
     "fold": true,
@@ -213,6 +217,7 @@
       "40px"
     ],
     "spacing": [
+      "-12px",
       "4px",
       "8px",
       "12px",
@@ -237,12 +242,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 496,
+    "words": 455,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 5814,
+    "docH": 6523,
     "specShown": 0,
     "untokenised": 0,
     "fold": true,
@@ -262,6 +267,7 @@
       "40px"
     ],
     "spacing": [
+      "-12px",
       "4px",
       "8px",
       "12px",
@@ -286,12 +292,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 521,
+    "words": 480,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 5810,
+    "docH": 6519,
     "specShown": 4,
     "untokenised": 0,
     "fold": true,
@@ -340,12 +346,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 1625,
+    "words": 1651,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 9356,
+    "docH": 9383,
     "specShown": 0,
     "untokenised": 0,
     "fold": true,
@@ -394,12 +400,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 1758,
+    "words": 1784,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 9356,
+    "docH": 9383,
     "specShown": 8,
     "untokenised": 0,
     "fold": true,
@@ -446,12 +452,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 1609,
+    "words": 1635,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 13590,
+    "docH": 13682,
     "specShown": 0,
     "untokenised": 0,
     "fold": true,
@@ -498,12 +504,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 1625,
+    "words": 1651,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 13590,
+    "docH": 13682,
     "specShown": 2,
     "untokenised": 0,
     "fold": true,
@@ -550,12 +556,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 1609,
+    "words": 1635,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 15621,
+    "docH": 15734,
     "specShown": 0,
     "untokenised": 0,
     "fold": false,
@@ -602,12 +608,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 1625,
+    "words": 1651,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 15617,
+    "docH": 15730,
     "specShown": 2,
     "untokenised": 0,
     "fold": false,
@@ -656,7 +662,7 @@
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 3761,
+    "docH": 3760,
     "specShown": 0,
     "untokenised": 0,
     "fold": true,
@@ -705,7 +711,7 @@
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 3761,
+    "docH": 3760,
     "specShown": 7,
     "untokenised": 0,
     "fold": true,
@@ -752,7 +758,7 @@
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 4874,
+    "docH": 4873,
     "specShown": 0,
     "untokenised": 0,
     "fold": true,
@@ -799,7 +805,7 @@
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 4874,
+    "docH": 4873,
     "specShown": 2,
     "untokenised": 0,
     "fold": true,
@@ -846,7 +852,7 @@
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 5543,
+    "docH": 5542,
     "specShown": 0,
     "untokenised": 0,
     "fold": true,
@@ -893,7 +899,7 @@
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 5539,
+    "docH": 5538,
     "specShown": 2,
     "untokenised": 0,
     "fold": true,
@@ -942,7 +948,7 @@
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 2731,
+    "docH": 2730,
     "specShown": 0,
     "untokenised": 0,
     "fold": true,
@@ -992,7 +998,7 @@
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 2731,
+    "docH": 2730,
     "specShown": 7,
     "untokenised": 0,
     "fold": true,
@@ -1040,7 +1046,7 @@
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 3476,
+    "docH": 3475,
     "specShown": 0,
     "untokenised": 0,
     "fold": true,
@@ -1088,7 +1094,7 @@
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 3476,
+    "docH": 3475,
     "specShown": 2,
     "untokenised": 0,
     "fold": true,
@@ -1136,7 +1142,7 @@
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 3882,
+    "docH": 3881,
     "specShown": 0,
     "untokenised": 0,
     "fold": true,
@@ -1184,7 +1190,7 @@
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 3878,
+    "docH": 3877,
     "specShown": 2,
     "untokenised": 0,
     "fold": true,
@@ -1229,12 +1235,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 776,
+    "words": 790,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 6816,
+    "docH": 6918,
     "specShown": 0,
     "untokenised": 0,
     "fold": true,
@@ -1279,12 +1285,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 864,
+    "words": 879,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 6816,
+    "docH": 6918,
     "specShown": 3,
     "untokenised": 0,
     "fold": true,
@@ -1329,12 +1335,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 776,
+    "words": 790,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 7774,
+    "docH": 7898,
     "specShown": 0,
     "untokenised": 0,
     "fold": true,
@@ -1379,12 +1385,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 792,
+    "words": 806,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 7774,
+    "docH": 7898,
     "specShown": 2,
     "untokenised": 0,
     "fold": true,
@@ -1429,12 +1435,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 776,
+    "words": 790,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 8484,
+    "docH": 8608,
     "specShown": 0,
     "untokenised": 0,
     "fold": true,
@@ -1479,12 +1485,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 792,
+    "words": 806,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 8480,
+    "docH": 8604,
     "specShown": 2,
     "untokenised": 0,
     "fold": true,
