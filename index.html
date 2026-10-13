@@ -805,7 +805,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--space-6);flex-
         </div>
       </div>
     </div>
-    <p class="note mt-5">Drift: static gate on <span data-fact="P01">12</span> sampled products, about <span data-fact="P01">70%</span> raw colour values and <span data-fact="P01">25%</span> off-scale spacing. Durations: v1 delivery history.</p>
+    <p class="note mt-5">Drift: static gate on the <span data-fact="P01">12</span> pilot products,<!-- TODO(matt): confirm the 12 pilot products belong to the 9 pilot teams --> about <span data-fact="P01">70%</span> raw colour values and <span data-fact="P01">25%</span> off-scale spacing. Durations: v1 delivery history.</p>
   </div>
 </section>
 
@@ -1036,12 +1036,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--space-6);flex-
       <div class="sbox star reveal"><span class="pill">North star</span><ul><li>Products in production on a pinned release<small class="note">Counted weekly, shown in the adoption funnel</small></li></ul></div>
       <div class="sbox now reveal"><span class="pill">Inputs</span><ul>
         <li>Time to first gate pass: <span data-fact="P07">2.5 days</span><small class="note">Median across <span data-fact="P07">9</span> pilots. The first took <span data-fact="P07">9</span> days, the latest under one.</small></li>
+        <li>Screens built in pilots: <span data-fact="P30">144</span><small class="note"><span data-fact="P30">12</span> per product across the <span data-fact="P30">12</span> pilot products</small><!-- TODO(matt): confirm the 12 pilot products belong to the 9 pilot teams --></li>
         <li>First-run gate pass rate: <span data-fact="P20">71%</span><small class="note">n = <span data-fact="P20">186</span> pilot builds, mostly failing on spacing</small></li>
-        <li>Drift per product: <span data-fact="P25">260</span>, down from the baseline in The problem, and zero on governed files<small class="note">Median across whole codebases, n = <span data-fact="P01">12</span> products</small></li>
+        <li>Drift per product: <span data-fact="P25">260</span>, down from the baseline in The problem, and zero on governed files<small class="note">Median across whole codebases of the <span data-fact="P01">12</span> pilot products</small><!-- TODO(matt): confirm the 12 pilot products belong to the 9 pilot teams --></li>
       </ul></div>
       <div class="sbox next reveal"><span class="pill">Guardrails</span><ul>
         <li>AA failures blocked before merge: <span data-fact="P29">117</span> since July 2026</li>
-        <li>Time for a critical fix to reach every adopter: <span data-fact="P11">under 1</span> working day to tag, <span data-fact="P11">6</span> to all three products<small class="note">Release and pin records</small></li>
+        <li>Time for a critical fix to reach every adopter: <span data-fact="P11">under 1</span> working day to tag, <span data-fact="P11">6</span> working days to reach all three products<small class="note">Release and pin records</small></li>
       </ul></div>
     </div>
   </div>
