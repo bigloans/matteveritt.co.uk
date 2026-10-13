@@ -1,0 +1,29 @@
+[
+  {
+    "title": "I replaced my own component library with a spec AI builds from",
+    "summary": "Why I retired the library I built, what replaced it and how teams adopted it.",
+    "type": "Case study",
+    "year": 2026,
+    "url": "/work/replacing-the-component-library/",
+    "file": "work/replacing-the-component-library/index.html",
+    "readTime": 1
+  },
+  {
+    "title": "Visual rules an AI agent can follow",
+    "summary": "Radius by role, two themes from one set of tokens and an AI disclosure component designed for the EU AI Act.",
+    "type": "Short read",
+    "year": 2026,
+    "url": "/work/visual-rules-for-agents/",
+    "file": "work/visual-rules-for-agents/index.html",
+    "readTime": 1
+  },
+  {
+    "title": "Running a design system with 15 agents",
+    "summary": "How a team of one ships releases, keeps a decision log and plans for time away.",
+    "type": "Short read",
+    "year": 2026,
+    "url": "/work/design-system-with-agents/",
+    "file": "work/design-system-with-agents/index.html",
+    "readTime": 1
+  }
+]
