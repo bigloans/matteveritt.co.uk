@@ -128,17 +128,16 @@ const footer = `<footer class="site-footer">
 
 // Read times and project index
 
-const words = (html) => {
-  const m = html.match(/<!-- words -->([\s\S]*?)<!-- \/words -->/);
-  if (!m) return 0;
-  return m[1]
+const words = (html) =>
+  [...html.matchAll(/<!-- words -->([\s\S]*?)<!-- \/words -->/g)]
+    .map((m) => m[1])
+    .join(" ")
     .replace(/<!--[\s\S]*?-->/g, " ")
     .replace(/<(script|style)[\s\S]*?<\/\1>/g, " ")
     .replace(/<[^>]+>/g, " ")
     .replace(/&[a-z#0-9]+;/gi, "x")
     .split(/\s+/)
     .filter((w) => /[\p{L}\p{N}]/u.test(w)).length;
-};
 
 for (const p of projects) {
   p.words = exists(p.file) ? words(read(p.file)) : 0;

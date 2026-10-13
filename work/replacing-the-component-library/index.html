@@ -45,15 +45,233 @@ try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.docu
 <!-- /build:header -->
 
 <main id="main" tabindex="-1">
-<h1>I replaced my own component library with a spec AI builds from</h1>
-<section id="glance" aria-labelledby="glance-h"><h2 id="glance-h">At a glance</h2></section>
-<section id="problem" aria-labelledby="problem-h"><h2 id="problem-h">The problem</h2></section>
-<section id="options" aria-labelledby="options-h"><h2 id="options-h">Options</h2></section>
-<section id="product" aria-labelledby="product-h"><h2 id="product-h">What I built</h2></section>
-<section id="evidence" aria-labelledby="evidence-h"><h2 id="evidence-h">First evidence</h2></section>
-<section id="adoption" aria-labelledby="adoption-h"><h2 id="adoption-h">Adoption</h2></section>
-<section id="metrics" aria-labelledby="metrics-h"><h2 id="metrics-h">Measures and trade-offs</h2></section>
-<section id="reflection" aria-labelledby="reflection-h"><h2 id="reflection-h">Reflection</h2></section>
+<!-- words -->
+<div class="article-hero page" data-spec="space" data-spec-prop="padding-top" data-spec-priority="2">
+  <h1 class="article-title" data-spec="type" data-spec-priority="1">I replaced my own component library with a spec AI builds from</h1>
+  <p class="article-lede" data-spec="space" data-spec-prop="margin-top" data-spec-priority="1">I built the component library for a portfolio of 60+ products. The evidence said it couldn't keep up, so I replaced it with a versioned specification that teams' AI coding agents build from, and a gate that checks the result. I run it as a product, and strategy, roadmap, releases and adoption are mine.</p>
+  <!-- build:meta -->
+<p class="meta-line" data-spec="color" data-spec-priority="3">Case study, 2026, 7 minute read</p>
+<!-- /build:meta -->
+  <dl class="summary" data-spec="space" data-spec-prop="margin-top" data-spec-priority="2">
+    <div><dt data-spec="color" data-spec-priority="3">Role</dt><dd data-spec="type" data-spec-priority="2">Product owner, designer and front-end lead</dd></div>
+    <div><dt>Team</dt><dd>Solo, with a 15-agent harness and 7 contributing designers; co-sponsored by the Head of UX</dd></div>
+    <div><dt>Scope</dt><dd>60+ products in React, Vue, Angular and legacy frameworks</dd></div>
+    <div><dt>Timeline</dt><dd>Spec work from Jul 2026</dd></div>
+  </dl>
+</div>
+<!-- /words -->
+
+<div class="article-body page">
+  <nav class="contents" aria-labelledby="contents-label">
+    <button class="contents-button" type="button" aria-expanded="false" aria-controls="contents-sheet">Contents</button>
+    <div class="contents-sheet" id="contents-sheet">
+      <div class="contents-head"><p class="contents-title" id="contents-label">Contents</p><button class="contents-close" type="button">Close</button></div>
+      <ol>
+        <li><a href="#glance">At a glance</a></li>
+        <li><a href="#problem">The problem</a></li>
+        <li><a href="#options">Options</a></li>
+        <li><a href="#product">What I built</a></li>
+        <li><a href="#evidence">First evidence</a></li>
+        <li><a href="#adoption">Adoption</a></li>
+        <li><a href="#metrics">Measures and trade-offs</a></li>
+        <li><a href="#reflection">Reflection</a></li>
+      </ol>
+    </div>
+  </nav>
+
+  <article class="article-main">
+<!-- words -->
+    <section id="glance" class="flow" aria-labelledby="glance-h">
+      <h2 id="glance-h">At a glance</h2>
+      <p>I bet that if AI agents generate every component, a design system needs no component library. It needs rules precise enough for a machine to follow and check.</p>
+      <ul class="figures block">
+        <li><strong>117</strong> accessibility failures blocked before merge, since July 2026</li>
+        <li>Time to first gate pass fell from <strong>9 days</strong> for the first pilot to <strong>under 1</strong> for the latest (median 2.5 across 9 pilots)</li>
+        <li><strong>71%</strong> first-run gate pass rate, n = 186 pilot builds</li>
+      </ul>
+      <div class="north-star block">
+        <p class="note">North star</p>
+        <p><span class="north-star-figure">3</span> products in production on a pinned release, including the AI agent and home hub, the entry point to every product</p>
+        <p class="note">v1 reached 6 products in over six years. The spec inherited v1's asset pipeline, and the AI coding agents it depends on arrived late in v1's six years.<!-- TODO(matt): confirm wording --></p>
+      </div>
+    </section>
+
+    <section id="problem" class="flow" aria-labelledby="problem-h">
+      <h2 id="problem-h">The problem</h2>
+      <p id="customers">v1 was the library I built. It had 45 components, with React, Vue and Angular built simultaneously. I delivered it in four stages against a roadmap I presented at CTO level.</p>
+      <p>Running the static gate against existing products found a median of 412 violations per product. Over six years, 6 products adopted v1, to varying degrees, across three frameworks. Each v1 component cost about 3.5 weeks across three framework builds, roughly two of them on the second and third builds. And nothing told an AI coding agent what on-brand or accessible meant.</p>
+      <div class="compare block">
+        <div>
+          <h3>Before</h3>
+          <ol>
+            <li>Designer draws the component</li>
+            <li>Handoff to engineering, then a 1 to 2 week wait</li>
+            <li>Central team builds and releases, then a 4 to 6 week wait</li>
+            <li>Product team adapts it</li>
+            <li>Accessibility audit</li>
+          </ol>
+        </div>
+        <div>
+          <h3>After</h3>
+          <ol>
+            <li>Team pins a release of the spec</li>
+            <li>Their AI agent reads the contract</li>
+            <li>Agent generates the UI</li>
+            <li>The gate checks it in CI</li>
+            <li>People review what machines can't judge</li>
+          </ol>
+        </div>
+      </div>
+      <p class="note">Drift: static gate on the 12 pilot products, about 70% raw colour values and 25% off-scale spacing. Durations: v1 delivery history.</p>
+    </section>
+
+    <section id="options" class="flow" aria-labelledby="options-h">
+      <h2 id="options-h">Options</h2>
+      <p>I judged three options on five criteria: framework coverage, time to ship, drift control, maintenance cost and dependence on a central team.</p>
+      <div class="block">
+        <div class="option">
+          <h3>Option A: continue v1</h3>
+          <p>Keep the library and its three framework builds. <strong>Why it lost.</strong> One person would build every component three times, for low adoption.</p>
+        </div>
+        <div class="option">
+          <h3>Option B: generate code from Figma</h3>
+          <p>Generate components from Figma through a framework-agnostic JSON contract I piloted. <strong>Why it lost.</strong> It generates from a picture, so the rules never reach the code.</p>
+        </div>
+        <div class="option">
+          <h3>Option C, chosen: specify and verify</h3>
+          <p>A specification that teams' agents build from, and a gate that checks the result.</p>
+        </div>
+      </div>
+      <h3>What the pivot cost</h3>
+      <ul>
+        <li>45 components of v1 work, set aside</li>
+        <li>Teams who had only just migrated to v1</li>
+        <li>The v1 roadmap I had committed to at CTO level</li>
+      </ul>
+      <p><strong>How I handled it.</strong> The asset pipeline carried over intact and migrated teams got a v1 token mapping. I re-presented the CTO roadmap with new milestones.</p>
+    </section>
+
+    <section id="product" class="flow" aria-labelledby="product-h">
+      <h2 id="product-h">What I built</h2>
+      <p>The spec covers 21 components and 6 layout primitives, with 90 releases in 14 weeks before 1.0.</p>
+      <h3>One spec, any framework</h3>
+      <p>Tokens, component rules and the definition of done live in three plain-text files.</p>
+      <!-- TODO(matt): supply a real spec excerpt, a real gate run, a dated decision log entry and a hub screenshot cleared for publication. -->
+      <h3>Accessibility lives in the tokens</h3>
+      <p>Every colour pairing the spec allows is tested against WCAG 2.2 AA in both themes, and a failing pair blocks the release.</p>
+      <h3>A release is a contract</h3>
+      <p>Teams pin a tagged release, and a hash records exactly which spec they pinned. The gate checks every build against it.</p>
+      <p>Each visual choice is a named rule with a token behind it. <a href="/work/visual-rules-for-agents/">Visual rules an AI agent can follow</a> shows how.</p>
+      <h3 id="gate">The gate</h3>
+      <p>I built a gate with Claude Code that blocks any change that breaks the contract.</p>
+      <dl class="layers">
+        <div><dt>Static</dt><dd>Reads the source on every commit. It flags raw colours, off-scale spacing, unknown tokens, broken type pairings and right-to-left breakage.</dd></div>
+        <div><dt>Rendered</dt><dd>Opens a real browser before merge. It measures contrast on real pixels in both themes and tabs through every control.</dd></div>
+        <div><dt>Human</dt><dd>Says where automation stops. A screen can pass the gate and still be the wrong screen, so reviewers spend their time there.</dd></div>
+      </dl>
+    </section>
+
+    <section id="evidence" class="flow" aria-labelledby="story">
+      <h2 id="story">First evidence</h2>
+      <p>I had only checked the spec by reading it, so I tested it by building from it.</p>
+      <p>Three fresh AI sessions got only the pinned spec and built the same components. All three failed the rendered gate on one button state no static check could see. I corrected the rule, and every release that changes a rule now gets this test.</p>
+      <figure class="recreation block" data-illustrative>
+        <div class="proof">
+          <div class="swatch fail"><span class="lbl" data-contrast-exempt>Ghost button<small>Active state, as specified</small></span><span class="ratio"><b data-fg="#2EC4B6" data-bg="#3F5B66">3.34:1</b>Fails AA</span></div>
+          <div class="swatch pass"><span class="lbl">Ghost button<small>Active state, corrected</small></span><span class="ratio"><b data-fg="#2EC4B6" data-bg="#2A3E45">5.17:1</b>Passes AA</span></div>
+        </div>
+        <figcaption class="note">Recreation. Ratios are calculated from the colours shown. AA needs 4.5:1.</figcaption>
+      </figure>
+      <h3>Caught by the gate: a rule that broke its own standard</h3>
+      <p>The button rule gave its label 3.34:1 against 4.5:1 on its active surface, and the same paragraph cited that ratio to ban the pairing elsewhere.</p>
+      <h3>Missed by the gate: a rule that contradicted itself</h3>
+      <p>A table rule asked for two things that can't both be true. The agent picked one, wrote clean code and noted the conflict, so the release process now reads the agent's notes too.</p>
+      <p class="note">n = 3 builds with one agent. A Cursor rerun passed two of three first time, and the gate caught an invented token in the third. This supports the method, but the model itself still needs adoption data.</p>
+    </section>
+
+    <section id="adoption" class="flow" aria-labelledby="adoption-h">
+      <h2 id="adoption-h">Adoption</h2>
+      <p>The Head of UX and I co-sponsored the spec. Engineering leadership made the spec the default for new UI and reskins, with no mandate to rewrite existing screens.</p>
+      <p>Teams who had only just moved onto v1 asked “Why redo work we've only just finished?”</p>
+      <h3>What changed their minds</h3>
+      <p><strong>Speed.</strong> In pilots, a screen took a median of 1.5 days vs 5 through the old handoff, across 5 screens built both ways. Most of the saving was handoff wait removed.</p>
+      <p><strong>No cost to them.</strong> I built the first three implementations. Later teams self-serve with a one-command setup.</p>
+      <p>The outcome was “We love it, but we can't do it right now.” Rollout follows each team's roadmap. A funded reskin was the forcing function, and mandates and demos converted nobody.</p>
+      <ol class="funnel" aria-label="Adoption funnel">
+        <li><b>9</b> piloted</li>
+        <li><b>6</b> committed with a date</li>
+        <li><b>3</b> in production on a pinned release, including the AI agent and home hub</li>
+      </ol>
+      <p class="note">Of about 60 teams, counted for the weekly report.</p>
+      <p>Designers now build in the same session as the agent. So far, 7 designers have contributed 47 catalogue entries, and <a href="/work/design-system-with-agents/">Running a design system with 15 agents</a> shows how.</p>
+      <h3 id="changed-mind">Where I changed my mind</h3>
+      <p>I argued rollout should wait until the component gap list closed. Then a smoke test found six contract defects review had missed, so pilots started with the first component batch and became our main way to find them.</p>
+      <blockquote>
+        <p>“We stopped arguing about pixel values in review. The gate settles that, so review is about whether the screen works.”</p>
+        <footer>Front-end lead, pilot product</footer>
+      </blockquote>
+    </section>
+
+    <section id="metrics" class="flow" aria-labelledby="metrics-h">
+      <h2 id="metrics-h">Measures and trade-offs</h2>
+      <p><strong>North star.</strong> Products in production on a pinned release, counted weekly.</p>
+      <h3>Inputs</h3>
+      <ul>
+        <li>Time to first gate pass: median 2.5 days across 9 pilots</li>
+        <li>Screens built in pilots: 144, 12 per product across the 12 pilot products</li>
+        <li>First-run gate pass rate: 71% over 186 pilot builds, mostly failing on spacing</li>
+        <li>Zero drift on governed files. Median drift across whole codebases of the 12 pilot products: 260, down from the baseline in The problem.</li>
+      </ul>
+      <h3>Guardrails</h3>
+      <ul>
+        <li>AA failures blocked before merge: 117 since July 2026<!-- TODO(matt): do you track accessibility failures that reached production? If so, give the count since July 2026. --></li>
+        <li>Time for a critical fix to reach every adopter: under 1 working day to tag, 6 working days to reach all three products</li>
+      </ul>
+      <p id="roadmap">Next: reach 1.0. Four of six exit criteria are met; still open are a first-run pass rate of 75% or more over 100 builds and one quarter with no token contract change.</p>
+
+      <h3 id="tradeoffs">Trade-offs</h3>
+      <p id="trade-offs">The decision log records what each major choice costs.</p>
+      <div class="trade">
+        <h4>AI output varies from run to run</h4>
+        <div class="trade-pair">
+          <p>Three runs from one brief used the same tokens and values but structured the code differently, from 407 to 930 lines.</p>
+          <p><strong>Contained by governing the contract, not the code.</strong> The gate checks tokens, contrast and behaviour, which held steady. Product teams own generated code through their own reviews and tests.</p>
+        </div>
+      </div>
+      <div class="trade">
+        <h4>Existing products weren't built for this</h4>
+        <div class="trade-pair">
+          <p>Most early adopters have a shipping product, its own CSS and a designer with expectations.</p>
+          <p><strong>Contained by writing the guide for existing products first.</strong> It names the four problems they hit, in order. Server-rendered legacy products take about 2 to 3 weeks to a first screen.</p>
+        </div>
+      </div>
+      <div class="trade">
+        <h4>Pinning slows critical fixes</h4>
+        <div class="trade-pair">
+          <p>Pinning protects teams from unplanned changes, so a critical fix waits for each team to update its pin. That wait grows with every adopter.</p>
+          <p><strong>Contained by updating pins through automated pull requests.</strong> Every tagged fix opens one for each adopter. Teams still review and merge it, so the pin keeps protecting them.<!-- TODO(matt): confirm the automated pull request pin update is real. --></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="reflection" class="flow" aria-labelledby="reflection-h">
+      <h2 id="reflection-h">Reflection</h2>
+      <h3>Remove the cost of saying yes</h3>
+      <p>Teams said yes once the implementation work wasn't theirs.</p>
+      <h3>Retire your own work when the evidence says so</h3>
+      <p>Sunk work is a poor reason to keep a product alive.</p>
+    </section>
+
+    <div class="article-end flow">
+      <p>I'm looking for a role as a design system manager or product owner, where a design system is run as a product.</p>
+      <div class="actions"><a class="btn btn-primary" href="mailto:matt.m.everitt@gmail.com">Email me</a><a class="btn btn-secondary" href="https://www.linkedin.com/in/matteveritt92/">LinkedIn</a></div>
+    </div>
+<!-- /words -->
+    <!-- build:next -->
+<p class="next"><a href="/work/visual-rules-for-agents/">Next: Visual rules an AI agent can follow</a></p>
+<!-- /build:next -->
+  </article>
+</div>
 </main>
 
 <!-- build:footer -->
