@@ -28,7 +28,7 @@ for (const url of urls) {
       await page.addStyleTag({ content: "html{scroll-behavior:auto!important}" });
       await page.evaluate(() => document.fonts.ready);
       const toggle = await page.$("[data-spec-toggle]");
-      for (const spec of toggle ? [false, true] : [false]) {
+      for (const spec of toggle && (await toggle.isVisible()) ? [false, true] : [false]) {
         if (spec) {
           await page.evaluate(() => scrollTo(0, 0));
           await toggle.click();

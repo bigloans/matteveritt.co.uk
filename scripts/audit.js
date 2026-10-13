@@ -46,6 +46,12 @@
     words: body.split(/\s+/).length,
     fonts: [...new Set(els.filter(hasText).map(e => getComputedStyle(e).fontFamily.split(',')[0].replace(/"/g, '').trim()))],
     docH: document.documentElement.scrollHeight,
+    specShown: +(document.querySelector('.spec-layer.is-on')?.dataset.count || 0),
+    untokenised: +(document.querySelector('.spec-layer.is-on')?.dataset.untokenised || 0),
+    fold: (() => {
+      const h1 = document.querySelector('h1'), next = document.querySelector('.hero .btn-primary, .summary dt') || h1;
+      return !!h1 && !!next && h1.getBoundingClientRect().top >= 0 && next.getBoundingClientRect().bottom <= innerHeight;
+    })(),
     contentsReachable: (() => {
       scrollTo(0, document.documentElement.scrollHeight / 2);
       const c = [...document.querySelectorAll('nav, button, summary')].find(e => /contents/i.test(e.textContent));

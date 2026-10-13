@@ -217,7 +217,7 @@ function specBody() {
     .join("\n        ");
   const demoCount = Object.keys(tokens.demo).length;
 
-  return `<section id="colour" aria-labelledby="colour-h">
+  return `<section id="colour" class="flow" aria-labelledby="colour-h">
       <h2 id="colour-h">Colour</h2>
       <p>Each role has one value per theme. The dark theme follows the system setting until you choose one with the theme toggle.</p>
       <div class="table-scroll" tabindex="0" role="region" aria-label="Colour roles">
@@ -241,7 +241,7 @@ function specBody() {
       <p>Recreations of product screens use ${demoCount} further <code>--demo-</code> colours. They show the product's brand and stay inside the recreations.</p>
     </section>
 
-    <section id="type" aria-labelledby="type-h">
+    <section id="type" class="flow" aria-labelledby="type-h">
       <h2 id="type-h">Type</h2>
       <p>Atkinson Hyperlegible Next sets all text. Atkinson Hyperlegible Mono sets code, gate output and spec annotations. Body text is 18px with line-height 1.55 at 900px and above, and 16px with 1.5 below.</p>
       <ul class="spec-list">
@@ -267,7 +267,7 @@ function specBody() {
       </div>
     </section>
 
-    <section id="spacing" aria-labelledby="spacing-h">
+    <section id="spacing" class="flow" aria-labelledby="spacing-h">
       <h2 id="spacing-h">Spacing</h2>
       <p>Every margin, padding and gap uses one of these steps. Below 900px, the gap between sections steps down from 96 to 64 and the gap between blocks from 48 to 32.</p>
       <ul class="spec-list">
@@ -275,7 +275,7 @@ function specBody() {
       </ul>
     </section>
 
-    <section id="radius" aria-labelledby="radius-h">
+    <section id="radius" class="flow" aria-labelledby="radius-h">
       <h2 id="radius-h">Radius</h2>
       <p>Radius follows the role an element plays, so hierarchy shows in its corners.</p>
       <ul class="spec-list">
@@ -283,13 +283,13 @@ function specBody() {
       </ul>
     </section>
 
-    <section id="elevation" aria-labelledby="elevation-h">
+    <section id="elevation" class="flow" aria-labelledby="elevation-h">
       <h2 id="elevation-h">Elevation and borders</h2>
       <p>One shadow, <code>--shadow-overlay</code>, lifts the contents sheet above the page. Content surfaces get none. A 1px <code>--color-hairline</code> border separates the header, the footer and the two kinds of work on the landing page.</p>
       <div class="spec-shadow"><code>--shadow-overlay</code></div>
     </section>
 
-    <section id="motion" aria-labelledby="motion-h">
+    <section id="motion" class="flow" aria-labelledby="motion-h">
       <h2 id="motion-h">Motion</h2>
       <p>Motion only follows something you do. "Show the spec" fades its annotations in over <code>--motion-fast</code>, ${tokens.motion.fast.value}, and the contents sheet opens at the same speed. Nothing animates on scroll or on hover. With reduced motion set, <code>--motion-fast</code> becomes 0ms.</p>
     </section>`;

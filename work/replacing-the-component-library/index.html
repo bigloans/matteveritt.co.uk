@@ -177,7 +177,7 @@ try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.docu
       <p>Three fresh AI sessions got only the pinned spec and built the same components. All three failed the rendered gate on one button state no static check could see. I corrected the rule, and every release that changes a rule now gets this test.</p>
       <figure class="recreation block" data-illustrative>
         <div class="proof">
-          <div class="swatch fail"><span class="lbl" data-contrast-exempt>Ghost button<small>Active state, as specified</small></span><span class="ratio"><b data-fg="#2EC4B6" data-bg="#3F5B66">3.34:1</b>Fails AA</span></div>
+          <div class="swatch fail"><span class="lbl" data-contrast-exempt><span class="sr-only">Ghost button</span><svg class="lbl-svg" width="120" height="24" aria-hidden="true"><text x="0" y="18">Ghost button</text></svg><small>Active state, as specified</small></span><span class="ratio"><b data-fg="#2EC4B6" data-bg="#3F5B66">3.34:1</b>Fails AA</span></div>
           <div class="swatch pass"><span class="lbl">Ghost button<small>Active state, corrected</small></span><span class="ratio"><b data-fg="#2EC4B6" data-bg="#2A3E45">5.17:1</b>Passes AA</span></div>
         </div>
         <figcaption class="note">Recreation. Ratios are calculated from the colours shown. AA needs 4.5:1.</figcaption>

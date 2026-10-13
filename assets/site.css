@@ -31,6 +31,7 @@ a { color: var(--color-interactive); text-decoration: underline; text-decoration
 a:hover { text-decoration-thickness: var(--size-rule); }
 :focus-visible { outline: var(--size-focus) solid var(--color-interactive); outline-offset: var(--size-focus); }
 [hidden] { display: none !important; }
+button { padding: 0; }
 .sr-only { position: absolute; width: var(--size-hairline); height: var(--size-hairline); overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .skip {
   position: absolute;
@@ -290,7 +291,7 @@ a:hover { text-decoration-thickness: var(--size-rule); }
   .js .contents.is-open .contents-sheet { visibility: visible; opacity: 1; transition: opacity var(--motion-fast); }
   .js .contents-head { display: flex; justify-content: space-between; align-items: center; }
   .js .contents li a { padding-block: var(--space-8); }
-  .js .has-contents .site-footer-in { padding-bottom: calc(var(--size-target) + var(--space-48)); }
+  .js .has-contents .site-footer-in { padding-bottom: var(--space-96); }
 }
 
 /* Case study parts */
@@ -334,6 +335,7 @@ blockquote footer { margin-top: var(--space-8); font-size: var(--text-14); color
 .swatch.fail { background: var(--demo-ghost-fail-bg); }
 .swatch.pass { background: var(--demo-ghost-pass-bg); }
 .swatch .lbl { font-size: var(--text-18); font-weight: var(--weight-semibold); color: var(--demo-ghost-fg); }
+.swatch .lbl-svg { display: block; overflow: visible; fill: currentColor; font-family: var(--font-text); font-size: var(--text-18); font-weight: var(--weight-semibold); }
 .swatch .lbl small { display: block; font-size: var(--text-14); color: var(--demo-swatch-label); }
 .swatch .ratio { text-align: right; font-size: var(--text-14); color: var(--demo-swatch-text); }
 .swatch .ratio b { display: block; font-size: var(--text-28); font-weight: var(--weight-semibold); line-height: var(--leading-snug); }
@@ -452,6 +454,15 @@ blockquote footer { margin-top: var(--space-8); font-size: var(--text-14); color
 .log th, .log td { padding: var(--space-12) var(--space-16) var(--space-12) 0; text-align: left; vertical-align: top; }
 .log tr + tr th, .log tr + tr td { border-top: var(--size-hairline) solid var(--color-hairline); }
 .log th { font-weight: var(--weight-semibold); white-space: nowrap; }
+
+@media (max-width: 519.98px) {
+  .log, .log tbody, .log tr, .log th, .log td { display: block; }
+  .log th { padding-bottom: 0; }
+  .log td { padding-block: var(--space-4) 0; }
+  .log tr { padding-bottom: var(--space-12); }
+  .log tr + tr { padding-top: var(--space-12); border-top: var(--size-hairline) solid var(--color-hairline); }
+  .log tr + tr th, .log tr + tr td { border-top: 0; }
+}
 
 @media (min-width: 900px) {
   .agent-groups { grid-template-columns: 1fr 1fr; column-gap: var(--space-32); }
