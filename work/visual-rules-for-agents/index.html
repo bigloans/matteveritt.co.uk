@@ -50,7 +50,7 @@ try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.docu
   <h1 class="article-title" data-spec="type" data-spec-priority="1">Visual rules an AI agent can follow</h1>
   <p class="article-lede" data-spec="space" data-spec-prop="margin-top" data-spec-priority="1">An agent can&#39;t interpret &ldquo;make it feel premium&rdquo;, so each aesthetic decision in the spec is a named rule with a token behind it. These are three of them.</p>
   <!-- build:meta -->
-<p class="meta-line" data-spec="color" data-spec-priority="3">Short read, 1 minute</p>
+<p class="meta-line" data-spec="color" data-spec-priority="3">Short read, 3 minutes</p>
 <!-- /build:meta -->
   <dl class="summary three" data-spec="space" data-spec-prop="margin-top" data-spec-priority="2">
     <div><dt data-spec="color" data-spec-priority="3">Role</dt><dd data-spec="type" data-spec-priority="2">Product owner, designer and front-end lead</dd></div>
@@ -106,7 +106,7 @@ try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.docu
 
     <section id="disclosure" class="flow" aria-labelledby="disclosure-h">
       <h2 id="disclosure-h">AI disclosure, designed for regulation</h2>
-      <p>The AI disclosure component marks AI-produced content and supports disclosure under Article 50 of the EU AI Act, applicable since 2 August 2026. It doesn&#39;t cover machine-readable marking.</p>
+      <p>The AI disclosure badge is the one component unique to this spec. I framed it as a legal disclosure first, so it is persistent and can&#39;t be dismissed. I scoped it first to AI built into products, such as automatic categorisation, AI-suggested values and actions taken on the user&#39;s behalf, rather than to chatbots.</p>
       <ul>
         <li>Always visible, never dismissible</li>
         <li>Always labelled in text, never colour alone</li>
@@ -120,7 +120,30 @@ try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.docu
         </div>
         <figcaption class="note">Recreation of the disclosure badge in both themes.</figcaption>
       </figure>
-      <!-- TODO(matt): the design reasoning behind the AI disclosure component (alternatives considered, states, any research or legal input) would make this a full case study. -->
+      <h3>Brand against legibility</h3>
+      <p>The gradient is a brand device, but the badge has to stay legible and can never rely on colour alone. Accessibility settled it. The text label carries the meaning, the gradient is decoration hidden from assistive technology, and a badge that relied on colour alone would fail WCAG 1.4.1.</p>
+      <h3>Three options</h3>
+      <div class="block">
+        <div class="option">
+          <h4>Option A, chosen: gradient on the border and dot only</h4>
+          <p>The label sits in the text colour on a neutral fill, so no text ever sits on the gradient.</p>
+        </div>
+        <div class="option">
+          <h4>Option B: gradient fill with dark text</h4>
+          <p>It passed AA at both ends of the gradient, but the worst case was about 4.72:1 at the pink end, a thin margin. The gate can&#39;t check text over a gradient either, so this option looks worse now than it did then.</p>
+        </div>
+        <div class="option">
+          <h4>Option C: gradient fill with white text</h4>
+          <p>It fails contrast at the light teal end.</p>
+        </div>
+      </div>
+      <h3>One state, two variants</h3>
+      <p>The badge has a single state. It is static and persistent, with no hover, focus or dismiss state, and it isn&#39;t interactive unless a variant adds an info control, which then follows the button or tooltip rules.</p>
+      <p>It comes as an inline badge or as a region marker, which is linked to its region with <code>aria-describedby</code>. Each comes in compact and standard sizes. An optional slow gradient animation, about 4 seconds long, is the one exception to the duration tokens, and it falls back to a static gradient when reduced motion is set.</p>
+      <p>Building from the spec found one problem. An agent emitted the primitive radius token instead of the role, so I renamed the role to pill. The gate also can&#39;t see the duration exception yet, and that is logged as an open issue.</p>
+      <h3>What it covers under the EU AI Act</h3>
+      <p>Article 50 applies from 2 August 2026. I scoped the badge to the human-facing disclosure in Article 50(1) and 50(4). Machine-readable marking under Article 50(2), such as watermarks, signed metadata and provenance records, sits outside the design system. The spec says so, so nobody oversells the badge as full compliance.</p>
+      <p>The European Commission now publishes guidance and an icon page for labelling AI-generated content. I haven&#39;t yet checked whether the badge&#39;s glyph should match it.</p>
     </section>
 
     <div class="article-end flow">
