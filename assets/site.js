@@ -1,30 +1,10 @@
 (function () {
   var root = document.documentElement;
   var narrowContents = window.matchMedia("(max-width: 899.98px)");
-  var systemDark = window.matchMedia("(prefers-color-scheme: dark)");
-
-  // Page theme. A stored choice wins; otherwise the system preference applies.
-
-  var themeBtn = document.querySelector("[data-theme-toggle]");
-  function pageIsDark() {
-    var t = root.getAttribute("data-theme");
-    return t ? t === "dark" : systemDark.matches;
-  }
-  function syncTheme() {
-    themeBtn.setAttribute("aria-pressed", pageIsDark());
-    document.dispatchEvent(new Event("themechange"));
-  }
-  if (themeBtn) {
-    themeBtn.hidden = false;
-    themeBtn.setAttribute("aria-pressed", pageIsDark());
-    themeBtn.addEventListener("click", function () {
-      var t = pageIsDark() ? "light" : "dark";
-      root.setAttribute("data-theme", t);
-      try { localStorage.setItem("theme", t); } catch (e) {}
-      syncTheme();
-    });
-    if (systemDark.addEventListener) systemDark.addEventListener("change", syncTheme);
-  }
+  var still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var rootStyle = getComputedStyle(root);
+  var drawMs = parseFloat(rootStyle.getPropertyValue("--motion-draw")) || 0;
+  var stagger = parseFloat(rootStyle.getPropertyValue("--motion-stagger")) || 0;
 
   // Show the spec. Token names and values come from the :root rules in tokens.css.
 
@@ -150,6 +130,8 @@
       var t = find.px("space", px);
       a.ok = !!t;
       a.text = (t ? t.name : "untokenised") + ": " + px + "px";
+      a.px = px;
+      a.name = t ? t.name : "untokenised";
       var kids = [].filter.call(el.children, function (c) { return c.getBoundingClientRect().width > 0; });
       var x = rect.left + Math.min(24, rect.width / 2);
       if (prop === "margin-top") a.line = { v: true, x: x, y: rect.top - px, len: px };
@@ -206,10 +188,18 @@
     items.sort(function (x, y) { return x.priority - y.priority; });
 
     var placed = [], shown = 0, untokenised = 0;
+    var obstacles = items.map(function (a) {
+      var r = a.box || a.rect;
+      return { owner: a, left: r.left, top: r.top, right: r.left + r.width, bottom: r.top + r.height };
+    });
     items.forEach(function (a) {
       var label = document.createElement("span");
       label.className = "spec-label" + (a.ok ? "" : " is-untokenised");
       label.textContent = a.text;
+      if (a.kind === "space" && a.ok) {
+        label.setAttribute("data-px", a.px);
+        label.setAttribute("data-name", a.name);
+      }
       layer.appendChild(label);
       if (a.short && label.offsetWidth > vw - 8) label.textContent = a.short;
       var w = label.offsetWidth, h = label.offsetHeight;
@@ -229,6 +219,7 @@
       for (var i = 0; i < spots.length; i++) {
         var s = spots[i];
         if (s.fit && s.left + w > vw - 4) continue;
+        if (s.fit && overlaps({ left: s.left, top: s.top, right: s.left + w, bottom: s.top + h }, obstacles.filter(function (o) { return o.owner !== a; }))) continue;
         s.left = Math.max(4, Math.min(s.left, vw - w - 4));
         var box = { left: s.left, top: s.top, right: s.left + w, bottom: s.top + h };
         if (!overlaps(box, placed)) { spot = box; break; }
@@ -254,21 +245,58 @@
       shown++;
       if (!a.ok) untokenised++;
     });
+    // Stagger top to bottom, so the page reads like it's being measured.
+
+    var marks = [].slice.call(layer.children).filter(function (n) { return !n.classList.contains("spec-label"); });
+    marks.sort(function (x, y) { return parseFloat(x.style.top) - parseFloat(y.style.top); });
+    marks.forEach(function (m, i) {
+      var d = Math.min(i, 18) * stagger + "ms";
+      m.style.setProperty("--d", d);
+      if (m.nextSibling) m.nextSibling.style.setProperty("--d", d);
+    });
     layer.setAttribute("data-count", shown);
     layer.setAttribute("data-untokenised", untokenised);
     return shown;
   }
 
+  // Measurements count up from zero while their lines draw.
+
+  function countLabels() {
+    if (still) return;
+    [].forEach.call(layer.querySelectorAll(".spec-label[data-px]"), function (label) {
+      var end = +label.getAttribute("data-px"), name = label.getAttribute("data-name");
+      var delay = parseFloat(label.style.getPropertyValue("--d")) || 0, t0 = null;
+      var step = function (t) {
+        if (!specOn) return;
+        if (t0 === null) t0 = t + delay;
+        var k = Math.max(0, Math.min(1, (t - t0) / drawMs));
+        label.textContent = name + ": " + Math.round(end * (1 - Math.pow(1 - k, 3))) + "px";
+        if (k < 1) requestAnimationFrame(step);
+      };
+      label.textContent = name + ": 0px";
+      requestAnimationFrame(step);
+    });
+  }
+
+  var hideTimer = null;
   function setSpec(on) {
     specOn = on;
     specBtn.setAttribute("aria-pressed", on);
-    specBtn.textContent = on ? "Hide the spec" : "Show the spec";
+    specBtn.lastChild.textContent = on ? "Hide the spec" : "Show the spec";
+    clearTimeout(hideTimer);
     if (on) {
+      if (layer) layer.classList.remove("is-on");
       var n = draw();
-      requestAnimationFrame(function () { layer.classList.add("is-on"); });
+      layer.getBoundingClientRect();
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () { if (specOn) { layer.classList.add("is-on"); countLabels(); } });
+      });
       specStatus.textContent = "Showing " + n + " spec annotations. Press Escape to hide.";
     } else {
-      if (layer) { layer.classList.remove("is-on"); layer.textContent = ""; }
+      if (layer) {
+        layer.classList.remove("is-on");
+        hideTimer = setTimeout(function () { if (!specOn) layer.textContent = ""; }, still ? 0 : 320);
+      }
       specStatus.textContent = "";
     }
   }
@@ -283,7 +311,6 @@
       requestAnimationFrame(function () { queued = false; if (specOn) draw(); });
     };
     window.addEventListener("resize", redraw);
-    document.addEventListener("themechange", redraw);
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(redraw);
   }
 
@@ -348,7 +375,6 @@
   // Motion: reveal on scroll, count-up figures, typed windows and funnel bars.
   // With reduced motion, everything shows in its final state at once.
 
-  var still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var countUp = function (el) {
     var end = +el.getAttribute("data-count"), suffix = el.getAttribute("data-suffix") || "";
     if (still) return;
@@ -390,6 +416,17 @@
     card.style.setProperty("--mx", e.clientX - r.left + "px");
     card.style.setProperty("--my", e.clientY - r.top + "px");
   }, { passive: true });
+
+  // Tilt on the feature card, a few degrees towards the pointer.
+
+  if (!still) [].forEach.call(document.querySelectorAll("[data-tilt]"), function (el) {
+    el.addEventListener("pointermove", function (e) {
+      var r = el.getBoundingClientRect();
+      var x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
+      el.style.transform = "perspective(1400px) rotateX(" + (-y * 3).toFixed(2) + "deg) rotateY(" + (x * 4).toFixed(2) + "deg)";
+    });
+    el.addEventListener("pointerleave", function () { el.style.transform = ""; });
+  });
 
   // Reading progress in the contents list.
 

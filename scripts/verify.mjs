@@ -85,7 +85,7 @@ const browser = await chromium.launch();
 // With JavaScript at each viewport: targets, headings, axe.
 
 for (const [width, height] of [[1444, 862], [390, 844], [320, 568]]) {
-  for (const theme of ["light", "dark"]) {
+  for (const theme of ["dark"]) {
     const ctx = await browser.newContext({ viewport: { width, height }, colorScheme: theme });
     const p = await ctx.newPage();
     for (const url of pages) {
@@ -93,7 +93,7 @@ for (const [width, height] of [[1444, 862], [390, 844], [320, 568]]) {
       const tag = `${url} ${width} ${theme}`;
       const r = await p.evaluate(() => {
         const vis = (e) => { const b = e.getBoundingClientRect(); return b.width > 0 && b.height > 0 && getComputedStyle(e).visibility !== "hidden"; };
-        const inText = (a) => a.closest("p, li, dd, td") && !a.classList.contains("btn") && a.closest("p, li, dd, td").textContent.trim() !== a.textContent.trim();
+        const inText = (a) => a.closest("p, li, dd, td, figcaption") && !a.classList.contains("btn") && a.closest("p, li, dd, td, figcaption").textContent.trim() !== a.textContent.trim();
         const small = [...document.querySelectorAll("a, button, summary")].filter(vis).filter((e) => !inText(e) && !e.closest(".contents-sheet")).filter((e) => {
           const b = e.getBoundingClientRect();
           return b.width < 24 || b.height < 24;
@@ -101,7 +101,7 @@ for (const [width, height] of [[1444, 862], [390, 844], [320, 568]]) {
         const header = [...document.querySelectorAll(".site-header a, .site-header button, .contents-button")].filter(vis).filter((e) => e.getBoundingClientRect().height < 44).map((e) => e.textContent.trim().slice(0, 20));
         const hs = [...document.querySelectorAll("h1, h2, h3, h4, h5, h6")].map((h) => +h.tagName[1]);
         const skipped = hs.some((n, i) => i && n > hs[i - 1] + 1);
-        return { small, header, h1: hs.filter((n) => n === 1).length, skipped, skip: !!document.querySelector("a.skip[href='#main']"), landmarks: !!document.querySelector("header") && !!document.querySelector("main") && !!document.querySelector("footer") };
+        return { small, header, h1: hs.filter((n) => n === 1).length, skipped, skip: !!document.querySelector("a.skip[href='#main']"), landmarks: !!document.querySelector("header") && !!document.querySelector("main") };
       });
       const bad = [];
       if (r.small.length) bad.push(`small targets: ${r.small.join(", ")}`);

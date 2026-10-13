@@ -20,7 +20,6 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='10' fill='%230B6B63'/%3E%3C/svg%3E">
 <script>
 document.documentElement.classList.add('js');
-try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}
 </script>
 <script src="/assets/site.js" defer></script>
 <!-- /build:head -->
@@ -38,7 +37,6 @@ try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.docu
     </nav>
     <div class="site-tools">
       <button class="spec-toggle" type="button" aria-pressed="false" data-spec-toggle hidden>Show the spec</button>
-      <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Dark theme" data-theme-toggle hidden><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg></button>
     </div>
   </div>
 </header>
@@ -48,7 +46,7 @@ try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.docu
 <!-- words -->
 <div class="band">
 <div class="article-hero page" data-spec="space" data-spec-prop="padding-top" data-spec-priority="2">
-  <h1 class="article-title reveal" data-spec="type" data-spec-priority="1">Visual rules an AI agent can follow</h1>
+  <h1 class="article-title reveal blur" data-spec="type" data-spec-priority="1">Visual rules an AI agent can follow</h1>
   <p class="article-lede" data-spec="space" data-spec-prop="margin-top" data-spec-priority="1">An agent can&#39;t interpret &ldquo;make it feel premium&rdquo;, so each aesthetic decision in the spec is a named rule with a token behind it. These are three of them.</p>
   <!-- build:meta -->
 <p class="meta-line" data-spec="color" data-spec-priority="3">Short read, 3 minutes</p>
@@ -151,13 +149,6 @@ try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.docu
 </main>
 
 <!-- build:footer -->
-<footer class="site-footer">
-  <div class="site-footer-in">
-    <p>Figures are published with my employer's permission. Interface visuals are recreations.</p>
-    <p>Set in Atkinson Hyperlegible Next, a typeface from the Braille Institute built for low-vision readers.</p>
-    <p><a href="/spec/">Read this site's spec</a></p>
-  </div>
-</footer>
 <p class="sr-only" role="status" aria-live="polite" data-spec-status></p>
 <!-- /build:footer -->
 </body>

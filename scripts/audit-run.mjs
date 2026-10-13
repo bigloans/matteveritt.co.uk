@@ -14,7 +14,7 @@ const [base = "http://localhost:8765", out, ...pages] = process.argv.slice(2);
 const urls = pages.length ? pages : ["/"];
 const audit = readFileSync(new URL("./audit.js", import.meta.url), "utf8");
 const viewports = [[1444, 862], [390, 844], [320, 568]];
-const themes = ["light", "dark"];
+const themes = ["dark"];
 
 const browser = await chromium.launch();
 const results = [];

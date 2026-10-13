@@ -133,7 +133,7 @@ button { padding: 0; }
 .site-nav a:hover { background-size: 100% var(--size-rule); }
 .site-name:hover { text-decoration: underline; }
 .site-tools { grid-area: tools; display: flex; align-items: center; gap: var(--space-8); }
-.spec-toggle, .theme-toggle {
+.spec-toggle {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -152,28 +152,18 @@ button { padding: 0; }
 .spec-toggle::before { content: ""; width: var(--space-8); height: var(--space-8); border: var(--size-hairline) solid currentColor; border-radius: var(--radius-circle); }
 .spec-toggle:hover, .spec-toggle[aria-pressed="true"] { border-color: var(--color-redline); color: var(--color-redline); }
 .spec-toggle[aria-pressed="true"]::before { background: currentColor; }
-.theme-toggle { min-width: var(--size-target); border-radius: var(--radius-circle); }
-.theme-toggle svg { transition: transform var(--motion-medium) var(--motion-ease); }
-.theme-toggle[aria-pressed="true"] svg { transform: rotate(180deg); }
 
 @media (min-width: 900px) {
   .site-header-in { grid-template-columns: auto 1fr auto; grid-template-areas: "name nav tools"; column-gap: var(--space-32); }
   .site-nav { margin-inline-start: 0; }
 }
 
-/* Footer */
+/* Page end */
 
-.site-footer { border-top: var(--size-hairline) solid var(--color-hairline); }
-.site-footer-in {
-  max-width: var(--size-page);
-  margin-inline: auto;
-  padding: var(--space-32) var(--space-gutter) var(--space-48);
-  display: grid;
-  gap: var(--space-8);
-  font-size: var(--text-14);
-  color: var(--color-text-muted);
+.article-body { padding-bottom: var(--space-section); }
+@media (max-width: 899.98px) {
+  .js .has-contents main { padding-bottom: var(--space-64); }
 }
-.site-footer a { display: inline-flex; align-items: center; min-height: var(--size-target); }
 
 /* Navy bands. Fixed navy in both themes, with a drifting aurora behind the content. */
 
@@ -566,7 +556,7 @@ button { padding: 0; }
   .js .contents.is-open .contents-sheet { visibility: visible; opacity: 1; transition: opacity var(--motion-fast); }
   .js .contents-head { display: flex; justify-content: space-between; align-items: center; }
   .js .contents li a { padding-block: var(--space-8); }
-  .js .has-contents .site-footer-in { padding-bottom: var(--space-96); }
+  
 }
 
 /* Case study parts */
@@ -800,8 +790,7 @@ button { padding: 0; }
 
 /* Show the spec overlay */
 
-.spec-layer { position: absolute; top: 0; left: 0; width: 100%; overflow: hidden; pointer-events: none; z-index: 40; opacity: 0; transition: opacity var(--motion-fast); }
-.spec-layer.is-on { opacity: 1; }
+.spec-layer { position: absolute; top: 0; left: 0; width: 100%; overflow: hidden; pointer-events: none; z-index: 30; }
 .spec-line { position: absolute; background: var(--color-redline); }
 .spec-line.v { width: var(--size-hairline); }
 .spec-line.h { height: var(--size-hairline); }
@@ -873,3 +862,44 @@ blockquote.panel { border-left: 0; }
 .band { border-bottom: var(--size-hairline) solid var(--color-inverse-line); }
 .feature-card.glow-border, .card.glow-border { background-color: var(--color-inverse-raised); }
 .card.glow-border:not(.band .card):not(.panel .card) { background-color: var(--color-surface-alt); }
+
+.dot { width: var(--space-8); height: var(--space-8); border-radius: var(--radius-circle); background: var(--gradient-brand); }
+.about-lede { font-size: var(--text-20); color: var(--color-text); }
+.facts { list-style: none; padding: 0; }
+
+/* Headlines arrive soft-focus, then sharpen */
+
+.js .reveal.blur { filter: blur(var(--space-12)); transition: opacity var(--motion-reveal) var(--motion-ease), transform var(--motion-reveal) var(--motion-ease), filter var(--motion-reveal) var(--motion-ease); }
+.js .reveal.blur.in { filter: none; }
+
+/* Gentle tilt on the feature card */
+
+[data-tilt] { transition: transform var(--motion-medium) var(--motion-ease); transform-style: preserve-3d; will-change: transform; }
+
+/* Show the spec: a blueprint grid fades in, then lines draw, outlines trace and labels settle, top to bottom */
+
+.spec-layer { opacity: 1; }
+.spec-layer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-spec-grid);
+  opacity: 0;
+  transition: opacity var(--motion-medium) var(--motion-ease);
+}
+.spec-layer.is-on::before { opacity: 1; }
+.spec-line.v { transform: scaleY(0); transform-origin: top; }
+.spec-line.h { transform: scaleX(0); transform-origin: left; }
+.spec-line { transition: transform var(--motion-fast) var(--motion-ease); }
+.is-on .spec-line { transform: none; transition: transform var(--motion-draw) var(--motion-ease) var(--d, 0ms); }
+.spec-box { outline: 0; border: var(--size-hairline) dashed var(--color-redline); clip-path: inset(0 100% 100% 0); transition: clip-path var(--motion-fast) var(--motion-ease); }
+.is-on .spec-box { clip-path: inset(calc(var(--space-4) * -1)); transition: clip-path var(--motion-draw) var(--motion-ease) var(--d, 0ms); }
+.spec-box::before, .spec-box::after { content: ""; position: absolute; width: var(--space-4); height: var(--space-4); background: var(--color-redline); }
+.spec-box::before { left: calc(var(--space-4) / -2 - var(--size-hairline)); top: calc(var(--space-4) / -2 - var(--size-hairline)); }
+.spec-box::after { right: calc(var(--space-4) / -2 - var(--size-hairline)); bottom: calc(var(--space-4) / -2 - var(--size-hairline)); }
+.spec-label { opacity: 0; transform: translateY(var(--space-4)) scale(0.96); transition: opacity var(--motion-fast) var(--motion-ease), transform var(--motion-fast) var(--motion-ease); box-shadow: var(--shadow-card); }
+.is-on .spec-label { opacity: 1; transform: none; transition: opacity var(--motion-medium) var(--motion-ease) calc(var(--d, 0ms) + var(--motion-draw) / 2), transform var(--motion-medium) var(--motion-ease) calc(var(--d, 0ms) + var(--motion-draw) / 2); }
+.spec-toggle { position: relative; overflow: hidden; }
+.spec-toggle::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent, rgba(255, 122, 182, 0.25), transparent); transform: translateX(-100%); }
+.spec-toggle[aria-pressed="true"]::after { transform: translateX(100%); transition: transform var(--motion-draw) var(--motion-ease); }
+.about-grid > .card { align-self: start; }

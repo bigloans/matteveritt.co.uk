@@ -20,7 +20,6 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='10' fill='%230B6B63'/%3E%3C/svg%3E">
 <script>
 document.documentElement.classList.add('js');
-try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}
 </script>
 <script src="/assets/site.js" defer></script>
 <!-- /build:head -->
@@ -38,7 +37,6 @@ try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.docu
     </nav>
     <div class="site-tools">
       <button class="spec-toggle" type="button" aria-pressed="false" data-spec-toggle hidden>Show the spec</button>
-      <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Dark theme" data-theme-toggle hidden><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg></button>
     </div>
   </div>
 </header>
@@ -48,14 +46,14 @@ try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.docu
 <!-- words -->
 <div class="band">
 <div class="article-hero page" data-spec="space" data-spec-prop="padding-top" data-spec-priority="2">
-  <h1 class="article-title reveal" data-spec="type" data-spec-priority="1">I replaced my own component library with <span class="grad-text">a spec AI builds from</span></h1>
+  <h1 class="article-title reveal blur" data-spec="type" data-spec-priority="1">I replaced my own component library with <span class="grad-text">a spec AI builds from</span></h1>
   <p class="article-lede reveal" style="--i:1" data-spec="space" data-spec-prop="margin-top" data-spec-priority="1">I built the component library for a portfolio of 60+ products. The evidence said it couldn't keep up, so I replaced it with a versioned specification that teams' AI coding agents build from, and a gate that checks the result. I run it as a product, and strategy, roadmap, releases and adoption are mine.</p>
   <!-- build:meta -->
 <p class="meta-line" data-spec="color" data-spec-priority="3">Case study, 2026, 7 minute read</p>
 <!-- /build:meta -->
   <dl class="summary reveal" style="--i:2" data-spec="space" data-spec-prop="margin-top" data-spec-priority="2">
     <div><dt data-spec="color" data-spec-priority="3">Role</dt><dd data-spec="type" data-spec-priority="2">Product owner, designer and front-end lead</dd></div>
-    <div><dt>Team</dt><dd>Solo, with a 15-agent harness and 7 contributing designers; co-sponsored by the Head of UX</dd></div>
+    <div><dt>Team</dt><dd>Solo, with a 15-agent harness and 7 contributing designers</dd></div>
     <div><dt>Scope</dt><dd>60+ products in React, Vue, Angular and legacy frameworks</dd></div>
     <div><dt>Timeline</dt><dd>Spec work from Jul 2026</dd></div>
   </dl>
@@ -234,7 +232,7 @@ Exceptions applied (1) — auditable, deliberate opt-outs:
 
     <section id="adoption" class="flow" aria-labelledby="adoption-h">
       <h2 id="adoption-h" class="reveal">Adoption</h2>
-      <p class="reveal">The Head of UX and I co-sponsored the spec. Engineering leadership made the spec the default for new UI and reskins, with no mandate to rewrite existing screens.</p>
+      <p class="reveal">Engineering leadership made the spec the default for new UI and reskins, with no mandate to rewrite existing screens.</p>
       <div class="panel block reveal">
         <p class="big-quote">Why redo work we've only just finished?</p>
         <footer>Teams who had only just moved onto v1</footer>
@@ -295,7 +293,7 @@ Exceptions applied (1) — auditable, deliberate opt-outs:
     </section>
 
     <div class="article-end panel cta-panel reveal">
-      <p>I'm looking for a role as a design system manager or product owner, where a design system is run as a product.</p>
+      <p>Fancy a chat? I'm always happy to talk about anything in product design, development or management.</p>
       <div class="actions"><a class="btn btn-primary" href="mailto:matt.m.everitt@gmail.com">Email me</a><a class="btn btn-secondary" href="https://www.linkedin.com/in/matteveritt92/">LinkedIn</a></div>
     </div>
 <!-- /words -->
@@ -309,13 +307,6 @@ Exceptions applied (1) — auditable, deliberate opt-outs:
 </main>
 
 <!-- build:footer -->
-<footer class="site-footer">
-  <div class="site-footer-in">
-    <p>Figures are published with my employer's permission. Interface visuals are recreations.</p>
-    <p>Set in Atkinson Hyperlegible Next, a typeface from the Braille Institute built for low-vision readers.</p>
-    <p><a href="/spec/">Read this site's spec</a></p>
-  </div>
-</footer>
 <p class="sr-only" role="status" aria-live="polite" data-spec-status></p>
 <!-- /build:footer -->
 </body>

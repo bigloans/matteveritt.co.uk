@@ -2,108 +2,6 @@
   {
     "url": "/",
     "viewport": "1444x862",
-    "theme": "light",
-    "spec": false,
-    "sizes": [
-      "14px",
-      "16px",
-      "18px",
-      "20px",
-      "28px",
-      "40px",
-      "64px"
-    ],
-    "spacing": [
-      "4px",
-      "8px",
-      "12px",
-      "16px",
-      "24px",
-      "32px",
-      "48px",
-      "64px",
-      "96px"
-    ],
-    "radii": [
-      "10px",
-      "16px",
-      "20px",
-      "50%",
-      "999px"
-    ],
-    "small": [],
-    "lowContrast": [],
-    "foldOK": "Timeline label not found",
-    "hScroll": false,
-    "caps": 0,
-    "middots": 0,
-    "arrows": 0,
-    "dashes": 0,
-    "words": 507,
-    "fonts": [
-      "Atkinson Hyperlegible Next",
-      "Atkinson Hyperlegible Mono"
-    ],
-    "docH": 3331,
-    "specShown": 0,
-    "untokenised": 0,
-    "fold": true,
-    "contentsReachable": false
-  },
-  {
-    "url": "/",
-    "viewport": "1444x862",
-    "theme": "light",
-    "spec": true,
-    "sizes": [
-      "14px",
-      "16px",
-      "18px",
-      "20px",
-      "28px",
-      "40px",
-      "64px"
-    ],
-    "spacing": [
-      "4px",
-      "8px",
-      "12px",
-      "16px",
-      "24px",
-      "32px",
-      "48px",
-      "64px",
-      "96px"
-    ],
-    "radii": [
-      "10px",
-      "16px",
-      "20px",
-      "50%",
-      "999px"
-    ],
-    "small": [],
-    "lowContrast": [],
-    "foldOK": "Timeline label not found",
-    "hScroll": false,
-    "caps": 0,
-    "middots": 0,
-    "arrows": 0,
-    "dashes": 0,
-    "words": 563,
-    "fonts": [
-      "Atkinson Hyperlegible Next",
-      "Atkinson Hyperlegible Mono"
-    ],
-    "docH": 3331,
-    "specShown": 15,
-    "untokenised": 0,
-    "fold": true,
-    "contentsReachable": false
-  },
-  {
-    "url": "/",
-    "viewport": "1444x862",
     "theme": "dark",
     "spec": false,
     "sizes": [
@@ -141,12 +39,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 507,
+    "words": 501,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 3331,
+    "docH": 3155,
     "specShown": 0,
     "untokenised": 0,
     "fold": true,
@@ -192,12 +90,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 563,
+    "words": 557,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 3331,
+    "docH": 3155,
     "specShown": 15,
     "untokenised": 0,
     "fold": true,
@@ -206,104 +104,6 @@
   {
     "url": "/",
     "viewport": "390x844",
-    "theme": "light",
-    "spec": false,
-    "sizes": [
-      "14px",
-      "16px",
-      "18px",
-      "20px",
-      "28px",
-      "40px"
-    ],
-    "spacing": [
-      "4px",
-      "8px",
-      "12px",
-      "16px",
-      "24px",
-      "32px",
-      "48px",
-      "64px"
-    ],
-    "radii": [
-      "10px",
-      "16px",
-      "20px",
-      "50%",
-      "999px"
-    ],
-    "small": [],
-    "lowContrast": [],
-    "foldOK": "Timeline label not found",
-    "hScroll": false,
-    "caps": 0,
-    "middots": 0,
-    "arrows": 0,
-    "dashes": 0,
-    "words": 502,
-    "fonts": [
-      "Atkinson Hyperlegible Next",
-      "Atkinson Hyperlegible Mono"
-    ],
-    "docH": 5421,
-    "specShown": 0,
-    "untokenised": 0,
-    "fold": true,
-    "contentsReachable": false
-  },
-  {
-    "url": "/",
-    "viewport": "390x844",
-    "theme": "light",
-    "spec": true,
-    "sizes": [
-      "14px",
-      "16px",
-      "18px",
-      "20px",
-      "28px",
-      "40px"
-    ],
-    "spacing": [
-      "4px",
-      "8px",
-      "12px",
-      "16px",
-      "24px",
-      "32px",
-      "48px",
-      "64px"
-    ],
-    "radii": [
-      "10px",
-      "16px",
-      "20px",
-      "50%",
-      "999px"
-    ],
-    "small": [],
-    "lowContrast": [],
-    "foldOK": "Timeline label not found",
-    "hScroll": false,
-    "caps": 0,
-    "middots": 0,
-    "arrows": 0,
-    "dashes": 0,
-    "words": 522,
-    "fonts": [
-      "Atkinson Hyperlegible Next",
-      "Atkinson Hyperlegible Mono"
-    ],
-    "docH": 5421,
-    "specShown": 4,
-    "untokenised": 0,
-    "fold": true,
-    "contentsReachable": false
-  },
-  {
-    "url": "/",
-    "viewport": "390x844",
     "theme": "dark",
     "spec": false,
     "sizes": [
@@ -339,12 +139,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 502,
+    "words": 496,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 5421,
+    "docH": 5332,
     "specShown": 0,
     "untokenised": 0,
     "fold": true,
@@ -388,110 +188,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 522,
+    "words": 516,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 5421,
-    "specShown": 4,
-    "untokenised": 0,
-    "fold": true,
-    "contentsReachable": false
-  },
-  {
-    "url": "/",
-    "viewport": "320x568",
-    "theme": "light",
-    "spec": false,
-    "sizes": [
-      "14px",
-      "16px",
-      "18px",
-      "20px",
-      "28px",
-      "40px"
-    ],
-    "spacing": [
-      "4px",
-      "8px",
-      "12px",
-      "16px",
-      "24px",
-      "32px",
-      "48px",
-      "64px"
-    ],
-    "radii": [
-      "10px",
-      "16px",
-      "20px",
-      "50%",
-      "999px"
-    ],
-    "small": [],
-    "lowContrast": [],
-    "foldOK": "Timeline label not found",
-    "hScroll": false,
-    "caps": 0,
-    "middots": 0,
-    "arrows": 0,
-    "dashes": 0,
-    "words": 502,
-    "fonts": [
-      "Atkinson Hyperlegible Next",
-      "Atkinson Hyperlegible Mono"
-    ],
-    "docH": 5907,
-    "specShown": 0,
-    "untokenised": 0,
-    "fold": true,
-    "contentsReachable": false
-  },
-  {
-    "url": "/",
-    "viewport": "320x568",
-    "theme": "light",
-    "spec": true,
-    "sizes": [
-      "14px",
-      "16px",
-      "18px",
-      "20px",
-      "28px",
-      "40px"
-    ],
-    "spacing": [
-      "4px",
-      "8px",
-      "12px",
-      "16px",
-      "24px",
-      "32px",
-      "48px",
-      "64px"
-    ],
-    "radii": [
-      "10px",
-      "16px",
-      "20px",
-      "50%",
-      "999px"
-    ],
-    "small": [],
-    "lowContrast": [],
-    "foldOK": "Timeline label not found",
-    "hScroll": false,
-    "caps": 0,
-    "middots": 0,
-    "arrows": 0,
-    "dashes": 0,
-    "words": 522,
-    "fonts": [
-      "Atkinson Hyperlegible Next",
-      "Atkinson Hyperlegible Mono"
-    ],
-    "docH": 5907,
+    "docH": 5332,
     "specShown": 4,
     "untokenised": 0,
     "fold": true,
@@ -535,12 +237,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 502,
+    "words": 496,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 5907,
+    "docH": 5814,
     "specShown": 0,
     "untokenised": 0,
     "fold": true,
@@ -584,12 +286,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 522,
+    "words": 516,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 5907,
+    "docH": 5810,
     "specShown": 4,
     "untokenised": 0,
     "fold": true,
@@ -598,114 +300,6 @@
   {
     "url": "/work/replacing-the-component-library/",
     "viewport": "1444x862",
-    "theme": "light",
-    "spec": false,
-    "sizes": [
-      "14px",
-      "16px",
-      "18px",
-      "20px",
-      "28px",
-      "40px",
-      "64px"
-    ],
-    "spacing": [
-      "4px",
-      "8px",
-      "12px",
-      "16px",
-      "24px",
-      "32px",
-      "48px",
-      "64px",
-      "96px"
-    ],
-    "radii": [
-      "10px",
-      "16px",
-      "20px",
-      "50%",
-      "999px"
-    ],
-    "small": [],
-    "lowContrast": [
-      "3.34:1 Ghost button",
-      "3.34:1 Ghost button"
-    ],
-    "foldOK": true,
-    "hScroll": false,
-    "caps": 0,
-    "middots": 0,
-    "arrows": 0,
-    "dashes": 0,
-    "words": 1676,
-    "fonts": [
-      "Atkinson Hyperlegible Next",
-      "Atkinson Hyperlegible Mono"
-    ],
-    "docH": 9469,
-    "specShown": 0,
-    "untokenised": 0,
-    "fold": true,
-    "contentsReachable": true
-  },
-  {
-    "url": "/work/replacing-the-component-library/",
-    "viewport": "1444x862",
-    "theme": "light",
-    "spec": true,
-    "sizes": [
-      "14px",
-      "16px",
-      "18px",
-      "20px",
-      "28px",
-      "40px",
-      "64px"
-    ],
-    "spacing": [
-      "4px",
-      "8px",
-      "12px",
-      "16px",
-      "24px",
-      "32px",
-      "48px",
-      "64px",
-      "96px"
-    ],
-    "radii": [
-      "10px",
-      "16px",
-      "20px",
-      "50%",
-      "999px"
-    ],
-    "small": [],
-    "lowContrast": [
-      "3.34:1 Ghost button",
-      "3.34:1 Ghost button"
-    ],
-    "foldOK": true,
-    "hScroll": false,
-    "caps": 0,
-    "middots": 0,
-    "arrows": 0,
-    "dashes": 0,
-    "words": 1706,
-    "fonts": [
-      "Atkinson Hyperlegible Next",
-      "Atkinson Hyperlegible Mono"
-    ],
-    "docH": 9469,
-    "specShown": 6,
-    "untokenised": 0,
-    "fold": true,
-    "contentsReachable": true
-  },
-  {
-    "url": "/work/replacing-the-component-library/",
-    "viewport": "1444x862",
     "theme": "dark",
     "spec": false,
     "sizes": [
@@ -746,12 +340,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 1676,
+    "words": 1625,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 9469,
+    "docH": 9356,
     "specShown": 0,
     "untokenised": 0,
     "fold": true,
@@ -800,12 +394,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 1706,
+    "words": 1655,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 9469,
+    "docH": 9356,
     "specShown": 6,
     "untokenised": 0,
     "fold": true,
@@ -814,110 +408,6 @@
   {
     "url": "/work/replacing-the-component-library/",
     "viewport": "390x844",
-    "theme": "light",
-    "spec": false,
-    "sizes": [
-      "14px",
-      "16px",
-      "18px",
-      "20px",
-      "28px",
-      "40px"
-    ],
-    "spacing": [
-      "4px",
-      "8px",
-      "12px",
-      "16px",
-      "24px",
-      "32px",
-      "48px",
-      "96px"
-    ],
-    "radii": [
-      "10px",
-      "16px",
-      "20px",
-      "50%",
-      "999px"
-    ],
-    "small": [],
-    "lowContrast": [
-      "3.34:1 Ghost button",
-      "3.34:1 Ghost button"
-    ],
-    "foldOK": false,
-    "hScroll": false,
-    "caps": 0,
-    "middots": 0,
-    "arrows": 0,
-    "dashes": 0,
-    "words": 1660,
-    "fonts": [
-      "Atkinson Hyperlegible Next",
-      "Atkinson Hyperlegible Mono"
-    ],
-    "docH": 13783,
-    "specShown": 0,
-    "untokenised": 0,
-    "fold": true,
-    "contentsReachable": true
-  },
-  {
-    "url": "/work/replacing-the-component-library/",
-    "viewport": "390x844",
-    "theme": "light",
-    "spec": true,
-    "sizes": [
-      "14px",
-      "16px",
-      "18px",
-      "20px",
-      "28px",
-      "40px"
-    ],
-    "spacing": [
-      "4px",
-      "8px",
-      "12px",
-      "16px",
-      "24px",
-      "32px",
-      "48px",
-      "96px"
-    ],
-    "radii": [
-      "10px",
-      "16px",
-      "20px",
-      "50%",
-      "999px"
-    ],
-    "small": [],
-    "lowContrast": [
-      "3.34:1 Ghost button",
-      "3.34:1 Ghost button"
-    ],
-    "foldOK": false,
-    "hScroll": false,
-    "caps": 0,
-    "middots": 0,
-    "arrows": 0,
-    "dashes": 0,
-    "words": 1676,
-    "fonts": [
-      "Atkinson Hyperlegible Next",
-      "Atkinson Hyperlegible Mono"
-    ],
-    "docH": 13783,
-    "specShown": 2,
-    "untokenised": 0,
-    "fold": true,
-    "contentsReachable": true
-  },
-  {
-    "url": "/work/replacing-the-component-library/",
-    "viewport": "390x844",
     "theme": "dark",
     "spec": false,
     "sizes": [
@@ -936,7 +426,7 @@
       "24px",
       "32px",
       "48px",
-      "96px"
+      "64px"
     ],
     "radii": [
       "10px",
@@ -956,12 +446,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 1660,
+    "words": 1609,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 13783,
+    "docH": 13590,
     "specShown": 0,
     "untokenised": 0,
     "fold": true,
@@ -988,7 +478,7 @@
       "24px",
       "32px",
       "48px",
-      "96px"
+      "64px"
     ],
     "radii": [
       "10px",
@@ -1008,119 +498,15 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 1676,
+    "words": 1625,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 13783,
+    "docH": 13590,
     "specShown": 2,
     "untokenised": 0,
     "fold": true,
-    "contentsReachable": true
-  },
-  {
-    "url": "/work/replacing-the-component-library/",
-    "viewport": "320x568",
-    "theme": "light",
-    "spec": false,
-    "sizes": [
-      "14px",
-      "16px",
-      "18px",
-      "20px",
-      "28px",
-      "40px"
-    ],
-    "spacing": [
-      "4px",
-      "8px",
-      "12px",
-      "16px",
-      "24px",
-      "32px",
-      "48px",
-      "96px"
-    ],
-    "radii": [
-      "10px",
-      "16px",
-      "20px",
-      "50%",
-      "999px"
-    ],
-    "small": [],
-    "lowContrast": [
-      "3.34:1 Ghost button",
-      "3.34:1 Ghost button"
-    ],
-    "foldOK": false,
-    "hScroll": false,
-    "caps": 0,
-    "middots": 0,
-    "arrows": 0,
-    "dashes": 0,
-    "words": 1660,
-    "fonts": [
-      "Atkinson Hyperlegible Next",
-      "Atkinson Hyperlegible Mono"
-    ],
-    "docH": 15886,
-    "specShown": 0,
-    "untokenised": 0,
-    "fold": false,
-    "contentsReachable": true
-  },
-  {
-    "url": "/work/replacing-the-component-library/",
-    "viewport": "320x568",
-    "theme": "light",
-    "spec": true,
-    "sizes": [
-      "14px",
-      "16px",
-      "18px",
-      "20px",
-      "28px",
-      "40px"
-    ],
-    "spacing": [
-      "4px",
-      "8px",
-      "12px",
-      "16px",
-      "24px",
-      "32px",
-      "48px",
-      "96px"
-    ],
-    "radii": [
-      "10px",
-      "16px",
-      "20px",
-      "50%",
-      "999px"
-    ],
-    "small": [],
-    "lowContrast": [
-      "3.34:1 Ghost button",
-      "3.34:1 Ghost button"
-    ],
-    "foldOK": false,
-    "hScroll": false,
-    "caps": 0,
-    "middots": 0,
-    "arrows": 0,
-    "dashes": 0,
-    "words": 1676,
-    "fonts": [
-      "Atkinson Hyperlegible Next",
-      "Atkinson Hyperlegible Mono"
-    ],
-    "docH": 15886,
-    "specShown": 2,
-    "untokenised": 0,
-    "fold": false,
     "contentsReachable": true
   },
   {
@@ -1144,7 +530,7 @@
       "24px",
       "32px",
       "48px",
-      "96px"
+      "64px"
     ],
     "radii": [
       "10px",
@@ -1164,12 +550,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 1660,
+    "words": 1609,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 15886,
+    "docH": 15621,
     "specShown": 0,
     "untokenised": 0,
     "fold": false,
@@ -1196,7 +582,7 @@
       "24px",
       "32px",
       "48px",
-      "96px"
+      "64px"
     ],
     "radii": [
       "10px",
@@ -1216,12 +602,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 1676,
+    "words": 1625,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 15886,
+    "docH": 15617,
     "specShown": 2,
     "untokenised": 0,
     "fold": false,
@@ -1230,104 +616,6 @@
   {
     "url": "/work/visual-rules-for-agents/",
     "viewport": "1444x862",
-    "theme": "light",
-    "spec": false,
-    "sizes": [
-      "14px",
-      "16px",
-      "18px",
-      "20px",
-      "40px"
-    ],
-    "spacing": [
-      "4px",
-      "8px",
-      "12px",
-      "16px",
-      "24px",
-      "32px",
-      "48px",
-      "64px",
-      "96px"
-    ],
-    "radii": [
-      "10px",
-      "16px",
-      "20px",
-      "50%",
-      "999px"
-    ],
-    "small": [],
-    "lowContrast": [],
-    "foldOK": true,
-    "hScroll": false,
-    "caps": 0,
-    "middots": 0,
-    "arrows": 0,
-    "dashes": 0,
-    "words": 713,
-    "fonts": [
-      "Atkinson Hyperlegible Next",
-      "Atkinson Hyperlegible Mono"
-    ],
-    "docH": 3849,
-    "specShown": 0,
-    "untokenised": 0,
-    "fold": true,
-    "contentsReachable": false
-  },
-  {
-    "url": "/work/visual-rules-for-agents/",
-    "viewport": "1444x862",
-    "theme": "light",
-    "spec": true,
-    "sizes": [
-      "14px",
-      "16px",
-      "18px",
-      "20px",
-      "40px"
-    ],
-    "spacing": [
-      "4px",
-      "8px",
-      "12px",
-      "16px",
-      "24px",
-      "32px",
-      "48px",
-      "64px",
-      "96px"
-    ],
-    "radii": [
-      "10px",
-      "16px",
-      "20px",
-      "50%",
-      "999px"
-    ],
-    "small": [],
-    "lowContrast": [],
-    "foldOK": true,
-    "hScroll": false,
-    "caps": 0,
-    "middots": 0,
-    "arrows": 0,
-    "dashes": 0,
-    "words": 743,
-    "fonts": [
-      "Atkinson Hyperlegible Next",
-      "Atkinson Hyperlegible Mono"
-    ],
-    "docH": 3849,
-    "specShown": 6,
-    "untokenised": 0,
-    "fold": true,
-    "contentsReachable": false
-  },
-  {
-    "url": "/work/visual-rules-for-agents/",
-    "viewport": "1444x862",
     "theme": "dark",
     "spec": false,
     "sizes": [
@@ -1363,12 +651,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 713,
+    "words": 683,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 3849,
+    "docH": 3761,
     "specShown": 0,
     "untokenised": 0,
     "fold": true,
@@ -1412,12 +700,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 743,
+    "words": 713,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 3849,
+    "docH": 3761,
     "specShown": 6,
     "untokenised": 0,
     "fold": true,
@@ -1426,98 +714,6 @@
   {
     "url": "/work/visual-rules-for-agents/",
     "viewport": "390x844",
-    "theme": "light",
-    "spec": false,
-    "sizes": [
-      "14px",
-      "16px",
-      "18px",
-      "28px"
-    ],
-    "spacing": [
-      "4px",
-      "8px",
-      "12px",
-      "16px",
-      "24px",
-      "32px",
-      "48px"
-    ],
-    "radii": [
-      "10px",
-      "16px",
-      "20px",
-      "50%",
-      "999px"
-    ],
-    "small": [],
-    "lowContrast": [],
-    "foldOK": true,
-    "hScroll": false,
-    "caps": 0,
-    "middots": 0,
-    "arrows": 0,
-    "dashes": 0,
-    "words": 713,
-    "fonts": [
-      "Atkinson Hyperlegible Next",
-      "Atkinson Hyperlegible Mono"
-    ],
-    "docH": 5035,
-    "specShown": 0,
-    "untokenised": 0,
-    "fold": true,
-    "contentsReachable": false
-  },
-  {
-    "url": "/work/visual-rules-for-agents/",
-    "viewport": "390x844",
-    "theme": "light",
-    "spec": true,
-    "sizes": [
-      "14px",
-      "16px",
-      "18px",
-      "28px"
-    ],
-    "spacing": [
-      "4px",
-      "8px",
-      "12px",
-      "16px",
-      "24px",
-      "32px",
-      "48px"
-    ],
-    "radii": [
-      "10px",
-      "16px",
-      "20px",
-      "50%",
-      "999px"
-    ],
-    "small": [],
-    "lowContrast": [],
-    "foldOK": true,
-    "hScroll": false,
-    "caps": 0,
-    "middots": 0,
-    "arrows": 0,
-    "dashes": 0,
-    "words": 729,
-    "fonts": [
-      "Atkinson Hyperlegible Next",
-      "Atkinson Hyperlegible Mono"
-    ],
-    "docH": 5035,
-    "specShown": 2,
-    "untokenised": 0,
-    "fold": true,
-    "contentsReachable": false
-  },
-  {
-    "url": "/work/visual-rules-for-agents/",
-    "viewport": "390x844",
     "theme": "dark",
     "spec": false,
     "sizes": [
@@ -1533,7 +729,8 @@
       "16px",
       "24px",
       "32px",
-      "48px"
+      "48px",
+      "64px"
     ],
     "radii": [
       "10px",
@@ -1550,12 +747,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 713,
+    "words": 683,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 5035,
+    "docH": 4874,
     "specShown": 0,
     "untokenised": 0,
     "fold": true,
@@ -1579,7 +776,8 @@
       "16px",
       "24px",
       "32px",
-      "48px"
+      "48px",
+      "64px"
     ],
     "radii": [
       "10px",
@@ -1596,104 +794,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 729,
+    "words": 699,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 5035,
-    "specShown": 2,
-    "untokenised": 0,
-    "fold": true,
-    "contentsReachable": false
-  },
-  {
-    "url": "/work/visual-rules-for-agents/",
-    "viewport": "320x568",
-    "theme": "light",
-    "spec": false,
-    "sizes": [
-      "14px",
-      "16px",
-      "18px",
-      "28px"
-    ],
-    "spacing": [
-      "4px",
-      "8px",
-      "12px",
-      "16px",
-      "24px",
-      "32px",
-      "48px"
-    ],
-    "radii": [
-      "10px",
-      "16px",
-      "20px",
-      "50%",
-      "999px"
-    ],
-    "small": [],
-    "lowContrast": [],
-    "foldOK": false,
-    "hScroll": false,
-    "caps": 0,
-    "middots": 0,
-    "arrows": 0,
-    "dashes": 0,
-    "words": 713,
-    "fonts": [
-      "Atkinson Hyperlegible Next",
-      "Atkinson Hyperlegible Mono"
-    ],
-    "docH": 5746,
-    "specShown": 0,
-    "untokenised": 0,
-    "fold": true,
-    "contentsReachable": false
-  },
-  {
-    "url": "/work/visual-rules-for-agents/",
-    "viewport": "320x568",
-    "theme": "light",
-    "spec": true,
-    "sizes": [
-      "14px",
-      "16px",
-      "18px",
-      "28px"
-    ],
-    "spacing": [
-      "4px",
-      "8px",
-      "12px",
-      "16px",
-      "24px",
-      "32px",
-      "48px"
-    ],
-    "radii": [
-      "10px",
-      "16px",
-      "20px",
-      "50%",
-      "999px"
-    ],
-    "small": [],
-    "lowContrast": [],
-    "foldOK": false,
-    "hScroll": false,
-    "caps": 0,
-    "middots": 0,
-    "arrows": 0,
-    "dashes": 0,
-    "words": 729,
-    "fonts": [
-      "Atkinson Hyperlegible Next",
-      "Atkinson Hyperlegible Mono"
-    ],
-    "docH": 5746,
+    "docH": 4874,
     "specShown": 2,
     "untokenised": 0,
     "fold": true,
@@ -1717,7 +823,8 @@
       "16px",
       "24px",
       "32px",
-      "48px"
+      "48px",
+      "64px"
     ],
     "radii": [
       "10px",
@@ -1734,12 +841,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 713,
+    "words": 683,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 5746,
+    "docH": 5543,
     "specShown": 0,
     "untokenised": 0,
     "fold": true,
@@ -1763,7 +870,8 @@
       "16px",
       "24px",
       "32px",
-      "48px"
+      "48px",
+      "64px"
     ],
     "radii": [
       "10px",
@@ -1780,12 +888,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 729,
+    "words": 699,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 5746,
+    "docH": 5539,
     "specShown": 2,
     "untokenised": 0,
     "fold": true,
@@ -1794,106 +902,6 @@
   {
     "url": "/work/design-system-with-agents/",
     "viewport": "1444x862",
-    "theme": "light",
-    "spec": false,
-    "sizes": [
-      "14px",
-      "16px",
-      "18px",
-      "20px",
-      "40px",
-      "64px"
-    ],
-    "spacing": [
-      "4px",
-      "8px",
-      "12px",
-      "16px",
-      "24px",
-      "32px",
-      "48px",
-      "64px",
-      "96px"
-    ],
-    "radii": [
-      "10px",
-      "16px",
-      "20px",
-      "50%",
-      "999px"
-    ],
-    "small": [],
-    "lowContrast": [],
-    "foldOK": true,
-    "hScroll": false,
-    "caps": 0,
-    "middots": 0,
-    "arrows": 0,
-    "dashes": 0,
-    "words": 403,
-    "fonts": [
-      "Atkinson Hyperlegible Next",
-      "Atkinson Hyperlegible Mono"
-    ],
-    "docH": 2844,
-    "specShown": 0,
-    "untokenised": 0,
-    "fold": true,
-    "contentsReachable": false
-  },
-  {
-    "url": "/work/design-system-with-agents/",
-    "viewport": "1444x862",
-    "theme": "light",
-    "spec": true,
-    "sizes": [
-      "14px",
-      "16px",
-      "18px",
-      "20px",
-      "40px",
-      "64px"
-    ],
-    "spacing": [
-      "4px",
-      "8px",
-      "12px",
-      "16px",
-      "24px",
-      "32px",
-      "48px",
-      "64px",
-      "96px"
-    ],
-    "radii": [
-      "10px",
-      "16px",
-      "20px",
-      "50%",
-      "999px"
-    ],
-    "small": [],
-    "lowContrast": [],
-    "foldOK": true,
-    "hScroll": false,
-    "caps": 0,
-    "middots": 0,
-    "arrows": 0,
-    "dashes": 0,
-    "words": 433,
-    "fonts": [
-      "Atkinson Hyperlegible Next",
-      "Atkinson Hyperlegible Mono"
-    ],
-    "docH": 2844,
-    "specShown": 6,
-    "untokenised": 0,
-    "fold": true,
-    "contentsReachable": false
-  },
-  {
-    "url": "/work/design-system-with-agents/",
-    "viewport": "1444x862",
     "theme": "dark",
     "spec": false,
     "sizes": [
@@ -1919,7 +927,6 @@
       "10px",
       "16px",
       "20px",
-      "50%",
       "999px"
     ],
     "small": [],
@@ -1930,12 +937,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 403,
+    "words": 367,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 2844,
+    "docH": 2731,
     "specShown": 0,
     "untokenised": 0,
     "fold": true,
@@ -1969,7 +976,6 @@
       "10px",
       "16px",
       "20px",
-      "50%",
       "999px"
     ],
     "small": [],
@@ -1980,12 +986,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 433,
+    "words": 397,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 2844,
+    "docH": 2731,
     "specShown": 6,
     "untokenised": 0,
     "fold": true,
@@ -1994,102 +1000,6 @@
   {
     "url": "/work/design-system-with-agents/",
     "viewport": "390x844",
-    "theme": "light",
-    "spec": false,
-    "sizes": [
-      "14px",
-      "16px",
-      "18px",
-      "20px",
-      "28px",
-      "40px"
-    ],
-    "spacing": [
-      "4px",
-      "8px",
-      "12px",
-      "16px",
-      "24px",
-      "32px",
-      "48px"
-    ],
-    "radii": [
-      "10px",
-      "16px",
-      "20px",
-      "50%",
-      "999px"
-    ],
-    "small": [],
-    "lowContrast": [],
-    "foldOK": true,
-    "hScroll": false,
-    "caps": 0,
-    "middots": 0,
-    "arrows": 0,
-    "dashes": 0,
-    "words": 403,
-    "fonts": [
-      "Atkinson Hyperlegible Next",
-      "Atkinson Hyperlegible Mono"
-    ],
-    "docH": 3661,
-    "specShown": 0,
-    "untokenised": 0,
-    "fold": true,
-    "contentsReachable": false
-  },
-  {
-    "url": "/work/design-system-with-agents/",
-    "viewport": "390x844",
-    "theme": "light",
-    "spec": true,
-    "sizes": [
-      "14px",
-      "16px",
-      "18px",
-      "20px",
-      "28px",
-      "40px"
-    ],
-    "spacing": [
-      "4px",
-      "8px",
-      "12px",
-      "16px",
-      "24px",
-      "32px",
-      "48px"
-    ],
-    "radii": [
-      "10px",
-      "16px",
-      "20px",
-      "50%",
-      "999px"
-    ],
-    "small": [],
-    "lowContrast": [],
-    "foldOK": true,
-    "hScroll": false,
-    "caps": 0,
-    "middots": 0,
-    "arrows": 0,
-    "dashes": 0,
-    "words": 419,
-    "fonts": [
-      "Atkinson Hyperlegible Next",
-      "Atkinson Hyperlegible Mono"
-    ],
-    "docH": 3661,
-    "specShown": 2,
-    "untokenised": 0,
-    "fold": true,
-    "contentsReachable": false
-  },
-  {
-    "url": "/work/design-system-with-agents/",
-    "viewport": "390x844",
     "theme": "dark",
     "spec": false,
     "sizes": [
@@ -2099,295 +1009,6 @@
       "20px",
       "28px",
       "40px"
-    ],
-    "spacing": [
-      "4px",
-      "8px",
-      "12px",
-      "16px",
-      "24px",
-      "32px",
-      "48px"
-    ],
-    "radii": [
-      "10px",
-      "16px",
-      "20px",
-      "50%",
-      "999px"
-    ],
-    "small": [],
-    "lowContrast": [],
-    "foldOK": true,
-    "hScroll": false,
-    "caps": 0,
-    "middots": 0,
-    "arrows": 0,
-    "dashes": 0,
-    "words": 403,
-    "fonts": [
-      "Atkinson Hyperlegible Next",
-      "Atkinson Hyperlegible Mono"
-    ],
-    "docH": 3661,
-    "specShown": 0,
-    "untokenised": 0,
-    "fold": true,
-    "contentsReachable": false
-  },
-  {
-    "url": "/work/design-system-with-agents/",
-    "viewport": "390x844",
-    "theme": "dark",
-    "spec": true,
-    "sizes": [
-      "14px",
-      "16px",
-      "18px",
-      "20px",
-      "28px",
-      "40px"
-    ],
-    "spacing": [
-      "4px",
-      "8px",
-      "12px",
-      "16px",
-      "24px",
-      "32px",
-      "48px"
-    ],
-    "radii": [
-      "10px",
-      "16px",
-      "20px",
-      "50%",
-      "999px"
-    ],
-    "small": [],
-    "lowContrast": [],
-    "foldOK": true,
-    "hScroll": false,
-    "caps": 0,
-    "middots": 0,
-    "arrows": 0,
-    "dashes": 0,
-    "words": 419,
-    "fonts": [
-      "Atkinson Hyperlegible Next",
-      "Atkinson Hyperlegible Mono"
-    ],
-    "docH": 3661,
-    "specShown": 2,
-    "untokenised": 0,
-    "fold": true,
-    "contentsReachable": false
-  },
-  {
-    "url": "/work/design-system-with-agents/",
-    "viewport": "320x568",
-    "theme": "light",
-    "spec": false,
-    "sizes": [
-      "14px",
-      "16px",
-      "18px",
-      "20px",
-      "28px",
-      "40px"
-    ],
-    "spacing": [
-      "4px",
-      "8px",
-      "12px",
-      "16px",
-      "24px",
-      "32px",
-      "48px"
-    ],
-    "radii": [
-      "10px",
-      "16px",
-      "20px",
-      "50%",
-      "999px"
-    ],
-    "small": [],
-    "lowContrast": [],
-    "foldOK": false,
-    "hScroll": false,
-    "caps": 0,
-    "middots": 0,
-    "arrows": 0,
-    "dashes": 0,
-    "words": 403,
-    "fonts": [
-      "Atkinson Hyperlegible Next",
-      "Atkinson Hyperlegible Mono"
-    ],
-    "docH": 4109,
-    "specShown": 0,
-    "untokenised": 0,
-    "fold": true,
-    "contentsReachable": false
-  },
-  {
-    "url": "/work/design-system-with-agents/",
-    "viewport": "320x568",
-    "theme": "light",
-    "spec": true,
-    "sizes": [
-      "14px",
-      "16px",
-      "18px",
-      "20px",
-      "28px",
-      "40px"
-    ],
-    "spacing": [
-      "4px",
-      "8px",
-      "12px",
-      "16px",
-      "24px",
-      "32px",
-      "48px"
-    ],
-    "radii": [
-      "10px",
-      "16px",
-      "20px",
-      "50%",
-      "999px"
-    ],
-    "small": [],
-    "lowContrast": [],
-    "foldOK": false,
-    "hScroll": false,
-    "caps": 0,
-    "middots": 0,
-    "arrows": 0,
-    "dashes": 0,
-    "words": 419,
-    "fonts": [
-      "Atkinson Hyperlegible Next",
-      "Atkinson Hyperlegible Mono"
-    ],
-    "docH": 4109,
-    "specShown": 2,
-    "untokenised": 0,
-    "fold": true,
-    "contentsReachable": false
-  },
-  {
-    "url": "/work/design-system-with-agents/",
-    "viewport": "320x568",
-    "theme": "dark",
-    "spec": false,
-    "sizes": [
-      "14px",
-      "16px",
-      "18px",
-      "20px",
-      "28px",
-      "40px"
-    ],
-    "spacing": [
-      "4px",
-      "8px",
-      "12px",
-      "16px",
-      "24px",
-      "32px",
-      "48px"
-    ],
-    "radii": [
-      "10px",
-      "16px",
-      "20px",
-      "50%",
-      "999px"
-    ],
-    "small": [],
-    "lowContrast": [],
-    "foldOK": false,
-    "hScroll": false,
-    "caps": 0,
-    "middots": 0,
-    "arrows": 0,
-    "dashes": 0,
-    "words": 403,
-    "fonts": [
-      "Atkinson Hyperlegible Next",
-      "Atkinson Hyperlegible Mono"
-    ],
-    "docH": 4109,
-    "specShown": 0,
-    "untokenised": 0,
-    "fold": true,
-    "contentsReachable": false
-  },
-  {
-    "url": "/work/design-system-with-agents/",
-    "viewport": "320x568",
-    "theme": "dark",
-    "spec": true,
-    "sizes": [
-      "14px",
-      "16px",
-      "18px",
-      "20px",
-      "28px",
-      "40px"
-    ],
-    "spacing": [
-      "4px",
-      "8px",
-      "12px",
-      "16px",
-      "24px",
-      "32px",
-      "48px"
-    ],
-    "radii": [
-      "10px",
-      "16px",
-      "20px",
-      "50%",
-      "999px"
-    ],
-    "small": [],
-    "lowContrast": [],
-    "foldOK": false,
-    "hScroll": false,
-    "caps": 0,
-    "middots": 0,
-    "arrows": 0,
-    "dashes": 0,
-    "words": 419,
-    "fonts": [
-      "Atkinson Hyperlegible Next",
-      "Atkinson Hyperlegible Mono"
-    ],
-    "docH": 4109,
-    "specShown": 2,
-    "untokenised": 0,
-    "fold": true,
-    "contentsReachable": false
-  },
-  {
-    "url": "/spec/",
-    "viewport": "1444x862",
-    "theme": "light",
-    "spec": false,
-    "sizes": [
-      "14px",
-      "16px",
-      "18px",
-      "20px",
-      "28px",
-      "40px",
-      "64px"
     ],
     "spacing": [
       "4px",
@@ -2397,39 +1018,37 @@
       "24px",
       "32px",
       "48px",
-      "64px",
-      "96px"
+      "64px"
     ],
     "radii": [
       "10px",
       "16px",
       "20px",
-      "50%",
       "999px"
     ],
     "small": [],
     "lowContrast": [],
-    "foldOK": "Timeline label not found",
+    "foldOK": true,
     "hScroll": false,
     "caps": 0,
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 807,
+    "words": 367,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 6702,
+    "docH": 3476,
     "specShown": 0,
     "untokenised": 0,
     "fold": true,
     "contentsReachable": false
   },
   {
-    "url": "/spec/",
-    "viewport": "1444x862",
-    "theme": "light",
+    "url": "/work/design-system-with-agents/",
+    "viewport": "390x844",
+    "theme": "dark",
     "spec": true,
     "sizes": [
       "14px",
@@ -2437,8 +1056,7 @@
       "18px",
       "20px",
       "28px",
-      "40px",
-      "64px"
+      "40px"
     ],
     "spacing": [
       "4px",
@@ -2448,31 +1066,125 @@
       "24px",
       "32px",
       "48px",
-      "64px",
-      "96px"
+      "64px"
     ],
     "radii": [
       "10px",
       "16px",
       "20px",
-      "50%",
       "999px"
     ],
     "small": [],
     "lowContrast": [],
-    "foldOK": "Timeline label not found",
+    "foldOK": true,
     "hScroll": false,
     "caps": 0,
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 825,
+    "words": 383,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 6702,
-    "specShown": 3,
+    "docH": 3476,
+    "specShown": 2,
+    "untokenised": 0,
+    "fold": true,
+    "contentsReachable": false
+  },
+  {
+    "url": "/work/design-system-with-agents/",
+    "viewport": "320x568",
+    "theme": "dark",
+    "spec": false,
+    "sizes": [
+      "14px",
+      "16px",
+      "18px",
+      "20px",
+      "28px",
+      "40px"
+    ],
+    "spacing": [
+      "4px",
+      "8px",
+      "12px",
+      "16px",
+      "24px",
+      "32px",
+      "48px",
+      "64px"
+    ],
+    "radii": [
+      "10px",
+      "16px",
+      "20px",
+      "999px"
+    ],
+    "small": [],
+    "lowContrast": [],
+    "foldOK": false,
+    "hScroll": false,
+    "caps": 0,
+    "middots": 0,
+    "arrows": 0,
+    "dashes": 0,
+    "words": 367,
+    "fonts": [
+      "Atkinson Hyperlegible Next",
+      "Atkinson Hyperlegible Mono"
+    ],
+    "docH": 3882,
+    "specShown": 0,
+    "untokenised": 0,
+    "fold": true,
+    "contentsReachable": false
+  },
+  {
+    "url": "/work/design-system-with-agents/",
+    "viewport": "320x568",
+    "theme": "dark",
+    "spec": true,
+    "sizes": [
+      "14px",
+      "16px",
+      "18px",
+      "20px",
+      "28px",
+      "40px"
+    ],
+    "spacing": [
+      "4px",
+      "8px",
+      "12px",
+      "16px",
+      "24px",
+      "32px",
+      "48px",
+      "64px"
+    ],
+    "radii": [
+      "10px",
+      "16px",
+      "20px",
+      "999px"
+    ],
+    "small": [],
+    "lowContrast": [],
+    "foldOK": false,
+    "hScroll": false,
+    "caps": 0,
+    "middots": 0,
+    "arrows": 0,
+    "dashes": 0,
+    "words": 383,
+    "fonts": [
+      "Atkinson Hyperlegible Next",
+      "Atkinson Hyperlegible Mono"
+    ],
+    "docH": 3878,
+    "specShown": 2,
     "untokenised": 0,
     "fold": true,
     "contentsReachable": false
@@ -2498,7 +1210,6 @@
       "16px",
       "24px",
       "32px",
-      "48px",
       "64px",
       "96px"
     ],
@@ -2517,12 +1228,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 807,
+    "words": 776,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 6702,
+    "docH": 6816,
     "specShown": 0,
     "untokenised": 0,
     "fold": true,
@@ -2549,7 +1260,6 @@
       "16px",
       "24px",
       "32px",
-      "48px",
       "64px",
       "96px"
     ],
@@ -2568,12 +1278,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 825,
+    "words": 794,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 6702,
+    "docH": 6816,
     "specShown": 3,
     "untokenised": 0,
     "fold": true,
@@ -2582,104 +1292,6 @@
   {
     "url": "/spec/",
     "viewport": "390x844",
-    "theme": "light",
-    "spec": false,
-    "sizes": [
-      "14px",
-      "16px",
-      "18px",
-      "20px",
-      "28px",
-      "40px",
-      "64px"
-    ],
-    "spacing": [
-      "4px",
-      "8px",
-      "12px",
-      "16px",
-      "24px",
-      "32px",
-      "48px"
-    ],
-    "radii": [
-      "10px",
-      "16px",
-      "20px",
-      "50%",
-      "999px"
-    ],
-    "small": [],
-    "lowContrast": [],
-    "foldOK": "Timeline label not found",
-    "hScroll": false,
-    "caps": 0,
-    "middots": 0,
-    "arrows": 0,
-    "dashes": 0,
-    "words": 807,
-    "fonts": [
-      "Atkinson Hyperlegible Next",
-      "Atkinson Hyperlegible Mono"
-    ],
-    "docH": 7664,
-    "specShown": 0,
-    "untokenised": 0,
-    "fold": true,
-    "contentsReachable": false
-  },
-  {
-    "url": "/spec/",
-    "viewport": "390x844",
-    "theme": "light",
-    "spec": true,
-    "sizes": [
-      "14px",
-      "16px",
-      "18px",
-      "20px",
-      "28px",
-      "40px",
-      "64px"
-    ],
-    "spacing": [
-      "4px",
-      "8px",
-      "12px",
-      "16px",
-      "24px",
-      "32px",
-      "48px"
-    ],
-    "radii": [
-      "10px",
-      "16px",
-      "20px",
-      "50%",
-      "999px"
-    ],
-    "small": [],
-    "lowContrast": [],
-    "foldOK": "Timeline label not found",
-    "hScroll": false,
-    "caps": 0,
-    "middots": 0,
-    "arrows": 0,
-    "dashes": 0,
-    "words": 823,
-    "fonts": [
-      "Atkinson Hyperlegible Next",
-      "Atkinson Hyperlegible Mono"
-    ],
-    "docH": 7664,
-    "specShown": 2,
-    "untokenised": 0,
-    "fold": true,
-    "contentsReachable": false
-  },
-  {
-    "url": "/spec/",
-    "viewport": "390x844",
     "theme": "dark",
     "spec": false,
     "sizes": [
@@ -2698,7 +1310,8 @@
       "16px",
       "24px",
       "32px",
-      "48px"
+      "48px",
+      "64px"
     ],
     "radii": [
       "10px",
@@ -2715,12 +1328,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 807,
+    "words": 776,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 7664,
+    "docH": 7774,
     "specShown": 0,
     "untokenised": 0,
     "fold": true,
@@ -2747,57 +1360,9 @@
       "16px",
       "24px",
       "32px",
-      "48px"
-    ],
-    "radii": [
-      "10px",
-      "16px",
-      "20px",
-      "50%",
-      "999px"
-    ],
-    "small": [],
-    "lowContrast": [],
-    "foldOK": "Timeline label not found",
-    "hScroll": false,
-    "caps": 0,
-    "middots": 0,
-    "arrows": 0,
-    "dashes": 0,
-    "words": 823,
-    "fonts": [
-      "Atkinson Hyperlegible Next",
-      "Atkinson Hyperlegible Mono"
-    ],
-    "docH": 7664,
-    "specShown": 2,
-    "untokenised": 0,
-    "fold": true,
-    "contentsReachable": false
-  },
-  {
-    "url": "/spec/",
-    "viewport": "320x568",
-    "theme": "light",
-    "spec": false,
-    "sizes": [
-      "14px",
-      "16px",
-      "18px",
-      "20px",
-      "28px",
-      "40px",
+      "48px",
       "64px"
     ],
-    "spacing": [
-      "4px",
-      "8px",
-      "12px",
-      "16px",
-      "24px",
-      "32px",
-      "48px"
-    ],
     "radii": [
       "10px",
       "16px",
@@ -2813,61 +1378,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 807,
+    "words": 792,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 8368,
-    "specShown": 0,
-    "untokenised": 0,
-    "fold": true,
-    "contentsReachable": false
-  },
-  {
-    "url": "/spec/",
-    "viewport": "320x568",
-    "theme": "light",
-    "spec": true,
-    "sizes": [
-      "14px",
-      "16px",
-      "18px",
-      "20px",
-      "28px",
-      "40px",
-      "64px"
-    ],
-    "spacing": [
-      "4px",
-      "8px",
-      "12px",
-      "16px",
-      "24px",
-      "32px",
-      "48px"
-    ],
-    "radii": [
-      "10px",
-      "16px",
-      "20px",
-      "50%",
-      "999px"
-    ],
-    "small": [],
-    "lowContrast": [],
-    "foldOK": "Timeline label not found",
-    "hScroll": false,
-    "caps": 0,
-    "middots": 0,
-    "arrows": 0,
-    "dashes": 0,
-    "words": 823,
-    "fonts": [
-      "Atkinson Hyperlegible Next",
-      "Atkinson Hyperlegible Mono"
-    ],
-    "docH": 8368,
+    "docH": 7774,
     "specShown": 2,
     "untokenised": 0,
     "fold": true,
@@ -2894,7 +1410,8 @@
       "16px",
       "24px",
       "32px",
-      "48px"
+      "48px",
+      "64px"
     ],
     "radii": [
       "10px",
@@ -2911,12 +1428,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 807,
+    "words": 776,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 8368,
+    "docH": 8484,
     "specShown": 0,
     "untokenised": 0,
     "fold": true,
@@ -2943,7 +1460,8 @@
       "16px",
       "24px",
       "32px",
-      "48px"
+      "48px",
+      "64px"
     ],
     "radii": [
       "10px",
@@ -2960,12 +1478,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 823,
+    "words": 792,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 8368,
+    "docH": 8480,
     "specShown": 2,
     "untokenised": 0,
     "fold": true,

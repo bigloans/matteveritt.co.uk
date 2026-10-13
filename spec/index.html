@@ -20,7 +20,6 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='10' fill='%230B6B63'/%3E%3C/svg%3E">
 <script>
 document.documentElement.classList.add('js');
-try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}
 </script>
 <script src="/assets/site.js" defer></script>
 <!-- /build:head -->
@@ -38,7 +37,6 @@ try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.docu
     </nav>
     <div class="site-tools">
       <button class="spec-toggle" type="button" aria-pressed="false" data-spec-toggle hidden>Show the spec</button>
-      <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Dark theme" data-theme-toggle hidden><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg></button>
     </div>
   </div>
 </header>
@@ -47,7 +45,7 @@ try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.docu
 <main id="main" tabindex="-1">
 <div class="band">
 <div class="article-hero page" data-spec="space" data-spec-prop="padding-top" data-spec-priority="2">
-  <h1 class="article-title reveal" data-spec="type" data-spec-priority="1">This site's spec</h1>
+  <h1 class="article-title reveal blur" data-spec="type" data-spec-priority="1">This site's spec</h1>
   <p class="article-lede" data-spec="space" data-spec-prop="margin-top" data-spec-priority="1">Every value on this site comes from one token file. The same file draws the "Show the spec" annotations and this page, so the three can't drift apart.</p>
 </div>
 </div>
@@ -56,32 +54,32 @@ try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.docu
 <!-- build:spec -->
 <section id="colour" class="flow" aria-labelledby="colour-h">
       <h2 id="colour-h">Colour</h2>
-      <p>Each role has one value per theme. The dark theme follows the system setting until you choose one with the theme toggle.</p>
+      <p>The site has one theme, deep navy. Each colour role has one value.</p>
       <div class="table-scroll" tabindex="0" role="region" aria-label="Colour roles">
         <table>
-          <thead><tr><th scope="col">Role</th><th scope="col">Light</th><th scope="col">Dark</th><th scope="col">Use</th></tr></thead>
+          <thead><tr><th scope="col">Role</th><th scope="col">Value</th><th scope="col">Use</th></tr></thead>
           <tbody>
-          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-surface)"></span><code>--color-surface</code></th><td><code>#FFFFFF</code></td><td><code>#0B1628</code></td><td>Page background</td></tr>
-          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-surface-alt)"></span><code>--color-surface-alt</code></th><td><code>#F3F5F8</code></td><td><code>#12223A</code></td><td>Gate output, contents sheet, tables</td></tr>
-          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-text)"></span><code>--color-text</code></th><td><code>#0B1628</code></td><td><code>#E8EDF4</code></td><td>Text and headings</td></tr>
-          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-text-muted)"></span><code>--color-text-muted</code></th><td><code>#5D6878</code></td><td><code>#B9C6D8</code></td><td>Metadata and notes</td></tr>
-          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-interactive)"></span><code>--color-interactive</code></th><td><code>#0B6B63</code></td><td><code>#2EC4B6</code></td><td>Links, primary buttons and focus</td></tr>
-          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-on-interactive)"></span><code>--color-on-interactive</code></th><td><code>#FFFFFF</code></td><td><code>#0B1628</code></td><td>Text on primary buttons</td></tr>
-          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-redline)"></span><code>--color-redline</code></th><td><code>#C2185B</code></td><td><code>#FF7AB6</code></td><td>Spec annotations only</td></tr>
-          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-hairline)"></span><code>--color-hairline</code></th><td><code>#D3D9E1</code></td><td><code>#2A3B57</code></td><td>1px separators</td></tr>
-          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-accent-blue)"></span><code>--color-accent-blue</code></th><td><code>#2A55B8</code></td><td><code>#7C9BFF</code></td><td>Gradient stop and accent text</td></tr>
-          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-accent-violet)"></span><code>--color-accent-violet</code></th><td><code>#6D28D9</code></td><td><code>#A78BFA</code></td><td>Gradient stop and accent text</td></tr>
-          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-accent-pink)"></span><code>--color-accent-pink</code></th><td><code>#B4235F</code></td><td><code>#FF6FB1</code></td><td>Gradient stop and accent text</td></tr>
-          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-inverse-surface)"></span><code>--color-inverse-surface</code></th><td><code>#0B1628</code></td><td><code>#0B1628</code></td><td>Navy bands, the same in both themes</td></tr>
-          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-inverse-raised)"></span><code>--color-inverse-raised</code></th><td><code>#12223A</code></td><td><code>#12223A</code></td><td>Cards on navy bands</td></tr>
-          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-inverse-deep)"></span><code>--color-inverse-deep</code></th><td><code>#060D19</code></td><td><code>#060D19</code></td><td>Terminals and the deepest navy</td></tr>
-          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-inverse-text)"></span><code>--color-inverse-text</code></th><td><code>#FFFFFF</code></td><td><code>#FFFFFF</code></td><td>Headings on navy</td></tr>
-          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-inverse-muted)"></span><code>--color-inverse-muted</code></th><td><code>#B9C6D8</code></td><td><code>#B9C6D8</code></td><td>Body text on navy</td></tr>
-          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-inverse-accent)"></span><code>--color-inverse-accent</code></th><td><code>#2EC4B6</code></td><td><code>#2EC4B6</code></td><td>Links, buttons and focus on navy</td></tr>
-          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-inverse-blue)"></span><code>--color-inverse-blue</code></th><td><code>#7C9BFF</code></td><td><code>#7C9BFF</code></td><td>Accent on navy</td></tr>
-          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-inverse-pink)"></span><code>--color-inverse-pink</code></th><td><code>#FF6FB1</code></td><td><code>#FF6FB1</code></td><td>Accent and failures on navy</td></tr>
-          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-inverse-on-accent)"></span><code>--color-inverse-on-accent</code></th><td><code>#0B1628</code></td><td><code>#0B1628</code></td><td>Text on teal buttons</td></tr>
-          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-inverse-line)"></span><code>--color-inverse-line</code></th><td><code>#26385A</code></td><td><code>#26385A</code></td><td>Hairlines on navy</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-surface)"></span><code>--color-surface</code></th><td><code>#0B1628</code></td><td>Page background</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-surface-alt)"></span><code>--color-surface-alt</code></th><td><code>#12223A</code></td><td>Gate output, contents sheet, tables</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-text)"></span><code>--color-text</code></th><td><code>#E8EDF4</code></td><td>Text and headings</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-text-muted)"></span><code>--color-text-muted</code></th><td><code>#B9C6D8</code></td><td>Metadata and notes</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-interactive)"></span><code>--color-interactive</code></th><td><code>#2EC4B6</code></td><td>Links, primary buttons and focus</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-on-interactive)"></span><code>--color-on-interactive</code></th><td><code>#0B1628</code></td><td>Text on primary buttons</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-redline)"></span><code>--color-redline</code></th><td><code>#FF7AB6</code></td><td>Spec annotations only</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-hairline)"></span><code>--color-hairline</code></th><td><code>#2A3B57</code></td><td>1px separators</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-accent-blue)"></span><code>--color-accent-blue</code></th><td><code>#7C9BFF</code></td><td>Gradient stop and accent text</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-accent-violet)"></span><code>--color-accent-violet</code></th><td><code>#A78BFA</code></td><td>Gradient stop and accent text</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-accent-pink)"></span><code>--color-accent-pink</code></th><td><code>#FF6FB1</code></td><td>Gradient stop and accent text</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-inverse-surface)"></span><code>--color-inverse-surface</code></th><td><code>#0B1628</code></td><td>Navy bands, the same in both themes</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-inverse-raised)"></span><code>--color-inverse-raised</code></th><td><code>#12223A</code></td><td>Cards on navy bands</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-inverse-deep)"></span><code>--color-inverse-deep</code></th><td><code>#060D19</code></td><td>Terminals and the deepest navy</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-inverse-text)"></span><code>--color-inverse-text</code></th><td><code>#FFFFFF</code></td><td>Headings on navy</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-inverse-muted)"></span><code>--color-inverse-muted</code></th><td><code>#B9C6D8</code></td><td>Body text on navy</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-inverse-accent)"></span><code>--color-inverse-accent</code></th><td><code>#2EC4B6</code></td><td>Links, buttons and focus on navy</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-inverse-blue)"></span><code>--color-inverse-blue</code></th><td><code>#7C9BFF</code></td><td>Accent on navy</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-inverse-pink)"></span><code>--color-inverse-pink</code></th><td><code>#FF6FB1</code></td><td>Accent and failures on navy</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-inverse-on-accent)"></span><code>--color-inverse-on-accent</code></th><td><code>#0B1628</code></td><td>Text on teal buttons</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-inverse-line)"></span><code>--color-inverse-line</code></th><td><code>#26385A</code></td><td>Hairlines on navy</td></tr>
           </tbody>
         </table>
       </div>
@@ -89,31 +87,31 @@ try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.docu
       <p>The build fails if any of these pairs drops below 4.5:1, the WCAG 2.2 AA minimum for body text.</p>
       <div class="table-scroll" tabindex="0" role="region" aria-label="Contrast pairs">
         <table>
-          <thead><tr><th scope="col">Pair</th><th scope="col">Light</th><th scope="col">Dark</th></tr></thead>
+          <thead><tr><th scope="col">Pair</th><th scope="col">Ratio</th></tr></thead>
           <tbody>
-          <tr><th scope="row"><code>text</code> on <code>surface</code></th><td>18.11:1</td><td>15.39:1</td></tr>
-          <tr><th scope="row"><code>text</code> on <code>surface-alt</code></th><td>16.58:1</td><td>13.57:1</td></tr>
-          <tr><th scope="row"><code>text-muted</code> on <code>surface</code></th><td>5.65:1</td><td>10.46:1</td></tr>
-          <tr><th scope="row"><code>text-muted</code> on <code>surface-alt</code></th><td>5.17:1</td><td>9.22:1</td></tr>
-          <tr><th scope="row"><code>interactive</code> on <code>surface</code></th><td>6.37:1</td><td>8.35:1</td></tr>
-          <tr><th scope="row"><code>interactive</code> on <code>surface-alt</code></th><td>5.83:1</td><td>7.36:1</td></tr>
-          <tr><th scope="row"><code>on-interactive</code> on <code>interactive</code></th><td>6.37:1</td><td>8.35:1</td></tr>
-          <tr><th scope="row"><code>redline</code> on <code>surface</code></th><td>5.87:1</td><td>7.51:1</td></tr>
-          <tr><th scope="row"><code>redline</code> on <code>surface-alt</code></th><td>5.38:1</td><td>6.62:1</td></tr>
-          <tr><th scope="row"><code>accent-blue</code> on <code>surface</code></th><td>6.80:1</td><td>6.89:1</td></tr>
-          <tr><th scope="row"><code>accent-violet</code> on <code>surface</code></th><td>7.10:1</td><td>6.65:1</td></tr>
-          <tr><th scope="row"><code>accent-pink</code> on <code>surface</code></th><td>6.28:1</td><td>7.04:1</td></tr>
-          <tr><th scope="row"><code>accent-pink</code> on <code>surface-alt</code></th><td>5.75:1</td><td>6.20:1</td></tr>
-          <tr><th scope="row"><code>inverse-text</code> on <code>inverse-surface</code></th><td>18.11:1</td><td>18.11:1</td></tr>
-          <tr><th scope="row"><code>inverse-muted</code> on <code>inverse-surface</code></th><td>10.46:1</td><td>10.46:1</td></tr>
-          <tr><th scope="row"><code>inverse-muted</code> on <code>inverse-raised</code></th><td>9.22:1</td><td>9.22:1</td></tr>
-          <tr><th scope="row"><code>inverse-accent</code> on <code>inverse-surface</code></th><td>8.35:1</td><td>8.35:1</td></tr>
-          <tr><th scope="row"><code>inverse-accent</code> on <code>inverse-raised</code></th><td>7.36:1</td><td>7.36:1</td></tr>
-          <tr><th scope="row"><code>inverse-accent</code> on <code>inverse-deep</code></th><td>8.98:1</td><td>8.98:1</td></tr>
-          <tr><th scope="row"><code>inverse-blue</code> on <code>inverse-raised</code></th><td>6.07:1</td><td>6.07:1</td></tr>
-          <tr><th scope="row"><code>inverse-pink</code> on <code>inverse-raised</code></th><td>6.20:1</td><td>6.20:1</td></tr>
-          <tr><th scope="row"><code>inverse-pink</code> on <code>inverse-deep</code></th><td>7.56:1</td><td>7.56:1</td></tr>
-          <tr><th scope="row"><code>inverse-on-accent</code> on <code>inverse-accent</code></th><td>8.35:1</td><td>8.35:1</td></tr>
+          <tr><th scope="row"><code>text</code> on <code>surface</code></th><td>15.39:1</td></tr>
+          <tr><th scope="row"><code>text</code> on <code>surface-alt</code></th><td>13.57:1</td></tr>
+          <tr><th scope="row"><code>text-muted</code> on <code>surface</code></th><td>10.46:1</td></tr>
+          <tr><th scope="row"><code>text-muted</code> on <code>surface-alt</code></th><td>9.22:1</td></tr>
+          <tr><th scope="row"><code>interactive</code> on <code>surface</code></th><td>8.35:1</td></tr>
+          <tr><th scope="row"><code>interactive</code> on <code>surface-alt</code></th><td>7.36:1</td></tr>
+          <tr><th scope="row"><code>on-interactive</code> on <code>interactive</code></th><td>8.35:1</td></tr>
+          <tr><th scope="row"><code>redline</code> on <code>surface</code></th><td>7.51:1</td></tr>
+          <tr><th scope="row"><code>redline</code> on <code>surface-alt</code></th><td>6.62:1</td></tr>
+          <tr><th scope="row"><code>accent-blue</code> on <code>surface</code></th><td>6.89:1</td></tr>
+          <tr><th scope="row"><code>accent-violet</code> on <code>surface</code></th><td>6.65:1</td></tr>
+          <tr><th scope="row"><code>accent-pink</code> on <code>surface</code></th><td>7.04:1</td></tr>
+          <tr><th scope="row"><code>accent-pink</code> on <code>surface-alt</code></th><td>6.20:1</td></tr>
+          <tr><th scope="row"><code>inverse-text</code> on <code>inverse-surface</code></th><td>18.11:1</td></tr>
+          <tr><th scope="row"><code>inverse-muted</code> on <code>inverse-surface</code></th><td>10.46:1</td></tr>
+          <tr><th scope="row"><code>inverse-muted</code> on <code>inverse-raised</code></th><td>9.22:1</td></tr>
+          <tr><th scope="row"><code>inverse-accent</code> on <code>inverse-surface</code></th><td>8.35:1</td></tr>
+          <tr><th scope="row"><code>inverse-accent</code> on <code>inverse-raised</code></th><td>7.36:1</td></tr>
+          <tr><th scope="row"><code>inverse-accent</code> on <code>inverse-deep</code></th><td>8.98:1</td></tr>
+          <tr><th scope="row"><code>inverse-blue</code> on <code>inverse-raised</code></th><td>6.07:1</td></tr>
+          <tr><th scope="row"><code>inverse-pink</code> on <code>inverse-raised</code></th><td>6.20:1</td></tr>
+          <tr><th scope="row"><code>inverse-pink</code> on <code>inverse-deep</code></th><td>7.56:1</td></tr>
+          <tr><th scope="row"><code>inverse-on-accent</code> on <code>inverse-accent</code></th><td>8.35:1</td></tr>
           </tbody>
         </table>
       </div>
@@ -188,12 +186,13 @@ try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.docu
 
     <section id="gradients" class="flow" aria-labelledby="gradients-h">
       <h2 id="gradients-h">Gradients</h2>
-      <p>The brand sweeps from teal through blue to pink. Gradient type uses deeper stops on the light surface, so every stop still clears 3:1 for large text.</p>
+      <p>The brand sweeps from teal through blue to pink. Every stop clears 3:1 against navy, so gradient type stays readable as large text.</p>
       <ul class="spec-list">
         <li class="spec-gradient"><span style="background:var(--gradient-brand)"></span><code>--gradient-brand</code><span class="spec-note">Brand sweep on navy: teal, blue, pink</span></li>
-        <li class="spec-gradient"><span style="background:var(--gradient-text)"></span><code>--gradient-text</code><span class="spec-note">Gradient type on the page surface. Every stop clears 3:1 for large text</span></li>
+        <li class="spec-gradient"><span style="background:var(--gradient-text)"></span><code>--gradient-text</code><span class="spec-note">Gradient type. Every stop clears 3:1 for large text on navy</span></li>
         <li class="spec-gradient"><span style="background:var(--gradient-aurora)"></span><code>--gradient-aurora</code><span class="spec-note">Drifting glow behind navy bands</span></li>
         <li class="spec-gradient"><span style="background:var(--gradient-surface-glow)"></span><code>--gradient-surface-glow</code><span class="spec-note">Faint glow on page-surface panels</span></li>
+        <li class="spec-gradient"><span style="background:var(--gradient-spec-grid)"></span><code>--gradient-spec-grid</code><span class="spec-note">The blueprint grid behind "Show the spec": an 8px baseline and 48px columns</span></li>
       </ul>
     </section>
 
@@ -205,7 +204,7 @@ try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.docu
 
     <section id="motion" class="flow" aria-labelledby="motion-h">
       <h2 id="motion-h">Motion</h2>
-      <p>Motion adds a little joy without getting in the way of reading. Navy bands drift slowly, sections ease in as they arrive, and figures count up once. With reduced motion set, every duration becomes 0ms and nothing moves.</p>
+      <p>Motion adds a little joy without getting in the way of reading. Navy bands drift slowly, headlines sharpen into focus, sections ease in as they arrive and figures count up once. "Show the spec" fades in a blueprint grid, then draws each measurement top to bottom, counting the values up as the lines grow. With reduced motion set, every duration becomes 0ms and nothing moves.</p>
       <div class="table-scroll" tabindex="0" role="region" aria-label="Motion tokens">
         <table>
           <thead><tr><th scope="col">Token</th><th scope="col">Value</th><th scope="col">Use</th></tr></thead>
@@ -216,6 +215,8 @@ try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.docu
           <tr><th scope="row"><code>--motion-count</code></th><td><code>1400ms</code></td><td>Figures counting up</td></tr>
           <tr><th scope="row"><code>--motion-ambient</code></th><td><code>24s</code></td><td>The slow drift of the aurora glow</td></tr>
           <tr><th scope="row"><code>--motion-ease</code></th><td><code>cubic-bezier(0.2, 0.8, 0.2, 1)</code></td><td>One easing curve for everything</td></tr>
+          <tr><th scope="row"><code>--motion-draw</code></th><td><code>600ms</code></td><td>"Show the spec" lines and outlines drawing in</td></tr>
+          <tr><th scope="row"><code>--motion-stagger</code></th><td><code>45ms</code></td><td>Delay between one annotation and the next</td></tr>
           </tbody>
         </table>
       </div>
@@ -226,13 +227,6 @@ try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.docu
 </main>
 
 <!-- build:footer -->
-<footer class="site-footer">
-  <div class="site-footer-in">
-    <p>Figures are published with my employer's permission. Interface visuals are recreations.</p>
-    <p>Set in Atkinson Hyperlegible Next, a typeface from the Braille Institute built for low-vision readers.</p>
-    <p><a href="/spec/">Read this site's spec</a></p>
-  </div>
-</footer>
 <p class="sr-only" role="status" aria-live="polite" data-spec-status></p>
 <!-- /build:footer -->
 </body>
