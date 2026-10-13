@@ -1,0 +1,12 @@
+[
+  {
+    "url": "/",
+    "performance": 99,
+    "accessibility": 100,
+    "bestPractices": 96,
+    "seo": 100,
+    "failing": [
+      "errors-in-console"
+    ]
+  }
+]
