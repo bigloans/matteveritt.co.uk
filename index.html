@@ -69,6 +69,7 @@ try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.docu
   --measure-narrow:660px;
   --measure-cta:560px;
   --size-hairline:1px;
+  --size-target:44px;
   --size-dot:6px;
   --size-bullet:8px;
   --size-caret:10px;
@@ -351,12 +352,13 @@ section{padding:var(--space-24) 0}
 .specfile .bar,.term .bar{display:flex;gap:var(--space-2);padding:var(--space-3) var(--space-4);border-bottom:var(--border-1) solid var(--inverse-fill-3);align-items:center}
 .specfile .bar i,.term .bar i{width:var(--size-caret);height:var(--size-caret);border-radius:var(--radius-circle);background:var(--inverse-window-dot)}
 .specfile .bar span{margin-left:var(--space-3);color:var(--inverse-text-muted);font-size:var(--text-sm)}
-.specfile pre{padding:var(--space-4) var(--space-4);line-height:1.75;color:var(--inverse-text-body);white-space:pre-wrap}
+.specfile pre{padding:var(--space-4) var(--space-4);line-height:1.75;color:var(--inverse-text-body);white-space:pre;overflow-x:auto}
 .k{color:var(--code-key)}.s{color:var(--code-string)}.c{color:var(--code-comment)}.n{color:var(--code-number)}
 
 /* table of contents */
-.toc{position:relative;z-index:10;background:var(--color-bg);border-bottom:var(--border-1) solid var(--color-border)}
-.toc-details{max-width:var(--wrap);margin:0 auto;padding:0 var(--space-6)}
+html{scroll-padding-top:var(--space-12)}
+.toc{position:sticky;top:0;z-index:10;background:var(--color-bg);border-bottom:var(--border-1) solid var(--color-border)}
+.toc-details{max-width:var(--wrap);margin:0 auto;padding:0 max(var(--space-6),env(safe-area-inset-right)) 0 max(var(--space-6),env(safe-area-inset-left))}
 .toc summary{cursor:pointer;padding:var(--space-3) 0;font:600 var(--text-sm) var(--font-body);color:var(--color-text)}
 .toc summary:focus-visible,.toc a:focus-visible{outline:var(--focus-width) solid var(--color-interactive);outline-offset:var(--focus-offset)}
 .toc ol{list-style:none;display:grid;gap:var(--space-1);padding-bottom:var(--space-3)}
@@ -364,13 +366,19 @@ section{padding:var(--space-24) 0}
 .toc a:hover{color:var(--color-text);text-decoration:underline}
 .toc a[aria-current="true"]{color:var(--color-interactive);font-weight:600}
 @media (min-width:901px){
-  html{scroll-padding-top:var(--space-12)}
-  .toc{position:sticky;top:0}
   .toc summary{display:none}
   .toc ol{display:flex;gap:var(--space-4);overflow-x:auto;padding:0;scrollbar-width:thin}
   .toc li{flex:none}
   .toc a{padding:var(--space-3) 0;border-bottom:var(--border-2) solid transparent}
   .toc a[aria-current="true"]{border-bottom-color:var(--color-interactive)}
+}
+@media (max-width:900px){
+  .toc summary{display:flex;align-items:center;justify-content:space-between;min-height:var(--size-target);padding:0;list-style:none}
+  .toc summary::-webkit-details-marker{display:none}
+  .toc summary:after{content:"";width:var(--size-bullet);height:var(--size-bullet);margin-right:var(--space-1);border-right:var(--border-2) solid currentColor;border-bottom:var(--border-2) solid currentColor;transform:translateY(calc(var(--space-1) * -1)) rotate(45deg)}
+  .toc details[open] summary:after{transform:rotate(-135deg)}
+  .toc ol{position:absolute;left:0;right:0;top:100%;max-height:calc(100vh - var(--space-12));max-height:calc(100dvh - var(--space-12) - env(safe-area-inset-top));overflow-y:auto;overscroll-behavior:contain;background:var(--color-bg);border-bottom:var(--border-1) solid var(--color-border);box-shadow:var(--shadow-card);padding:var(--space-2) max(var(--space-6),env(safe-area-inset-right)) var(--space-4) max(var(--space-6),env(safe-area-inset-left))}
+  .toc a{padding:var(--space-2) 0}
 }
 
 /* at a glance */
@@ -583,7 +591,8 @@ section{padding:var(--space-24) 0}
 .layer p{font-size:var(--text-md);color:var(--inverse-text-soft)}
 .layer b{color:var(--inverse-text);font-weight:600}
 .term{background:var(--inverse-bg-deep);border:var(--border-1) solid var(--inverse-border);border-radius:var(--radius-surface);overflow:hidden;font-family:var(--font-mono);font-size:var(--text-sm);box-shadow:var(--shadow-term)}
-.term pre{padding:var(--space-4);line-height:1.8;color:var(--inverse-text-soft);white-space:pre-wrap;min-height:var(--size-term)}
+.term pre{padding:var(--space-4);line-height:1.8;color:var(--inverse-text-soft);white-space:pre;overflow-x:auto;min-height:var(--size-term)}
+.term pre:focus-visible{outline:var(--focus-width) solid var(--inverse-accent);outline-offset:calc(var(--focus-offset) * -1)}
 .term .f{color:var(--code-fail)}.term .ok{color:var(--code-pass)}.term .d{color:var(--code-comment)}.term .h{color:var(--inverse-text);font-weight:500}.term .w{color:var(--code-warn)}
 
 /* story */
@@ -683,11 +692,37 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--space-6);flex-
   .flow,.aid{grid-template-columns:1fr}
   .funnel{flex-direction:column}
   .stat b{font-size:var(--text-2xl)}
+  .lanes,.stats{grid-template-columns:1fr}
+  .stat{border-right:0}.stat:not(:last-child){border-bottom:var(--border-1) solid var(--color-border)}
 }
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
+
+<nav class="toc" aria-label="Contents">
+  <details class="toc-details" open>
+    <summary>Contents</summary>
+    <ol>
+      <li><a href="#glance">At a glance</a></li>
+      <li><a href="#customers">Customers</a></li>
+      <li><a href="#problem">The problem</a></li>
+      <li><a href="#options">Options</a></li>
+      <li><a href="#product">The product</a></li>
+      <li><a href="#visual-language">Visual language</a></li>
+      <li><a href="#designers">Designers</a></li>
+      <li><a href="#gate">The gate</a></li>
+      <li><a href="#story">First evidence</a></li>
+      <li><a href="#team">Team of one</a></li>
+      <li><a href="#adoption">Adoption</a></li>
+      <li><a href="#metrics">Metrics</a></li>
+      <li><a href="#trade-offs">Trade-offs</a></li>
+      <li><a href="#roadmap">Roadmap</a></li>
+      <li><a href="#reflection">Reflection</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ol>
+  </details>
+</nav>
 
 <header class="hero">
   <div class="wrap">
@@ -722,30 +757,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--space-6);flex-
 </header>
 
 <main id="main" tabindex="-1">
-
-<nav class="toc" aria-label="Contents">
-  <details class="toc-details" open>
-    <summary>Contents</summary>
-    <ol>
-      <li><a href="#glance">At a glance</a></li>
-      <li><a href="#customers">Customers</a></li>
-      <li><a href="#problem">The problem</a></li>
-      <li><a href="#options">Options</a></li>
-      <li><a href="#product">The product</a></li>
-      <li><a href="#visual-language">Visual language</a></li>
-      <li><a href="#designers">Designers</a></li>
-      <li><a href="#gate">The gate</a></li>
-      <li><a href="#story">First evidence</a></li>
-      <li><a href="#team">Team of one</a></li>
-      <li><a href="#adoption">Adoption</a></li>
-      <li><a href="#metrics">Metrics</a></li>
-      <li><a href="#trade-offs">Trade-offs</a></li>
-      <li><a href="#roadmap">Roadmap</a></li>
-      <li><a href="#reflection">Reflection</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ol>
-  </details>
-</nav>
 
 <section id="glance">
   <div class="wrap">
@@ -929,7 +940,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--space-6);flex-
     </div>
     <div class="term reveal" data-illustrative>
       <div class="bar" aria-hidden="true"><i></i><i></i><i></i></div>
-<pre><span class="sr-only">Example gate output.
+<pre tabindex="0"><span class="sr-only">Example gate output.
 </span><span class="h">$ gate check src/</span>
 <span class="d">  spec pinned at release, hashes verified</span>
 
@@ -1143,6 +1154,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--space-6);flex-
   function syncToc(){toc.open=wide.matches}
   syncToc();
   if(wide.addEventListener)wide.addEventListener('change',syncToc);
+  tocList.addEventListener('click',function(e){if(e.target.closest('a')&&!wide.matches)toc.open=false});
+  toc.addEventListener('keydown',function(e){if(e.key==='Escape'&&toc.open&&!wide.matches){toc.open=false;toc.querySelector('summary').focus()}});
   var current=null,ticking=false;
   function markCurrent(){
     ticking=false;
