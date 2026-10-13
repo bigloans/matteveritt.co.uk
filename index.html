@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Component library case study · Matt Everitt</title>
+<title>Component library case study by Matt Everitt</title>
 <meta name="description" content="Matt Everitt replaced his own component library with a specification that AI coding agents build from. He runs it as a product, measures it like one and says plainly what is still unproven.">
 <meta property="og:title" content="I replaced my own component library with a spec AI builds from">
 <meta property="og:description" content="Matt Everitt replaced his own component library with a specification that AI coding agents build from. He runs it as a product, measures it like one and says plainly what is still unproven.">
@@ -27,7 +27,6 @@ try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.docu
   --font-body:Inter,system-ui,sans-serif;
   --font-display:Poppins,sans-serif;
   --font-mono:"JetBrains Mono",ui-monospace,monospace;
-  --text-xs:12px;
   --text-sm:14px;
   --text-md:16px;
   --text-lg:18px;
@@ -349,8 +348,7 @@ h1,h2,h3{font-family:var(--font-display);line-height:1.15;letter-spacing:-.01em}
 h2{font-size:var(--text-3xl);font-weight:600;margin-bottom:var(--space-5)}
 h3{font-size:var(--text-lg);font-weight:600;margin-bottom:var(--space-2)}
 p+p{margin-top:var(--space-4)}
-.eyebrow{font-family:var(--font-display);font-weight:500;font-size:var(--text-xs);letter-spacing:.2em;text-transform:uppercase;color:var(--color-interactive);margin-bottom:var(--space-4);display:flex;align-items:center;gap:var(--space-3)}
-.eyebrow:before{content:"";width:var(--size-rule);height:var(--border-2);background:currentColor}
+.eyebrow{font-family:var(--font-body);font-weight:600;font-size:var(--text-sm);color:var(--color-interactive);margin-bottom:var(--space-4);display:flex;align-items:center;gap:var(--space-3)}
 .lede{font-size:var(--text-xl);color:var(--color-text-muted);max-width:var(--measure)}
 section{padding:var(--space-28) 0}
 .tight{padding-top:0}
@@ -369,7 +367,7 @@ section{padding:var(--space-28) 0}
 
 /* placeholders */
 .ph{background:var(--ph-bg);color:var(--ph-text);outline:var(--border-1) dashed var(--ph-text);border-radius:var(--radius-control);padding:0 var(--space-1);font:inherit}
-.dark .ph,.hero .ph,.contact .ph,.bcol.win .ph,.callout .ph,.proof .ph,.fun.prod .ph,.log .ph{background:var(--ph-bg-inverse);color:var(--ph-text-inverse);outline-color:var(--ph-text-inverse)}
+.dark .ph,.hero .ph,.contact .ph,.bcol.win .ph,.callout .ph,.proof .ph,.log .ph{background:var(--ph-bg-inverse);color:var(--ph-text-inverse);outline-color:var(--ph-text-inverse)}
 
 /* hero */
 .hero{background:var(--bg-hero);color:var(--inverse-text);overflow:hidden;position:relative}
@@ -391,19 +389,17 @@ section{padding:var(--space-28) 0}
 .hero .specfile{grid-area:spec;margin-top:var(--space-10)}
 .hero .eyebrow{color:var(--inverse-accent)}
 .hero h1{font-size:var(--text-4xl);font-weight:700;margin-bottom:var(--space-8);max-width:22ch}
-.hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--inverse-accent),var(--code-key));-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero .lede{color:var(--inverse-text-soft)}
 .teaser{display:inline-flex;align-items:center;gap:var(--space-3);margin-top:var(--space-7);padding:var(--space-3) var(--space-4) var(--space-3) var(--space-3);border-radius:var(--radius-pill);background:var(--inverse-accent-faint);border:var(--border-1) solid var(--inverse-accent-dash);color:var(--demo-dark-text);font-size:var(--text-sm);text-decoration:none;transition:background .2s}
 .teaser:hover,.teaser:focus-visible{background:var(--inverse-accent-subtle)}
 .teaser:focus-visible{outline:var(--focus-width) solid var(--inverse-accent);outline-offset:var(--focus-offset)}
-.teaser b{font-family:var(--font-mono);font-size:var(--text-xs);font-weight:500;background:var(--inverse-accent);color:var(--inverse-on-accent);padding:var(--space-1) var(--space-2);border-radius:var(--radius-pill)}
+.teaser b{font-family:var(--font-body);font-size:var(--text-sm);font-weight:500;background:var(--inverse-accent);color:var(--inverse-on-accent);padding:var(--space-1) var(--space-2);border-radius:var(--radius-pill)}
 .meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-5) var(--space-7);padding-top:var(--space-5);border-top:var(--border-1) solid var(--inverse-line);max-width:var(--measure-narrow)}
-.meta dt{font-size:var(--text-xs);letter-spacing:.16em;text-transform:uppercase;color:var(--inverse-text-muted);margin-bottom:var(--space-1)}
+.meta dt{font-size:var(--text-sm);color:var(--inverse-text-muted);margin-bottom:var(--space-1)}
 .meta dd{font-size:var(--text-sm);font-weight:500}
 
-.sum{list-style:none;margin-top:var(--space-7);display:grid;gap:var(--space-3);max-width:var(--measure-narrow);counter-reset:sm}
-.sum li{font-size:var(--text-md);color:var(--inverse-text-soft);padding-left:var(--space-8);position:relative}
-.sum li:before{counter-increment:sm;content:counter(sm,decimal-leading-zero);position:absolute;left:0;top:var(--space-1);font:500 var(--text-xs) var(--font-mono);color:var(--inverse-accent)}
+.sum{list-style:none;margin-top:var(--space-7);display:grid;gap:var(--space-3);max-width:var(--measure-narrow)}
+.sum li{font-size:var(--text-md);color:var(--inverse-text-soft)}
 .sum b{color:var(--inverse-text);font-weight:600}
 .specfile{background:var(--inverse-window);border:var(--border-1) solid var(--inverse-border);border-radius:var(--radius-surface);box-shadow:var(--shadow-window);overflow:hidden;font-size:var(--text-sm);transform:rotate(1.5deg)}
 .specfile .bar,.term .bar{display:flex;gap:var(--space-2);padding:var(--space-3) var(--space-4);border-bottom:var(--border-1) solid var(--inverse-fill-3);align-items:center}
@@ -434,7 +430,7 @@ section{padding:var(--space-28) 0}
 /* at a glance */
 .glance{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-5);margin-top:var(--space-12)}
 .glance div{padding:var(--space-6);border-radius:var(--radius-surface);background:var(--color-sunken)}
-.glance small{display:block;font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-interactive);margin-bottom:var(--space-3);letter-spacing:.04em}
+.glance small{display:block;font-family:var(--font-body);font-size:var(--text-sm);color:var(--color-interactive);margin-bottom:var(--space-3);font-weight:600}
 .glance p{font-size:var(--text-md);color:var(--color-text-muted)}
 .glance ul{list-style:none;font-size:var(--text-md);color:var(--color-text-muted)}
 .glance li{padding-left:var(--space-4);position:relative;margin-bottom:var(--space-2)}
@@ -448,7 +444,7 @@ section{padding:var(--space-28) 0}
 .stat small.note{display:block;margin-top:var(--space-3);font-size:var(--text-sm);line-height:1.5}
 .stat b .ph{font-size:var(--text-xl)}
 .stat.star{background:var(--color-highlight)}
-.kicker{display:block;font:500 var(--text-xs) var(--font-mono);font-style:normal;letter-spacing:.08em;text-transform:uppercase;color:var(--color-interactive);margin-bottom:var(--space-3)}
+.kicker{display:block;font:500 var(--text-sm) var(--font-body);font-style:normal;color:var(--color-interactive);margin-bottom:var(--space-3)}
 
 /* problem */
 .two{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-16);align-items:start}
@@ -466,7 +462,7 @@ section{padding:var(--space-28) 0}
 .compare{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-6);margin-top:var(--space-14)}
 .lane{border-radius:var(--radius-surface);padding:var(--space-7);border:var(--border-1) solid var(--inverse-border);background:var(--inverse-fill)}
 .lane.new{border-color:var(--inverse-accent-border);background:var(--bg-lane-new);box-shadow:var(--shadow-lane)}
-.lane h3{font-size:var(--text-sm);letter-spacing:.14em;text-transform:uppercase;color:var(--inverse-text-muted);margin-bottom:var(--space-6);font-weight:500}
+.lane h3{font-size:var(--text-sm);color:var(--inverse-text-muted);margin-bottom:var(--space-6);font-weight:500}
 .lane.new h3{color:var(--inverse-accent)}
 .step{display:flex;align-items:center;gap:var(--space-4);padding:var(--space-3) 0;position:relative}
 .step:not(:last-child):after{content:"";position:absolute;left:calc(var(--size-icon) / 2 - var(--border-1));top:var(--space-12);height:calc(100% - var(--size-icon));width:var(--border-2);background:var(--inverse-line)}
@@ -477,16 +473,16 @@ section{padding:var(--space-28) 0}
 .lane.new .dot{background:var(--inverse-accent);color:var(--inverse-on-accent)}
 .step p{font-size:var(--text-md);color:var(--inverse-text-body)}
 .step small{display:block;font-size:var(--text-sm);color:var(--inverse-text-muted)}
-.wait{display:inline-block;margin-left:var(--space-2);font-size:var(--text-xs);padding:var(--space-1) var(--space-2);border-radius:var(--radius-pill);background:var(--inverse-fail-subtle);color:var(--inverse-fail-text);letter-spacing:.04em}
+.wait{display:inline-block;margin-left:var(--space-2);font-size:var(--text-sm);padding:var(--space-1) var(--space-2);border-radius:var(--radius-pill);background:var(--inverse-fail-subtle);color:var(--inverse-fail-text)}
 
 /* designers flow */
 .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-4);margin-top:var(--space-12);counter-reset:f}
 .fstep{position:relative;padding:var(--space-6);border-radius:var(--radius-surface);border:var(--border-1) solid var(--color-border);background:var(--color-surface)}
-.fstep:before{counter-increment:f;content:counter(f,decimal-leading-zero);font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-interactive);display:block;margin-bottom:var(--space-4)}
+.fstep:before{counter-increment:f;content:"Step " counter(f);font-weight:600;font-size:var(--text-sm);color:var(--color-interactive);display:block;margin-bottom:var(--space-4)}
 .fstep:not(:last-child):after{content:"";position:absolute;right:calc(var(--space-3) * -1);top:50%;width:var(--size-caret);height:var(--size-caret);border-top:var(--border-2) solid var(--color-brand);border-right:var(--border-2) solid var(--color-brand);transform:translateY(-50%) rotate(45deg)}
 .fstep h3{font-size:var(--text-md)}
 .fstep p{font-size:var(--text-sm);color:var(--color-text-muted)}
-.who{display:inline-block;font-size:var(--text-xs);font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:var(--space-1) var(--space-2);border-radius:var(--radius-pill);margin-bottom:var(--space-3)}
+.who{display:inline-block;font-size:var(--text-sm);font-weight:600;padding:var(--space-1) var(--space-2);border-radius:var(--radius-pill);margin-bottom:var(--space-3)}
 .who.d{background:var(--color-info-subtle);color:var(--color-info-text)}.who.a{background:var(--color-interactive-subtle);color:var(--color-interactive)}.who.g{background:var(--color-accent-subtle);color:var(--color-accent-text)}
 .callout{margin-top:var(--space-7);padding:var(--space-6);border-radius:var(--radius-surface);background:var(--inverse-bg);color:var(--inverse-text-body);display:flex;gap:var(--space-4);align-items:flex-start}
 .callout svg{flex:none;color:var(--inverse-accent);margin-top:var(--space-1)}
@@ -496,7 +492,7 @@ section{padding:var(--space-28) 0}
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-5);margin-top:var(--space-12)}
 .card{border:var(--border-1) solid var(--color-border);border-radius:var(--radius-surface);padding:var(--space-7);background:var(--color-surface);transition:transform .25s,box-shadow .25s}
 .card:hover{transform:translateY(var(--lift-md));box-shadow:var(--shadow-card)}
-.card .num{font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-interactive);margin-bottom:var(--space-6);display:block}
+.card .num{font-family:var(--font-body);font-size:var(--text-sm);color:var(--color-interactive);margin-bottom:var(--space-6);display:block}
 .card p{font-size:var(--text-md);color:var(--color-text-muted)}
 .card .why{margin-top:var(--space-4);font-size:var(--text-sm)}
 .card.pick{border-color:var(--color-brand);box-shadow:var(--shadow-card-pick)}
@@ -513,7 +509,7 @@ section{padding:var(--space-28) 0}
 /* buy-in */
 .buy{display:grid;grid-template-columns:1fr 1.25fr 1fr;gap:var(--space-5);margin-top:var(--space-12);align-items:stretch}
 .bcol{border-radius:var(--radius-surface);padding:var(--space-7);border:var(--border-1) solid var(--color-border);background:var(--color-surface)}
-.bcol small{display:block;font-family:var(--font-mono);font-size:var(--text-xs);letter-spacing:.06em;margin-bottom:var(--space-4)}
+.bcol small{display:block;font-family:var(--font-body);font-size:var(--text-sm);margin-bottom:var(--space-4);font-weight:600}
 .bcol.obj small{color:var(--color-fail-text)}.bcol.win small{color:var(--color-interactive)}.bcol.out small{color:var(--color-info-text)}
 .bcol.obj{background:var(--color-fail-subtle);border-color:var(--color-fail-border)}
 .bcol.win{background:var(--inverse-bg);border-color:var(--inverse-bg);color:var(--inverse-text)}
@@ -524,14 +520,11 @@ section{padding:var(--space-28) 0}
 .bcol.win p{color:var(--inverse-text-soft);font-size:var(--text-sm)}
 .wins{display:grid;gap:var(--space-4)}
 .wins > div{display:flex;gap:var(--space-4)}
-.funnel{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-3);margin-top:var(--space-5)}
-.fun{padding:var(--space-5) var(--space-6);border-radius:var(--radius-surface);background:var(--color-sunken)}
-.fun b{display:block;font:600 var(--text-xl) var(--font-display);color:var(--color-text-strong);margin-bottom:var(--space-2);overflow-wrap:anywhere}
-.fun > span{font-size:var(--text-sm);color:var(--color-text-muted)}
-.fun.prod{background:var(--inverse-bg);box-shadow:var(--shadow-prod)}
-.fun.prod b{color:var(--inverse-text)}.fun.prod span{color:var(--inverse-text-soft)}.fun.prod .kicker{color:var(--inverse-accent)}
+.funnel{list-style:none;display:flex;flex-wrap:wrap;gap:var(--space-2) var(--space-8);margin-top:var(--space-6);font-size:var(--text-md);color:var(--color-text-muted)}
+.funnel b{font:600 var(--text-xl) var(--font-display);color:var(--color-text-strong)}
+.funnel .prod{color:var(--color-text)}
+.funnel .prod b{color:var(--color-interactive)}
 .pmute{font-size:var(--text-md);color:var(--color-text-muted)}
-.wins > div > span{flex:none;width:var(--size-icon-sm);height:var(--size-icon-sm);border-radius:var(--radius-control);background:var(--inverse-accent-subtle);color:var(--inverse-accent);display:grid;place-items:center;font:600 var(--text-xs) var(--font-mono)}
 /* contact */
 .contact{background:var(--bg-contact);color:var(--inverse-text);padding:var(--space-24) 0;text-align:center}
 .contact h2{margin-bottom:var(--space-3)}
@@ -545,13 +538,12 @@ section{padding:var(--space-28) 0}
 .hz{margin-top:var(--space-12);display:grid;grid-template-columns:var(--size-hz-side) 1fr;gap:var(--space-5);align-items:stretch}
 .hz-me{border-radius:var(--radius-surface);padding:var(--space-6);background:var(--bg-hz-me);border:var(--border-1) solid var(--inverse-accent-border);display:flex;flex-direction:column;gap:var(--space-4)}
 .hz-me .node{padding:var(--space-4);border-radius:var(--radius-control);background:var(--inverse-node);border:var(--border-1) solid var(--inverse-border)}
-.hz-me small{display:block;font-family:var(--font-mono);font-size:var(--text-xs);color:var(--inverse-accent);letter-spacing:.06em;margin-bottom:var(--space-1)}
+.hz-me small{display:block;font-family:var(--font-body);font-size:var(--text-sm);color:var(--inverse-accent);margin-bottom:var(--space-1)}
 .hz-me b{font-family:var(--font-display);font-weight:600;font-size:var(--text-md);display:block}
 .hz-me p{font-size:var(--text-sm);color:var(--inverse-text-soft);margin-top:var(--space-1)}
-.hz-me .arrow{align-self:center;color:var(--inverse-accent);font-size:var(--text-lg);line-height:1}
 .lanes{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-4);align-items:start}
 .lane2{border-radius:var(--radius-surface);padding:var(--space-5);border:var(--border-1) solid var(--inverse-border);background:var(--inverse-fill)}
-.lane2 h3{font-size:var(--text-xs);letter-spacing:.14em;text-transform:uppercase;color:var(--inverse-accent);font-weight:500;margin-bottom:var(--space-4)}
+.lane2 h3{font-size:var(--text-sm);color:var(--inverse-accent);font-weight:500;margin-bottom:var(--space-4)}
 .lane2 ul{list-style:none;display:grid;gap:var(--space-2)}
 .lane2 li{font-size:var(--text-sm);color:var(--inverse-text-body);padding:var(--space-2) var(--space-3);border-radius:var(--radius-control);background:var(--inverse-fill-2);border:var(--border-1) solid var(--inverse-border-faint)}
 .lane2 li span{display:block;font-size:var(--text-sm);color:var(--inverse-text-muted)}
@@ -559,23 +551,23 @@ section{padding:var(--space-28) 0}
 .guard{display:flex;gap:var(--space-4);padding:var(--space-4) var(--space-5);border-radius:var(--radius-surface);border:var(--border-1) dashed var(--inverse-accent-dash)}
 .guard svg{flex:none;color:var(--inverse-accent);margin-top:var(--space-1)}
 .guard p{font-size:var(--text-sm);color:var(--inverse-text-soft)}.guard b{color:var(--inverse-text);font-weight:600}
-.log{margin-top:var(--space-5);border-radius:var(--radius-surface);background:var(--inverse-bg-deep);border:var(--border-1) solid var(--inverse-border);padding:var(--space-5) var(--space-6);font:var(--text-sm)/1.8 var(--font-mono);color:var(--inverse-text-soft);display:grid;gap:var(--space-2)}
-.log small{font-size:var(--text-xs);color:var(--inverse-text-muted);letter-spacing:.06em;margin-bottom:var(--space-1)}
+.log{margin-top:var(--space-5);border-radius:var(--radius-surface);background:var(--inverse-bg-deep);border:var(--border-1) solid var(--inverse-border);padding:var(--space-5) var(--space-6);font-size:var(--text-sm);line-height:1.8;color:var(--inverse-text-soft);display:grid;gap:var(--space-2)}
+.log small{font-size:var(--text-sm);color:var(--inverse-text-muted);margin-bottom:var(--space-1)}
 .log div{display:grid;grid-template-columns:auto var(--size-log-col) 1fr;gap:var(--space-4);align-items:baseline}
 .log time{color:var(--inverse-accent)}
 /* story v2 */
-.exp{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-4);margin-top:var(--space-12)}
+.exp{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-4);margin-top:var(--space-12);counter-reset:exp}
 .exp div{padding:var(--space-6);border-radius:var(--radius-surface);background:var(--color-sunken);position:relative}
-.exp small{font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-interactive);display:block;margin-bottom:var(--space-3);letter-spacing:.06em}
+.exp small:before{counter-increment:exp;content:counter(exp) ". "}
+.exp small{font-family:var(--font-body);font-size:var(--text-sm);color:var(--color-interactive);display:block;margin-bottom:var(--space-3);font-weight:600}
 .exp h3{font-size:var(--text-lg)}
 .exp p{font-size:var(--text-md);color:var(--color-text-muted)}
 .proof{margin-top:var(--space-5);border-radius:var(--radius-surface);background:var(--inverse-bg);padding:var(--space-9);display:grid;grid-template-columns:1fr auto 1fr;gap:var(--space-6);align-items:center}
-.proof .arrow{color:var(--inverse-accent);font:500 var(--text-sm) var(--font-mono);text-align:center;letter-spacing:.06em}
-.proof .arrow span{display:block;font-size:var(--text-2xl);line-height:1;margin-bottom:var(--space-2)}
+.proof .arrow{color:var(--inverse-accent);font:500 var(--text-sm) var(--font-body);text-align:center}
 .proof .note{grid-column:1/-1;margin-top:calc(var(--space-2) * -1);color:var(--inverse-text-soft)}
 .finds{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4);margin-top:var(--space-5)}
 .find{padding:var(--space-6);border-radius:var(--radius-surface);border:var(--border-1) solid var(--color-border)}
-.find .vd{display:inline-block;font:600 var(--text-xs) var(--font-body);letter-spacing:.05em;padding:var(--space-1) var(--space-3);border-radius:var(--radius-pill);margin-bottom:var(--space-3)}
+.find .vd{display:inline-block;font:600 var(--text-sm) var(--font-body);padding:var(--space-1) var(--space-3);border-radius:var(--radius-pill);margin-bottom:var(--space-3)}
 .find .vd.c{background:var(--color-pass-subtle);color:var(--color-pass-text)}.find .vd.m{background:var(--color-warn-subtle);color:var(--color-warn-text)}
 .find h3{font-size:var(--text-lg)}
 .find p{font-size:var(--text-md);color:var(--color-text-muted)}
@@ -631,14 +623,14 @@ section{padding:var(--space-28) 0}
 .rr-card i+i{width:var(--size-skel-w-short);margin-top:var(--space-2)}
 .rr-ctrl{background:var(--demo-teal-deep);color:var(--demo-on-teal-deep);font:600 var(--text-sm) var(--font-body);padding:var(--space-2) var(--space-3);border-radius:var(--radius-control)}
 .rr-pill{display:inline-block;margin-top:var(--space-3);font:500 var(--text-sm) var(--font-body);padding:var(--space-1) var(--space-3);border-radius:var(--radius-pill);background:var(--demo-teal-deep-subtle);color:var(--demo-teal-deep)}
-.rr-tag{position:absolute;font-family:var(--font-mono);font-size:var(--text-sm);color:var(--demo-teal-deep);background:var(--demo-light-surface);border:var(--border-1) solid var(--demo-light-tag-border);border-radius:var(--radius-control);padding:0 var(--space-2);white-space:nowrap}
+.rr-tag{position:absolute;font-family:var(--font-body);font-size:var(--text-sm);color:var(--demo-teal-deep);background:var(--demo-light-surface);border:var(--border-1) solid var(--demo-light-tag-border);border-radius:var(--radius-control);padding:0 var(--space-2);white-space:nowrap}
 .rr-tag.top{top:calc(var(--space-3) * -1);right:var(--space-4)}
 .rr-tag.bottom{bottom:calc(var(--space-3) * -1);left:var(--space-4)}
 /* depth */
 .depth{display:grid;grid-template-columns:1fr 1fr;width:100%;height:100%;min-height:var(--size-canvas)}
 .depth > div{display:grid;place-items:center;padding:var(--space-6)}
 .depth .l{background:var(--demo-light-stage)}.depth .d{background:var(--demo-navy)}
-.dcard{width:var(--size-dcard-w);height:var(--size-dcard-h);border-radius:var(--radius-surface);display:flex;align-items:flex-end;padding:var(--space-3);font:500 var(--text-sm) var(--font-mono)}
+.dcard{width:var(--size-dcard-w);height:var(--size-dcard-h);border-radius:var(--radius-surface);display:flex;align-items:flex-end;padding:var(--space-3);font:500 var(--text-sm) var(--font-body)}
 .l .dcard{background:var(--demo-light-surface);box-shadow:var(--shadow-demo-lift);color:var(--demo-light-muted)}
 .d .dcard{background:var(--demo-dark-surface);border:var(--border-1) solid var(--demo-dark-edge-strong);box-shadow:var(--shadow-demo-glow);color:var(--demo-dark-label)}
 /* hover glow */
@@ -672,7 +664,7 @@ section{padding:var(--space-28) 0}
 .gate{display:grid;grid-template-columns:.9fr 1.1fr;gap:var(--space-14);align-items:center}
 .layers{display:grid;gap:var(--space-4);margin-top:var(--space-7)}
 .layer{display:flex;gap:var(--space-4);align-items:flex-start;padding:var(--space-4) var(--space-5);border-radius:var(--radius-surface);border:var(--border-1) solid var(--inverse-border);background:var(--inverse-fill)}
-.layer .tag{flex:none;font-family:var(--font-mono);font-size:var(--text-xs);padding:var(--space-1) var(--space-2);border-radius:var(--radius-control);background:var(--inverse-accent-subtle);color:var(--inverse-accent);margin-top:var(--space-1)}
+.layer .tag{flex:none;font-family:var(--font-body);font-size:var(--text-sm);padding:var(--space-1) var(--space-2);border-radius:var(--radius-control);background:var(--inverse-accent-subtle);color:var(--inverse-accent);margin-top:var(--space-1)}
 .layer p{font-size:var(--text-md);color:var(--inverse-text-soft)}
 .layer b{color:var(--inverse-text);font-weight:600}
 .term{background:var(--inverse-bg-deep);border:var(--border-1) solid var(--inverse-border);border-radius:var(--radius-surface);overflow:hidden;font-family:var(--font-mono);font-size:var(--text-sm);box-shadow:var(--shadow-term)}
@@ -689,9 +681,9 @@ section{padding:var(--space-28) 0}
 .swatch.pass{background:var(--demo-ghost-pass-bg)}
 .swatch .lbl{font:600 var(--text-lg) var(--font-body);color:var(--demo-ghost-fg)}
 .swatch .lbl small{display:block;font:500 var(--text-sm) var(--font-body);color:var(--demo-swatch-label);margin-top:var(--space-1)}
-.swatch .ratio{text-align:right;font-family:var(--font-mono);font-size:var(--text-sm);color:var(--demo-swatch-text)}
+.swatch .ratio{text-align:right;font-family:var(--font-body);font-size:var(--text-sm);color:var(--demo-swatch-text)}
 .swatch .ratio b{display:block;font-family:var(--font-display);font-size:var(--text-2xl);font-weight:600;line-height:1.1}
-.verdict{display:inline-block;margin-top:var(--space-1);font-size:var(--text-xs);padding:var(--space-1) var(--space-2);border-radius:var(--radius-pill);font-family:var(--font-body);font-weight:600;letter-spacing:.05em}
+.verdict{display:inline-block;margin-top:var(--space-1);font-size:var(--text-sm);padding:var(--space-1) var(--space-2);border-radius:var(--radius-pill);font-family:var(--font-body);font-weight:600}
 .verdict.no{background:var(--inverse-fail-subtle);color:var(--inverse-fail-strong)}
 .verdict.yes{background:var(--inverse-pass-subtle);color:var(--inverse-pass-text)}
 .finding{margin-top:var(--space-7);padding:var(--space-6);border-radius:var(--radius-surface);border:var(--border-1) solid var(--color-border)}
@@ -706,7 +698,7 @@ section{padding:var(--space-28) 0}
 .trade > div{padding:var(--space-6)}
 .trade .cost{background:var(--inverse-fill)}
 .trade .fix{background:var(--bg-trade-fix);border-left:var(--border-1) solid var(--inverse-fill-3)}
-.trade small{display:block;font-family:var(--font-mono);font-size:var(--text-xs);letter-spacing:.08em;text-transform:uppercase;margin-bottom:var(--space-2)}
+.trade small{display:block;font-family:var(--font-body);font-size:var(--text-sm);margin-bottom:var(--space-2);font-weight:600}
 .trade .cost small{color:var(--inverse-fail-text)}.trade .fix small{color:var(--inverse-accent)}
 .trade h3{font-size:var(--text-lg);color:var(--inverse-text)}
 .trade p{font-size:var(--text-md);color:var(--inverse-text-soft)}
@@ -717,7 +709,7 @@ section{padding:var(--space-28) 0}
 .tl{position:relative;padding-top:var(--space-9)}
 .tl:before{content:"";position:absolute;top:0;left:0;width:var(--size-marker);height:var(--size-marker);border-radius:var(--radius-circle);background:var(--color-surface);border:var(--border-4) solid var(--color-brand)}
 .tl.now:before{background:var(--color-brand);box-shadow:var(--shadow-now)}
-.tl small{font-family:var(--font-mono);font-size:var(--text-sm);color:var(--color-interactive)}
+.tl small{font-family:var(--font-body);font-size:var(--text-sm);color:var(--color-interactive)}
 .tl h3{font-size:var(--text-lg);margin:var(--space-1) 0 var(--space-2)}
 .tl p{font-size:var(--text-sm);color:var(--color-text-muted)}
 .practices{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-5);margin-top:var(--space-16)}
@@ -738,7 +730,7 @@ section{padding:var(--space-28) 0}
 /* status */
 .status{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-5);margin-top:var(--space-12)}
 .sbox{border-radius:var(--radius-surface);padding:var(--space-6);border:var(--border-1) solid var(--color-border)}
-.sbox .pill{display:inline-flex;align-items:center;gap:var(--space-2);font:600 var(--text-xs) var(--font-body);letter-spacing:.04em;padding:var(--space-1) var(--space-3);border-radius:var(--radius-pill);margin-bottom:var(--space-4)}
+.sbox .pill{display:inline-flex;align-items:center;gap:var(--space-2);font:600 var(--text-sm) var(--font-body);padding:var(--space-1) var(--space-3);border-radius:var(--radius-pill);margin-bottom:var(--space-4)}
 .sbox .pill:before{content:"";width:var(--size-bullet);height:var(--size-bullet);border-radius:var(--radius-circle);background:currentColor}
 .sbox.done .pill{background:var(--color-pass-subtle);color:var(--color-pass-text)}
 .sbox.now .pill{background:var(--color-interactive-subtle);color:var(--color-interactive)}
@@ -775,7 +767,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--space-6);flex-
   .hero-in,.two,.gate,.story,.compare,.demo,.vl,.trade,.buy,.hz,.exp,.finds,.guards{grid-template-columns:1fr}
   .lanes{grid-template-columns:1fr 1fr}
   .proof{grid-template-columns:1fr;padding:var(--space-6)}
-  .proof .arrow span{transform:rotate(90deg)}
   .hero-in{padding:var(--space-4) 0 var(--space-16);grid-template-areas:"title" "meta" "copy" "spec";row-gap:var(--space-8)}
   .hero h1{margin-bottom:0}
   .hero .specfile{margin-top:0}
@@ -796,7 +787,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--space-6);flex-
 }
 @media (max-width:520px){
   .flow,.icons,.depth,.aid{grid-template-columns:1fr}
-  .funnel{grid-template-columns:1fr}
+  .funnel{flex-direction:column}
   .stat b{font-size:var(--text-2xl)}
 }
 </style>
@@ -806,15 +797,15 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--space-6);flex-
 
 <header class="hero">
   <div class="wrap">
-    <nav><b>Matt Everitt</b><div class="nav-end"><span>Design System Manager · Case study · 16 min read</span><button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false" hidden>Dark theme</button></div></nav>
+    <nav><b>Matt Everitt</b><div class="nav-end"><span>Design system manager</span><span>Case study</span><span>16 min read</span><button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false" hidden>Dark theme</button></div></nav>
     <div class="hero-in">
       <div class="hero-title">
-        <p class="eyebrow">Design systems · AI-assisted development</p>
-        <h1>I replaced my own component library with <em>a spec AI builds from</em></h1>
+        <p class="eyebrow">Design systems and AI-assisted development</p>
+        <h1>I replaced my own component library with a spec AI builds from</h1>
       </div>
       <div class="hero-copy">
         <p class="lede">I built the component library behind <span data-fact="F01">60+</span> products in <span data-fact="F02">React, Vue, Angular and legacy frameworks</span>. The evidence said it couldn't keep up, so I replaced it with a versioned specification that teams' AI coding agents build from, and a gate that checks the result. I run it as a product: strategy, roadmap, releases and adoption are mine.</p>
-        <a class="teaser" href="#options"><b>HIGHLIGHT</b>How I decided to retire my own library</a>
+        <a class="teaser" href="#options"><b>Highlight</b>How I decided to retire my own library</a>
         <ol class="sum">
           <li><b>The product:</b> a spec, gate and asset pack that teams' AI agents build from, in any framework.</li>
           <li><b>The case for change:</b> a median of <span data-fact="P01">412</span> violations per product and <span data-fact="P09">about 3.5 weeks</span> per component across three framework builds.</li>
@@ -878,9 +869,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--space-6);flex-
     <p class="eyebrow">At a glance</p>
     <h2>The specification is the product</h2>
     <div class="glance reveal">
-      <div><small>THE BET</small><p>If an AI agent generates every component, the design system doesn't need a component library. It needs rules precise enough for a machine to follow and to check.</p></div>
-      <div><small>WHAT I OWNED</small><ul><li>The spec and its visual language</li><li>The validation gate</li><li>The icon and pictogram pack</li><li>The agent harness</li><li>Releases and governance</li><li>The adoption guide</li></ul></div>
-      <div><small>WHERE IT STANDS</small><p>Of <span data-fact="P04">about 60</span> teams, <span data-fact="P04">9</span> have piloted, <span data-fact="P04">6</span> have committed with a date and <span data-fact="P04">3</span> are in production.</p></div>
+      <div><small>The bet</small><p>If an AI agent generates every component, the design system doesn't need a component library. It needs rules precise enough for a machine to follow and to check.</p></div>
+      <div><small>What I owned</small><ul><li>The spec and its visual language</li><li>The validation gate</li><li>The icon and pictogram pack</li><li>The agent harness</li><li>Releases and governance</li><li>The adoption guide</li></ul></div>
+      <div><small>Where it stands</small><p>Of <span data-fact="P04">about 60</span> teams, <span data-fact="P04">9</span> have piloted, <span data-fact="P04">6</span> have committed with a date and <span data-fact="P04">3</span> are in production.</p></div>
     </div>
     <div class="stats reveal">
       <div class="stat"><b><span data-fact="F01">60+</span></b><span>products in scope</span><small class="note">Whole portfolio, October 2026</small></div>
@@ -897,9 +888,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--space-6);flex-
     <h2>The customers and the product I'd built</h2>
     <p class="lede">My customers are the product teams behind <span data-fact="F01">60+</span> products, working in <span data-fact="F02">React, Vue, Angular and legacy frameworks</span>. Each team has its own roadmap, and none of them is waiting for a design system.</p>
     <div class="glance reveal">
-      <div><small>V1, THE LIBRARY I BUILT</small><p><span data-fact="F04">45</span> components, with <span data-fact="F05">React, Vue and Angular built simultaneously</span>. I delivered it against a roadmap in <span data-fact="F06">four stages</span> that I presented at CTO level: audit and alignment, assets package and pipeline, component library build, then rollout and adoption.</p></div>
-      <div><small>TRACK RECORD</small><p>Earlier operational changes I led saved <span data-fact="F07">£94k a year</span>. The largest part came from merging a separate component build function into one design operations role, which I proposed and led. This work predates the spec.</p></div>
-      <div><small>TENURE</small><p>I've been here <span data-fact="F03">about 6 years</span>. I started as a junior UI designer and progressed to design system manager.</p></div>
+      <div><small>v1, the library I built</small><p><span data-fact="F04">45</span> components, with <span data-fact="F05">React, Vue and Angular built simultaneously</span>. I delivered it against a roadmap in <span data-fact="F06">four stages</span> that I presented at CTO level: audit and alignment, assets package and pipeline, component library build, then rollout and adoption.</p></div>
+      <div><small>Track record</small><p>Earlier operational changes I led saved <span data-fact="F07">£94k a year</span>. The largest part came from merging a separate component build function into one design operations role, which I proposed and led. This work predates the spec.</p></div>
+      <div><small>Tenure</small><p>I've been here <span data-fact="F03">about 6 years</span>. I started as a junior UI designer and progressed to design system manager.</p></div>
     </div>
   </div>
 </section>
@@ -914,8 +905,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--space-6);flex-
         <h3>Before</h3>
         <div class="steps">
           <div class="step"><span class="dot"></span><p>Designer draws the component<small>A Figma file per component</small></p></div>
-          <div class="step"><span class="dot"></span><p>Handoff to engineering <span class="wait">WAIT</span> <span data-fact="P18">1 to 2 weeks</span><small>Specs, redlines, questions</small></p></div>
-          <div class="step"><span class="dot"></span><p>Central team builds and releases <span class="wait">WAIT</span> <span data-fact="P18">4 to 6 weeks</span><small>Three builds per component: React, Vue and Angular</small></p></div>
+          <div class="step"><span class="dot"></span><p>Handoff to engineering <span class="wait">Wait</span> <span data-fact="P18">1 to 2 weeks</span><small>Specs, redlines, questions</small></p></div>
+          <div class="step"><span class="dot"></span><p>Central team builds and releases <span class="wait">Wait</span> <span data-fact="P18">4 to 6 weeks</span><small>Three builds per component: React, Vue and Angular</small></p></div>
           <div class="step"><span class="dot"></span><p>Product team adapts it<small>Drift starts here</small></p></div>
           <div class="step"><span class="dot"></span><p>Accessibility audit<small>Issues found after release</small></p></div>
         </div>
@@ -942,9 +933,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--space-6);flex-
     <p class="lede">I judged each option on five criteria.</p>
     <ul class="chips"><li>Framework coverage</li><li>Time to ship</li><li>Drift control</li><li>Maintenance cost</li><li>Dependence on a central team</li></ul>
     <div class="grid3">
-      <div class="card reveal"><span class="num">OPTION A</span><h3>Continue v1</h3><p>Keep the library and its three framework builds.</p><p class="why"><b>Why it lost.</b> Continuing v1 meant one person building every component three times, for low adoption.</p></div>
-      <div class="card reveal"><span class="num">OPTION B</span><h3>Generate code from Figma</h3><p>Generate components from Figma through <span data-fact="F08">a framework-agnostic JSON contract</span>, the Component Schema Layer I piloted with Claude and Cursor.</p><p class="why"><b>Why it lost.</b> Figma-to-code generates from a picture, so the rules never reach the code.</p></div>
-      <div class="card pick reveal"><span class="num">OPTION C · CHOSEN</span><h3>Specify and verify</h3><p>Write a specification that teams' agents build from, and a validation gate that checks the result. No library.</p></div>
+      <div class="card reveal"><span class="num">Option A</span><h3>Continue v1</h3><p>Keep the library and its three framework builds.</p><p class="why"><b>Why it lost.</b> Continuing v1 meant one person building every component three times, for low adoption.</p></div>
+      <div class="card reveal"><span class="num">Option B</span><h3>Generate code from Figma</h3><p>Generate components from Figma through <span data-fact="F08">a framework-agnostic JSON contract</span>, the Component Schema Layer I piloted with Claude and Cursor.</p><p class="why"><b>Why it lost.</b> Figma-to-code generates from a picture, so the rules never reach the code.</p></div>
+      <div class="card pick reveal"><span class="num">Option C, chosen</span><h3>Specify and verify</h3><p>Write a specification that teams' agents build from, and a validation gate that checks the result. No library.</p></div>
     </div>
     <div class="finding reveal">
       <h3>What the pivot cost</h3>
@@ -960,9 +951,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--space-6);flex-
     <h2>Remove the library and keep the contract</h2>
     <p class="lede">The spec covers <span data-fact="F10">21 components and 6 layout primitives</span>. Before 1.0 I ship small and often, with <span data-fact="F11">90 releases in 14 weeks</span>. Teams pin a release, so nothing changes in a product until its team upgrades.</p>
     <div class="grid3">
-      <div class="card reveal"><span class="num">01</span><h3>One spec, any framework</h3><p>Tokens, component rules and the definition of done live in three plain-text files that work with React, Vue or plain HTML.</p></div>
-      <div class="card reveal"><span class="num">02</span><h3>Accessibility lives in the tokens</h3><p>Every colour pairing the spec allows is tested against WCAG 2.2 AA in both themes, and a failing pair blocks the release. Test builds once caught a rule that broke this (see <a href="#story">First evidence</a>).</p></div>
-      <div class="card reveal"><span class="num">03</span><h3>A release is a contract</h3><p>Teams pin a tagged release, and a hash records exactly which spec they pinned. The gate checks every build against it.</p></div>
+      <div class="card reveal"><h3>One spec, any framework</h3><p>Tokens, component rules and the definition of done live in three plain-text files that work with React, Vue or plain HTML.</p></div>
+      <div class="card reveal"><h3>Accessibility lives in the tokens</h3><p>Every colour pairing the spec allows is tested against WCAG 2.2 AA in both themes, and a failing pair blocks the release. Test builds once caught a rule that broke this (see <a href="#story">First evidence</a>).</p></div>
+      <div class="card reveal"><h3>A release is a contract</h3><p>Teams pin a tagged release, and a hash records exactly which spec they pinned. The gate checks every build against it.</p></div>
     </div>
     <p class="note mt-5">Token format: the tokens live in the spec file, not in the W3C Design Tokens Community Group format. The consumer is an agent reading one file, and a JSON copy would be a second source to keep in step. If a tool ever needs that format, it gets a generated copy.</p>
   </div>
@@ -1000,10 +991,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--space-6);flex-
       <div class="vbox reveal">
         <div data-illustrative class="canvas">
           <div class="rr-modal">
-            <span class="rr-tag top">modal · 20</span>
+            <span class="rr-tag top">modal 20</span>
             <div class="rr-card"><div><i></i><i></i></div><span class="rr-ctrl">Assign</span></div>
             <span class="rr-pill">In review</span>
-            <span class="rr-tag bottom">surface · 16 · control · 10 · pill</span>
+            <span class="rr-tag bottom">surface 16, control 10, pill</span>
           </div>
         </div>
         <div class="cap"><h3>Radius by role</h3><p>Components reference a role, never a raw value, so changing every card's corner is a single edit.</p></div>
@@ -1066,9 +1057,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--space-6);flex-
       <h2>Trust, but verify every change</h2>
       <p class="lede">A spec only works if someone checks it was followed. I built a validation gate with Claude Code that blocks any change that breaks the contract.</p>
       <div class="layers">
-        <div class="layer"><span class="tag">STATIC</span><p><b>Reads the source on every commit.</b> It flags raw colours, off-scale spacing, unknown tokens, broken type pairings and CSS that would break right-to-left layouts.</p></div>
-        <div class="layer"><span class="tag">RENDERED</span><p><b>Opens a real browser before merge.</b> It measures contrast on the actual pixels in both themes, tabs through every control and checks for a visible focus ring.</p></div>
-        <div class="layer"><span class="tag">HUMAN</span><p><b>Says where automation stops.</b> A screen can pass the gate and still be the wrong screen. The adoption guide says so plainly, so reviewers spend their time there.</p></div>
+        <div class="layer"><span class="tag">Static</span><p><b>Reads the source on every commit.</b> It flags raw colours, off-scale spacing, unknown tokens, broken type pairings and CSS that would break right-to-left layouts.</p></div>
+        <div class="layer"><span class="tag">Rendered</span><p><b>Opens a real browser before merge.</b> It measures contrast on the actual pixels in both themes, tabs through every control and checks for a visible focus ring.</p></div>
+        <div class="layer"><span class="tag">Human</span><p><b>Says where automation stops.</b> A screen can pass the gate and still be the wrong screen. The adoption guide says so plainly, so reviewers spend their time there.</p></div>
       </div>
     </div>
     <div class="term reveal" data-illustrative>
@@ -1097,30 +1088,29 @@ warning: draft pictogram in review, not blocking.
 <span class="ok">  ✓ type-scale         all roles whole</span>
 <span class="w">  ! draft pictogram    in review, not blocking</span>
 
-<span class="f">  3 blocking · 0 skipped · exit 1</span></pre>
+<span class="f">  3 blocking, 0 skipped, exit 1</span></pre>
     </div>
   </div>
 </section>
 
 <section id="story">
   <div class="wrap">
-    <p class="eyebrow">First evidence</p>
     <h2>First evidence: three AI builds found what review missed</h2>
     <p class="lede">Until then, the spec had only been checked by reading it. So I tested it the way teams would use it, by building from it.</p>
     <div class="exp">
-      <div class="reveal"><small>01 · BUILD</small><h3>Three fresh sessions</h3><p>Each AI session got only the pinned spec and built the same components from scratch.</p></div>
-      <div class="reveal"><small>02 · MEASURE</small><h3>Same failure, three times</h3><p>All three failed the rendered gate on one button state. Every token was valid, so no static check could see it.</p></div>
-      <div class="reveal"><small>03 · FIX</small><h3>Rule fixed, process changed</h3><p>I corrected the rule. Any release that changes a rule now gets the same test.</p></div>
+      <div class="reveal"><small>Build</small><h3>Three fresh sessions</h3><p>Each AI session got only the pinned spec and built the same components from scratch.</p></div>
+      <div class="reveal"><small>Measure</small><h3>Same failure, three times</h3><p>All three failed the rendered gate on one button state. Every token was valid, so no static check could see it.</p></div>
+      <div class="reveal"><small>Fix</small><h3>Rule fixed, process changed</h3><p>I corrected the rule. Any release that changes a rule now gets the same test.</p></div>
     </div>
     <div class="proof reveal" data-illustrative>
-      <div class="swatch fail"><span class="lbl" data-contrast-exempt>Ghost button<small>Active state, as specified</small></span><span class="ratio"><b data-fg="#2ec4b6" data-bg="#3f5b66">–</b><span class="verdict no">FAILS AA</span></span></div>
-      <div class="arrow" aria-hidden="true"><span>→</span>FIX</div>
-      <div class="swatch pass"><span class="lbl">Ghost button<small>Active state, corrected</small></span><span class="ratio"><b data-fg="#2ec4b6" data-bg="#2a3e45">–</b><span class="verdict yes">PASSES AA</span></span></div>
+      <div class="swatch fail"><span class="lbl" data-contrast-exempt>Ghost button<small>Active state, as specified</small></span><span class="ratio"><b data-fg="#2ec4b6" data-bg="#3f5b66">–</b><span class="verdict no">Fails AA</span></span></div>
+      <div class="arrow" aria-hidden="true">Fix</div>
+      <div class="swatch pass"><span class="lbl">Ghost button<small>Active state, corrected</small></span><span class="ratio"><b data-fg="#2ec4b6" data-bg="#2a3e45">–</b><span class="verdict yes">Passes AA</span></span></div>
       <p class="note">Recreation. Ratios are calculated live from the colours shown. AA needs 4.5:1.</p>
     </div>
     <div class="finds">
-      <div class="find reveal"><span class="vd c">CAUGHT BY THE GATE</span><h3>A rule that broke its own standard</h3><p>The button rule gave its label <span data-fact="F15">3.34:1 against 4.5:1</span> on its active surface. The same paragraph cited that ratio when it banned the pairing elsewhere. Reading missed it, but measuring the pixels didn't.</p></div>
-      <div class="find reveal"><span class="vd m">MISSED BY THE GATE</span><h3>A rule that contradicted itself</h3><p>A table rule asked for two things that can't both be true. The agent picked one and wrote clean code, and noted the conflict. So the release process now reads the agent's notes as well as the result.</p></div>
+      <div class="find reveal"><span class="vd c">Caught by the gate</span><h3>A rule that broke its own standard</h3><p>The button rule gave its label <span data-fact="F15">3.34:1 against 4.5:1</span> on its active surface. The same paragraph cited that ratio when it banned the pairing elsewhere. Reading missed it, but measuring the pixels didn't.</p></div>
+      <div class="find reveal"><span class="vd m">Missed by the gate</span><h3>A rule that contradicted itself</h3><p>A table rule asked for two things that can't both be true. The agent picked one and wrote clean code, and noted the conflict. So the release process now reads the agent's notes as well as the result.</p></div>
     </div>
     <p class="note mt-4">n = <span data-fact="F14">3</span> builds with one agent. In a rerun with Cursor, two of three builds passed first time. The third used an invented token name, which the gate caught and one iteration fixed.</p>
     <div class="story-q reveal"><p class="quote">Testing a spec by building from it finds defects that reading it misses. One defect across three runs supports the method; the model itself still needs adoption data.</p></div>
@@ -1129,16 +1119,13 @@ warning: draft pictogram in review, not blocking.
 
 <section id="team" class="dark">
   <div class="wrap">
-    <p class="eyebrow">Team of one</p>
     <h2>Running a product with a team of one</h2>
     <p class="lede">I run a harness of <span data-fact="F13">15</span> specialist agents, each with one job and a written standard. The agents do the work. I make the decisions.</p>
     <div class="hz">
       <div class="hz-me reveal">
-        <div class="node"><small>QUEUE</small><b>Ranked backlog</b><p>Every session opens here.</p></div>
-        <span class="arrow" aria-hidden="true">↓</span>
-        <div class="node"><small>ME</small><b>One decision</b><p>The driver turns the queue into one choice.</p></div>
-        <span class="arrow" aria-hidden="true">↓</span>
-        <div class="node"><small>AGENTS</small><b>Specialists do the work</b><p>Each task goes to its specialist.</p></div>
+        <div class="node"><small>Queue</small><b>Ranked backlog</b><p>Every session opens here.</p></div>
+        <div class="node"><small>Me</small><b>One decision</b><p>The driver turns the queue into one choice.</p></div>
+        <div class="node"><small>Agents</small><b>Specialists do the work</b><p>Each task goes to its specialist.</p></div>
       </div>
       <div class="lanes">
         <div class="lane2 reveal"><h3>Design</h3><ul><li>System architect<span>Is this token the right shape?</span></li><li>Agent-experience designer<span>Can a rule be read two ways?</span></li><li>Adoption designer<span>Is the route in easy for teams?</span></li><li>Prior-art researcher<span>What do standards say?</span></li></ul></div>
@@ -1154,12 +1141,12 @@ warning: draft pictogram in review, not blocking.
     </div>
     <h3 class="mt-12">Continuity</h3>
     <div class="layers">
-      <div class="layer reveal"><span class="tag">PLAN</span><p>I designed a plan covering <span data-fact="F17">seven months</span> of extended leave, so the system ran without me.</p></div>
-      <div class="layer reveal"><span class="tag">LOG</span><p>The dated decision log holds <span data-fact="F12">150+</span> entries. A mistake gets corrected in a new entry, never erased.</p></div>
-      <div class="layer reveal"><span class="tag">STEWARD</span><p>The release steward agent checks every release against the written procedure, whoever runs it.</p></div>
+      <div class="layer reveal"><span class="tag">Plan</span><p>I designed a plan covering <span data-fact="F17">seven months</span> of extended leave, so the system ran without me.</p></div>
+      <div class="layer reveal"><span class="tag">Log</span><p>The dated decision log holds <span data-fact="F12">150+</span> entries. A mistake gets corrected in a new entry, never erased.</p></div>
+      <div class="layer reveal"><span class="tag">Steward</span><p>The release steward agent checks every release against the written procedure, whoever runs it.</p></div>
     </div>
     <div class="log reveal">
-      <small>A DECISION I REVERSED</small>
+      <small>A decision I reversed</small>
       <div><time><span data-fact="P14">6 to 9 Jul 2026</span></time><span>decided</span><span>Write a skill file for each component, for agents to follow.</span></div>
       <div><time><span data-fact="P14">5 Aug 2026</span></time><span>reversed</span><span>Retired them. They had drifted from the canonical contract and told agents to emit a token the gate rejects.</span></div>
     </div>
@@ -1168,25 +1155,24 @@ warning: draft pictogram in review, not blocking.
 
 <section id="adoption">
   <div class="wrap">
-    <p class="eyebrow">Adoption</p>
     <h2>Adoption is the real test</h2>
     <p class="lede">Co-sponsored with the <span data-fact="F18">Head of UX</span>. Engineering leadership made it the default for new UI and reskins, with no mandate to rewrite existing screens. The hardest audience was teams who had only just moved onto the previous version of the design system.</p>
     <div class="buy">
-      <div class="bcol obj reveal"><small>THE OBJECTION</small><blockquote>Why redo work we've only just finished?</blockquote><p>Those teams had spent real time on the last migration and didn't want to spend it again.</p></div>
-      <div class="bcol win reveal"><small>WHAT CHANGED THEIR MINDS</small>
+      <div class="bcol obj reveal"><small>The objection</small><blockquote>Why redo work we've only just finished?</blockquote><p>Those teams had spent real time on the last migration and didn't want to spend it again.</p></div>
+      <div class="bcol win reveal"><small>What changed their minds</small>
         <div class="wins">
-          <div><span>01</span><div><h3>Speed</h3><p>In pilots, a screen took a median of <span data-fact="P02">1.5 days</span> from the spec, against <span data-fact="P02">5</span> through the old handoff. Most of the saving was handoff wait removed.</p></div></div>
-          <div><span>02</span><div><h3>No cost to them</h3><p>I built the first three implementations myself. From team four, teams self-serve with the one-command setup and a one-hour kick-off, reaching a first gate pass in a median of <span data-fact="P07">2.5 days</span>.</p></div></div>
-          <div><span>03</span><div><h3>Proof from pilots</h3><p>Nine pilots across React, Vue and Angular, from compliance and audit tools to an inspection app. A server-rendered legacy product reached its first screen.</p></div></div>
+          <div><div><h3>Speed</h3><p>In pilots, a screen took a median of <span data-fact="P02">1.5 days</span> from the spec, against <span data-fact="P02">5</span> through the old handoff. Most of the saving was handoff wait removed.</p></div></div>
+          <div><div><h3>No cost to them</h3><p>I built the first three implementations myself. From team four, teams self-serve with the one-command setup and a one-hour kick-off, reaching a first gate pass in a median of <span data-fact="P07">2.5 days</span>.</p></div></div>
+          <div><div><h3>Proof from pilots</h3><p>Nine pilots across React, Vue and Angular, from compliance and audit tools to an inspection app. A server-rendered legacy product reached its first screen.</p></div></div>
         </div>
       </div>
-      <div class="bcol out reveal"><small>THE OUTCOME</small><blockquote>"We love it, but we can't do it right now."</blockquote><p>Rollout follows each team's roadmap, so nobody migrates mid-delivery. The forcing function was a funded reskin already on the roadmap. The system rode along with work the team was doing anyway. Mandates and demos converted nobody.</p></div>
+      <div class="bcol out reveal"><small>The outcome</small><blockquote>"We love it, but we can't do it right now."</blockquote><p>Rollout follows each team's roadmap, so nobody migrates mid-delivery. The forcing function was a funded reskin already on the roadmap. The system rode along with work the team was doing anyway. Mandates and demos converted nobody.</p></div>
     </div>
-    <div class="funnel reveal" role="group" aria-label="Adoption funnel">
-      <div class="fun"><b><span data-fact="P04">9</span></b><span>Piloted</span></div>
-      <div class="fun"><b><span data-fact="P04">6</span></b><span>Committed with a date</span></div>
-      <div class="fun prod"><em class="kicker">North star</em><b><span data-fact="P04">3</span></b><span>In production on a pinned release</span></div>
-    </div>
+    <ol class="funnel reveal" aria-label="Adoption funnel">
+      <li><b><span data-fact="P04">9</span></b> piloted</li>
+      <li><b><span data-fact="P04">6</span></b> committed with a date</li>
+      <li class="prod"><b><span data-fact="P04">3</span></b> in production on a pinned release, the north star</li>
+    </ol>
     <p class="note mt-3">Of <span data-fact="P04">about 60</span> teams, counted for the weekly report.</p>
     <div class="two mt-14">
       <div class="reveal">
@@ -1209,14 +1195,14 @@ warning: draft pictogram in review, not blocking.
     <h2>How I measure it</h2>
     <p class="lede">I track the system like a product, with one north star, the inputs that drive it and guardrails that must not slip.</p>
     <div class="status">
-      <div class="sbox star reveal"><span class="pill">NORTH STAR</span><ul><li>Products in production on a pinned release: <span data-fact="P04">3</span> of <span data-fact="F01">60+</span><small class="note">Weekly count</small></li></ul></div>
-      <div class="sbox now reveal"><span class="pill">INPUTS</span><ul>
+      <div class="sbox star reveal"><span class="pill">North star</span><ul><li>Products in production on a pinned release: <span data-fact="P04">3</span> of <span data-fact="F01">60+</span><small class="note">Weekly count</small></li></ul></div>
+      <div class="sbox now reveal"><span class="pill">Inputs</span><ul>
         <li>Time to first gate pass: <span data-fact="P07">2.5 days</span><small class="note">Median across <span data-fact="P07">9</span> pilots. The first took <span data-fact="P07">9</span> days, the latest under one.</small></li>
         <li>First-run gate pass rate: <span data-fact="P20">71%</span><small class="note">n = <span data-fact="P20">186</span> pilot builds. Most failures were off-scale spacing, cleared in one agent iteration.</small></li>
         <li>Drift per product: <span data-fact="P01">412</span> before, <span data-fact="P25">260</span> after, and zero on governed files<small class="note">Median across whole codebases as screens migrate, n = <span data-fact="P01">12</span> products. CI blocks violations in governed files.</small></li>
         <li>Designer-contributed assets: <span data-fact="P06">47</span><small class="note">Catalogue entries from <span data-fact="P06">7</span> designers, to date</small></li>
       </ul></div>
-      <div class="sbox next reveal"><span class="pill">GUARDRAILS</span><ul>
+      <div class="sbox next reveal"><span class="pill">Guardrails</span><ul>
         <li>Accessibility defects after release: <span data-fact="P03">14</span> before, <span data-fact="P03">3</span> after<small class="note">The three production products, comparable two-quarter periods. The gate also blocked <span data-fact="P03">340</span> AA failures before merge in nine months.</small></li>
         <li>Time for a critical fix to reach every adopter: <span data-fact="P11">under 1</span> working day to tag, <span data-fact="P11">6</span> to all three products<small class="note">Release and pin records. Each team's merge sets the second step.</small></li>
       </ul></div>
@@ -1266,9 +1252,9 @@ warning: draft pictogram in review, not blocking.
     <p class="lede">A spec that teams build from has to be as dependable as code, so I release it like code.</p>
     <h3 class="sub-head">Where it stands, October 2026</h3>
     <div class="status mt-5">
-      <div class="sbox done reveal"><span class="pill">SHIPPED</span><ul><li>Spec covering <span data-fact="F10">21 components and 6 layout primitives</span></li><li>Static and rendered gate</li><li>Icon and pictogram pack, with one meaning per icon</li><li>Adoption guide and one-command setup</li><li>Nine pilots across React, Vue and Angular products</li></ul></div>
-      <div class="sbox now reveal"><span class="pill">IN PROGRESS</span><ul><li>Rollout to product teams, timed to their roadmaps</li><li>Every known adoption blocker is a tracked issue</li><li>The weekly report states the adoption position</li></ul></div>
-      <div class="sbox next reveal"><span class="pill">NEXT</span><ul><li>Reach 1.0, after which any changed value is a breaking release</li><li>1.0 exit criteria: four of six met. Still open are a first-run pass rate of <span data-fact="P26">75%</span> or more over <span data-fact="P26">100</span> builds (<span data-fact="P20">71%</span> now) and one quarter with no token contract change.</li><li>Adoption tracking, so the weekly report shows which teams build from the spec</li></ul></div>
+      <div class="sbox done reveal"><span class="pill">Shipped</span><ul><li>Spec covering <span data-fact="F10">21 components and 6 layout primitives</span></li><li>Static and rendered gate</li><li>Icon and pictogram pack, with one meaning per icon</li><li>Adoption guide and one-command setup</li><li>Nine pilots across React, Vue and Angular products</li></ul></div>
+      <div class="sbox now reveal"><span class="pill">In progress</span><ul><li>Rollout to product teams, timed to their roadmaps</li><li>Every known adoption blocker is a tracked issue</li><li>The weekly report states the adoption position</li></ul></div>
+      <div class="sbox next reveal"><span class="pill">Next</span><ul><li>Reach 1.0, after which any changed value is a breaking release</li><li>1.0 exit criteria: four of six met. Still open are a first-run pass rate of <span data-fact="P26">75%</span> or more over <span data-fact="P26">100</span> builds (<span data-fact="P20">71%</span> now) and one quarter with no token contract change.</li><li>Adoption tracking, so the weekly report shows which teams build from the spec</li></ul></div>
     </div>
   </div>
 </section>
@@ -1299,7 +1285,7 @@ warning: draft pictogram in review, not blocking.
 
 <footer>
   <div class="wrap">
-    <span>Matt Everitt · Design System Manager</span>
+    <span>Matt Everitt, design system manager</span>
     <span>Figures are published with my employer's permission. Interface visuals are recreations.</span>
   </div>
 </footer>
