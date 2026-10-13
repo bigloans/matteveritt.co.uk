@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>Matt Everitt, CV</title>
+<link rel="stylesheet" href="../../assets/tokens.css">
+<style>
+@font-face { font-family: "Atkinson Hyperlegible Next"; font-weight: 400; src: url(../../fonts/atkinson-hyperlegible-next-400.woff2) format("woff2"); }
+@font-face { font-family: "Atkinson Hyperlegible Next"; font-weight: 600; src: url(../../fonts/atkinson-hyperlegible-next-600.woff2) format("woff2"); }
+@font-face { font-family: "Atkinson Hyperlegible Next"; font-weight: 700; src: url(../../fonts/atkinson-hyperlegible-next-700.woff2) format("woff2"); }
+@page { size: A4; margin: 11mm 14mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-text); font-size: 9.6pt; line-height: 1.38; color: var(--color-text); }
+a { color: var(--color-interactive); text-decoration: none; }
+h1 { font-size: 24pt; font-weight: var(--weight-bold); line-height: var(--leading-tight); }
+.role { margin-top: 3pt; font-size: 12pt; font-weight: var(--weight-semibold); color: var(--color-interactive); }
+.contact { display: flex; flex-wrap: wrap; gap: 4pt 16pt; margin-top: 7pt; color: var(--color-text-muted); }
+h2 { margin-top: 10pt; padding-bottom: 3pt; border-bottom: var(--size-hairline) solid var(--color-hairline); font-size: 11pt; font-weight: var(--weight-bold); }
+.profile { margin-top: 6pt; }
+ul { margin-top: 5pt; padding-left: 13pt; }
+li + li { margin-top: 1.5pt; }
+.job { margin-top: 6pt; }
+.job-head { display: flex; justify-content: space-between; gap: 12pt; }
+.job-head h3 { font-size: 10.5pt; font-weight: var(--weight-semibold); }
+.job-head span { color: var(--color-text-muted); white-space: nowrap; }
+.employer { margin-top: 6pt; font-weight: var(--weight-semibold); color: var(--color-text-muted); }
+.cols { display: grid; grid-template-columns: 1fr 1fr; column-gap: 20pt; }
+.cols p { margin-top: 5pt; }
+.muted { color: var(--color-text-muted); }
+</style>
+</head>
+<body>
+<header>
+  <h1>Matt Everitt</h1>
+  <p class="role">Design system leader</p>
+  <p class="contact"><span>Nottingham, UK</span><a href="mailto:matt.m.everitt@gmail.com">matt.m.everitt@gmail.com</a><a href="https://www.linkedin.com/in/matteveritt92/">linkedin.com/in/matteveritt92</a><a href="https://matteveritt.co.uk/">matteveritt.co.uk</a></p>
+</header>
+
+<h2>Profile</h2>
+<p class="profile">I run design systems as products. Over six years I've grown from junior UI designer to leading a design system team, and I've built two generations of system: a component library in three frameworks, then a specification that AI coding agents build from, with an automated gate that checks the result. I'm strongest on governance, release management and accessibility, and on getting designers and engineers to adopt new ways of working. I'm looking for a design system manager or product owner role, where a design system is run as a product.</p>
+
+<h2>Selected outcomes</h2>
+<ul>
+  <li>Replaced my own component library with a specification AI coding agents build from, for a portfolio of 60+ products</li>
+  <li>Built a CI gate that has blocked 117 accessibility failures before merge since July 2026</li>
+  <li>Cut time to first gate pass from 9 days for the first pilot team to under 1 day for the latest</li>
+  <li>Shipped 90 releases in 14 weeks, with semantic versioning, changelogs and a dated decision log of 150+ entries</li>
+  <li>Saved £94k a year by merging a separate component build function into one design operations role</li>
+  <li>Managed a front-end developer and a UI designer for two to three years</li>
+</ul>
+
+<h2>Experience</h2>
+<p class="employer">Ideagen, March 2020 to present</p>
+
+<div class="job">
+  <div class="job-head"><h3>Design Operations Manager</h3><span>Aug 2022 to present</span></div>
+  <ul>
+    <li>Lead the design system team and its roadmap, setting priorities, allocating resource and keeping delivery aligned with business needs.</li>
+    <li>Created a design system built for AI-assisted development. A written specification of tokens, component rules and a definition of done replaces the component library and Figma handoff, so any team can build consistent, on-brand UI without waiting on a central team.</li>
+    <li>Run it as a product, with tagged releases that teams pin, a documented release process and a dated decision log.</li>
+    <li>Built a validation gate with Claude Code that checks generated code against the pinned release in CI, and kept human review for what automation can't judge.</li>
+    <li>Built WCAG 2.2 AA into the design tokens, so accessibility is the default and failures block a release.</li>
+    <li>Own the icon and pictogram pack, with style rules and a contribution guide, and wrote the adoption guide and one-command setup.</li>
+    <li>Led adoption with 9 pilot teams, 3 products in production and 7 contributing designers. Mentor junior team members and teams adopting AI-assisted workflows.</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="job-head"><h3>UX/UI Designer</h3><span>Jun 2021 to Aug 2022</span></div>
+  <ul>
+    <li>Designed and documented the company's first design system and its component library, 45 components built in React, Vue and Angular.</li>
+    <li>Managed design requests from many teams, balancing priorities, and worked closely with developers through handoff and implementation.</li>
+    <li>Tracked how the system performed through feedback and user experience metrics.</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="job-head"><h3>Junior UI Designer</h3><span>Mar 2020 to Jun 2021</span></div>
+  <ul>
+    <li>Started the company design system, and completed 10 UX courses alongside the role to apply to it.</li>
+  </ul>
+</div>
+
+<div class="cols">
+  <section>
+    <h2>Education</h2>
+    <p><strong>BA (Hons) Graphic Design</strong><br>Sheffield Hallam University, 2016 to 2019</p>
+    <p><strong>UX design certificates (10)</strong><br>Interaction Design Foundation, 2020 to 2021</p>
+  </section>
+  <section>
+    <h2>Skills</h2>
+    <p>Design system strategy, governance, release management, WCAG 2.2 AA, design tokens, AI-assisted development with Claude Code, CI checks, roadmapping, Agile, Figma and Adobe Creative Suite</p>
+  </section>
+</div>
+</body>
+</html>

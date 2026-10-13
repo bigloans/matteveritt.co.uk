@@ -52,7 +52,6 @@ try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.docu
 <section class="hero page" aria-labelledby="hero-h" data-spec="space" data-spec-prop="padding-top" data-spec-priority="2">
   <h1 class="display" id="hero-h" data-spec="type" data-spec-priority="1">I run design systems as products.</h1>
   <p class="hero-lede" data-spec="space" data-spec-prop="margin-top" data-spec-priority="1">My latest replaced a component library with a specification that AI coding agents build from, across a portfolio of 60+ products.</p>
-  <!-- TODO(matt): name the employer and design system here and in About? -->
   <p class="hero-roles" data-spec="color" data-spec-priority="2">Design system manager, open to design system manager and product owner roles.</p>
   <div class="actions" data-spec="space" data-spec-prop="column-gap" data-spec-priority="3">
     <a class="btn btn-primary" href="/work/replacing-the-component-library/" data-spec="radius" data-spec-priority="1">Read the case study</a>
@@ -70,20 +69,24 @@ try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.docu
         <p class="meta-line" data-spec="color" data-spec-priority="3">Case study, 2026, 7 minute read</p>
 <!-- /build:work-feature -->
     </div>
-    <figure class="gate-figure" data-illustrative>
-      <figcaption>Example gate output</figcaption>
-<pre class="gate-out" tabindex="0" data-spec="radius" data-spec-priority="2"><span class="cmd">$ gate check src/</span>
-<span class="hint">  spec pinned at release, hashes verified</span>
+    <figure class="gate-figure" data-artefact>
+      <figcaption>Gate run on a deliberately broken test fixture</figcaption>
+<pre class="gate-out" tabindex="0" data-spec="radius" data-spec-priority="2"><span class="cmd">$ node src/cli.js --config fixtures/violating/gate.config.json</span>
 
-  ✕ raw-colour         card.css:14     #1e88e5
-<span class="hint">      use a colour role token</span>
-  ✕ off-scale-spacing  card.css:22     padding: 13px
-<span class="hint">      nearest tokens: --space-3, --space-4</span>
-  ✕ contrast (dark)    Button.ghost     3.34:1 &lt; 4.5:1
-  ✓ focus-visible      12 controls
-  ! draft pictogram    in review, not blocking
+gate — validated against pinned spec v0.31.0 (manifest sha256 verified)
+<span class="hint">passes: static
+checked 7 governed file(s)</span>
 
-  3 blocking, 0 skipped, exit 1</pre>
+bad.css
+  bad.css:2  [colour]  raw hex colour `#ff0000` — use a semantic `--color-*` token
+  bad.css:4  [spacing]  off-scale spacing `15px` — not a scale step; nearest is `16px` (use its `--spacing-*` / `--space-*` token)
+bad.html
+  bad.html:5  [a11y]  &lt;img&gt; is missing required "alt" attribute (wcag/h37)
+<span class="hint">  [… 55 further findings omitted …]</span>
+
+FAIL — 58 violation(s): 13 colour, 16 spacing, 15 tokenisable, 3 undefined-token, 6 a11y, 1 bad-exception, 1 ancestor-custom-property, 2 logical-properties, 1 typography
+EXIT=1</pre>
+      <p class="note">Run on 13 October 2026. The fixture pins spec v0.31.0 and the current spec is v0.93.0, so this shows how the gate behaves on a fixed test case. It is not a check of production code. Findings trimmed and product names removed.</p>
     </figure>
   </div>
   <ul class="reads" data-spec="space" data-spec-prop="margin-top" data-spec-priority="3">
@@ -105,13 +108,10 @@ try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.docu
 <section id="about" class="landing-section page" aria-labelledby="about-h">
   <h2 id="about-h">About</h2>
   <div class="flow measure">
-    <p data-spec="type" data-spec-priority="2">Over about 6 years, I've grown from junior UI designer to design system manager. I built v1, our component library, with 45 components across React, Vue and Angular, and delivered it in four stages against a roadmap I presented at CTO level.</p>
+    <p data-spec="type" data-spec-priority="2">I'm a design system manager based in Nottingham. Over about 6 years, I've grown from junior UI designer to leading a design system, and I've managed a front-end developer and a UI designer for two to three years. I built v1, our component library, with 45 components across React, Vue and Angular, and delivered it in four stages against a roadmap I presented at CTO level.</p>
     <p>When the evidence said a library couldn't keep up, I retired my own work and replaced it with a specification that AI coding agents build from. I run that spec as a product. Strategy, roadmap, releases and adoption are mine, and the Head of UX co-sponsors it.</p>
     <p>Earlier operational changes I led saved £94k a year, mostly by merging a separate component build function into one design operations role.</p>
-    <!-- TODO(matt): name the employer and design system here and in the hero? -->
-    <!-- TODO(matt): add "managed two people for two to three years" here? -->
-    <!-- TODO(matt): location and working pattern line? -->
-    <!-- TODO(matt): CV PDF to link? -->
+    <p class="cv-link"><a href="/assets/matt-everitt-cv.pdf">Download my CV (PDF, one page)</a></p>
   </div>
 </section>
 

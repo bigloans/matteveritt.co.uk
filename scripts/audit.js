@@ -29,7 +29,11 @@
     return r < need ? [`${r.toFixed(2)}:1 ${e.textContent.trim().slice(0, 30)}`] : [];
   });
   const tl = els.find(e => e.textContent.trim() === 'Timeline');
-  const body = document.body.innerText;
+  // Quoted artefacts keep their original punctuation, so character checks skip them.
+
+  const quoted = [...document.querySelectorAll('[data-artefact]')].map(e => e.innerText).join(' ');
+  let body = document.body.innerText;
+  for (const q of quoted.split(/\n+/).filter(Boolean)) body = body.replace(q, ' ');
   return {
     sizes: uniq(e => hasText(e) ? [cs(e).fontSize] : []),
     spacing: uniq(e => ['marginTop', 'marginBottom', 'paddingTop', 'paddingBottom', 'paddingLeft', 'paddingRight', 'rowGap', 'columnGap']

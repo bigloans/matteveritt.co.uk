@@ -530,3 +530,16 @@ blockquote footer { margin-top: var(--space-8); font-size: var(--text-14); color
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; animation: none !important; }
 }
+
+/* Real artefacts: quoted verbatim, collapsed in articles */
+
+.artefact { border: var(--size-hairline) solid var(--color-hairline); border-radius: var(--radius-surface); padding: 0 var(--space-16); }
+.artefact summary { display: flex; align-items: center; min-height: var(--size-target); color: var(--color-interactive); font-weight: var(--weight-semibold); cursor: pointer; }
+.artefact[open] { padding-bottom: var(--space-16); }
+.artefact figure { margin-top: var(--space-8); }
+.artefact blockquote { font-size: var(--text-16); }
+.artefact blockquote > * + * { margin-top: var(--space-12); }
+.artefact figcaption { margin-top: var(--space-12); }
+.artefact code, .artefact blockquote { overflow-wrap: anywhere; }
+.gate-figure .note { margin-top: var(--space-8); }
+.cv-link a { display: inline-flex; align-items: center; min-height: var(--size-target); }

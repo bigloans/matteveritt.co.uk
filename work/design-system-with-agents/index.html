@@ -111,6 +111,27 @@ try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.docu
       <h2 id="continuity-h">Continuity</h2>
       <p>I designed a plan covering two months of extended leave, so the system ran without me.</p>
       <p>The dated decision log holds 150+ entries. A mistake gets corrected in a new entry, never erased.</p>
+<!-- /words -->
+      <details class="artefact">
+        <summary>Read a decision log entry</summary>
+        <figure data-artefact>
+          <blockquote>
+            <p><strong>2026-08-11 — A file the gate could not evaluate is not a pass (done)</strong></p>
+            <p>The defect, measured rather than argued. When the accessibility engine's run for a page threw, <code>gate/src/rendered/run.js</code> caught it, recorded the page in the skipped channel, substituted an empty violation list and continued. The verdict then read <code>PASS — 0 violations</code> and the exit code was 0 — including under <code>--all</code>, whose contract is fail-closed. Demonstrated with a real browser on a page containing a nameless <code>&lt;button&gt;</code> and an <code>&lt;img&gt;</code> with no alt: the identical body produced two a11y findings when the engine could run and zero when it could not. Two real accessibility violations disappeared and the run reported success.</p>
+            <p>[…]</p>
+            <p>Three "not checked" meanings now warrant three outcomes, kept deliberately apart:</p>
+            <ul>
+              <li><strong>unevaluable</strong> — the gate tried and could not. INCOMPLETE, exit 2.</li>
+              <li><strong>unsupported</strong> — outside this checker's scope, such as a .md caught by a broad glob. Listed separately, exit unaffected. Conflating this with the above would fail a perfectly reasonable governed glob, and noise is how a gate gets switched off.</li>
+              <li><strong>skippedPasses</strong> — a layer nobody asked to run. Qualifies the verdict as INCOMPLETE but stays exit 0, per the 2026-08-10 entry: not asking for a pass is not the same as failing to run one.</li>
+            </ul>
+            <p>Exit 2 outranks exit 1 when a run has both violations and an unevaluable file. […]</p>
+            <p>Silent under-evaluation remains open as #20. A broken or cross-origin iframe, or a strict <code>script-src 'none'</code> CSP, makes the engine resolve reporting zero violations with nothing recorded anywhere. […] The consumer-facing documentation now says exit 0 is nearly sufficient and names that gap, rather than claiming a guarantee the code does not make.</p>
+          </blockquote>
+          <figcaption class="note">From DECISIONS.md, which is append-only. Old entries are never edited, only superseded. The […] marks are my cuts.</figcaption>
+        </figure>
+      </details>
+<!-- words -->
     </section>
 
     <section id="reversed" class="flow" aria-labelledby="reversed-h">

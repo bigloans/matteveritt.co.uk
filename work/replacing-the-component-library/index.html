@@ -92,7 +92,7 @@ try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.docu
       <div class="north-star block">
         <p class="note">North star</p>
         <p><span class="north-star-figure">3</span> products in production on a pinned release, including the AI agent and home hub, the entry point to every product</p>
-        <p class="note">v1 reached 6 products in over six years. The spec inherited v1's asset pipeline, and the AI coding agents it depends on arrived late in v1's six years.<!-- TODO(matt): confirm wording --></p>
+        <p class="note">v1 reached 6 products in over six years. The spec inherited v1's asset pipeline, and the AI coding agents it depends on arrived late in v1's six years.</p>
       </div>
     </section>
 
@@ -156,7 +156,17 @@ try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.docu
       <p>The spec covers 21 components and 6 layout primitives, with 90 releases in 14 weeks before 1.0.</p>
       <h3>One spec, any framework</h3>
       <p>Tokens, component rules and the definition of done live in three plain-text files.</p>
-      <!-- TODO(matt): supply a real spec excerpt, a real gate run, a dated decision log entry and a hub screenshot cleared for publication. -->
+<!-- /words -->
+      <details class="artefact">
+        <summary>Read a spec excerpt on focus rings</summary>
+        <figure data-artefact>
+          <blockquote>
+            <p>Focus ring rendering. The light-mode ring is teal-700, not teal-500, because teal-500 fell to 2.74:1 on surface-emphasis; teal-700 clears 3:1 on background, surface, and surface-emphasis. Dark mode stays teal-glow. Every focus ring — the outline drawn in <code>--color-ring</code> on <code>:focus-visible</code> — declares <code>outline-offset: var(--focus-ring-offset)</code>, and the declaration does not depend on whether the element has a fill. […] Leaving <code>outline-offset</code> undeclared, which hands the gap to the browser's default, is off-contract, and so is 0, a negative offset, or any value other than <code>var(--focus-ring-offset)</code>, even on an element where a flush ring would clear 3:1. A flush ring fails WCAG 1.4.11 on every filled variant but one, and the worst case is total invisibility: in light mode ring and interactive-default are the same hex (#00697b), so a flush ring there is 1.00:1 — the indicator is exactly not there. Measured against each fill, light / dark: interactive-default 1.00 / 1.31, interactive-accent 1.00 / 1.51, destructive 1.21 / 5.44 […]. The offset places the ring on the canvas instead, where it measures 5.40-6.35:1 in light and 4.39-13.04:1 in dark across all four surfaces a focused control may sit on — so the offset rule is what carries 1.4.11, not the colour choice.</p>
+          </blockquote>
+          <figcaption class="note">From the spec's DESIGN.md, section "Focus ring rendering", spec v0.93.0. The two […] marks are my cuts from a longer paragraph.</figcaption>
+        </figure>
+      </details>
+<!-- words -->
       <h3>Accessibility lives in the tokens</h3>
       <p>Every colour pairing the spec allows is tested against WCAG 2.2 AA in both themes, and a failing pair blocks the release.</p>
       <h3>A release is a contract</h3>
@@ -169,6 +179,39 @@ try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.docu
         <div><dt>Rendered</dt><dd>Opens a real browser before merge. It measures contrast on real pixels in both themes and tabs through every control.</dd></div>
         <div><dt>Human</dt><dd>Says where automation stops. A screen can pass the gate and still be the wrong screen, so reviewers spend their time there.</dd></div>
       </dl>
+<!-- /words -->
+      <details class="artefact">
+        <summary>See a real gate run</summary>
+        <figure class="gate-figure" data-artefact>
+          <pre class="gate-out" tabindex="0"><span class="cmd">$ node src/cli.js --config fixtures/violating/gate.config.json</span>
+
+gate — validated against pinned spec v0.31.0 (manifest sha256 verified)
+<span class="hint">passes: static
+checked 7 governed file(s)</span>
+
+bad.css
+  bad.css:2  [colour]  raw hex colour `#ff0000` — use a semantic `--color-*` token
+  bad.css:4  [spacing]  off-scale spacing `15px` — not a scale step; nearest is `16px` (use its `--spacing-*` / `--space-*` token)
+  bad.css:12  [undefined-token]  `--color-nonexistent` is not a defined colour role token in the pinned spec
+  bad.css:41  [tokenisable]  `linear` is for loops only — a transition takes one of the four cubic-bezier easings, because a constant-velocity transition reads mechanical
+bad.html
+  bad.html:5  [a11y]  &lt;img&gt; is missing required "alt" attribute (wcag/h37)
+laundered.css
+  laundered.css:17  [spacing]  hardcoded length `13px` in `--card-pad`, which is not a spec token — the value reaches governed properties through `var(--card-pad)` unchecked; use a spec token, or define this property from one
+  laundered.css:41  [ancestor-custom-property]  `--ring-glow` holds a var() and is declared on `:root`, so the var() resolves on the ancestor and descendants in another theme inherit the wrong value. Declare `--ring-glow` on the component selector whose own declarations read it. DESIGN.md § Focus ring rendering.
+unenforced-prose-rules.css
+  unenforced-prose-rules.css:58  [logical-properties]  physical side `padding-left` — write `padding-inline-start` (`paddingInlineStart` in a style object) with the same value, so the layout mirrors in right-to-left locales. COMPONENT-STANDARD.md § 5 mandates logical properties.
+<span class="hint">  [… 50 further findings omitted …]</span>
+
+Exceptions applied (1) — auditable, deliberate opt-outs:
+  exception-demo.css:3  [color]  reason: third-party chart lib requires this exact brand hex
+
+FAIL — 58 violation(s): 13 colour, 16 spacing, 15 tokenisable, 3 undefined-token, 6 a11y, 1 bad-exception, 1 ancestor-custom-property, 2 logical-properties, 1 typography
+EXIT=1</pre>
+          <figcaption class="note">Run on 13 October 2026 with gate v0.65.0, against the repo's own fixture of deliberately broken code. The fixture pins spec v0.31.0 and the current spec is v0.93.0, so this shows how the gate behaves on a fixed test case. It is not a check of production code. I trimmed the findings list and replaced product names with generic terms. The header, exceptions, verdict and exit code are otherwise unedited.</figcaption>
+        </figure>
+      </details>
+<!-- words -->
     </section>
 
     <section id="evidence" class="flow" aria-labelledby="story">
@@ -224,7 +267,7 @@ try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.docu
       </ul>
       <h3>Guardrails</h3>
       <ul>
-        <li>AA failures blocked before merge: 117 since July 2026<!-- TODO(matt): do you track accessibility failures that reached production? If so, give the count since July 2026. --></li>
+        <li>AA failures blocked before merge: 117 since July 2026</li>
         <li>Time for a critical fix to reach every adopter: under 1 working day to tag, 6 working days to reach all three products</li>
       </ul>
       <p id="roadmap">Next: reach 1.0. Four of six exit criteria are met; still open are a first-run pass rate of 75% or more over 100 builds and one quarter with no token contract change.</p>
@@ -249,7 +292,7 @@ try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.docu
         <h4>Pinning slows critical fixes</h4>
         <div class="trade-pair">
           <p>Pinning protects teams from unplanned changes, so a critical fix waits for each team to update its pin. That wait grows with every adopter.</p>
-          <p><strong>Contained by updating pins through automated pull requests.</strong> Every tagged fix opens one for each adopter. Teams still review and merge it, so the pin keeps protecting them.<!-- TODO(matt): confirm the automated pull request pin update is real. --></p>
+          <p><strong>Contained by updating pins through automated pull requests.</strong> Every tagged fix opens one for each adopter. Teams still review and merge it, so the pin keeps protecting them.</p>
         </div>
       </div>
     </section>

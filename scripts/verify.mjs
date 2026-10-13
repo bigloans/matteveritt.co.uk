@@ -35,6 +35,11 @@ const browser = await chromium.launch();
   let bad = [];
   for (const href of links) {
     const u = new URL(href);
+    if (!u.pathname.endsWith("/")) {
+      const head = await ctx.request.get(href);
+      if (head.status() !== 200) bad.push(`${href} ${head.status()}`);
+      continue;
+    }
     const res = await p.goto(u.origin + u.pathname);
     if (!res || res.status() !== 200) { bad.push(`${href} ${res && res.status()}`); continue; }
     const id = decodeURIComponent(u.hash.slice(1));
