@@ -7,7 +7,10 @@
   const els = [...document.querySelectorAll('body *')].filter(e => cs(e).display !== 'none');
   const hasText = e => [...e.childNodes].some(n => n.nodeType === 3 && n.textContent.trim());
   const uniq = f => [...new Set(els.flatMap(f))].sort((a, b) => parseFloat(a) - parseFloat(b));
-  const rgb = c => (c.match(/[\d.]+/g) || []).map(Number);
+  const rgb = c => {
+    const n = (c.match(/[\d.]+/g) || []).map(Number);
+    return c.startsWith('color(srgb') ? [n[0] * 255, n[1] * 255, n[2] * 255, n[3] ?? 1] : n;
+  };
   const lin = v => (v /= 255) <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4;
   const lum = ([r, g, b]) => 0.2126 * lin(r) + 0.7152 * lin(g) + 0.0722 * lin(b);
   const mix = (f, b) => { const a = f[3] ?? 1; return [0, 1, 2].map(i => f[i] * a + b[i] * (1 - a)); };

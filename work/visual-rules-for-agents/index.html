@@ -46,8 +46,9 @@ try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.docu
 
 <main id="main" tabindex="-1">
 <!-- words -->
+<div class="band">
 <div class="article-hero page" data-spec="space" data-spec-prop="padding-top" data-spec-priority="2">
-  <h1 class="article-title" data-spec="type" data-spec-priority="1">Visual rules an AI agent can follow</h1>
+  <h1 class="article-title reveal" data-spec="type" data-spec-priority="1">Visual rules an AI agent can follow</h1>
   <p class="article-lede" data-spec="space" data-spec-prop="margin-top" data-spec-priority="1">An agent can&#39;t interpret &ldquo;make it feel premium&rdquo;, so each aesthetic decision in the spec is a named rule with a token behind it. These are three of them.</p>
   <!-- build:meta -->
 <p class="meta-line" data-spec="color" data-spec-priority="3">Short read, 3 minutes</p>
@@ -58,13 +59,14 @@ try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.docu
     <div><dt>Timeline</dt><dd>Spec work from Jul 2026</dd></div>
   </dl>
 </div>
+</div>
 
 <div class="article-body no-contents page">
   <article class="article-main">
     <section id="visual-language" class="flow" aria-labelledby="visual">
       <h2 id="visual">Two themes from one set of tokens</h2>
       <p>Dark is the signature theme. Light is the working surface. The same tokens drive both, so an agent never picks colours for a theme. It picks a role, and the theme supplies the value.</p>
-      <figure class="demo recreation block" data-illustrative>
+      <figure class="demo recreation block reveal" data-illustrative>
         <div class="demo-side">
           <h3>Brand energy where it counts</h3>
           <p>Switch the preview between the two themes.</p>
@@ -91,7 +93,7 @@ try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.docu
     <section id="radius" class="flow" aria-labelledby="radius-h">
       <h2 id="radius-h">Radius by role</h2>
       <p>Components reference a role, never a raw value, so one edit changes every card&#39;s corner. A modal, a surface, a control and a pill each get their own radius, so hierarchy shows in the corners.</p>
-      <figure class="recreation block" data-illustrative>
+      <figure class="recreation block reveal" data-illustrative>
         <div class="canvas">
           <div class="rr-modal">
             <span class="rr-tag top">modal 20</span>
@@ -111,7 +113,7 @@ try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.docu
         <li>Always visible, never dismissible</li>
         <li>Always labelled in text, never colour alone</li>
       </ul>
-      <figure class="recreation block" data-illustrative>
+      <figure class="recreation block reveal" data-illustrative>
         <div class="canvas flush">
           <div class="aid">
             <div class="l"><div class="field"><small>Suggested category</small><b>Maintenance</b><span class="badge"><i></i>AI-generated</span></div></div>
@@ -123,19 +125,10 @@ try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.docu
       <h3>Brand against legibility</h3>
       <p>The gradient is a brand device, but the badge has to stay legible and can never rely on colour alone. Accessibility settled it. The text label carries the meaning, the gradient is decoration hidden from assistive technology, and a badge that relied on colour alone would fail WCAG 1.4.1.</p>
       <h3>Three options</h3>
-      <div class="block">
-        <div class="option">
-          <h4>Option A, chosen: gradient on the border and dot only</h4>
-          <p>The label sits in the text colour on a neutral fill, so no text ever sits on the gradient.</p>
-        </div>
-        <div class="option">
-          <h4>Option B: gradient fill with dark text</h4>
-          <p>It passed AA at both ends of the gradient, but the worst case was about 4.72:1 at the pink end, a thin margin. The gate can&#39;t check text over a gradient either, so this option looks worse now than it did then.</p>
-        </div>
-        <div class="option">
-          <h4>Option C: gradient fill with white text</h4>
-          <p>It fails contrast at the light teal end.</p>
-        </div>
+      <div class="option-grid block">
+        <div class="card lift spot glow-border reveal"><p class="pill teal">Option A, chosen</p><h4>Gradient on the border and dot only</h4><p>The label sits in the text colour on a neutral fill, so no text ever sits on the gradient.</p></div>
+        <div class="card lift spot reveal" style="--i:1"><p class="pill">Option B</p><h4>Gradient fill with dark text</h4><p>It passed AA at both ends of the gradient, but the worst case was about 4.72:1 at the pink end, a thin margin. The gate can&#39;t check text over a gradient either, so this option looks worse now than it did then.</p></div>
+        <div class="card lift spot reveal" style="--i:2"><p class="pill pink">Option C</p><h4>Gradient fill with white text</h4><p>It fails contrast at the light teal end.</p></div>
       </div>
       <h3>One state, two variants</h3>
       <p>The badge has a single state. It is static and persistent, with no hover, focus or dismiss state, and it isn&#39;t interactive unless a variant adds an info control, which then follows the button or tooltip rules.</p>

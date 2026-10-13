@@ -45,9 +45,11 @@ try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.docu
 <!-- /build:header -->
 
 <main id="main" tabindex="-1">
+<div class="band">
 <div class="article-hero page" data-spec="space" data-spec-prop="padding-top" data-spec-priority="2">
-  <h1 class="article-title" data-spec="type" data-spec-priority="1">This site's spec</h1>
+  <h1 class="article-title reveal" data-spec="type" data-spec-priority="1">This site's spec</h1>
   <p class="article-lede" data-spec="space" data-spec-prop="margin-top" data-spec-priority="1">Every value on this site comes from one token file. The same file draws the "Show the spec" annotations and this page, so the three can't drift apart.</p>
+</div>
 </div>
 <div class="article-body no-contents page">
   <div class="article-main">
@@ -67,6 +69,19 @@ try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.docu
           <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-on-interactive)"></span><code>--color-on-interactive</code></th><td><code>#FFFFFF</code></td><td><code>#0B1628</code></td><td>Text on primary buttons</td></tr>
           <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-redline)"></span><code>--color-redline</code></th><td><code>#C2185B</code></td><td><code>#FF7AB6</code></td><td>Spec annotations only</td></tr>
           <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-hairline)"></span><code>--color-hairline</code></th><td><code>#D3D9E1</code></td><td><code>#2A3B57</code></td><td>1px separators</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-accent-blue)"></span><code>--color-accent-blue</code></th><td><code>#2A55B8</code></td><td><code>#7C9BFF</code></td><td>Gradient stop and accent text</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-accent-violet)"></span><code>--color-accent-violet</code></th><td><code>#6D28D9</code></td><td><code>#A78BFA</code></td><td>Gradient stop and accent text</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-accent-pink)"></span><code>--color-accent-pink</code></th><td><code>#B4235F</code></td><td><code>#FF6FB1</code></td><td>Gradient stop and accent text</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-inverse-surface)"></span><code>--color-inverse-surface</code></th><td><code>#0B1628</code></td><td><code>#0B1628</code></td><td>Navy bands, the same in both themes</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-inverse-raised)"></span><code>--color-inverse-raised</code></th><td><code>#12223A</code></td><td><code>#12223A</code></td><td>Cards on navy bands</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-inverse-deep)"></span><code>--color-inverse-deep</code></th><td><code>#060D19</code></td><td><code>#060D19</code></td><td>Terminals and the deepest navy</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-inverse-text)"></span><code>--color-inverse-text</code></th><td><code>#FFFFFF</code></td><td><code>#FFFFFF</code></td><td>Headings on navy</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-inverse-muted)"></span><code>--color-inverse-muted</code></th><td><code>#B9C6D8</code></td><td><code>#B9C6D8</code></td><td>Body text on navy</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-inverse-accent)"></span><code>--color-inverse-accent</code></th><td><code>#2EC4B6</code></td><td><code>#2EC4B6</code></td><td>Links, buttons and focus on navy</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-inverse-blue)"></span><code>--color-inverse-blue</code></th><td><code>#7C9BFF</code></td><td><code>#7C9BFF</code></td><td>Accent on navy</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-inverse-pink)"></span><code>--color-inverse-pink</code></th><td><code>#FF6FB1</code></td><td><code>#FF6FB1</code></td><td>Accent and failures on navy</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-inverse-on-accent)"></span><code>--color-inverse-on-accent</code></th><td><code>#0B1628</code></td><td><code>#0B1628</code></td><td>Text on teal buttons</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-inverse-line)"></span><code>--color-inverse-line</code></th><td><code>#26385A</code></td><td><code>#26385A</code></td><td>Hairlines on navy</td></tr>
           </tbody>
         </table>
       </div>
@@ -85,6 +100,20 @@ try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.docu
           <tr><th scope="row"><code>on-interactive</code> on <code>interactive</code></th><td>6.37:1</td><td>8.35:1</td></tr>
           <tr><th scope="row"><code>redline</code> on <code>surface</code></th><td>5.87:1</td><td>7.51:1</td></tr>
           <tr><th scope="row"><code>redline</code> on <code>surface-alt</code></th><td>5.38:1</td><td>6.62:1</td></tr>
+          <tr><th scope="row"><code>accent-blue</code> on <code>surface</code></th><td>6.80:1</td><td>6.89:1</td></tr>
+          <tr><th scope="row"><code>accent-violet</code> on <code>surface</code></th><td>7.10:1</td><td>6.65:1</td></tr>
+          <tr><th scope="row"><code>accent-pink</code> on <code>surface</code></th><td>6.28:1</td><td>7.04:1</td></tr>
+          <tr><th scope="row"><code>accent-pink</code> on <code>surface-alt</code></th><td>5.75:1</td><td>6.20:1</td></tr>
+          <tr><th scope="row"><code>inverse-text</code> on <code>inverse-surface</code></th><td>18.11:1</td><td>18.11:1</td></tr>
+          <tr><th scope="row"><code>inverse-muted</code> on <code>inverse-surface</code></th><td>10.46:1</td><td>10.46:1</td></tr>
+          <tr><th scope="row"><code>inverse-muted</code> on <code>inverse-raised</code></th><td>9.22:1</td><td>9.22:1</td></tr>
+          <tr><th scope="row"><code>inverse-accent</code> on <code>inverse-surface</code></th><td>8.35:1</td><td>8.35:1</td></tr>
+          <tr><th scope="row"><code>inverse-accent</code> on <code>inverse-raised</code></th><td>7.36:1</td><td>7.36:1</td></tr>
+          <tr><th scope="row"><code>inverse-accent</code> on <code>inverse-deep</code></th><td>8.98:1</td><td>8.98:1</td></tr>
+          <tr><th scope="row"><code>inverse-blue</code> on <code>inverse-raised</code></th><td>6.07:1</td><td>6.07:1</td></tr>
+          <tr><th scope="row"><code>inverse-pink</code> on <code>inverse-raised</code></th><td>6.20:1</td><td>6.20:1</td></tr>
+          <tr><th scope="row"><code>inverse-pink</code> on <code>inverse-deep</code></th><td>7.56:1</td><td>7.56:1</td></tr>
+          <tr><th scope="row"><code>inverse-on-accent</code> on <code>inverse-accent</code></th><td>8.35:1</td><td>8.35:1</td></tr>
           </tbody>
         </table>
       </div>
@@ -157,15 +186,39 @@ try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.docu
       </ul>
     </section>
 
+    <section id="gradients" class="flow" aria-labelledby="gradients-h">
+      <h2 id="gradients-h">Gradients</h2>
+      <p>The brand sweeps from teal through blue to pink. Gradient type uses deeper stops on the light surface, so every stop still clears 3:1 for large text.</p>
+      <ul class="spec-list">
+        <li class="spec-gradient"><span style="background:var(--gradient-brand)"></span><code>--gradient-brand</code><span class="spec-note">Brand sweep on navy: teal, blue, pink</span></li>
+        <li class="spec-gradient"><span style="background:var(--gradient-text)"></span><code>--gradient-text</code><span class="spec-note">Gradient type on the page surface. Every stop clears 3:1 for large text</span></li>
+        <li class="spec-gradient"><span style="background:var(--gradient-aurora)"></span><code>--gradient-aurora</code><span class="spec-note">Drifting glow behind navy bands</span></li>
+        <li class="spec-gradient"><span style="background:var(--gradient-surface-glow)"></span><code>--gradient-surface-glow</code><span class="spec-note">Faint glow on page-surface panels</span></li>
+      </ul>
+    </section>
+
     <section id="elevation" class="flow" aria-labelledby="elevation-h">
       <h2 id="elevation-h">Elevation and borders</h2>
-      <p>One shadow, <code>--shadow-overlay</code>, lifts the contents sheet above the page. Content surfaces get none. A 1px <code>--color-hairline</code> border separates the header, the footer and the two kinds of work on the landing page.</p>
-      <div class="spec-shadow"><code>--shadow-overlay</code></div>
+      <p>Three shadows do three jobs. <code>--shadow-overlay</code> lifts the contents sheet, <code>--shadow-card</code> lifts a card you point at, and <code>--shadow-glow</code> marks the one action or piece of work that matters most. A 1px <code>--color-hairline</code> border separates kinds of content.</p>
+      <div class="spec-shadows"><div class="spec-shadow" style="box-shadow:var(--shadow-overlay)"><code>--shadow-overlay</code></div><div class="spec-shadow" style="box-shadow:var(--shadow-card)"><code>--shadow-card</code></div><div class="spec-shadow" style="box-shadow:var(--shadow-glow)"><code>--shadow-glow</code></div></div>
     </section>
 
     <section id="motion" class="flow" aria-labelledby="motion-h">
       <h2 id="motion-h">Motion</h2>
-      <p>Motion only follows something you do. "Show the spec" fades its annotations in over <code>--motion-fast</code>, 200ms, and the contents sheet opens at the same speed. Nothing animates on scroll or on hover. With reduced motion set, <code>--motion-fast</code> becomes 0ms.</p>
+      <p>Motion adds a little joy without getting in the way of reading. Navy bands drift slowly, sections ease in as they arrive, and figures count up once. With reduced motion set, every duration becomes 0ms and nothing moves.</p>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="Motion tokens">
+        <table>
+          <thead><tr><th scope="col">Token</th><th scope="col">Value</th><th scope="col">Use</th></tr></thead>
+          <tbody>
+          <tr><th scope="row"><code>--motion-fast</code></th><td><code>200ms</code></td><td>Hover, toggles, the spec reveal and the contents sheet</td></tr>
+          <tr><th scope="row"><code>--motion-medium</code></th><td><code>400ms</code></td><td>Card lift and bars</td></tr>
+          <tr><th scope="row"><code>--motion-reveal</code></th><td><code>700ms</code></td><td>Sections easing in as they scroll into view</td></tr>
+          <tr><th scope="row"><code>--motion-count</code></th><td><code>1400ms</code></td><td>Figures counting up</td></tr>
+          <tr><th scope="row"><code>--motion-ambient</code></th><td><code>24s</code></td><td>The slow drift of the aurora glow</td></tr>
+          <tr><th scope="row"><code>--motion-ease</code></th><td><code>cubic-bezier(0.2, 0.8, 0.2, 1)</code></td><td>One easing curve for everything</td></tr>
+          </tbody>
+        </table>
+      </div>
     </section>
 <!-- /build:spec -->
   </div>

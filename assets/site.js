@@ -60,7 +60,10 @@
   }
   function parseRgb(c) {
     var m = c.match(/[\d.]+/g);
-    return m ? m.slice(0, 4).map(Number) : null;
+    if (!m) return null;
+    m = m.slice(0, 4).map(Number);
+    if (c.indexOf("color(srgb") === 0) { m[0] *= 255; m[1] *= 255; m[2] *= 255; }
+    return m;
   }
   function lum(c) {
     return [0, 1, 2].map(function (i) {
@@ -340,6 +343,70 @@
         setters.forEach(function (x) { x.setAttribute("aria-pressed", x === b); });
       });
     });
+  }
+
+  // Motion: reveal on scroll, count-up figures, typed windows and funnel bars.
+  // With reduced motion, everything shows in its final state at once.
+
+  var still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var countUp = function (el) {
+    var end = +el.getAttribute("data-count"), suffix = el.getAttribute("data-suffix") || "";
+    if (still) return;
+    var t0 = null, dur = 1400;
+    var step = function (t) {
+      if (t0 === null) t0 = t;
+      var k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3);
+      el.textContent = Math.round(end * e) + suffix;
+      if (k < 1) requestAnimationFrame(step);
+    };
+    el.textContent = "0" + suffix;
+    requestAnimationFrame(step);
+  };
+  var showing = function (el) {
+    el.classList.add("in");
+    [].forEach.call(el.querySelectorAll ? el.querySelectorAll("[data-count]") : [], countUp);
+    if (el.hasAttribute && el.hasAttribute("data-count")) countUp(el);
+  };
+  var animated = [].slice.call(document.querySelectorAll(".reveal, .typed, .funnel-bars"));
+  if (still || !("IntersectionObserver" in window)) {
+    animated.forEach(function (el) { el.classList.add("in"); });
+  } else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        io.unobserve(e.target);
+        showing(e.target);
+      });
+    }, { threshold: 0.15, rootMargin: "0px 0px -5% 0px" });
+    animated.forEach(function (el) { io.observe(el); });
+  }
+
+  // Spotlight that follows the pointer across cards.
+
+  document.addEventListener("pointermove", function (e) {
+    var card = e.target.closest && e.target.closest(".spot");
+    if (!card) return;
+    var r = card.getBoundingClientRect();
+    card.style.setProperty("--mx", e.clientX - r.left + "px");
+    card.style.setProperty("--my", e.clientY - r.top + "px");
+  }, { passive: true });
+
+  // Reading progress in the contents list.
+
+  var progress = document.querySelector(".contents-progress");
+  var article = document.querySelector(".article-main");
+  if (progress && article) {
+    var queuedP = false;
+    var setProgress = function () {
+      queuedP = false;
+      var r = article.getBoundingClientRect();
+      var k = Math.max(0, Math.min(1, -r.top / Math.max(1, r.height - window.innerHeight)));
+      progress.style.setProperty("--progress", k.toFixed(3));
+    };
+    window.addEventListener("scroll", function () {
+      if (!queuedP) { queuedP = true; requestAnimationFrame(setProgress); }
+    }, { passive: true });
+    setProgress();
   }
 
   // Contrast ratios. The HTML carries them already; this recalculates from the colours.

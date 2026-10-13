@@ -49,54 +49,70 @@ try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.docu
 <!-- /build:header -->
 
 <main id="main" tabindex="-1">
-<section class="hero page" aria-labelledby="hero-h" data-spec="space" data-spec-prop="padding-top" data-spec-priority="2">
-  <h1 class="display" id="hero-h" data-spec="type" data-spec-priority="1">I run design systems as products.</h1>
-  <p class="hero-lede" data-spec="space" data-spec-prop="margin-top" data-spec-priority="1">My latest replaced a component library with a specification that AI coding agents build from, across a portfolio of 60+ products.</p>
-  <p class="hero-roles" data-spec="color" data-spec-priority="2">Design operations manager, open to design system manager and product owner roles.</p>
-  <div class="actions" data-spec="space" data-spec-prop="column-gap" data-spec-priority="3">
-    <a class="btn btn-primary" href="/work/replacing-the-component-library/" data-spec="radius" data-spec-priority="1">Read the case study</a>
-    <a class="btn btn-secondary" href="mailto:matt.m.everitt@gmail.com" data-spec="color" data-spec-priority="3">Email me</a>
+<section class="band hero-band" aria-labelledby="hero-h" data-spec="space" data-spec-prop="padding-top" data-spec-priority="2">
+  <div class="page hero-grid">
+    <div class="hero-copy">
+      <p class="pill status-pill reveal"><span class="pulse"></span>Design operations manager, open to design system manager and product owner roles</p>
+      <h1 class="display reveal" id="hero-h" style="--i:1" data-spec="type" data-spec-priority="1">I run design systems <span class="grad-text">as products.</span></h1>
+      <p class="hero-lede reveal" style="--i:2" data-spec="space" data-spec-prop="margin-top" data-spec-priority="1">My latest replaced a component library with a specification that AI coding agents build from, across a portfolio of 60+ products.</p>
+      <div class="actions reveal" style="--i:3" data-spec="space" data-spec-prop="column-gap" data-spec-priority="3">
+        <a class="btn btn-primary" href="/work/replacing-the-component-library/" data-spec="radius" data-spec-priority="1">Read the case study</a>
+        <a class="btn btn-secondary" href="mailto:matt.m.everitt@gmail.com">Email me</a>
+      </div>
+    </div>
+    <figure class="hero-visual reveal" style="--i:2">
+      <div class="window" aria-hidden="true" data-spec="radius" data-spec-priority="2">
+        <div class="window-bar"><i></i><i></i><i></i><span>tokens.json</span></div>
+<pre class="typed"><span class="ln" style="--i:0"><span class="c">{</span></span><span class="ln" style="--i:1">  <span class="k">"interactive"</span>: {</span><span class="ln" style="--i:2">    <span class="k">"light"</span>: <span class="s">"#0B6B63"</span>,</span><span class="ln" style="--i:3">    <span class="k">"dark"</span>:  <span class="s">"#2EC4B6"</span></span><span class="ln" style="--i:4">  },</span><span class="ln" style="--i:5">  <span class="k">"radius"</span>: { <span class="k">"control"</span>: <span class="n">"10px"</span> },</span><span class="ln" style="--i:6">  <span class="k">"space"</span>: [<span class="n">4, 8, 12, 16, 24, 32, 48</span>]</span><span class="ln" style="--i:7"><span class="c">}</span><span class="caret"></span></span></pre>
+      </div>
+      <span class="float-chip pass" aria-hidden="true">✓ 6.37:1, passes AA</span>
+      <span class="float-chip ai" aria-hidden="true"><i></i>AI-generated</span>
+      <figcaption>An excerpt from the one token file this site is built from. Press "Show the spec" to see it on the page.</figcaption>
+    </figure>
+  </div>
+  <div class="page">
+    <ul class="stat-grid four" aria-label="Headline figures">
+      <li class="card stat spot reveal" style="--i:0"><span class="stat-figure" data-count="60" data-suffix="+">60+</span><p>products in the portfolio the spec serves</p></li>
+      <li class="card stat spot reveal" style="--i:1"><span class="stat-figure" data-count="117">117</span><p>accessibility failures blocked before merge since July 2026</p></li>
+      <li class="card stat spot reveal" style="--i:2"><span class="stat-figure" data-count="71" data-suffix="%">71%</span><p>first-run gate pass rate across 186 pilot builds</p></li>
+      <li class="card stat spot reveal" style="--i:3"><span class="stat-figure" data-count="3">3</span><p>products in production on a pinned release</p></li>
+    </ul>
   </div>
 </section>
 
-<section id="work" class="landing-section page" aria-labelledby="work-h" data-spec="space" data-spec-prop="margin-top" data-spec-priority="2">
-  <h2 id="work-h" data-spec="type" data-spec-priority="2">Work</h2>
-  <div class="work-feature">
+<section id="work" class="section page" aria-labelledby="work-h" data-spec="space" data-spec-prop="padding-top" data-spec-priority="2">
+  <div class="section-head reveal">
+    <h2 id="work-h" data-spec="type" data-spec-priority="2">Work</h2>
+    <p>One case study and two short reads, all from the same project.</p>
+  </div>
+  <article class="feature-card glow-border reveal">
     <div class="work-text">
       <!-- build:work-feature -->
 <h3 class="work-title"><a href="/work/replacing-the-component-library/" data-spec="color" data-spec-priority="1">I replaced my own component library with a spec AI builds from</a></h3>
         <p class="work-summary">Why I retired the library I built, what replaced it and how teams adopted it.</p>
         <p class="meta-line" data-spec="color" data-spec-priority="3">Case study, 2026, 7 minute read</p>
+        <div class="actions"><a class="btn btn-primary" href="/work/replacing-the-component-library/">Read the case study</a></div>
 <!-- /build:work-feature -->
     </div>
     <figure class="gate-figure" data-artefact>
       <figcaption>Gate run on a deliberately broken test fixture</figcaption>
-<pre class="gate-out" tabindex="0" data-spec="radius" data-spec-priority="2"><span class="cmd">$ node src/cli.js --config fixtures/violating/gate.config.json</span>
-
-gate — validated against pinned spec v0.31.0 (manifest sha256 verified)
-<span class="hint">passes: static
-checked 7 governed file(s)</span>
-
-bad.css
-  bad.css:2  [colour]  raw hex colour `#ff0000` — use a semantic `--color-*` token
-  bad.css:4  [spacing]  off-scale spacing `15px` — not a scale step; nearest is `16px` (use its `--spacing-*` / `--space-*` token)
-bad.html
-  bad.html:5  [a11y]  &lt;img&gt; is missing required "alt" attribute (wcag/h37)
-<span class="hint">  [… 55 further findings omitted …]</span>
-
-FAIL — 58 violation(s): 13 colour, 16 spacing, 15 tokenisable, 3 undefined-token, 6 a11y, 1 bad-exception, 1 ancestor-custom-property, 2 logical-properties, 1 typography
-EXIT=1</pre>
+      <div class="window" data-spec="radius" data-spec-priority="3">
+        <div class="window-bar" aria-hidden="true"><i></i><i></i><i></i><span>terminal</span></div>
+<pre class="gate-out typed" tabindex="0" aria-label="Gate output"><span class="ln" style="--i:0"><span class="cmd">$ node src/cli.js --config fixtures/violating/gate.config.json</span></span><span class="ln" style="--i:1"> </span><span class="ln" style="--i:2">gate — validated against pinned spec v0.31.0 (manifest sha256 verified)</span><span class="ln" style="--i:3"><span class="hint">passes: static</span></span><span class="ln" style="--i:4"><span class="hint">checked 7 governed file(s)</span></span><span class="ln" style="--i:5"> </span><span class="ln" style="--i:6"><span class="file">bad.css</span></span><span class="ln" style="--i:7">  bad.css:2  <span class="fail">[colour]</span>  raw hex colour `#ff0000` — use a semantic `--color-*` token</span><span class="ln" style="--i:8">  bad.css:4  <span class="fail">[spacing]</span>  off-scale spacing `15px` — not a scale step; nearest is `16px` (use its `--spacing-*` / `--space-*` token)</span><span class="ln" style="--i:9"><span class="file">bad.html</span></span><span class="ln" style="--i:10">  bad.html:5  <span class="fail">[a11y]</span>  &lt;img&gt; is missing required "alt" attribute (wcag/h37)</span><span class="ln" style="--i:11"><span class="hint">  [… 55 further findings omitted …]</span></span><span class="ln" style="--i:12"> </span><span class="ln" style="--i:13"><span class="fail">FAIL — 58 violation(s): 13 colour, 16 spacing, 15 tokenisable, 3 undefined-token, 6 a11y, 1 bad-exception, 1 ancestor-custom-property, 2 logical-properties, 1 typography</span></span><span class="ln" style="--i:14"><span class="fail">EXIT=1</span></span></pre>
+      </div>
       <p class="note">Run on 13 October 2026. The fixture pins spec v0.31.0 and the current spec is v0.93.0, so this shows how the gate behaves on a fixed test case. It is not a check of production code. Findings trimmed and product names removed.</p>
     </figure>
-  </div>
-  <ul class="reads" data-spec="space" data-spec-prop="margin-top" data-spec-priority="3">
+  </article>
+  <ul class="read-cards" data-spec="space" data-spec-prop="column-gap" data-spec-priority="3">
       <!-- build:work-reads -->
-<li class="read-row">
+<li class="read-card card lift spot reveal" style="--i:0">
+        <div class="read-art" aria-hidden="true"><div class="art-radius"><span></span><span></span><span></span></div></div>
         <h3 class="read-title"><a href="/work/visual-rules-for-agents/">Visual rules an AI agent can follow</a></h3>
         <p class="read-summary">Radius by role, two themes from one set of tokens and an AI disclosure component designed for the EU AI Act.</p>
         <p class="meta-line">Short read, 3 minutes</p>
       </li>
-      <li class="read-row">
+      <li class="read-card card lift spot reveal" style="--i:1">
+        <div class="read-art" aria-hidden="true"><div class="art-agents"><i style="--d:0"></i><i style="--d:7"></i><i style="--d:14"></i><i style="--d:6"></i><i style="--d:13"></i><i style="--d:5"></i><i style="--d:12"></i><i style="--d:4"></i><i style="--d:11"></i><i style="--d:3"></i><i style="--d:10"></i><i style="--d:2"></i><i style="--d:9"></i><i style="--d:1"></i><i style="--d:8"></i></div></div>
         <h3 class="read-title"><a href="/work/design-system-with-agents/">Running a design system with 15 agents</a></h3>
         <p class="read-summary">How a team of one ships releases, keeps a decision log and plans for time away.</p>
         <p class="meta-line">Short read, 2 minutes</p>
@@ -105,19 +121,30 @@ EXIT=1</pre>
   </ul>
 </section>
 
-<section id="about" class="landing-section page" aria-labelledby="about-h">
-  <h2 id="about-h">About</h2>
-  <div class="flow measure">
-    <p data-spec="type" data-spec-priority="2">I'm a design operations manager based in Nottingham. Over about 6 years, I've grown from junior UI designer to leading a design system, and I've managed a front-end developer and a UI designer for two to three years. I built v1, our component library, with 45 components across React, Vue and Angular, and delivered it in four stages against a roadmap I presented at CTO level.</p>
-    <p>When the evidence said a library couldn't keep up, I retired my own work and replaced it with a specification that AI coding agents build from. I run that spec as a product. Strategy, roadmap, releases and adoption are mine, and the Head of UX co-sponsors it.</p>
-    <p>Earlier operational changes I led saved £94k a year, mostly by merging a separate component build function into one design operations role.</p>
-    <p class="cv-link"><a href="/assets/matt-everitt-cv.pdf">Download my CV (PDF, one page)</a></p>
+<section id="about" class="section page" aria-labelledby="about-h">
+  <div class="about-grid">
+    <div class="flow reveal">
+      <h2 id="about-h">About</h2>
+      <p data-spec="type" data-spec-priority="2">I'm a design operations manager based in Nottingham. Over about 6 years, I've grown from junior UI designer to leading a design system, and I've managed a front-end developer and a UI designer for two to three years. I built v1, our component library, with 45 components across React, Vue and Angular, and delivered it in four stages against a roadmap I presented at CTO level.</p>
+      <p>When the evidence said a library couldn't keep up, I retired my own work and replaced it with a specification that AI coding agents build from. I run that spec as a product. Strategy, roadmap, releases and adoption are mine, and the Head of UX co-sponsors it.</p>
+      <p>Earlier operational changes I led saved £94k a year, mostly by merging a separate component build function into one design operations role.</p>
+      <p class="cv-link"><a class="btn btn-secondary" href="/assets/matt-everitt-cv.pdf">Download my CV (PDF, one page)</a></p>
+    </div>
+    <div class="card spot reveal" style="--i:1">
+      <h3>From first component to running the system</h3>
+      <ol class="timeline">
+        <li><span class="year">March 2020</span><p class="what">Junior UI designer</p><p class="muted">Started the company design system</p></li>
+        <li><span class="year">June 2021</span><p class="what">UX/UI designer</p><p class="muted">Designed and documented v1, the component library</p></li>
+        <li><span class="year">August 2022</span><p class="what">Design operations manager</p><p class="muted">Leading the design system team and its roadmap</p></li>
+        <li><span class="year">July 2026</span><p class="what">The specification</p><p class="muted">Replaced v1 with a spec AI coding agents build from</p></li>
+      </ol>
+    </div>
   </div>
 </section>
 
-<section id="contact" class="landing-section page" aria-labelledby="contact-h">
-  <h2 id="contact-h">Contact</h2>
-  <div class="flow measure">
+<section id="contact" class="band contact-band" aria-labelledby="contact-h">
+  <div class="page flow reveal">
+    <h2 id="contact-h">Let's talk about <span class="grad-text">your design system</span></h2>
     <p>I'm looking for a role as a design system manager or product owner, where a design system is run as a product.</p>
     <div class="actions"><a class="btn btn-primary" href="mailto:matt.m.everitt@gmail.com" data-spec="color" data-spec-prop="background-color" data-spec-priority="2">Email me</a><a class="btn btn-secondary" href="https://www.linkedin.com/in/matteveritt92/" data-spec="radius" data-spec-priority="3">LinkedIn</a></div>
   </div>

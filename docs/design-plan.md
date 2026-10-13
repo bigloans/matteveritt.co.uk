@@ -308,3 +308,17 @@ Screenshots of every page at 1444 and 390 in both themes, plus the landing page 
 | The gate output pushed the landing page wider than 390px | Grid children get `min-width: 0`, so the output scrolls inside its own box |
 | The decision log table overflowed at 320px | Rows stack below 520px |
 | The intentional 3.34:1 ghost button label failed Lighthouse colour contrast | The visible label is SVG text with a screen reader label, so the demo stays visible and the page audit still lists it |
+
+## Version 3: personality back (13 October 2026)
+
+Matt reviewed v2 live and found it too quiet. It read like a blog, not a portfolio to explore. V3 reverses the brief's restraint rules on purpose and keeps everything else.
+
+| Changed | Kept |
+| --- | --- |
+| Navy bands with a drifting aurora glow and a faint grid, fixed navy in both themes | Content, word counts and page structure |
+| Gradient type on one phrase per hero, teal through blue to pink | One token source, the build and `--check` |
+| Count-up stat cards in the hero and At a glance | "Show the spec" and `/spec/` |
+| Cards with lift and a pointer spotlight, glowing gradient borders on chosen items | WCAG 2.2 AA, with every new colour checked by the build |
+| Visual blocks for lanes, options, the gate layers, steps, the funnel, metrics and trade-offs | No JavaScript needed for content |
+| Scroll reveals, typed windows and animated card art | Reduced motion stops all of it |
+| Sticky glass header and a reading progress bar | Lighthouse 98 or more on every page |

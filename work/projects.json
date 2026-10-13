@@ -15,7 +15,8 @@
     "year": 2026,
     "url": "/work/visual-rules-for-agents/",
     "file": "work/visual-rules-for-agents/index.html",
-    "readTime": 3
+    "readTime": 3,
+    "art": "radius"
   },
   {
     "title": "Running a design system with 15 agents",
@@ -24,6 +25,7 @@
     "year": 2026,
     "url": "/work/design-system-with-agents/",
     "file": "work/design-system-with-agents/index.html",
-    "readTime": 2
+    "readTime": 2,
+    "art": "agents"
   }
 ]

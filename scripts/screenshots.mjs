@@ -21,7 +21,7 @@ const browser = await chromium.launch();
 for (const url of urls) {
   for (const [width, height] of [[1444, 862], [390, 844]]) {
     for (const theme of ["light", "dark"]) {
-      const ctx = await browser.newContext({ viewport: { width, height }, colorScheme: theme, deviceScaleFactor: 1 });
+      const ctx = await browser.newContext({ viewport: { width, height }, colorScheme: theme, deviceScaleFactor: 1, reducedMotion: "reduce" });
       const page = await ctx.newPage();
       await page.goto(base + url, { waitUntil: "networkidle" });
       await page.evaluate(() => document.fonts.ready);
