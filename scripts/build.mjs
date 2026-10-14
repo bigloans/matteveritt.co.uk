@@ -26,9 +26,22 @@ const ratio = (a, b) => {
   const [hi, lo] = [lum(a), lum(b)].sort((x, y) => y - x);
   return (hi + 0.05) / (lo + 0.05);
 };
-const pairs = tokens.contrast.map(([fg, bg]) => {
-  const r = { fg, bg, ratio: ratio(tokens.color[fg].value, tokens.color[bg].value) };
-  if (r.ratio < 4.5) errors.push(`${fg} on ${bg} is ${r.ratio.toFixed(2)}:1`);
+// Roles reference primitives, and demo colours may reference either, so every value appears once.
+
+const hexOf = (name) => {
+  if (tokens.primitive[name]) return tokens.primitive[name].value;
+  if (name.startsWith("color-")) return hexOf(tokens.color[name.slice(6)].ref);
+  if (name.startsWith("demo-")) return tokens.demo[name.slice(5)].startsWith("#") ? tokens.demo[name.slice(5)] : hexOf(tokens.demo[name.slice(5)]);
+  throw new Error(`Unknown colour ${name}`);
+};
+for (const [k, v] of Object.entries(tokens.color)) if (!tokens.primitive[v.ref]) errors.push(`--color-${k} references missing primitive ${v.ref}`);
+
+// Text pairs need 4.5:1. Large text and UI pairs need 3:1.
+
+const need = { text: 4.5, ui: 3 };
+const pairs = tokens.contrast.map(([fg, bg, kind]) => {
+  const r = { fg, bg, kind, need: need[kind], ratio: ratio(hexOf(`color-${fg}`), hexOf(`color-${bg}`)) };
+  if (r.ratio < r.need) errors.push(`${fg} on ${bg} is ${r.ratio.toFixed(2)}:1, below ${r.need}:1`);
   return r;
 });
 
@@ -52,10 +65,12 @@ ${decl([
   ...Object.entries(tokens.radius).map(([k, v]) => [`radius-${k}`, v.value]),
   ...motion.map(([k, v]) => [`motion-${k}`, v.value]),
   ...Object.entries(tokens.size).map(([k, v]) => [`size-${k}`, v]),
-  ...Object.entries(tokens.color).map(([k, v]) => [`color-${k}`, v.value]),
+  ...Object.entries(tokens.primitive).map(([k, v]) => [k, v.value]),
+  ...Object.entries(tokens.color).map(([k, v]) => [`color-${k}`, `var(--${v.ref})`]),
   ...Object.entries(tokens.gradient).map(([k, v]) => [`gradient-${k}`, v.value]),
+  ...Object.entries(tokens.pattern).map(([k, v]) => [`pattern-${k}`, v.value]),
   ...Object.entries(tokens.shadow).map(([k, v]) => [`shadow-${k}`, v.value]),
-  ...Object.entries(tokens.demo).map(([k, v]) => [`demo-${k}`, v]),
+  ...Object.entries(tokens.demo).map(([k, v]) => [`demo-${k}`, v.startsWith("#") ? v : `var(--${v})`]),
   ...aliases("wide"),
 ])}
 }
@@ -68,7 +83,7 @@ ${decl(aliases("narrow"), "    ")}
 
 @media (prefers-reduced-motion: reduce) {
   :root {
-${decl(motion.filter(([k]) => /^(fast|medium|reveal|count|draw|stagger)$/.test(k)).map(([k]) => [`motion-${k}`, "0ms"]), "    ")}
+${decl(motion.filter(([k]) => k !== "ease").map(([k]) => [`motion-${k}`, "0ms"]), "    ")}
   }
 }
 `);
@@ -79,7 +94,7 @@ const head = `<link rel="preload" href="/fonts/atkinson-hyperlegible-next-400.wo
 <link rel="preload" href="/fonts/atkinson-hyperlegible-next-700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/tokens.css">
 <link rel="stylesheet" href="/assets/site.css">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='10' fill='%230B6B63'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='10' fill='%23${hexOf("color-interactive").slice(1)}'/%3E%3C/svg%3E">
 <script>
 document.documentElement.classList.add('js');
 </script>
@@ -128,13 +143,8 @@ const workFeature = `<h3 class="work-title"><a href="${feature.url}" data-spec="
         <p class="work-summary">${feature.summary}</p>
         <p class="meta-line" data-spec="color" data-spec-priority="3">${metaLine(feature)}</p>
         <div class="actions"><a class="btn btn-primary" href="${feature.url}">Read the case study</a></div>`;
-const art = {
-  radius: `<div class="read-art" aria-hidden="true"><div class="art-radius"><span></span><span></span><span></span></div></div>`,
-  agents: `<div class="read-art" aria-hidden="true"><div class="art-agents">${Array.from({ length: 15 }, (_, i) => `<i style="--d:${(i * 7) % 15}"></i>`).join("")}</div></div>`,
-};
 const workReads = reads
-  .map((p, i) => `<li class="read-card card lift spot reveal" style="--i:${i}"${i === 0 ? ' data-spec-component="Card / Read" data-spec-priority="3"' : ""}>
-        ${art[p.art] || ""}
+  .map((p, i) => `<li class="read-entry"${i === 0 ? ' data-spec-component="Entry / Read" data-spec-priority="3"' : ""}>
         <h3 class="read-title"><a href="${p.url}">${p.title}</a></h3>
         <p class="read-summary">${p.summary}</p>
         <p class="meta-line">${metaLine(p)}</p>
@@ -173,53 +183,36 @@ outputs.set("work/projects.json", JSON.stringify(projects.map(({ words, ...p }) 
 // Spec page body
 
 function specBody() {
-  const hex = (h) => `<code>${h}</code>`;
-  const swatch = (k) => `<span class="swatch-chip" style="background:var(--color-${k})"></span>`;
-  const colorRows = Object.entries(tokens.color)
-    .map(([k, v]) => `<tr><th scope="row">${swatch(k)}<code>--color-${k}</code></th><td>${hex(v.value)}</td><td>${v.note}</td></tr>`)
-    .join("\n          ");
-  const pairRows = pairs
-    .map((p) => `<tr><th scope="row"><code>${p.fg}</code> on <code>${p.bg}</code></th><td>${p.ratio.toFixed(2)}:1</td></tr>`)
-    .join("\n          ");
-  const typeRows = [...tokens.text]
-    .reverse()
-    .map((n) => `<li class="spec-type"><code>--text-${n}: ${n}px</code><span style="font-size:var(--text-${n})">I run design systems as products.</span></li>`)
-    .join("\n        ");
-  const leadRows = Object.entries(tokens.leading)
-    .map(([k, v]) => `<tr><th scope="row"><code>--leading-${k}</code></th><td>${v}</td></tr>`)
-    .join("\n          ");
-  const weightRows = Object.entries(tokens.weight)
-    .map(([k, v]) => `<tr><th scope="row"><code>--weight-${k}</code></th><td>${v}</td></tr>`)
-    .join("\n          ");
-  const spaceRows = tokens.space
-    .map((n) => `<li class="spec-space"><code>--space-${n}: ${n}px</code><span style="width:var(--space-${n})"></span></li>`)
-    .join("\n        ");
-  const radiusRows = Object.entries(tokens.radius)
-    .map(([k, v]) => `<li class="spec-radius"><span style="border-radius:var(--radius-${k})"></span><code>--radius-${k}: ${v.value}</code><span class="spec-note">${v.note}</span></li>`)
-    .join("\n        ");
+  const table = (label, head, rows) => `<div class="table-scroll" tabindex="0" role="region" aria-label="${label}">
+        <table>
+          <thead><tr>${head.map((h) => `<th scope="col">${h}</th>`).join("")}</tr></thead>
+          <tbody>
+          ${rows.join("\n          ")}
+          </tbody>
+        </table>
+      </div>`;
+  const swatch = (v) => `<span class="swatch-chip" style="background:var(--${v})"></span>`;
+  const primRows = Object.entries(tokens.primitive).map(([k, v]) => `<tr><th scope="row">${swatch(k)}<code>--${k}</code></th><td><code>${v.value}</code></td><td>${v.note}</td></tr>`);
+  const roleRows = Object.entries(tokens.color).map(([k, v]) => `<tr><th scope="row">${swatch(`color-${k}`)}<code>--color-${k}</code></th><td><code>--${v.ref}</code></td><td>${v.note}</td></tr>`);
+  const pairRows = pairs.map((p) => `<tr><th scope="row"><code>${p.fg}</code> on <code>${p.bg}</code></th><td>${p.ratio.toFixed(2)}:1</td><td>${p.kind === "text" ? "Text, 4.5:1" : "Large text and UI, 3:1"}</td></tr>`);
+  const typeRows = [...tokens.text].reverse().map((n) => `<li class="spec-type"><code>--text-${n}: ${n}px</code><span style="font-size:var(--text-${n})">I run design systems as products.</span></li>`);
+  const leadRows = Object.entries(tokens.leading).map(([k, v]) => `<tr><th scope="row"><code>--leading-${k}</code></th><td>${v}</td></tr>`);
+  const weightRows = Object.entries(tokens.weight).map(([k, v]) => `<tr><th scope="row"><code>--weight-${k}</code></th><td>${v}</td></tr>`);
+  const spaceRows = tokens.space.map((n) => `<li class="spec-space"><code>--space-${n}: ${n}px</code><span style="width:var(--space-${n})"></span></li>`);
+  const radiusRows = Object.entries(tokens.radius).map(([k, v]) => `<li class="spec-radius"><span style="border-radius:var(--radius-${k})"></span><code>--radius-${k}: ${v.value}</code><span class="spec-note">${v.note}</span></li>`);
+  const motionRows = Object.entries(tokens.motion).map(([k, v]) => `<tr><th scope="row"><code>--motion-${k}</code></th><td><code>${v.value}</code></td><td>${v.note}</td></tr>`);
   const demoCount = Object.keys(tokens.demo).length;
 
   return `<section id="colour" class="flow" aria-labelledby="colour-h">
       <h2 id="colour-h">Colour</h2>
-      <p>The site has one theme, deep navy. Each colour role has one value.</p>
-      <div class="table-scroll" tabindex="0" role="region" aria-label="Colour roles">
-        <table>
-          <thead><tr><th scope="col">Role</th><th scope="col">Value</th><th scope="col">Use</th></tr></thead>
-          <tbody>
-          ${colorRows}
-          </tbody>
-        </table>
-      </div>
+      <p>The site has one theme, deep navy, by choice. Each value appears once, as a primitive. Every role the CSS uses references one primitive.</p>
+      <h3>Primitives</h3>
+      ${table("Colour primitives", ["Primitive", "Value", "Use"], primRows)}
+      <h3>Roles</h3>
+      ${table("Colour roles", ["Role", "References", "Use"], roleRows)}
       <h3>Contrast</h3>
-      <p>The build fails if any of these pairs drops below 4.5:1, the WCAG 2.2 AA minimum for body text.</p>
-      <div class="table-scroll" tabindex="0" role="region" aria-label="Contrast pairs">
-        <table>
-          <thead><tr><th scope="col">Pair</th><th scope="col">Ratio</th></tr></thead>
-          <tbody>
-          ${pairRows}
-          </tbody>
-        </table>
-      </div>
+      <p>The build fails if a text pair drops below 4.5:1, or a large text or UI pair below 3:1. These are the WCAG 2.2 AA minimums.</p>
+      ${table("Contrast pairs", ["Pair", "Ratio", "Minimum"], pairRows)}
       <p>Recreations of product screens use ${demoCount} further <code>--demo-</code> colours. They show the product's brand and stay inside the recreations.</p>
     </section>
 
@@ -227,25 +220,11 @@ function specBody() {
       <h2 id="type-h">Type</h2>
       <p>Atkinson Hyperlegible Next sets all text. Atkinson Hyperlegible Mono sets code, gate output and spec annotations. Body text is 18px with line-height 1.55 at 900px and above, and 16px with 1.5 below.</p>
       <ul class="spec-list">
-        ${typeRows}
+        ${typeRows.join("\n        ")}
       </ul>
       <div class="spec-pair">
-        <div class="table-scroll" tabindex="0" role="region" aria-label="Line heights">
-          <table>
-            <thead><tr><th scope="col">Line height</th><th scope="col">Value</th></tr></thead>
-            <tbody>
-          ${leadRows}
-            </tbody>
-          </table>
-        </div>
-        <div class="table-scroll" tabindex="0" role="region" aria-label="Weights">
-          <table>
-            <thead><tr><th scope="col">Weight</th><th scope="col">Value</th></tr></thead>
-            <tbody>
-          ${weightRows}
-            </tbody>
-          </table>
-        </div>
+        ${table("Line heights", ["Line height", "Value"], leadRows)}
+        ${table("Weights", ["Weight", "Value"], weightRows)}
       </div>
     </section>
 
@@ -253,7 +232,7 @@ function specBody() {
       <h2 id="spacing-h">Spacing</h2>
       <p>Every margin, padding and gap uses one of these steps. Below 900px, the gap between sections steps down from 96 to 64 and the gap between blocks from 48 to 32.</p>
       <ul class="spec-list">
-        ${spaceRows}
+        ${spaceRows.join("\n        ")}
       </ul>
     </section>
 
@@ -261,35 +240,29 @@ function specBody() {
       <h2 id="radius-h">Radius</h2>
       <p>Radius follows the role an element plays, so hierarchy shows in its corners.</p>
       <ul class="spec-list">
-        ${radiusRows}
+        ${radiusRows.join("\n        ")}
       </ul>
     </section>
 
     <section id="gradients" class="flow" aria-labelledby="gradients-h">
-      <h2 id="gradients-h">Gradients</h2>
-      <p>The brand sweeps from teal through blue to pink. Every stop clears 3:1 against navy, so gradient type stays readable as large text.</p>
+      <h2 id="gradients-h">Gradient and pattern</h2>
+      <p>The brand gradient appears only where the brand is the subject, in the AI disclosure recreations, and as the 2px rule at the top of the header. No text sits on it.</p>
       <ul class="spec-list">
         ${Object.entries(tokens.gradient).map(([k, v]) => `<li class="spec-gradient"><span style="background:var(--gradient-${k})"></span><code>--gradient-${k}</code><span class="spec-note">${v.note}</span></li>`).join("\n        ")}
+        ${Object.entries(tokens.pattern).map(([k, v]) => `<li class="spec-gradient"><span class="spec-pattern" style="background:var(--pattern-${k})"></span><code>--pattern-${k}</code><span class="spec-note">${v.note}</span></li>`).join("\n        ")}
       </ul>
     </section>
 
     <section id="elevation" class="flow" aria-labelledby="elevation-h">
       <h2 id="elevation-h">Elevation and borders</h2>
-      <p>Three shadows do three jobs. <code>--shadow-overlay</code> lifts the contents sheet, <code>--shadow-card</code> lifts a card you point at, and <code>--shadow-glow</code> marks the one action or piece of work that matters most. A 1px <code>--color-hairline</code> border separates kinds of content.</p>
+      <p>One shadow, <code>--shadow-overlay</code>, lifts the menu and contents sheets above the page. Everything else sits flat, and a 1px <code>--color-hairline</code> border separates kinds of content.</p>
       <div class="spec-shadows">${Object.keys(tokens.shadow).map((k) => `<div class="spec-shadow" style="box-shadow:var(--shadow-${k})"><code>--shadow-${k}</code></div>`).join("")}</div>
     </section>
 
     <section id="motion" class="flow" aria-labelledby="motion-h">
       <h2 id="motion-h">Motion</h2>
-      <p>Motion adds a little joy without getting in the way of reading. Navy bands drift slowly, headlines sharpen into focus, sections ease in as they arrive and figures count up once. "Show the spec" fades in a blueprint grid, then draws each measurement top to bottom, counting the values up as the lines grow. With reduced motion set, every duration becomes 0ms and nothing moves.</p>
-      <div class="table-scroll" tabindex="0" role="region" aria-label="Motion tokens">
-        <table>
-          <thead><tr><th scope="col">Token</th><th scope="col">Value</th><th scope="col">Use</th></tr></thead>
-          <tbody>
-          ${Object.entries(tokens.motion).map(([k, v]) => `<tr><th scope="row"><code>--motion-${k}</code></th><td><code>${v.value}</code></td><td>${v.note}</td></tr>`).join("\n          ")}
-          </tbody>
-        </table>
-      </div>
+      <p>Motion happens when you act. The spec fades in and its measurements draw top to bottom; menus and the contents sheet open and close. With reduced motion set, every duration becomes 0ms.</p>
+      ${table("Motion tokens", ["Token", "Value", "Use"], motionRows)}
     </section>`;
 }
 

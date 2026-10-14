@@ -17,7 +17,7 @@
 <link rel="preload" href="/fonts/atkinson-hyperlegible-next-700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/tokens.css">
 <link rel="stylesheet" href="/assets/site.css">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='10' fill='%230B6B63'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='10' fill='%232EC4B6'/%3E%3C/svg%3E">
 <script>
 document.documentElement.classList.add('js');
 </script>
@@ -44,9 +44,8 @@ document.documentElement.classList.add('js');
 
 <main id="main" tabindex="-1">
 <!-- words -->
-<div class="band">
 <div class="article-hero page" data-spec="space" data-spec-prop="padding-top" data-spec-priority="2">
-  <h1 class="article-title reveal blur" data-spec="type" data-spec-priority="1">Running a design system with 15 agents</h1>
+  <h1 class="article-title" data-spec="type" data-spec-priority="1">Running a design system with 15 agents</h1>
   <p class="article-lede" data-spec="space" data-spec-prop="margin-top" data-spec-priority="1">I run the design system as a team of one, with a harness of 15 specialist agents and 7 contributing designers. Agents do measurable work, but spec and release decisions stay with me.</p>
   <!-- build:meta -->
 <p class="meta-line" data-spec="color" data-spec-priority="3">Short read, 2 minutes</p>
@@ -56,7 +55,6 @@ document.documentElement.classList.add('js');
     <div><dt>Scope</dt><dd>Solo, with a 15-agent harness and 7 contributing designers</dd></div>
     <div><dt>Timeline</dt><dd>Spec work from Jul 2026</dd></div>
   </dl>
-</div>
 </div>
 
 <div class="article-body no-contents page">
@@ -98,12 +96,12 @@ document.documentElement.classList.add('js');
       <h2 id="designers-h">Where designers work now</h2>
       <p>Without Figma handoff, designers build in the same session as an AI agent, against the pinned spec, so nobody has to memorise a rulebook. So far, 7 designers have contributed 47 catalogue entries.</p>
       <ol class="steps-row four block">
-        <li class="card lift spot reveal" data-spec-component="Card / Step" data-spec-priority="3"><p class="pill teal">Designer</p><h3>Builds a screen</h3><p>The agent generates it from the designer&#39;s description.</p></li>
-        <li class="card lift spot reveal" style="--i:1"><p class="pill blue">Agent</p><h3>Spots a missing asset</h3><p>No pictogram fits, so the agent offers to draft one in the session.</p></li>
-        <li class="card lift spot reveal" style="--i:2"><p class="pill blue">Agent</p><h3>Applies the rules</h3><p>It checks for duplicates, follows the style guide and opens a review.</p></li>
-        <li class="card lift spot reveal" style="--i:3"><p class="pill pink">Gate</p><h3>Flags the draft</h3><p>It lists the draft without failing the build, so nothing ships unseen.</p></li>
+        <li class="card" data-spec-component="Card / Step" data-spec-priority="3"><p class="pill teal">Designer</p><h3>Builds a screen</h3><p>The agent generates it from the designer&#39;s description.</p></li>
+        <li class="card"><p class="pill blue">Agent</p><h3>Spots a missing asset</h3><p>No pictogram fits, so the agent offers to draft one in the session.</p></li>
+        <li class="card"><p class="pill blue">Agent</p><h3>Applies the rules</h3><p>It checks for duplicates, follows the style guide and opens a review.</p></li>
+        <li class="card"><p class="pill">Gate</p><h3>Flags the draft</h3><p>It lists the draft without failing the build, so nothing ships unseen.</p></li>
       </ol>
-      <div class="panel block reveal">
+      <div class="panel block">
         <h3>Put guardrails where people work</h3>
         <p class="big-quote">Rules in the AI session beat a style guide nobody memorises.</p>
         <p>The agent enforces the style guide, so designers judge meaning.</p>
@@ -113,8 +111,8 @@ document.documentElement.classList.add('js');
     <section id="continuity" class="flow" aria-labelledby="continuity-h">
       <h2 id="continuity-h">Continuity</h2>
       <ul class="stat-grid block">
-        <li class="card stat spot reveal"><span class="stat-figure grad-text">2 months</span><p>of extended leave covered by a plan I designed, so the system ran without me</p></li>
-        <li class="card stat spot reveal" style="--i:1"><span class="stat-figure grad-text" data-count="150" data-suffix="+">150+</span><p>entries in the dated decision log. A mistake gets corrected in a new entry, never erased.</p></li>
+        <li class="card stat"><span class="stat-figure">2 months</span><p>of extended leave covered by a plan I designed, so the system ran without me</p></li>
+        <li class="card stat"><span class="stat-figure">150+</span><p>entries in the dated decision log. A mistake gets corrected in a new entry, never erased.</p></li>
       </ul>
 <!-- /words -->
       <details class="artefact">
@@ -141,8 +139,8 @@ document.documentElement.classList.add('js');
     <section id="reversed" class="flow" aria-labelledby="reversed-h">
       <h2 id="reversed-h">A decision I reversed</h2>
       <ol class="log-timeline block">
-        <li class="card reveal"><p class="pill teal">Decided, 6 to 9 Jul 2026</p><p>Write a skill file for each component, for agents to follow.</p></li>
-        <li class="card reversed reveal" style="--i:1"><p class="pill pink">Reversed, 5 Aug 2026</p><p>Retired them. They had drifted from the canonical contract and told agents to emit a token the gate rejects.</p></li>
+        <li class="card"><p class="pill teal">Decided, 6 to 9 Jul 2026</p><p>Write a skill file for each component, for agents to follow.</p></li>
+        <li class="card reversed"><p class="pill">Reversed, 5 Aug 2026</p><p>Retired them. They had drifted from the canonical contract and told agents to emit a token the gate rejects.</p></li>
       </ol>
     </section>
 

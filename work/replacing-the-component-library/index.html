@@ -17,7 +17,7 @@
 <link rel="preload" href="/fonts/atkinson-hyperlegible-next-700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/tokens.css">
 <link rel="stylesheet" href="/assets/site.css">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='10' fill='%230B6B63'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='10' fill='%232EC4B6'/%3E%3C/svg%3E">
 <script>
 document.documentElement.classList.add('js');
 </script>
@@ -44,20 +44,18 @@ document.documentElement.classList.add('js');
 
 <main id="main" tabindex="-1">
 <!-- words -->
-<div class="band">
 <div class="article-hero page" data-spec="space" data-spec-prop="padding-top" data-spec-priority="2">
-  <h1 class="article-title reveal blur" data-spec="type" data-spec-priority="1">I replaced my own component library with <span class="grad-text">a spec AI builds from</span></h1>
-  <p class="article-lede reveal" style="--i:1" data-spec="space" data-spec-prop="margin-top" data-spec-priority="1">I built the component library for a portfolio of 60+ products. The evidence said it couldn't keep up, so I replaced it with a versioned specification that teams' AI coding agents build from, and a gate that checks the result. I run it as a product, and strategy, roadmap, releases and adoption are mine.</p>
+  <h1 class="article-title" data-spec="type" data-spec-priority="1">I replaced my own component library with a spec AI builds from</h1>
+  <p class="article-lede" data-spec="space" data-spec-prop="margin-top" data-spec-priority="1">I built the component library for a portfolio of 60+ products. The evidence said it couldn't keep up, so I replaced it with a versioned specification that teams' AI coding agents build from, and a gate that checks the result. I run it as a product, and strategy, roadmap, releases and adoption are mine.</p>
   <!-- build:meta -->
 <p class="meta-line" data-spec="color" data-spec-priority="3">Case study, 2026, 7 minute read</p>
 <!-- /build:meta -->
-  <dl class="summary reveal" style="--i:2" data-spec="space" data-spec-prop="margin-top" data-spec-priority="2">
+  <dl class="summary" data-spec="space" data-spec-prop="margin-top" data-spec-priority="2">
     <div data-spec-component="Tile / Summary" data-spec-priority="2"><dt>Role</dt><dd>Product owner, designer and front-end lead</dd></div>
     <div><dt>Team</dt><dd>Solo, with a 15-agent harness and 7 contributing designers</dd></div>
     <div><dt>Scope</dt><dd>60+ products in React, Vue, Angular and legacy frameworks</dd></div>
     <div><dt>Timeline</dt><dd>Spec work from Jul 2026</dd></div>
   </dl>
-</div>
 </div>
 <!-- /words -->
 
@@ -83,14 +81,14 @@ document.documentElement.classList.add('js');
   <article class="article-main">
 <!-- words -->
     <section id="glance" class="flow" aria-labelledby="glance-h">
-      <h2 id="glance-h" class="reveal">At a glance</h2>
-      <p class="figures-intro reveal">I bet that if AI agents generate every component, a design system needs no component library. It needs rules precise enough for a machine to follow and check.</p>
+      <h2 id="glance-h">At a glance</h2>
+      <p class="figures-intro">I bet that if AI agents generate every component, a design system needs no component library. It needs rules precise enough for a machine to follow and check.</p>
       <ul class="stat-grid three block">
-        <li class="card stat spot reveal" data-spec-component="Card / Stat" data-spec-priority="3"><span class="stat-figure grad-text" data-count="117">117</span><p>accessibility failures blocked before merge, since July 2026</p></li>
-        <li class="card stat spot reveal" style="--i:1"><span class="stat-figure grad-text">&lt;1 day</span><p>Time to first gate pass fell from 9 days for the first pilot to under 1 for the latest (median 2.5 across 9 pilots)</p></li>
-        <li class="card stat spot reveal" style="--i:2"><span class="stat-figure grad-text" data-count="71" data-suffix="%">71%</span><p>first-run gate pass rate, n = 186 pilot builds</p></li>
-        <li class="panel stat stat-wide reveal">
-          <span class="stat-figure grad-text" data-count="3">3</span>
+        <li class="card stat" data-spec-component="Card / Stat" data-spec-priority="3"><span class="stat-figure">117</span><p>accessibility failures blocked before merge, since July 2026</p></li>
+        <li class="card stat"><span class="stat-figure">&lt;1 day</span><p>Time to first gate pass fell from 9 days for the first pilot to under 1 for the latest (median 2.5 across 9 pilots)</p></li>
+        <li class="card stat"><span class="stat-figure">71%</span><p>first-run gate pass rate, n = 186 pilot builds</p></li>
+        <li class="panel stat stat-wide">
+          <span class="stat-figure">3</span>
           <div>
             <p class="pill teal">North star</p>
             <p class="mt">products in production on a pinned release, including the AI agent and home hub, the entry point to every product</p>
@@ -101,10 +99,10 @@ document.documentElement.classList.add('js');
     </section>
 
     <section id="problem" class="flow" aria-labelledby="problem-h">
-      <h2 id="problem-h" class="reveal">The problem</h2>
-      <p id="customers" class="reveal">My first design system was a component library I built. It had 45 components, with React, Vue and Angular built simultaneously. I delivered it in four stages against a roadmap I presented at CTO level.</p>
-      <p class="reveal">Running the static gate against existing products found hundreds of rule violations per product. Over six years, 6 products adopted it, to varying degrees, across three frameworks. Each of its components cost about 3.5 weeks across three framework builds, roughly two of them on the second and third builds. And nothing told an AI coding agent what on-brand or accessible meant.</p>
-      <div class="panel lanes block reveal">
+      <h2 id="problem-h">The problem</h2>
+      <p id="customers">My first design system was a component library I built. It had 45 components, with React, Vue and Angular built simultaneously. I delivered it in four stages against a roadmap I presented at CTO level.</p>
+      <p>Running the static gate against existing products found hundreds of rule violations per product. Over six years, 6 products adopted it, to varying degrees, across three frameworks. Each of its components cost about 3.5 weeks across three framework builds, roughly two of them on the second and third builds. And nothing told an AI coding agent what on-brand or accessible meant.</p>
+      <div class="panel lanes block">
         <div class="card lane">
           <h3>Before</h3>
           <ol class="lane-steps">
@@ -115,7 +113,7 @@ document.documentElement.classList.add('js');
             <li>Accessibility audit</li>
           </ol>
         </div>
-        <div class="card lane after glow-border">
+        <div class="card lane after">
           <h3>After</h3>
           <ol class="lane-steps">
             <li>Team pins a release of the spec</li>
@@ -130,12 +128,12 @@ document.documentElement.classList.add('js');
     </section>
 
     <section id="options" class="flow" aria-labelledby="options-h">
-      <h2 id="options-h" class="reveal">Options</h2>
-      <p class="reveal">I judged three options on five criteria: framework coverage, time to ship, drift control, maintenance cost and dependence on a central team.</p>
+      <h2 id="options-h">Options</h2>
+      <p>I judged three options on five criteria: framework coverage, time to ship, drift control, maintenance cost and dependence on a central team.</p>
       <div class="option-grid block">
-        <div class="card lift spot reveal"><p class="pill">Option A</p><h3>Keep the first design system</h3><p>Keep the library and its three framework builds.</p><p><strong>Why it lost.</strong> One person would build every component three times, for low adoption.</p></div>
-        <div class="card lift spot reveal" style="--i:1"><p class="pill">Option B</p><h3>Generate code from Figma</h3><p>Generate components from Figma through a framework-agnostic JSON contract I piloted.</p><p><strong>Why it lost.</strong> It generates from a picture, so the rules never reach the code.</p></div>
-        <div class="card lift spot glow-border reveal" style="--i:2"><p class="pill teal">Option C, chosen</p><h3>Specify and verify</h3><p>A specification that teams' agents build from, and a gate that checks the result.</p></div>
+        <div class="card"><p class="pill">Option A</p><h3>Keep the first design system</h3><p>Keep the library and its three framework builds.</p><p><strong>Why it lost.</strong> One person would build every component three times, for low adoption.</p></div>
+        <div class="card"><p class="pill">Option B</p><h3>Generate code from Figma</h3><p>Generate components from Figma through a framework-agnostic JSON contract I piloted.</p><p><strong>Why it lost.</strong> It generates from a picture, so the rules never reach the code.</p></div>
+        <div class="card chosen"><p class="pill teal">Option C, chosen</p><h3>Specify and verify</h3><p>A specification that teams' agents build from, and a gate that checks the result.</p></div>
       </div>
       <h3>What the pivot cost</h3>
       <ul>
@@ -147,12 +145,12 @@ document.documentElement.classList.add('js');
     </section>
 
     <section id="product" class="flow" aria-labelledby="product-h">
-      <h2 id="product-h" class="reveal">What I built</h2>
-      <p class="reveal">The spec covers 21 components and 6 layout primitives, with 90 releases in 14 weeks before 1.0.</p>
+      <h2 id="product-h">What I built</h2>
+      <p>The spec covers 21 components and 6 layout primitives, with 90 releases in 14 weeks before 1.0.</p>
       <div class="feature-grid block">
-        <div class="card lift spot reveal"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h10l6 6v10H4z"/><path d="M14 4v6h6"/><path d="M8 14h8M8 17h5"/></svg></span><h3>One spec, any framework</h3><p>Tokens, component rules and the definition of done live in three plain-text files.</p></div>
-        <div class="card lift spot reveal" style="--i:1"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg></span><h3>Accessibility lives in the tokens</h3><p>Every colour pairing the spec allows is tested against WCAG 2.2 AA in both themes, and a failing pair blocks the release.</p></div>
-        <div class="card lift spot reveal" style="--i:2"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 6 6 1-4.5 4.5L18 20l-6-3-6 3 1.5-6.5L3 9l6-1z"/></svg></span><h3>A release is a contract</h3><p>Teams pin a tagged release, and a hash records exactly which spec they pinned. The gate checks every build against it.</p></div>
+        <div class="card"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h10l6 6v10H4z"/><path d="M14 4v6h6"/><path d="M8 14h8M8 17h5"/></svg></span><h3>One spec, any framework</h3><p>Tokens, component rules and the definition of done live in three plain-text files.</p></div>
+        <div class="card"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg></span><h3>Accessibility lives in the tokens</h3><p>Every colour pairing the spec allows is tested against WCAG 2.2 AA in both themes, and a failing pair blocks the release.</p></div>
+        <div class="card"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 6 6 1-4.5 4.5L18 20l-6-3-6 3 1.5-6.5L3 9l6-1z"/></svg></span><h3>A release is a contract</h3><p>Teams pin a tagged release, and a hash records exactly which spec they pinned. The gate checks every build against it.</p></div>
       </div>
 <!-- /words -->
       <details class="artefact">
@@ -169,16 +167,16 @@ document.documentElement.classList.add('js');
       <p>Each visual choice is a named rule with a token behind it. <a href="/work/visual-rules-for-agents/">Visual rules an AI agent can follow</a> shows how.</p>
       <h3 id="gate">The gate</h3>
       <p>I built a gate with Claude Code that blocks any change that breaks the contract.</p>
-      <ol class="layer-stack panel block reveal">
+      <ol class="layer-stack panel block">
         <li class="card"><p class="pill teal">Static</p><p><strong>Reads the source on every commit.</strong> It flags raw colours, off-scale spacing, unknown tokens, broken type pairings and right-to-left breakage.</p></li>
         <li class="card"><p class="pill blue">Rendered</p><p><strong>Opens a real browser before merge.</strong> It measures contrast on real pixels in both themes and tabs through every control.</p></li>
-        <li class="card"><p class="pill pink">Human</p><p><strong>Says where automation stops.</strong> A screen can pass the gate and still be the wrong screen, so reviewers spend their time there.</p></li>
+        <li class="card"><p class="pill">Human</p><p><strong>Says where automation stops.</strong> A screen can pass the gate and still be the wrong screen, so reviewers spend their time there.</p></li>
       </ol>
 <!-- /words -->
       <details class="artefact">
         <summary>See a real gate run</summary>
         <figure class="gate-figure" data-artefact>
-          <div class="window"><div class="window-bar" aria-hidden="true"><i></i><i></i><i></i><span>terminal</span></div><pre class="gate-out" tabindex="0" aria-label="Gate output"><span class="cmd">$ node src/cli.js --config fixtures/violating/gate.config.json</span>
+          <div class="code-block"><pre class="gate-out" tabindex="0" aria-label="Gate output"><span class="cmd">$ node src/cli.js --config fixtures/violating/gate.config.json</span>
 
 gate — validated against pinned spec v0.31.0 (manifest sha256 verified)
 <span class="hint">passes: static
@@ -210,38 +208,44 @@ Exceptions applied (1) — auditable, deliberate opt-outs:
     </section>
 
     <section id="evidence" class="flow" aria-labelledby="story">
-      <h2 id="story" class="reveal">First evidence</h2>
-      <p class="reveal">I had only checked the spec by reading it, so I tested it by building from it.</p>
+      <h2 id="story">First evidence</h2>
+      <p>I had only checked the spec by reading it, so I tested it by building from it.</p>
       <ol class="steps-row block">
-        <li class="card reveal"><h3>Build</h3><p>Three fresh AI sessions got only the pinned spec and built the same components.</p></li>
-        <li class="card reveal" style="--i:1"><h3>Measure</h3><p>All three failed the rendered gate on one button state no static check could see.</p></li>
-        <li class="card reveal" style="--i:2"><h3>Fix</h3><p>I corrected the rule, and every release that changes a rule now gets this test.</p></li>
+        <li class="card"><h3>Build</h3><p>Three fresh AI sessions got only the pinned spec and built the same components.</p></li>
+        <li class="card"><h3>Measure</h3><p>All three failed the rendered gate on one button state no static check could see.</p></li>
+        <li class="card"><h3>Fix</h3><p>I corrected the rule, and every release that changes a rule now gets this test.</p></li>
       </ol>
-      <figure class="recreation block reveal" data-illustrative>
+      <figure class="recreation block" data-illustrative>
         <div class="proof">
-          <div class="swatch fail"><span class="lbl" data-contrast-exempt><span class="sr-only">Ghost button</span><svg class="lbl-svg" width="120" height="24" aria-hidden="true"><text x="0" y="18">Ghost button</text></svg><small>Active state, as specified</small></span><span class="ratio"><b data-fg="#2EC4B6" data-bg="#3F5B66">3.34:1</b>Fails AA</span></div>
-          <div class="swatch pass"><span class="lbl">Ghost button<small>Active state, corrected</small></span><span class="ratio"><b data-fg="#2EC4B6" data-bg="#2A3E45">5.17:1</b>Passes AA</span></div>
+          <div>
+            <div class="swatch fail"><span class="lbl" data-contrast-exempt><span class="sr-only">Ghost button</span><svg class="lbl-svg" width="120" height="24" aria-hidden="true"><text x="0" y="18">Ghost button</text></svg><small>Active state, as specified</small></span></div>
+            <p class="verdict fail"><b data-fg="#2EC4B6" data-bg="#3F5B66">3.34:1</b>Fails AA</p>
+          </div>
+          <div>
+            <div class="swatch pass"><span class="lbl">Ghost button<small>Active state, corrected</small></span></div>
+            <p class="verdict pass"><b data-fg="#2EC4B6" data-bg="#2A3E45">5.17:1</b>Passes AA</p>
+          </div>
         </div>
         <figcaption class="note">Recreation. Ratios are calculated from the colours shown. AA needs 4.5:1.</figcaption>
       </figure>
       <div class="find-grid block">
-        <div class="card reveal"><p class="pill teal">Caught by the gate</p><h3>A rule that broke its own standard</h3><p>The button rule gave its label 3.34:1 against 4.5:1 on its active surface, and the same paragraph cited that ratio to ban the pairing elsewhere.</p></div>
-        <div class="card reveal" style="--i:1"><p class="pill pink">Missed by the gate</p><h3>A rule that contradicted itself</h3><p>A table rule asked for two things that can't both be true. The agent picked one, wrote clean code and noted the conflict, so the release process now reads the agent's notes too.</p></div>
+        <div class="card"><p class="pill teal">Caught by the gate</p><h3>A rule that broke its own standard</h3><p>The button rule gave its label 3.34:1 against 4.5:1 on its active surface, and the same paragraph cited that ratio to ban the pairing elsewhere.</p></div>
+        <div class="card"><p class="pill">Missed by the gate</p><h3>A rule that contradicted itself</h3><p>A table rule asked for two things that can't both be true. The agent picked one, wrote clean code and noted the conflict, so the release process now reads the agent's notes too.</p></div>
       </div>
       <p class="note">n = 3 builds with one agent. A Cursor rerun passed two of three first time, and the gate caught an invented token in the third. This supports the method, but the model itself still needs adoption data.</p>
     </section>
 
     <section id="adoption" class="flow" aria-labelledby="adoption-h">
-      <h2 id="adoption-h" class="reveal">Adoption</h2>
-      <p class="reveal">Engineering leadership made the spec the default for new UI and reskins, with no mandate to rewrite existing screens.</p>
-      <div class="panel block reveal">
+      <h2 id="adoption-h">Adoption</h2>
+      <p>Engineering leadership made the spec the default for new UI and reskins, with no mandate to rewrite existing screens.</p>
+      <div class="panel block">
         <p class="big-quote">Why redo work we've only just finished?</p>
         <footer>Teams who had only just moved onto the first design system</footer>
       </div>
       <h3>What changed their minds</h3>
       <div class="find-grid">
-        <div class="card lift spot reveal"><p class="pill teal">Speed</p><p>In pilots, a screen took a median of 1.5 days vs 5 through the old handoff, across 5 screens built both ways. Most of the saving was handoff wait removed.</p></div>
-        <div class="card lift spot reveal" style="--i:1"><p class="pill blue">No cost to them</p><p>I built the first three implementations. Later teams self-serve with a one-command setup.</p></div>
+        <div class="card"><p class="pill teal">Speed</p><p>In pilots, a screen took a median of 1.5 days vs 5 through the old handoff, across 5 screens built both ways. Most of the saving was handoff wait removed.</p></div>
+        <div class="card"><p class="pill blue">No cost to them</p><p>I built the first three implementations. Later teams self-serve with a one-command setup.</p></div>
       </div>
       <p>The outcome was “We love it, but we can't do it right now.” Rollout follows each team's roadmap. A funded reskin was the forcing function, and mandates and demos converted nobody.</p>
       <div class="panel block">
@@ -255,22 +259,22 @@ Exceptions applied (1) — auditable, deliberate opt-outs:
       <p>Designers now build in the same session as the agent. So far, 7 designers have contributed 47 catalogue entries, and <a href="/work/design-system-with-agents/">Running a design system with 15 agents</a> shows how.</p>
       <h3 id="changed-mind">Where I changed my mind</h3>
       <p>I argued rollout should wait until the component gap list closed. Then a smoke test found six contract defects review had missed, so pilots started with the first component batch and became our main way to find them.</p>
-      <blockquote class="panel block reveal">
+      <blockquote class="panel block">
         <p class="big-quote">We stopped arguing about pixel values in review. The gate settles that, so review is about whether the screen works.</p>
         <footer>Front-end lead, pilot product</footer>
       </blockquote>
     </section>
 
     <section id="metrics" class="flow" aria-labelledby="metrics-h">
-      <h2 id="metrics-h" class="reveal">Measures and trade-offs</h2>
-      <p class="reveal"><strong>North star.</strong> Products in production on a pinned release, counted weekly.</p>
+      <h2 id="metrics-h">Measures and trade-offs</h2>
+      <p><strong>North star.</strong> Products in production on a pinned release, counted weekly.</p>
       <div class="metric-grid block">
-        <div class="card metric spot reveal"><span class="label">Time to first gate pass</span><span class="stat-figure grad-text">2.5 days</span><span class="note">Median across 9 pilots</span></div>
-        <div class="card metric spot reveal" style="--i:1"><span class="label">Screens built in pilots</span><span class="stat-figure grad-text" data-count="144">144</span><span class="note">12 per product across the 12 pilot products</span></div>
-        <div class="card metric spot reveal" style="--i:2"><span class="label">First-run gate pass rate</span><span class="stat-figure grad-text" data-count="71" data-suffix="%">71%</span><span class="note">Over 186 pilot builds, mostly failing on spacing</span></div>
-        <div class="card metric spot reveal"><span class="label">Drift on governed files</span><span class="stat-figure grad-text">Zero</span><span class="note">Drift across whole codebases of the 12 pilot products is about a third lower than the baseline in The problem</span></div>
-        <div class="card metric spot reveal" style="--i:1"><span class="label">AA failures blocked before merge</span><span class="stat-figure grad-text" data-count="117">117</span><span class="note">Since July 2026</span></div>
-        <div class="card metric spot reveal" style="--i:2"><span class="label">Critical fix to every adopter</span><span class="stat-figure grad-text">6 days</span><span class="note">Under 1 working day to tag, 6 working days to reach all three products</span></div>
+        <div class="card metric"><span class="label">Time to first gate pass</span><span class="stat-figure">2.5 days</span><span class="note">Median across 9 pilots</span></div>
+        <div class="card metric"><span class="label">Screens built in pilots</span><span class="stat-figure">144</span><span class="note">12 per product across the 12 pilot products</span></div>
+        <div class="card metric"><span class="label">First-run gate pass rate</span><span class="stat-figure">71%</span><span class="note">Over 186 pilot builds, mostly failing on spacing</span></div>
+        <div class="card metric"><span class="label">Drift on governed files</span><span class="stat-figure">Zero</span><span class="note">Drift across whole codebases of the 12 pilot products is about a third lower than the baseline in The problem</span></div>
+        <div class="card metric"><span class="label">AA failures blocked before merge</span><span class="stat-figure">117</span><span class="note">Since July 2026</span></div>
+        <div class="card metric"><span class="label">Critical fix to every adopter</span><span class="stat-figure">6 days</span><span class="note">Under 1 working day to tag, 6 working days to reach all three products</span></div>
       </div>
       <p id="roadmap" class="callout">Next: reach 1.0. Four of six exit criteria are met; still open are a first-run pass rate of 75% or more over 100 builds and one quarter with no token contract change.</p>
 
@@ -278,22 +282,22 @@ Exceptions applied (1) — auditable, deliberate opt-outs:
       <p id="trade-offs">The decision log records what each major choice costs.</p>
       <div class="panel block">
         <div class="trade-grid">
-          <div class="card reveal"><h4>AI output varies from run to run</h4><p class="label cost">Cost</p><p>Three runs from one brief used the same tokens and values but structured the code differently, from 407 to 930 lines.</p><p class="label fix">Contained by governing the contract, not the code</p><p>The gate checks tokens, contrast and behaviour, which held steady. Product teams own generated code through their own reviews and tests.</p></div>
-          <div class="card reveal"><h4>Existing products weren't built for this</h4><p class="label cost">Cost</p><p>Most early adopters have a shipping product, its own CSS and a designer with expectations.</p><p class="label fix">Contained by writing the guide for existing products first</p><p>It names the four problems they hit, in order. Server-rendered legacy products take about 2 to 3 weeks to a first screen.</p></div>
-          <div class="card reveal"><h4>Pinning slows critical fixes</h4><p class="label cost">Cost</p><p>Pinning protects teams from unplanned changes, so a critical fix waits for each team to update its pin. That wait grows with every adopter.</p><p class="label fix">Contained by updating pins through automated pull requests</p><p>Every tagged fix opens one for each adopter. Teams still review and merge it, so the pin keeps protecting them.</p></div>
+          <div class="card"><h4>AI output varies from run to run</h4><p class="label cost">Cost</p><p>Three runs from one brief used the same tokens and values but structured the code differently, from 407 to 930 lines.</p><p class="label fix">Contained by governing the contract, not the code</p><p>The gate checks tokens, contrast and behaviour, which held steady. Product teams own generated code through their own reviews and tests.</p></div>
+          <div class="card"><h4>Existing products weren't built for this</h4><p class="label cost">Cost</p><p>Most early adopters have a shipping product, its own CSS and a designer with expectations.</p><p class="label fix">Contained by writing the guide for existing products first</p><p>It names the four problems they hit, in order. Server-rendered legacy products take about 2 to 3 weeks to a first screen.</p></div>
+          <div class="card"><h4>Pinning slows critical fixes</h4><p class="label cost">Cost</p><p>Pinning protects teams from unplanned changes, so a critical fix waits for each team to update its pin. That wait grows with every adopter.</p><p class="label fix">Contained by updating pins through automated pull requests</p><p>Every tagged fix opens one for each adopter. Teams still review and merge it, so the pin keeps protecting them.</p></div>
         </div>
       </div>
     </section>
 
     <section id="reflection" class="flow" aria-labelledby="reflection-h">
-      <h2 id="reflection-h" class="reveal">Reflection</h2>
+      <h2 id="reflection-h">Reflection</h2>
       <div class="lesson-grid">
-        <div class="card reveal"><h3>Remove the cost of saying yes</h3><p>Teams said yes once the implementation work wasn't theirs.</p></div>
-        <div class="card reveal" style="--i:1"><h3>Retire your own work when the evidence says so</h3><p>Sunk work is a poor reason to keep a product alive.</p></div>
+        <div class="card"><h3>Remove the cost of saying yes</h3><p>Teams said yes once the implementation work wasn't theirs.</p></div>
+        <div class="card"><h3>Retire your own work when the evidence says so</h3><p>Sunk work is a poor reason to keep a product alive.</p></div>
       </div>
     </section>
 
-    <div class="article-end panel cta-panel reveal">
+    <div class="article-end panel cta-panel">
       <p>Fancy a chat? I'm always happy to talk about anything in product design, development or management.</p>
       <div class="actions"><a class="btn btn-primary" href="mailto:matt.m.everitt@gmail.com">Email me</a><a class="btn btn-secondary" href="https://www.linkedin.com/in/matteveritt92/">LinkedIn</a></div>
     </div>
@@ -303,8 +307,6 @@ Exceptions applied (1) — auditable, deliberate opt-outs:
 <!-- /build:next -->
   </article>
 </div>
-</main>
-
 </main>
 
 <!-- build:footer -->
