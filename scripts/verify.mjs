@@ -72,7 +72,7 @@ const browser = await chromium.launch();
     await p.goto(base + url);
     const r = await p.evaluate(() => ({
       h1: !!document.querySelector("h1")?.getBoundingClientRect().height,
-      nav: [...document.querySelectorAll(".site-nav a")].every((a) => a.getBoundingClientRect().height > 0),
+      nav: [...document.querySelectorAll(".site-menu a")].every((a) => a.getBoundingClientRect().height > 0),
       spec: !!document.querySelector("[data-spec-toggle]")?.getBoundingClientRect().height,
       contents: document.querySelector(".contents ol") ? document.querySelector(".contents ol").getBoundingClientRect().height > 0 : true,
       ratios: [...document.querySelectorAll("[data-fg]")].every((b) => /\d\.\d\d:1/.test(b.textContent)),

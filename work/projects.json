@@ -6,7 +6,8 @@
     "year": 2026,
     "url": "/work/replacing-the-component-library/",
     "file": "work/replacing-the-component-library/index.html",
-    "readTime": 7
+    "readTime": 7,
+    "shortTitle": "Replacing my component library"
   },
   {
     "title": "Visual rules an AI agent can follow",
@@ -15,7 +16,8 @@
     "year": 2026,
     "url": "/work/visual-rules-for-agents/",
     "file": "work/visual-rules-for-agents/index.html",
-    "readTime": 3
+    "readTime": 3,
+    "shortTitle": "Visual rules an AI agent can follow"
   },
   {
     "title": "Running a design system with 15 agents",
@@ -24,6 +26,7 @@
     "year": 2026,
     "url": "/work/design-system-with-agents/",
     "file": "work/design-system-with-agents/index.html",
-    "readTime": 2
+    "readTime": 2,
+    "shortTitle": "Running a design system with 15 agents"
   }
 ]

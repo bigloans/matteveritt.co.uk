@@ -1,0 +1,17 @@
+[
+  {
+    "version": 3,
+    "date": "2026-10-14",
+    "notes": "A calmer site. Decorative motion is gone, colour tokens are now primitives and roles, and two demos let you try the gate and follow a bug through the agent harness."
+  },
+  {
+    "version": 2,
+    "date": "2026-10-13",
+    "notes": "The single case study became a portfolio, with a landing page, the case study, two short reads and this site's spec, all built from one token file."
+  },
+  {
+    "version": 1,
+    "date": "2026-10-09",
+    "notes": "Launched as a single page with one case study, on a design system built for AI coding agents."
+  }
+]

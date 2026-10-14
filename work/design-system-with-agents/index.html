@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Running a design system with 15 agents, Matt Everitt</title>
+<title>Matt Everitt's Portfolio: Running a design system with 15 agents</title>
 <meta name="description" content="How a team of one ships releases, keeps a decision log and plans for time away.">
-<meta property="og:title" content="Running a design system with 15 agents">
+<meta property="og:title" content="Matt Everitt's Portfolio: Running a design system with 15 agents">
 <meta property="og:description" content="How a team of one ships releases, keeps a decision log and plans for time away.">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://matteveritt.co.uk/og-image.png">
@@ -30,14 +30,13 @@ document.documentElement.classList.add('js');
 <header class="site-header">
   <div class="site-header-in">
     <a class="site-name" href="/">Matt Everitt</a>
-    <nav class="site-nav" aria-label="Site">
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-menu" hidden>Menu</button>
+    <nav class="site-menu" id="site-menu" aria-label="Site">
       <a href="/#work">Work</a>
       <a href="/#about">About</a>
       <a href="/#contact">Contact</a>
-    </nav>
-    <div class="site-tools">
       <button class="spec-toggle" type="button" aria-pressed="false" data-spec-toggle hidden>Show the spec</button>
-    </div>
+    </nav>
   </div>
 </header>
 <!-- /build:header -->
@@ -156,6 +155,23 @@ document.documentElement.classList.add('js');
 </main>
 
 <!-- build:footer -->
+<footer class="site-footer">
+  <div class="page">
+    <ul class="footer-links" aria-label="Contact">
+      <li><a href="mailto:matt.m.everitt@gmail.com">matt.m.everitt@gmail.com</a></li>
+      <li><a href="https://www.linkedin.com/in/matteveritt92/">LinkedIn</a></li>
+      <li><a href="/assets/matt-everitt-cv.pdf">CV (PDF)</a></li>
+    </ul>
+    <div class="footer-meta">
+      <p>Set in Atkinson Hyperlegible Next, a typeface from the Braille Institute built for low-vision readers.</p>
+      <ul class="footer-links" aria-label="About this site">
+        <li><a href="/spec/">Read this site's spec</a></li>
+        <li><a href="/changelog/">Changelog</a></li>
+      </ul>
+      <p>Site version 3, updated 14 October 2026</p>
+    </div>
+  </div>
+</footer>
 <p class="sr-only" role="status" aria-live="polite" data-spec-status></p>
 <!-- /build:footer -->
 </body>

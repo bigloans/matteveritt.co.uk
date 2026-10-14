@@ -12,9 +12,12 @@ const read = (f) => readFileSync(path.join(root, f), "utf8");
 const exists = (f) => existsSync(path.join(root, f));
 const tokens = JSON.parse(read("tokens.json"));
 const projects = JSON.parse(read("work/projects.json"));
+const changelog = JSON.parse(read("changelog.json"));
 const check = process.argv.includes("--check");
 const WPM = 230;
-const pages = ["index.html", "spec/index.html", ...projects.map((p) => p.file)].filter(exists);
+const pages = ["index.html", "spec/index.html", "changelog/index.html", ...projects.map((p) => p.file)].filter(exists);
+const SITE = "Matt Everitt's Portfolio";
+const shortTitles = { "spec/index.html": "This site's spec", "changelog/index.html": "Changelog", ...Object.fromEntries(projects.map((p) => [p.file, p.shortTitle])) };
 const outputs = new Map();
 const errors = [];
 
@@ -104,18 +107,38 @@ const header = `<a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="site-header-in">
     <a class="site-name" href="/">Matt Everitt</a>
-    <nav class="site-nav" aria-label="Site">
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-menu" hidden>Menu</button>
+    <nav class="site-menu" id="site-menu" aria-label="Site">
       <a href="/#work">Work</a>
       <a href="/#about">About</a>
       <a href="/#contact">Contact</a>
-    </nav>
-    <div class="site-tools">
       <button class="spec-toggle" type="button" aria-pressed="false" data-spec-toggle hidden>Show the spec</button>
-    </div>
+    </nav>
   </div>
 </header>`;
 
-const footer = `<p class="sr-only" role="status" aria-live="polite" data-spec-status></p>`;
+// Footer. The version line comes from the newest changelog entry.
+
+const longDate = (iso) => new Date(`${iso}T12:00:00Z`).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
+const [latest] = changelog;
+const footer = `<footer class="site-footer">
+  <div class="page">
+    <ul class="footer-links" aria-label="Contact">
+      <li><a href="mailto:matt.m.everitt@gmail.com">matt.m.everitt@gmail.com</a></li>
+      <li><a href="https://www.linkedin.com/in/matteveritt92/">LinkedIn</a></li>
+      <li><a href="/assets/matt-everitt-cv.pdf">CV (PDF)</a></li>
+    </ul>
+    <div class="footer-meta">
+      <p>Set in Atkinson Hyperlegible Next, a typeface from the Braille Institute built for low-vision readers.</p>
+      <ul class="footer-links" aria-label="About this site">
+        <li><a href="/spec/">Read this site's spec</a></li>
+        <li><a href="/changelog/">Changelog</a></li>
+      </ul>
+      <p>Site version ${latest.version}, updated ${longDate(latest.date)}</p>
+    </div>
+  </div>
+</footer>
+<p class="sr-only" role="status" aria-live="polite" data-spec-status></p>`;
 
 // Read times and project index
 
@@ -172,8 +195,13 @@ const stamp = (html, name, content) => {
   return html.replace(re, (_, a, b) => `${a}\n${content}\n${b}`);
 };
 
+const titled = (html, file) => {
+  const t = shortTitles[file] ? `${SITE}: ${shortTitles[file]}` : SITE;
+  return html.replace(/<title>[^<]*<\/title>/, `<title>${t}</title>`).replace(/(<meta property="og:title" content=")[^"]*(")/, `$1${t.replace(/"/g, "&quot;")}$2`);
+};
+
 for (const file of pages) {
-  let html = read(file);
+  let html = titled(read(file), file);
   for (const [name, content] of Object.entries(regions(file))) html = stamp(html, name, content);
   outputs.set(file, html);
 }

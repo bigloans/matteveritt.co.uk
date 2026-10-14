@@ -1,9 +1,11 @@
-# GitHub Pages build. Keep tooling, docs and briefs off the public site.
+# GitHub Pages build. Keep tooling, docs, data and briefs off the public site.
 exclude:
   - scripts
   - docs
   - tokens.json
+  - changelog.json
   - case-study-brief.md
   - portfolio-handoff.md
   - portfolio-handoff-2.md
   - portfolio-handoff-3.md
+  - portfolio-handoff-4.md

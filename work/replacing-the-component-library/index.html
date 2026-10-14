@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>I replaced my own component library with a spec AI builds from, Matt Everitt</title>
+<title>Matt Everitt's Portfolio: Replacing my component library</title>
 <meta name="description" content="Why Matt Everitt retired the component library he built, what replaced it and how teams adopted it.">
-<meta property="og:title" content="I replaced my own component library with a spec AI builds from">
+<meta property="og:title" content="Matt Everitt's Portfolio: Replacing my component library">
 <meta property="og:description" content="Why Matt Everitt retired the component library he built, what replaced it and how teams adopted it.">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://matteveritt.co.uk/og-image.png">
@@ -30,14 +30,13 @@ document.documentElement.classList.add('js');
 <header class="site-header">
   <div class="site-header-in">
     <a class="site-name" href="/">Matt Everitt</a>
-    <nav class="site-nav" aria-label="Site">
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-menu" hidden>Menu</button>
+    <nav class="site-menu" id="site-menu" aria-label="Site">
       <a href="/#work">Work</a>
       <a href="/#about">About</a>
       <a href="/#contact">Contact</a>
-    </nav>
-    <div class="site-tools">
       <button class="spec-toggle" type="button" aria-pressed="false" data-spec-toggle hidden>Show the spec</button>
-    </div>
+    </nav>
   </div>
 </header>
 <!-- /build:header -->
@@ -297,10 +296,6 @@ Exceptions applied (1) — auditable, deliberate opt-outs:
       </div>
     </section>
 
-    <div class="article-end panel cta-panel">
-      <p>Fancy a chat? I'm always happy to talk about anything in product design, development or management.</p>
-      <div class="actions"><a class="btn btn-primary" href="mailto:matt.m.everitt@gmail.com">Email me</a><a class="btn btn-secondary" href="https://www.linkedin.com/in/matteveritt92/">LinkedIn</a></div>
-    </div>
 <!-- /words -->
     <!-- build:next -->
 <p class="next"><a href="/work/visual-rules-for-agents/">Next: Visual rules an AI agent can follow</a></p>
@@ -310,6 +305,23 @@ Exceptions applied (1) — auditable, deliberate opt-outs:
 </main>
 
 <!-- build:footer -->
+<footer class="site-footer">
+  <div class="page">
+    <ul class="footer-links" aria-label="Contact">
+      <li><a href="mailto:matt.m.everitt@gmail.com">matt.m.everitt@gmail.com</a></li>
+      <li><a href="https://www.linkedin.com/in/matteveritt92/">LinkedIn</a></li>
+      <li><a href="/assets/matt-everitt-cv.pdf">CV (PDF)</a></li>
+    </ul>
+    <div class="footer-meta">
+      <p>Set in Atkinson Hyperlegible Next, a typeface from the Braille Institute built for low-vision readers.</p>
+      <ul class="footer-links" aria-label="About this site">
+        <li><a href="/spec/">Read this site's spec</a></li>
+        <li><a href="/changelog/">Changelog</a></li>
+      </ul>
+      <p>Site version 3, updated 14 October 2026</p>
+    </div>
+  </div>
+</footer>
 <p class="sr-only" role="status" aria-live="polite" data-spec-status></p>
 <!-- /build:footer -->
 </body>

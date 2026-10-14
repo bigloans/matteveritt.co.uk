@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Design systems portfolio, Matt Everitt</title>
+<title>Matt Everitt's Portfolio</title>
 <meta name="description" content="Matt Everitt runs design systems as products. His latest replaced a component library with a specification that AI coding agents build from, across a portfolio of 60+ products.">
-<meta property="og:title" content="Design systems portfolio, Matt Everitt">
+<meta property="og:title" content="Matt Everitt's Portfolio">
 <meta property="og:description" content="Matt Everitt runs design systems as products. His latest replaced a component library with a specification that AI coding agents build from, across a portfolio of 60+ products.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://matteveritt.co.uk/og-image.png">
@@ -34,14 +34,13 @@ document.documentElement.classList.add('js');
 <header class="site-header">
   <div class="site-header-in">
     <a class="site-name" href="/">Matt Everitt</a>
-    <nav class="site-nav" aria-label="Site">
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-menu" hidden>Menu</button>
+    <nav class="site-menu" id="site-menu" aria-label="Site">
       <a href="/#work">Work</a>
       <a href="/#about">About</a>
       <a href="/#contact">Contact</a>
-    </nav>
-    <div class="site-tools">
       <button class="spec-toggle" type="button" aria-pressed="false" data-spec-toggle hidden>Show the spec</button>
-    </div>
+    </nav>
   </div>
 </header>
 <!-- /build:header -->
@@ -55,7 +54,6 @@ document.documentElement.classList.add('js');
       <p class="hero-lede" data-spec="space" data-spec-prop="margin-top" data-spec-priority="1">My latest replaced a component library with a specification that AI coding agents build from, across a portfolio of 60+ products.</p>
       <div class="actions" data-spec="space" data-spec-prop="column-gap" data-spec-priority="3">
         <a class="btn btn-primary" href="/work/replacing-the-component-library/" data-spec="radius" data-spec-component="Button / Primary" data-spec-priority="1">Read the case study</a>
-        <a class="btn btn-secondary" href="mailto:matt.m.everitt@gmail.com">Email me</a>
       </div>
     </div>
     <figure class="hero-visual">
@@ -157,21 +155,37 @@ gate — validated against pinned spec v0.31.0 (manifest sha256 verified)
         <li><span class="year">June 2021</span><p class="what">UX/UI designer</p><p class="muted">Designed and documented our first design system</p></li>
         <li><span class="year">August 2022</span><p class="what">Design operations manager</p><p class="muted">Leading the design system team and its roadmap</p></li>
       </ol>
-      <p class="timeline-cv"><a class="btn btn-secondary" href="/assets/matt-everitt-cv.pdf">Download my CV</a></p>
     </div>
   </div>
 </section>
 
-<section id="contact" class="band contact-band" aria-labelledby="contact-h">
-  <div class="page flow">
-    <h2 id="contact-h">Fancy a chat?</h2>
-    <p>I'm always happy to talk about anything in product design, development or management.</p>
-    <div class="actions"><a class="btn btn-primary" href="mailto:matt.m.everitt@gmail.com" data-spec="color" data-spec-prop="background-color" data-spec-component="Button / Primary" data-spec-priority="2">Email me</a><a class="btn btn-secondary" href="https://www.linkedin.com/in/matteveritt92/" data-spec="radius" data-spec-priority="3">LinkedIn</a></div>
-  </div>
+<section id="contact" class="section page flow" aria-labelledby="contact-h">
+  <h2 id="contact-h">Contact</h2>
+  <ul class="contact-links">
+    <li><a href="mailto:matt.m.everitt@gmail.com">matt.m.everitt@gmail.com</a></li>
+    <li><a href="https://www.linkedin.com/in/matteveritt92/">LinkedIn</a></li>
+  </ul>
 </section>
 </main>
 
 <!-- build:footer -->
+<footer class="site-footer">
+  <div class="page">
+    <ul class="footer-links" aria-label="Contact">
+      <li><a href="mailto:matt.m.everitt@gmail.com">matt.m.everitt@gmail.com</a></li>
+      <li><a href="https://www.linkedin.com/in/matteveritt92/">LinkedIn</a></li>
+      <li><a href="/assets/matt-everitt-cv.pdf">CV (PDF)</a></li>
+    </ul>
+    <div class="footer-meta">
+      <p>Set in Atkinson Hyperlegible Next, a typeface from the Braille Institute built for low-vision readers.</p>
+      <ul class="footer-links" aria-label="About this site">
+        <li><a href="/spec/">Read this site's spec</a></li>
+        <li><a href="/changelog/">Changelog</a></li>
+      </ul>
+      <p>Site version 3, updated 14 October 2026</p>
+    </div>
+  </div>
+</footer>
 <p class="sr-only" role="status" aria-live="polite" data-spec-status></p>
 <!-- /build:footer -->
 </body>

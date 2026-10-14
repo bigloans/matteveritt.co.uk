@@ -452,6 +452,43 @@
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(redraw);
   }
 
+  // Site menu. Below 900px the links and "Show the spec" sit in a sheet that traps focus while open.
+
+  var siteHeader = document.querySelector(".site-header");
+  var menuBtn = document.querySelector(".menu-button");
+  var menu = document.getElementById("site-menu");
+  var menuOpen = false;
+  if (siteHeader && menuBtn && menu) {
+    menuBtn.hidden = false;
+    var focusables = function () {
+      return [menuBtn].concat([].filter.call(menu.querySelectorAll("a, button"), function (el) { return !el.hidden; }));
+    };
+    var setMenu = function (open, returnFocus) {
+      menuOpen = open;
+      siteHeader.classList.toggle("is-open", open);
+      menuBtn.setAttribute("aria-expanded", open);
+      menuBtn.textContent = open ? "Close" : "Menu";
+      if (open) menu.querySelector("a").focus();
+      else if (returnFocus) menuBtn.focus();
+    };
+    menuBtn.addEventListener("click", function () { setMenu(!menuOpen); });
+    menu.addEventListener("click", function (e) {
+      if (menuOpen && e.target.closest("a, button")) setMenu(false, e.target.matches("button"));
+    });
+    siteHeader.addEventListener("keydown", function (e) {
+      if (!menuOpen) return;
+      if (e.key === "Escape") { e.stopPropagation(); setMenu(false, true); return; }
+      if (e.key !== "Tab") return;
+      var f = focusables(), first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    });
+    document.addEventListener("click", function (e) {
+      if (menuOpen && !siteHeader.contains(e.target)) setMenu(false);
+    });
+    narrowContents.addEventListener("change", function (e) { if (!e.matches && menuOpen) setMenu(false); });
+  }
+
   // Contents. Sticky list on wide screens; a fixed button and sheet on narrow ones.
 
   var contents = document.querySelector(".contents");
