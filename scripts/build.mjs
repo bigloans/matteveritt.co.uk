@@ -207,6 +207,7 @@ const regions = (file) => {
   const r = { head, header, footer };
   if (file === "index.html") Object.assign(r, { "hero-excerpt": heroExcerpt, "work-feature": workFeature, "work-reads": workReads });
   if (file === "spec/index.html") r.spec = specBody();
+  if (file === "changelog/index.html") r.changelog = changelogBody();
   const i = projects.findIndex((p) => p.file === file);
   if (i >= 0) {
     const next = projects[(i + 1) % projects.length];
@@ -319,6 +320,18 @@ function specBody() {
       <p>Motion happens when you act. The spec fades in and its measurements draw top to bottom; menus and the contents sheet open and close. With reduced motion set, every duration becomes 0ms.</p>
       ${table("Motion tokens", ["Token", "Value", "Use"], motionRows)}
     </section>`;
+}
+
+// Changelog page body, newest first
+
+function changelogBody() {
+  return `<ol class="changelog" reversed>
+      ${[...changelog].sort((a, b) => b.version - a.version).map((e) => `<li class="changelog-entry" data-spec-component="Entry / Release" data-spec-priority="3">
+        <h2>Version ${e.version}</h2>
+        <p class="meta-line"><time datetime="${e.date}">${longDate(e.date)}</time></p>
+        <p>${e.notes}</p>
+      </li>`).join("\n      ")}
+    </ol>`;
 }
 
 // Write or check

@@ -13,7 +13,7 @@ const { chromium } = require("playwright");
 const axeSource = readFileSync(require.resolve("axe-core/axe.min.js"), "utf8");
 
 const base = process.argv[2] || "http://localhost:8765";
-const pages = ["/", "/work/replacing-the-component-library/", "/work/visual-rules-for-agents/", "/work/design-system-with-agents/", "/spec/"];
+const pages = ["/", "/work/replacing-the-component-library/", "/work/visual-rules-for-agents/", "/work/design-system-with-agents/", "/spec/", "/changelog/"];
 const reads = { visual: "visual-rules-for-agents", "visual-language": "visual-rules-for-agents", designers: "design-system-with-agents", team: "design-system-with-agents", reversed: "design-system-with-agents" };
 const oldIds = ["glance", "customers", "problem", "options", "product", "visual", "visual-language", "designers", "gate", "evidence", "story", "team", "reversed", "adoption", "changed-mind", "metrics", "tradeoffs", "trade-offs", "roadmap", "reflection"];
 const results = [];

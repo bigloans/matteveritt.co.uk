@@ -762,3 +762,11 @@ blockquote.panel { margin-inline: 0; }
 @media (min-width: 900px) {
   .bug-steps { grid-template-columns: repeat(5, minmax(0, 1fr)); }
 }
+
+/* Changelog */
+
+.changelog { list-style: none; padding: 0; display: grid; }
+.changelog-entry { display: grid; gap: var(--space-8); padding-block: var(--space-32); border-bottom: var(--size-hairline) solid var(--color-hairline); }
+.changelog-entry:first-child { padding-top: 0; }
+.changelog-entry h2 { font-size: var(--text-28); }
+.changelog-entry p:last-child { max-width: var(--size-measure); }

@@ -13,7 +13,7 @@ const { chromium } = require("playwright");
 const args = process.argv.slice(2);
 const spec = args.includes("--spec");
 const [base = "http://localhost:8765", out = "shots", ...pages] = args.filter((a) => a !== "--spec");
-const urls = pages.length ? pages : ["/", "/work/replacing-the-component-library/", "/work/visual-rules-for-agents/", "/work/design-system-with-agents/", "/spec/"];
+const urls = pages.length ? pages : ["/", "/work/replacing-the-component-library/", "/work/visual-rules-for-agents/", "/work/design-system-with-agents/", "/spec/", "/changelog/"];
 const slug = (u) => u.replace(/^\/|\/$/g, "").replace(/\//g, "-") || "home";
 mkdirSync(out, { recursive: true });
 
