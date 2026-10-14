@@ -19,7 +19,7 @@ body {
   background: var(--color-surface);
   -webkit-font-smoothing: antialiased;
 }
-h1, h2, h3, h4, p, ul, ol, dl, dd, figure, blockquote, pre, table { margin: 0; }
+h1, h2, h3, h4, h5, p, ul, ol, dl, dd, figure, blockquote, pre, table { margin: 0; }
 ul, ol { padding-left: var(--space-24); }
 h1, h2, h3, h4 { line-height: var(--leading-snug); letter-spacing: var(--size-tracking-tight); text-wrap: balance; }
 h2 { font-size: var(--text-20); font-weight: var(--weight-semibold); }
@@ -428,8 +428,6 @@ button { padding: 0; }
 .option-grid, .feature-grid, .find-grid, .lesson-grid, .metric-grid, .trade-grid { display: grid; gap: var(--space-16); }
 .option-grid .card h3 { font-size: var(--text-18); }
 .option-grid .chosen { border-color: var(--color-interactive); }
-.icon { display: grid; place-items: center; width: var(--space-48); height: var(--space-48); border: var(--size-hairline) solid var(--color-hairline); border-radius: var(--radius-control); color: var(--color-interactive); }
-.icon svg { width: var(--space-24); height: var(--space-24); }
 .layer-stack { list-style: none; padding: 0; display: grid; gap: var(--space-12); }
 .layer-stack.panel { padding: var(--space-16); }
 .layer-stack li { display: grid; gap: var(--space-8); padding: var(--space-16) var(--space-24); }

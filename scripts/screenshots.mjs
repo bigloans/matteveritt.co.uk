@@ -27,7 +27,9 @@ for (const url of urls) {
       await page.evaluate(() => document.fonts.ready);
       let name = `${slug(url)}-${width}-${theme}`;
       if (spec) {
+        if (await page.isVisible(".menu-button")) await page.click(".menu-button");
         await page.click("[data-spec-toggle]");
+        await page.waitForTimeout(1500);
         await page.waitForTimeout(400);
         name += "-spec";
       }

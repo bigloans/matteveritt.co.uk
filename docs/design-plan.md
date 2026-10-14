@@ -361,3 +361,30 @@ Matt reviewed v2 live and found it too quiet. It read like a blog, not a portfol
 | 4. Which product skills would you defend? | Roadmapping, backlog ownership, prioritisation, discovery, stakeholder management, metrics and release planning. Remove Figma and release management. Replace WCAG 2.2 AA with accessibility |
 | 5. Which piece of work outside the spec would you point to? | Left for now |
 | 6. Anything outside work? | Skipped |
+
+### Decisions brief 4 left open
+
+| Choice | Decision |
+| --- | --- |
+| Branch | `portfolio-v3` fast-forwarded to `main` first, so it starts from the live site |
+| Danger primitive | `orange-400` `#FF7A45`. Hue 17 degrees, 44 degrees from pink-400. 7.0:1 on navy-900, 6.17:1 on navy-800 |
+| Roles beyond the brief's list | `accent` (blue-400) for file names and code keys, and `annotation-component` (violet-400) for component tags in "Show the spec" |
+| Text roles | One `text` role. Headings and body read well at the same value, so no `text-strong` |
+| Hairlines | `#26385A` merged into navy-700 `#2A3B57` |
+| Header at 900px and above | Not sticky, like the narrow header. A 2px brand gradient rule sits on top |
+| Menu sheet | Drops below the header row. The Menu button becomes Close while open |
+| Spec draw-in | Fades in over `--motion-fast`, then each group draws over `--motion-draw`, `--motion-stagger` apart, top to bottom. The scan line, counters, rising columns and sliding rulers are gone |
+| Resize label | A changed spacing label reads "was --space-96, now --space-64" and highlights for 1.2 seconds |
+| Gate demo card | Its image is `assets/gate-demo.svg`, a small bar chart. The ghost button sits on the original active surface, so the original teal label gives the real 3.34:1 |
+| Gate demo messages | Static findings reuse the real gate's wording. The contrast line follows the same `file:line [category] message` format |
+| Product recreations | The visual rules read still shows the product's light theme, because the read is about the product's two themes. Site-level light values are gone |
+| Redaction log | `docs/redaction-log.md` is gitignored. It quotes the originals, and the repo is public |
+| Changelog | Three entries, as the brief lists. The 13 October motion experiments are folded into version 3 |
+
+### Post-build review (phase 8)
+
+| Finding | Change |
+| --- | --- |
+| Boxed icons above the three "What I built" cards repeated each heading and said nothing | Removed, with their styles |
+| The gate demo card stretched to the panel's height, leaving a gap above the button | The card's rows now align to the top |
+| The browser's default h5 margin gave the demo card heading 30.06px of off-scale spacing | h5 joined the margin reset |
