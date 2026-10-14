@@ -62,6 +62,24 @@ document.documentElement.classList.add('js');
     <section id="team" class="flow" aria-labelledby="team-h">
       <h2 id="team-h">A team of one</h2>
       <p>Each agent in the harness has one job and a written standard. Any edit that moves a brand value stops until it is explained, and no bug is fixed until one agent reproduces it and another checks the fix.</p>
+      <h3 id="bug-h">Follow a bug</h3>
+      <figure class="bug-demo block" data-bug-demo aria-labelledby="bug-h">
+        <!-- TODO(matt): confirm the step order and which agents act at each step. -->
+        <ol class="bug-steps">
+          <li data-step><span class="bug-role">Reproduction writer</span><p class="bug-text">The reproduction writer proves the bug before anyone fixes it.</p></li>
+          <li data-step><span class="bug-role">Check author</span><p class="bug-text">The check author writes the failing test first.</p></li>
+          <li data-step><span class="bug-role">Scope warden</span><p class="bug-text">The fix goes in, and the scope warden asks whether it is the smallest one.</p></li>
+          <li data-step><span class="bug-role">Verifier</span><p class="bug-text">The verifier, a different agent from the one that reproduced the bug, checks that the fix fixes the defect.</p></li>
+          <li data-step><span class="bug-role">Release steward</span><p class="bug-text">The release steward checks that the release procedure was followed before the fix ships.</p></li>
+        </ol>
+        <p class="bug-sentence" data-bug-sentence hidden></p>
+        <div class="actions bug-controls" hidden>
+          <button class="btn btn-secondary" type="button" data-bug-prev>Previous step</button>
+          <button class="btn btn-secondary" type="button" data-bug-next>Next step</button>
+        </div>
+        <p class="sr-only" role="status" aria-live="polite" data-bug-status></p>
+        <figcaption class="note">A simulation of how a bug moves through the harness, built from the roles and rules on this page.</figcaption>
+      </figure>
       <details class="agents block">
         <summary>Meet the 15 agents</summary>
         <div class="agent-groups">

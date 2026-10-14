@@ -547,6 +547,66 @@
     });
   }
 
+  // Try the gate. Each checkbox applies one real kind of violation to the card,
+  // and the panel lists findings in the gate's message format.
+
+  var gateDemo = document.querySelector("[data-gate-demo]");
+  if (gateDemo) {
+    var card = gateDemo.querySelector("[data-demo-card]");
+    var img = card.querySelector("img"), title = card.querySelector(".demo-card-title"), cardBtn = card.querySelector(".demo-card-btn");
+    var alt = img.getAttribute("alt");
+    var out = gateDemo.querySelector("[data-gate-output]"), gateStatus = gateDemo.querySelector("[data-gate-status]");
+    var rules = {
+      hex: { apply: function (on) { title.style.color = on ? "#ff0000" : ""; }, line: "card.css:3  <span class=\"fail\">[colour]</span>  raw hex colour `#ff0000` — use a semantic `--color-*` token" },
+      padding: { apply: function (on) { card.style.padding = on ? "15px" : ""; }, line: "card.css:5  <span class=\"fail\">[spacing]</span>  off-scale spacing `15px` — not a scale step; nearest is `16px` (use its `--spacing-*` / `--space-*` token)" },
+      alt: { apply: function (on) { if (on) img.removeAttribute("alt"); else img.setAttribute("alt", alt); }, line: "card.html:2  <span class=\"fail\">[a11y]</span>  &lt;img&gt; is missing required \"alt\" attribute (wcag/h37)" },
+      ghost: { apply: function (on) { cardBtn.style.color = on ? getComputedStyle(root).getPropertyValue("--demo-ghost-fg") : ""; }, line: "card.html:4  <span class=\"fail\">[contrast]</span>  button label 3.34:1 on its surface — text needs 4.5:1 (WCAG 1.4.3)" }
+    };
+    var boxes = [].slice.call(gateDemo.querySelectorAll("[data-violation]"));
+    var render = function () {
+      var lines = [];
+      boxes.forEach(function (b) {
+        var r = rules[b.getAttribute("data-violation")];
+        r.apply(b.checked);
+        if (b.checked) lines.push(r.line);
+      });
+      var n = lines.length;
+      var verdict = n ? "FAIL, " + n + " violation" + (n === 1 ? "" : "s") : "PASS, 0 violations";
+      var files = lines.length ? "\n" + lines.map(function (l) { return "  " + l; }).join("\n") + "\n" : "";
+      out.innerHTML = "<span class=\"hint\">passes: static, rendered\nchecked 2 governed file(s)</span>\n" + files + "\n<span class=\"" + (n ? "fail" : "ok") + "\">" + verdict + "</span>";
+      gateStatus.textContent = "Gate result: " + verdict + ".";
+    };
+    boxes.forEach(function (b) { b.addEventListener("change", render); });
+  }
+
+  // Follow a bug. Previous and Next move a highlight through the steps.
+
+  var bugDemo = document.querySelector("[data-bug-demo]");
+  if (bugDemo) {
+    var steps = [].slice.call(bugDemo.querySelectorAll("[data-step]"));
+    var sentence = bugDemo.querySelector("[data-bug-sentence]");
+    var prev = bugDemo.querySelector("[data-bug-prev]"), next = bugDemo.querySelector("[data-bug-next]");
+    var bugStatus = bugDemo.querySelector("[data-bug-status]");
+    var at = 0;
+    var show = function (i, announce) {
+      at = i;
+      steps.forEach(function (s, j) {
+        if (j === i) s.setAttribute("aria-current", "step");
+        else s.removeAttribute("aria-current");
+      });
+      var text = steps[i].querySelector(".bug-text").textContent;
+      sentence.textContent = text;
+      prev.setAttribute("aria-disabled", i === 0);
+      next.setAttribute("aria-disabled", i === steps.length - 1);
+      if (announce) bugStatus.textContent = "Step " + (i + 1) + " of " + steps.length + ". " + text;
+    };
+    prev.addEventListener("click", function () { if (at > 0) show(at - 1, true); });
+    next.addEventListener("click", function () { if (at < steps.length - 1) show(at + 1, true); });
+    sentence.hidden = false;
+    bugDemo.querySelector(".bug-controls").hidden = false;
+    show(0, false);
+  }
+
   // Contrast ratios. The HTML carries them already; this recalculates from the colours.
 
   [].forEach.call(document.querySelectorAll("[data-fg]"), function (el) {

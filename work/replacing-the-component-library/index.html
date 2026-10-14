@@ -173,6 +173,31 @@ document.documentElement.classList.add('js');
         <li class="card"><p class="pill">Human</p><p><strong>Says where automation stops.</strong> A screen can pass the gate and still be the wrong screen, so reviewers spend their time there.</p></li>
       </ol>
       <p>When the accessibility engine could not run on a page, the gate used to report a pass, so now a file the gate can't evaluate fails the run as incomplete. <a href="/work/design-system-with-agents/#decision-log">Read the full decision log entry</a> in Running a design system with 15 agents.</p>
+      <h4 id="try-gate-h">Try the gate</h4>
+      <figure class="gate-demo block" data-gate-demo aria-labelledby="try-gate-h">
+        <div class="gate-demo-grid">
+          <div class="gate-demo-stage">
+            <fieldset class="gate-demo-controls">
+              <legend>Break a rule</legend>
+              <label><input type="checkbox" data-violation="hex"> Use a raw hex colour</label>
+              <label><input type="checkbox" data-violation="padding"> Set padding to 15px</label>
+              <label><input type="checkbox" data-violation="alt"> Remove the image's alt text</label>
+              <label><input type="checkbox" data-violation="ghost"> Use the ghost button's original label colour</label>
+            </fieldset>
+            <div class="demo-card" data-demo-card>
+              <img src="/assets/gate-demo.svg" alt="Bar chart of screens built per pilot" width="320" height="160" loading="lazy">
+              <h5 class="demo-card-title">Pilot progress</h5>
+              <button class="demo-card-btn" type="button" tabindex="-1" aria-hidden="true">View details</button>
+            </div>
+          </div>
+          <pre class="gate-out gate-demo-out" data-artefact data-gate-output tabindex="0" aria-label="Simulated gate output"><span class="hint">passes: static, rendered
+checked 2 governed file(s)</span>
+
+<span class="ok">PASS, 0 violations</span></pre>
+        </div>
+        <p class="sr-only" role="status" aria-live="polite" data-gate-status></p>
+        <figcaption class="note">A simulation of the gate's static and rendered checks, running in your browser.</figcaption>
+      </figure>
 <!-- /words -->
       <details class="artefact">
         <summary>See a real gate run</summary>
