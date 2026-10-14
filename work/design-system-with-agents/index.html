@@ -121,19 +121,18 @@ document.documentElement.classList.add('js');
         <summary>Read a decision log entry</summary>
         <figure data-artefact>
           <blockquote>
-            <p><strong>2026-08-11 — A file the gate could not evaluate is not a pass (done)</strong></p>
-            <p>The defect, measured rather than argued. When the accessibility engine's run for a page threw, <code>gate/src/rendered/run.js</code> caught it, recorded the page in the skipped channel, substituted an empty violation list and continued. The verdict then read <code>PASS — 0 violations</code> and the exit code was 0 — including under <code>--all</code>, whose contract is fail-closed. Demonstrated with a real browser on a page containing a nameless <code>&lt;button&gt;</code> and an <code>&lt;img&gt;</code> with no alt: the identical body produced two a11y findings when the engine could run and zero when it could not. Two real accessibility violations disappeared and the run reported success.</p>
-            <p>[…]</p>
-            <p>Three "not checked" meanings now warrant three outcomes, kept deliberately apart:</p>
+            <p><strong>11 August 2026: a file the gate could not evaluate is not a pass</strong></p>
+            <p>The defect, measured rather than argued. When the accessibility engine's run for a page threw an error, the rendered check caught it, recorded the page as skipped, put an empty list of violations in its place and carried on. The verdict then read "PASS, 0 violations" and the exit code was 0, even in the mode whose contract is to fail closed. A real browser showed it on a page with a nameless button and an image with no alt text. The same page produced two accessibility findings when the engine could run and none when it could not. Two real violations disappeared and the run reported success.</p>
+            <p>Three meanings of "not checked" now get three outcomes, kept apart on purpose:</p>
             <ul>
-              <li><strong>unevaluable</strong> — the gate tried and could not. INCOMPLETE, exit 2.</li>
-              <li><strong>unsupported</strong> — outside this checker's scope, such as a .md caught by a broad glob. Listed separately, exit unaffected. Conflating this with the above would fail a perfectly reasonable governed glob, and noise is how a gate gets switched off.</li>
-              <li><strong>skippedPasses</strong> — a layer nobody asked to run. Qualifies the verdict as INCOMPLETE but stays exit 0, per the 2026-08-10 entry: not asking for a pass is not the same as failing to run one.</li>
+              <li><strong>Unevaluable.</strong> The gate tried and could not. The run is incomplete and exits with code 2.</li>
+              <li><strong>Unsupported.</strong> The file is outside this checker's scope, such as a Markdown file caught by a broad pattern. It is listed separately and the exit code is unaffected. Treating it as unevaluable would fail a reasonable pattern, and noise is how a gate gets switched off.</li>
+              <li><strong>Skipped.</strong> Nobody asked for this layer to run. The verdict says incomplete but the exit code stays 0, because not asking for a check is not the same as failing to run one.</li>
             </ul>
-            <p>Exit 2 outranks exit 1 when a run has both violations and an unevaluable file. […]</p>
-            <p>Silent under-evaluation remains open as #20. A broken or cross-origin iframe, or a strict <code>script-src 'none'</code> CSP, makes the engine resolve reporting zero violations with nothing recorded anywhere. […] The consumer-facing documentation now says exit 0 is nearly sufficient and names that gap, rather than claiming a guarantee the code does not make.</p>
+            <p>Exit code 2 outranks exit code 1 when a run has both violations and a file it could not evaluate.</p>
+            <p>Silent under-evaluation is still open. A broken or cross-origin iframe, or a strict script policy, can make the engine report zero violations with nothing recorded anywhere. The documentation for teams now says exit code 0 is nearly sufficient and names that gap, rather than claiming a guarantee the code does not make.</p>
           </blockquote>
-          <figcaption class="note">From DECISIONS.md, which is append-only. Old entries are never edited, only superseded. The […] marks are my cuts.</figcaption>
+          <figcaption class="note">Adapted from the decision log, which is append-only. Old entries are never edited, only superseded.</figcaption>
         </figure>
       </details>
 <!-- words -->

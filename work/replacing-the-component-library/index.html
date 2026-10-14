@@ -103,7 +103,7 @@ document.documentElement.classList.add('js');
     <section id="problem" class="flow" aria-labelledby="problem-h">
       <h2 id="problem-h" class="reveal">The problem</h2>
       <p id="customers" class="reveal">My first design system was a component library I built. It had 45 components, with React, Vue and Angular built simultaneously. I delivered it in four stages against a roadmap I presented at CTO level.</p>
-      <p class="reveal">Running the static gate against existing products found a median of 412 violations per product. Over six years, 6 products adopted it, to varying degrees, across three frameworks. Each of its components cost about 3.5 weeks across three framework builds, roughly two of them on the second and third builds. And nothing told an AI coding agent what on-brand or accessible meant.</p>
+      <p class="reveal">Running the static gate against existing products found hundreds of rule violations per product. Over six years, 6 products adopted it, to varying degrees, across three frameworks. Each of its components cost about 3.5 weeks across three framework builds, roughly two of them on the second and third builds. And nothing told an AI coding agent what on-brand or accessible meant.</p>
       <div class="panel lanes block reveal">
         <div class="card lane">
           <h3>Before</h3>
@@ -126,7 +126,7 @@ document.documentElement.classList.add('js');
           </ol>
         </div>
       </div>
-      <p class="note">Drift: static gate on the 12 pilot products, about 70% raw colour values and 25% off-scale spacing. Durations: delivery history of the first design system.</p>
+      <p class="note">Drift: static gate on the 12 pilot products, mostly raw colour values, then off-scale spacing. Durations: delivery history of the first design system.</p>
     </section>
 
     <section id="options" class="flow" aria-labelledby="options-h">
@@ -159,9 +159,10 @@ document.documentElement.classList.add('js');
         <summary>Read a spec excerpt on focus rings</summary>
         <figure data-artefact>
           <blockquote>
-            <p>Focus ring rendering. The light-mode ring is teal-700, not teal-500, because teal-500 fell to 2.74:1 on surface-emphasis; teal-700 clears 3:1 on background, surface, and surface-emphasis. Dark mode stays teal-glow. Every focus ring — the outline drawn in <code>--color-ring</code> on <code>:focus-visible</code> — declares <code>outline-offset: var(--focus-ring-offset)</code>, and the declaration does not depend on whether the element has a fill. […] Leaving <code>outline-offset</code> undeclared, which hands the gap to the browser's default, is off-contract, and so is 0, a negative offset, or any value other than <code>var(--focus-ring-offset)</code>, even on an element where a flush ring would clear 3:1. A flush ring fails WCAG 1.4.11 on every filled variant but one, and the worst case is total invisibility: in light mode ring and interactive-default are the same hex (#00697b), so a flush ring there is 1.00:1 — the indicator is exactly not there. Measured against each fill, light / dark: interactive-default 1.00 / 1.31, interactive-accent 1.00 / 1.51, destructive 1.21 / 5.44 […]. The offset places the ring on the canvas instead, where it measures 5.40-6.35:1 in light and 4.39-13.04:1 in dark across all four surfaces a focused control may sit on — so the offset rule is what carries 1.4.11, not the colour choice.</p>
+            <p>Focus ring rendering. Every focus ring, the outline drawn on <code>:focus-visible</code>, declares the spec's focus ring offset token, whether or not the element has a fill. Leaving the offset undeclared, which hands the gap to the browser's default, is off-contract. So is 0, a negative offset or any other value, even on an element where a flush ring would clear 3:1.</p>
+            <p>A flush ring fails WCAG 1.4.11 on filled variants. Measured against each fill, it reaches 1.31:1 on the default interactive fill and 1.51:1 on the accent fill. The offset places the ring on the canvas instead, where it measures 4.39 to 13.04:1 across all four surfaces a focused control may sit on. So the offset rule is what carries 1.4.11, not the colour choice.</p>
           </blockquote>
-          <figcaption class="note">From the spec's DESIGN.md, section "Focus ring rendering", spec v0.93.0. The two […] marks are my cuts from a longer paragraph.</figcaption>
+          <figcaption class="note">Adapted from the spec's DESIGN.md, section "Focus ring rendering", spec v0.93.0.</figcaption>
         </figure>
       </details>
 <!-- words -->
@@ -267,7 +268,7 @@ Exceptions applied (1) — auditable, deliberate opt-outs:
         <div class="card metric spot reveal"><span class="label">Time to first gate pass</span><span class="stat-figure grad-text">2.5 days</span><span class="note">Median across 9 pilots</span></div>
         <div class="card metric spot reveal" style="--i:1"><span class="label">Screens built in pilots</span><span class="stat-figure grad-text" data-count="144">144</span><span class="note">12 per product across the 12 pilot products</span></div>
         <div class="card metric spot reveal" style="--i:2"><span class="label">First-run gate pass rate</span><span class="stat-figure grad-text" data-count="71" data-suffix="%">71%</span><span class="note">Over 186 pilot builds, mostly failing on spacing</span></div>
-        <div class="card metric spot reveal"><span class="label">Drift on governed files</span><span class="stat-figure grad-text">Zero</span><span class="note">Median drift across whole codebases of the 12 pilot products: 260, down from the baseline in The problem</span></div>
+        <div class="card metric spot reveal"><span class="label">Drift on governed files</span><span class="stat-figure grad-text">Zero</span><span class="note">Drift across whole codebases of the 12 pilot products is about a third lower than the baseline in The problem</span></div>
         <div class="card metric spot reveal" style="--i:1"><span class="label">AA failures blocked before merge</span><span class="stat-figure grad-text" data-count="117">117</span><span class="note">Since July 2026</span></div>
         <div class="card metric spot reveal" style="--i:2"><span class="label">Critical fix to every adopter</span><span class="stat-figure grad-text">6 days</span><span class="note">Under 1 working day to tag, 6 working days to reach all three products</span></div>
       </div>

@@ -349,7 +349,7 @@ Matt reviewed v2 live and found it too quiet. It read like a blog, not a portfol
 - Baseline: `docs/audit-baseline-v3.json`, from `scripts/audit.js` (brief 1 script with the brief 2 checks) on all five pages at 1444 × 862, 390 × 844 and 320 × 568, with "Show the spec" off and on.
 - Baseline result: 7 or fewer sizes, Atkinson families only, `small` empty, `hScroll` false, no middle dots, arrows or dashes outside artefacts. `lowContrast` lists only the ghost button demo.
 - The employer permission line no longer appears on any page. The footer that held it was removed on 13 October.
-- The £94k saving survives only in the CV.
+- The money saving figure survives only in the CV.
 
 ### Phase 0 answers
 
