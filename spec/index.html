@@ -42,9 +42,11 @@ document.documentElement.classList.add('js');
 <!-- /build:header -->
 
 <main id="main" tabindex="-1">
+<div class="band">
 <div class="article-hero page" data-spec="space" data-spec-prop="padding-top" data-spec-priority="2">
-  <h1 class="article-title" data-spec="type" data-spec-priority="1">This site's spec</h1>
+  <h1 class="article-title reveal blur" data-spec="type" data-spec-priority="1">This site's spec</h1>
   <p class="article-lede" data-spec="space" data-spec-prop="margin-top" data-spec-priority="1">Every value on this site comes from one token file. The same file draws the "Show the spec" annotations and this page, so the three can't drift apart.</p>
+</div>
 </div>
 <div class="article-body no-contents page">
   <div class="article-main">
@@ -84,9 +86,11 @@ document.documentElement.classList.add('js');
           <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-interactive)"></span><code>--color-interactive</code></th><td><code>--teal-400</code></td><td>Links, buttons, focus and selected states</td></tr>
           <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-on-interactive)"></span><code>--color-on-interactive</code></th><td><code>--navy-900</code></td><td>Text on teal, violet and pink fills</td></tr>
           <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-hairline)"></span><code>--color-hairline</code></th><td><code>--navy-700</code></td><td>1px borders and separators</td></tr>
-          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-annotation)"></span><code>--color-annotation</code></th><td><code>--pink-400</code></td><td>"Show the spec" annotations. The only standalone use of pink</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-annotation)"></span><code>--color-annotation</code></th><td><code>--pink-400</code></td><td>"Show the spec" annotations</td></tr>
           <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-annotation-component)"></span><code>--color-annotation-component</code></th><td><code>--violet-400</code></td><td>Component name tags in "Show the spec"</td></tr>
           <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-accent)"></span><code>--color-accent</code></th><td><code>--blue-400</code></td><td>File names and keys in code, secondary labels</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-accent-pink)"></span><code>--color-accent-pink</code></th><td><code>--pink-400</code></td><td>Accent text, pills and the brand's warm end</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-accent-violet)"></span><code>--color-accent-violet</code></th><td><code>--violet-400</code></td><td>Accent text and headings</td></tr>
           <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-danger)"></span><code>--color-danger</code></th><td><code>--orange-400</code></td><td>Failure states: "Fails AA" and gate FAIL lines</td></tr>
           <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-brand-start)"></span><code>--color-brand-start</code></th><td><code>--teal-400</code></td><td>Brand gradient, first stop</td></tr>
           <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-brand-middle)"></span><code>--color-brand-middle</code></th><td><code>--blue-400</code></td><td>Brand gradient, middle stop</td></tr>
@@ -122,6 +126,10 @@ document.documentElement.classList.add('js');
           <tr><th scope="row"><code>danger</code> on <code>surface-raised</code></th><td>6.17:1</td><td>Text, 4.5:1</td></tr>
           <tr><th scope="row"><code>danger</code> on <code>surface-deep</code></th><td>7.52:1</td><td>Text, 4.5:1</td></tr>
           <tr><th scope="row"><code>interactive</code> on <code>hairline</code></th><td>5.20:1</td><td>Large text and UI, 3:1</td></tr>
+          <tr><th scope="row"><code>accent-pink</code> on <code>surface</code></th><td>7.04:1</td><td>Text, 4.5:1</td></tr>
+          <tr><th scope="row"><code>accent-pink</code> on <code>surface-raised</code></th><td>6.20:1</td><td>Text, 4.5:1</td></tr>
+          <tr><th scope="row"><code>accent-violet</code> on <code>surface</code></th><td>6.65:1</td><td>Text, 4.5:1</td></tr>
+          <tr><th scope="row"><code>accent-violet</code> on <code>surface-raised</code></th><td>5.87:1</td><td>Text, 4.5:1</td></tr>
           </tbody>
         </table>
       </div>
@@ -196,30 +204,38 @@ document.documentElement.classList.add('js');
 
     <section id="gradients" class="flow" aria-labelledby="gradients-h">
       <h2 id="gradients-h">Gradient and pattern</h2>
-      <p>The brand gradient appears only where the brand is the subject, in the AI disclosure recreations, and as the 2px rule at the top of the header. No text sits on it.</p>
+      <p>The brand sweeps from teal through blue to pink. It runs along the top of the header, borders the chosen cards and colours one phrase per headline. Every stop clears 3:1 against navy, so gradient type stays readable as large text. Soft aurora glows sit behind the navy bands and run the length of each page.</p>
       <ul class="spec-list">
         <li class="spec-gradient"><span style="background:var(--gradient-brand)"></span><code>--gradient-brand</code><span class="spec-note">Brand sweep: teal, blue, pink. Used where the brand is the subject, and as the header rule</span></li>
+        <li class="spec-gradient"><span style="background:var(--gradient-text)"></span><code>--gradient-text</code><span class="spec-note">Gradient type. Every stop clears 3:1 for large text on navy</span></li>
+        <li class="spec-gradient"><span style="background:var(--gradient-aurora)"></span><code>--gradient-aurora</code><span class="spec-note">Drifting glow behind navy bands</span></li>
+        <li class="spec-gradient"><span style="background:var(--gradient-surface-glow)"></span><code>--gradient-surface-glow</code><span class="spec-note">Faint glow on page-surface panels</span></li>
+        <li class="spec-gradient"><span style="background:var(--gradient-page-glow)"></span><code>--gradient-page-glow</code><span class="spec-note">Faint glows spread down the whole page, so sections flow into each other</span></li>
         <li class="spec-gradient"><span class="spec-pattern" style="background:var(--pattern-spec-grid)"></span><code>--pattern-spec-grid</code><span class="spec-note">The grid behind "Show the spec": an 8px baseline and 48px columns</span></li>
       </ul>
     </section>
 
     <section id="elevation" class="flow" aria-labelledby="elevation-h">
       <h2 id="elevation-h">Elevation and borders</h2>
-      <p>One shadow, <code>--shadow-overlay</code>, lifts the menu and contents sheets above the page. Everything else sits flat, and a 1px <code>--color-hairline</code> border separates kinds of content.</p>
-      <div class="spec-shadows"><div class="spec-shadow" style="box-shadow:var(--shadow-overlay)"><code>--shadow-overlay</code></div></div>
+      <p>Three shadows do three jobs. <code>--shadow-overlay</code> lifts the menu and contents sheets, <code>--shadow-card</code> lifts a card you point at, and <code>--shadow-glow</code> marks the one action or piece of work that matters most. A 1px <code>--color-hairline</code> border separates kinds of content.</p>
+      <div class="spec-shadows"><div class="spec-shadow" style="box-shadow:var(--shadow-overlay)"><code>--shadow-overlay</code></div><div class="spec-shadow" style="box-shadow:var(--shadow-card)"><code>--shadow-card</code></div><div class="spec-shadow" style="box-shadow:var(--shadow-glow)"><code>--shadow-glow</code></div></div>
     </section>
 
     <section id="motion" class="flow" aria-labelledby="motion-h">
       <h2 id="motion-h">Motion</h2>
-      <p>Motion happens when you act. The spec fades in and its measurements draw top to bottom; menus and the contents sheet open and close. With reduced motion set, every duration becomes 0ms.</p>
+      <p>Motion adds a little joy without getting in the way of reading. Aurora glows drift slowly, headlines sharpen into focus, sections ease in as they arrive and figures count up once. "Show the spec" fades in a grid, then draws each measurement top to bottom. With reduced motion set, every duration becomes 0ms and nothing moves.</p>
       <div class="table-scroll" tabindex="0" role="region" aria-label="Motion tokens">
         <table>
           <thead><tr><th scope="col">Token</th><th scope="col">Value</th><th scope="col">Use</th></tr></thead>
           <tbody>
-          <tr><th scope="row"><code>--motion-fast</code></th><td><code>200ms</code></td><td>Toggles, the menu and contents sheets, the spec fade and the resize highlight</td></tr>
-          <tr><th scope="row"><code>--motion-draw</code></th><td><code>600ms</code></td><td>"Show the spec" measurements drawing in</td></tr>
-          <tr><th scope="row"><code>--motion-stagger</code></th><td><code>45ms</code></td><td>Delay between one annotation and the next, top to bottom</td></tr>
+          <tr><th scope="row"><code>--motion-fast</code></th><td><code>200ms</code></td><td>Hover, toggles, the menu and contents sheets, the spec reveal and the resize highlight</td></tr>
+          <tr><th scope="row"><code>--motion-medium</code></th><td><code>400ms</code></td><td>Card lift and bars</td></tr>
+          <tr><th scope="row"><code>--motion-reveal</code></th><td><code>700ms</code></td><td>Sections easing in as they scroll into view</td></tr>
+          <tr><th scope="row"><code>--motion-count</code></th><td><code>1400ms</code></td><td>Figures counting up</td></tr>
+          <tr><th scope="row"><code>--motion-ambient</code></th><td><code>24s</code></td><td>The slow drift of the aurora glow</td></tr>
           <tr><th scope="row"><code>--motion-ease</code></th><td><code>cubic-bezier(0.2, 0.8, 0.2, 1)</code></td><td>One easing curve for everything</td></tr>
+          <tr><th scope="row"><code>--motion-draw</code></th><td><code>600ms</code></td><td>"Show the spec" lines and outlines drawing in</td></tr>
+          <tr><th scope="row"><code>--motion-stagger</code></th><td><code>45ms</code></td><td>Delay between one annotation and the next</td></tr>
           </tbody>
         </table>
       </div>
@@ -243,7 +259,7 @@ document.documentElement.classList.add('js');
         <li><a href="/spec/">Read this site's spec</a></li>
         <li><a href="/changelog/">Changelog</a></li>
       </ul>
-      <p>Site version 3, updated 14 October 2026</p>
+      <p>Site version 4, updated 14 October 2026</p>
     </div>
   </div>
 </footer>

@@ -183,7 +183,7 @@
       g.parts.push({ type: "space", area: area, line: line });
       g.token = t ? t.name : null;
       g.key = prop;
-      g.label = { text: (t ? t.name : "untokenised") + ": " + px + "px", line: line };
+      g.label = { text: (t ? t.name : "untokenised") + ": " + px + "px", count: { name: t ? t.name : "untokenised", px: px }, line: line };
     } else if (kind === "radius") {
       var r = cs.borderTopLeftRadius, rt = find.radius(r);
       g.ok = !!rt;
@@ -312,17 +312,20 @@
     groups.forEach(function (g) {
       var group = piece("spec-g");
       g.node = group;
+      g.counters = [];
       g.parts.forEach(function (p) {
         if (p.type === "frame") {
           var f = piece("sp-frame", toDoc(p.box), group);
           ["tl", "tr", "bl", "br"].forEach(function (k) { piece("sp-handle " + k, null, f); });
           var tag = piece("sp-tag", null, group);
-          tag.textContent = p.name;
+          tag.textContent = "◇ " + p.name;
           if (!tryPlace(tag, [{ left: p.box.left, top: p.box.top - tag.offsetHeight - 6 }, { left: p.box.right - tag.offsetWidth, top: p.box.top - tag.offsetHeight - 6 }, { left: p.box.left, top: p.box.top + 6 }], g)) group.removeChild(tag);
           var dims = piece("sp-dims", null, group);
           var W = Math.round(p.box.width), H = Math.round(p.box.height);
           dims.textContent = W + " × " + H;
-          if (!tryPlace(dims, [{ left: p.box.left + p.box.width / 2 - dims.offsetWidth / 2, top: p.box.bottom + 6 }, { left: p.box.right - dims.offsetWidth, top: p.box.bottom - dims.offsetHeight - 6 }], g)) group.removeChild(dims);
+          if (tryPlace(dims, [{ left: p.box.left + p.box.width / 2 - dims.offsetWidth / 2, top: p.box.bottom + 6 }, { left: p.box.right - dims.offsetWidth, top: p.box.bottom - dims.offsetHeight - 6 }], g)) {
+            g.counters.push({ node: dims, fmt: function (k) { return Math.round(W * k) + " × " + Math.round(H * k); } });
+          } else group.removeChild(dims);
         } else if (p.type === "space") {
           piece("sp-hatch", toDoc(p.area), group);
           var L = p.line;
@@ -365,6 +368,10 @@
         for (var i = 0; i < spots.length && !spotOk; i++) spotOk = tryPlace(lab, [spots[i]], g, !!spots[i].fit);
         if (!spotOk) group.removeChild(lab);
         else g.labelNode = lab;
+        if (spotOk && g.label.count && g.ok) {
+          var C = g.label.count;
+          g.counters.push({ node: lab, fmt: function (k) { return C.name + ": " + Math.round(C.px * k) + "px"; } });
+        }
       }
       if (!group.children.length) { layer.removeChild(group); return; }
       shown++;
@@ -376,15 +383,63 @@
     return groups.filter(function (g) { return g.node && g.node.parentNode; });
   }
 
-  // Groups draw in document order, top to bottom, one stagger step apart.
+  // Choreography. A scan line sweeps the viewport and each group draws as the line reaches it.
+  // Groups further down draw when they scroll into view.
 
-  var live = [];
+  var scanMs = 1000, scanDelay = 250, groupIO = null, live = [];
+
+  function runCounters(g, delay) {
+    if (still) return;
+    g.counters.forEach(function (c) {
+      var t0 = null, final = c.node.textContent;
+      c.node.textContent = c.fmt(0);
+      var step = function (t) {
+        if (!specOn) return;
+        if (t0 === null) t0 = t + delay;
+        var k = Math.max(0, Math.min(1, (t - t0) / drawMs));
+        c.node.textContent = k >= 1 ? final : c.fmt(1 - Math.pow(1 - k, 3));
+        if (k < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    });
+  }
+
+  function reveal(g, delay) {
+    g.node.style.setProperty("--d", delay + "ms");
+    g.node.classList.add("on");
+    runCounters(g, delay);
+  }
+
+  function scan() {
+    if (still) return;
+    var line = document.createElement("span");
+    line.className = "sp-scan";
+    line.setAttribute("aria-hidden", "true");
+    line.style.setProperty("--scan", scanMs + "ms");
+    line.style.animationDelay = scanDelay + "ms";
+    document.body.appendChild(line);
+    setTimeout(function () { if (line.parentNode) line.parentNode.removeChild(line); }, scanDelay + scanMs + 400);
+  }
 
   function choreograph(instant) {
-    live.slice().sort(function (x, y) { return x.top - y.top; }).forEach(function (g, i) {
-      g.node.style.setProperty("--d", instant ? "0ms" : i * stagger + "ms");
-      g.node.classList.add("on");
+    if (groupIO) { groupIO.disconnect(); groupIO = null; }
+    var vh = window.innerHeight;
+    if (instant || still) { live.forEach(function (g) { g.node.classList.add("on"); }); return; }
+    var later = [];
+    live.forEach(function (g) {
+      if (g.top < vh) reveal(g, scanDelay + Math.max(0, g.top) / vh * scanMs);
+      else later.push(g);
     });
+    if (!later.length || !("IntersectionObserver" in window)) { later.forEach(function (g) { reveal(g, 0); }); return; }
+    groupIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        groupIO.unobserve(e.target);
+        var g = later.filter(function (x) { return x.node === e.target.parentNode; })[0];
+        if (g) reveal(g, 80);
+      });
+    }, { rootMargin: "0px 0px -10% 0px" });
+    later.forEach(function (g) { if (g.node.firstChild) groupIO.observe(g.node.firstChild); });
   }
 
   // When a breakpoint changes a spacing step, the changed label says what it was.
@@ -410,20 +465,36 @@
   function setSpec(on) {
     specOn = on;
     specBtn.setAttribute("aria-pressed", on);
-    specBtn.textContent = on ? "Hide the spec" : "Show the spec";
+    specBtn.lastChild.textContent = on ? "Hide the spec" : "Show the spec";
     clearTimeout(hideTimer);
     if (on) {
+      if (layer) layer.className = "spec-layer";
+
+      // Measure the final layout: finish every reveal and drop any tilt first.
+
+      root.classList.add("spec-measure");
+      [].forEach.call(document.querySelectorAll(".reveal, .typed, .funnel-bars"), function (el) { el.classList.add("in"); });
+      [].forEach.call(document.querySelectorAll("[data-tilt]"), function (el) { el.style.transform = ""; });
+      root.getBoundingClientRect();
       live = draw();
       lastSpace = new Map();
       markChanges();
+      requestAnimationFrame(function () { root.classList.remove("spec-measure"); });
       layer.getBoundingClientRect();
-      layer.classList.add("is-on");
-      choreograph(still);
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          if (!specOn) return;
+          layer.classList.add("is-on");
+          scan();
+          choreograph(false);
+        });
+      });
       specStatus.textContent = "Showing " + live.length + " spec annotations. Press Escape to hide.";
     } else {
+      if (groupIO) { groupIO.disconnect(); groupIO = null; }
       if (layer) {
-        layer.classList.remove("is-on");
-        hideTimer = setTimeout(function () { if (!specOn) layer.textContent = ""; }, parseFloat(rootStyle.getPropertyValue("--motion-fast")) || 0);
+        layer.classList.add("is-leaving");
+        hideTimer = setTimeout(function () { if (!specOn) { layer.textContent = ""; layer.className = "spec-layer"; } }, still ? 0 : 360);
       }
       specStatus.textContent = "";
     }
@@ -545,6 +616,114 @@
         setters.forEach(function (x) { x.setAttribute("aria-pressed", x === b); });
       });
     });
+  }
+
+  // Motion: reveal on scroll, count-up figures, typed windows and funnel bars.
+  // With reduced motion, everything shows in its final state at once.
+
+  var countUp = function (el) {
+    var end = +el.getAttribute("data-count"), suffix = el.getAttribute("data-suffix") || "";
+    if (still) return;
+    var t0 = null, dur = 1400;
+    var step = function (t) {
+      if (t0 === null) t0 = t;
+      var k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3);
+      el.textContent = Math.round(end * e) + suffix;
+      if (k < 1) requestAnimationFrame(step);
+    };
+    el.textContent = "0" + suffix;
+    requestAnimationFrame(step);
+  };
+  var showing = function (el) {
+    el.classList.add("in");
+    [].forEach.call(el.querySelectorAll ? el.querySelectorAll("[data-count]") : [], countUp);
+    if (el.hasAttribute && el.hasAttribute("data-count")) countUp(el);
+  };
+  var animated = [].slice.call(document.querySelectorAll(".reveal, .typed, .funnel-bars"));
+  if (still || !("IntersectionObserver" in window)) {
+    animated.forEach(function (el) { el.classList.add("in"); });
+  } else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        io.unobserve(e.target);
+        showing(e.target);
+      });
+    }, { threshold: 0.15, rootMargin: "0px 0px -5% 0px" });
+    animated.forEach(function (el) { io.observe(el); });
+  }
+
+  // Spotlight that follows the pointer across cards.
+
+  document.addEventListener("pointermove", function (e) {
+    var card = e.target.closest && e.target.closest(".spot");
+    if (!card) return;
+    var r = card.getBoundingClientRect();
+    card.style.setProperty("--mx", e.clientX - r.left + "px");
+    card.style.setProperty("--my", e.clientY - r.top + "px");
+  }, { passive: true });
+
+  // Tilt on the feature card, a few degrees towards the pointer.
+
+  if (!still) [].forEach.call(document.querySelectorAll("[data-tilt]"), function (el) {
+    el.addEventListener("pointermove", function (e) {
+      var r = el.getBoundingClientRect();
+      var x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
+      el.style.transform = "perspective(1400px) rotateX(" + (-y * 3).toFixed(2) + "deg) rotateY(" + (x * 4).toFixed(2) + "deg)";
+    });
+    el.addEventListener("pointerleave", function () { el.style.transform = ""; });
+  });
+
+  // The pink pill in the radius art follows the pointer to the nearest edge of its box.
+
+  var pills = [].slice.call(document.querySelectorAll(".art-radius"));
+  if (pills.length && !still) {
+    var pillState = pills.map(function (art) {
+      return { art: art, box: art.children[1], pill: art.children[2], x: 32, y: 12, tx: 32, ty: 12 };
+    });
+    var animating = false;
+    var tick = function () {
+      animating = false;
+      pillState.forEach(function (p) {
+        p.x += (p.tx - p.x) * 0.14;
+        p.y += (p.ty - p.y) * 0.14;
+        p.pill.style.setProperty("--px", p.x.toFixed(2) + "px");
+        p.pill.style.setProperty("--py", p.y.toFixed(2) + "px");
+        if (Math.abs(p.tx - p.x) > 0.2 || Math.abs(p.ty - p.y) > 0.2) animating = true;
+      });
+      if (animating) requestAnimationFrame(tick);
+    };
+    document.addEventListener("pointermove", function (e) {
+      pillState.forEach(function (p) {
+        var b = p.box.getBoundingClientRect(), pr = p.pill.getBoundingClientRect();
+        var cx = b.left + b.width / 2, cy = b.top + b.height / 2;
+        var dx = e.clientX - cx, dy = e.clientY - cy, len = Math.hypot(dx, dy) || 1;
+        var ux = dx / len, uy = dy / len, pad = 6;
+        var ax = Math.max(0, (b.width - pr.width) / 2 - pad), ay = Math.max(0, (b.height - pr.height) / 2 - pad);
+        var t = Math.min(ux ? ax / Math.abs(ux) : Infinity, uy ? ay / Math.abs(uy) : Infinity);
+        p.tx = ux * t;
+        p.ty = uy * t;
+      });
+      if (!animating) { animating = true; requestAnimationFrame(tick); }
+    }, { passive: true });
+  }
+
+  // Reading progress in the contents list.
+
+  var progress = document.querySelector(".contents-progress");
+  var article = document.querySelector(".article-main");
+  if (progress && article) {
+    var queuedP = false;
+    var setProgress = function () {
+      queuedP = false;
+      var r = article.getBoundingClientRect();
+      var k = Math.max(0, Math.min(1, -r.top / Math.max(1, r.height - window.innerHeight)));
+      progress.style.setProperty("--progress", k.toFixed(3));
+    };
+    window.addEventListener("scroll", function () {
+      if (!queuedP) { queuedP = true; requestAnimationFrame(setProgress); }
+    }, { passive: true });
+    setProgress();
   }
 
   // Try the gate. Each checkbox applies one real kind of violation to the card,

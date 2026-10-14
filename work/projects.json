@@ -17,7 +17,8 @@
     "url": "/work/visual-rules-for-agents/",
     "file": "work/visual-rules-for-agents/index.html",
     "readTime": 3,
-    "shortTitle": "Visual rules an AI agent can follow"
+    "shortTitle": "Visual rules an AI agent can follow",
+    "art": "radius"
   },
   {
     "title": "Running a design system with 15 agents",
@@ -27,6 +28,7 @@
     "url": "/work/design-system-with-agents/",
     "file": "work/design-system-with-agents/index.html",
     "readTime": 2,
-    "shortTitle": "Running a design system with 15 agents"
+    "shortTitle": "Running a design system with 15 agents",
+    "art": "agents"
   }
 ]

@@ -34,9 +34,13 @@
   --radius-pill: 999px;
   --radius-circle: 50%;
   --motion-fast: 200ms;
+  --motion-medium: 400ms;
+  --motion-reveal: 700ms;
+  --motion-count: 1400ms;
+  --motion-ambient: 24s;
+  --motion-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
   --motion-draw: 600ms;
   --motion-stagger: 45ms;
-  --motion-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
   --size-page: 1200px;
   --size-measure: 68ch;
   --size-target: 44px;
@@ -78,13 +82,21 @@
   --color-annotation: var(--pink-400);
   --color-annotation-component: var(--violet-400);
   --color-accent: var(--blue-400);
+  --color-accent-pink: var(--pink-400);
+  --color-accent-violet: var(--violet-400);
   --color-danger: var(--orange-400);
   --color-brand-start: var(--teal-400);
   --color-brand-middle: var(--blue-400);
   --color-brand-end: var(--pink-400);
   --gradient-brand: linear-gradient(90deg, var(--color-brand-start), var(--color-brand-middle) 50%, var(--color-brand-end));
+  --gradient-text: linear-gradient(90deg, var(--color-brand-start), var(--color-brand-middle) 50%, var(--color-brand-end));
+  --gradient-aurora: radial-gradient(40% 60% at 85% 10%, rgba(46, 196, 182, 0.32), transparent 70%), radial-gradient(35% 55% at 10% 90%, rgba(124, 155, 255, 0.26), transparent 70%), radial-gradient(30% 45% at 55% 50%, rgba(255, 111, 177, 0.16), transparent 70%);
+  --gradient-surface-glow: radial-gradient(60% 80% at 100% 0%, rgba(46, 196, 182, 0.12), transparent 60%), radial-gradient(50% 70% at 0% 100%, rgba(124, 155, 255, 0.10), transparent 60%);
+  --gradient-page-glow: radial-gradient(50% 18% at 0% 30%, rgba(124, 155, 255, 0.10), transparent 70%), radial-gradient(45% 16% at 100% 52%, rgba(46, 196, 182, 0.09), transparent 70%), radial-gradient(50% 18% at 5% 78%, rgba(255, 111, 177, 0.07), transparent 70%), radial-gradient(40% 14% at 95% 95%, rgba(124, 155, 255, 0.08), transparent 70%);
   --pattern-spec-grid: repeating-linear-gradient(0deg, color-mix(in srgb, var(--color-annotation) 7%, transparent) 0 1px, transparent 1px 8px), repeating-linear-gradient(90deg, color-mix(in srgb, var(--color-annotation) 5%, transparent) 0 1px, transparent 1px 48px);
   --shadow-overlay: 0 12px 32px rgba(0, 0, 0, 0.5);
+  --shadow-card: 0 18px 40px rgba(0, 0, 0, 0.35);
+  --shadow-glow: 0 0 0 1px rgba(46, 196, 182, 0.35), 0 12px 40px rgba(46, 196, 182, 0.25);
   --demo-navy: var(--navy-900);
   --demo-dark-surface: #1A2A45;
   --demo-dark-text: #E6EDF6;
@@ -137,6 +149,10 @@
 @media (prefers-reduced-motion: reduce) {
   :root {
     --motion-fast: 0ms;
+    --motion-medium: 0ms;
+    --motion-reveal: 0ms;
+    --motion-count: 0ms;
+    --motion-ambient: 0ms;
     --motion-draw: 0ms;
     --motion-stagger: 0ms;
   }

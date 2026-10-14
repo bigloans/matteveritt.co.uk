@@ -1,5 +1,10 @@
 [
   {
+    "version": 4,
+    "date": "2026-10-14",
+    "notes": "The gradients, navy bands and motion are back, after version 3 felt too flat. The version 3 content, header, footer and gate demo stay."
+  },
+  {
     "version": 3,
     "date": "2026-10-14",
     "notes": "A calmer site. Decorative motion is gone, colour tokens are now primitives and roles, and two demos let you try the gate and follow a bug through the agent harness."

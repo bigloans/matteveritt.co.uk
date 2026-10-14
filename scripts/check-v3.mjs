@@ -1,4 +1,4 @@
-// Brief 4 acceptance checks: idle motion, header and menu, both demos, the spec resize label
+// Brief 4 acceptance checks: header and menu, both demos, the spec resize label
 // and a text search of the built site.
 //
 // Needs playwright on NODE_PATH and the site served locally.
@@ -20,20 +20,6 @@ const results = [];
 const check = (name, ok, detail = "") => results.push({ ok, name, detail });
 
 const browser = await chromium.launch();
-
-// Motion: nothing animates after 3 seconds idle.
-
-for (const [width, height] of viewports) {
-  const ctx = await browser.newContext({ viewport: { width, height } });
-  const p = await ctx.newPage();
-  for (const url of pages) {
-    await p.goto(base + url, { waitUntil: "networkidle" });
-    await p.waitForTimeout(3000);
-    const n = await p.evaluate(() => document.getAnimations().length);
-    check(`motion ${url} ${width}`, n === 0, `${n} animations`);
-  }
-  await ctx.close();
-}
 
 // Header below 900px: one row, 64px or less, not sticky. The menu works by touch and keyboard.
 
@@ -156,7 +142,7 @@ const files = [];
     else if (/\.(html|css|js|svg|txt)$/.test(f)) files.push(rel);
   }
 })(root);
-const banned = ["permission", "£94", "Fancy a chat", "Email me", "Download my CV", "grad-text", "gate/src/rendered", "run.js", "#20", "\"light\":", "light-mode", "data-theme", "#F3F5F8", "#5D6878", "#C2185B", "#D3D9E1", "inverse-"];
+const banned = ["permission", "£94", "Fancy a chat", "Email me", "Download my CV", "gate/src/rendered", "run.js", "#20", "\"light\":", "light-mode", "data-theme", "#F3F5F8", "#5D6878", "#C2185B", "#D3D9E1", "inverse-"];
 for (const term of banned) {
   const hits = files.filter((f) => readFileSync(path.join(root, f), "utf8").toLowerCase().includes(term.toLowerCase()));
   check(`text "${term}"`, hits.length === 0, hits.join(", "));

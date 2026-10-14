@@ -166,8 +166,13 @@ const workFeature = `<h3 class="work-title"><a href="${feature.url}" data-spec="
         <p class="work-summary">${feature.summary}</p>
         <p class="meta-line" data-spec="color" data-spec-priority="3">${metaLine(feature)}</p>
         <div class="actions"><a class="btn btn-primary" href="${feature.url}">Read the case study</a></div>`;
+const art = {
+  radius: `<div class="read-art" aria-hidden="true"><div class="art-radius"><span></span><span></span><span></span></div></div>`,
+  agents: `<div class="read-art" aria-hidden="true"><div class="art-agents">${Array.from({ length: 15 }, (_, i) => `<i style="--d:${(i * 7) % 15}"></i>`).join("")}</div></div>`,
+};
 const workReads = reads
-  .map((p, i) => `<li class="read-entry"${i === 0 ? ' data-spec-component="Entry / Read" data-spec-priority="3"' : ""}>
+  .map((p, i) => `<li class="read-card card lift spot reveal" style="--i:${i}"${i === 0 ? ' data-spec-component="Card / Read" data-spec-priority="3"' : ""}>
+        ${art[p.art] || ""}
         <h3 class="read-title"><a href="${p.url}">${p.title}</a></h3>
         <p class="read-summary">${p.summary}</p>
         <p class="meta-line">${metaLine(p)}</p>
@@ -195,9 +200,15 @@ const heroExcerpt = (() => {
     `  ${k("space")}: [${tokens.space.join(", ")}]`,
     "}",
   ];
-  return `<figure class="hero-excerpt" data-spec-component="Code / Excerpt" data-spec-priority="2">
-      <div class="code-block" data-spec="radius" data-spec-priority="2"><pre tabindex="0" aria-label="tokens.json excerpt">${lines.join("\n")}</pre></div>
-      <figcaption>tokens.json, excerpt</figcaption>
+  const typed = lines.map((l, i) => `<span class="ln" style="--i:${i}">${l}${i === lines.length - 1 ? '<span class="caret"></span>' : ""}</span>`).join("");
+  return `<figure class="hero-visual reveal" style="--i:2">
+      <div class="window" data-spec="radius" data-spec-component="Window / Code" data-spec-priority="2">
+        <div class="window-bar" aria-hidden="true"><i></i><i></i><i></i><span>tokens.json</span></div>
+<pre class="typed" tabindex="0" aria-label="tokens.json excerpt">${typed}</pre>
+      </div>
+      <span class="float-chip pass" aria-hidden="true">✓ ${ratio(hexOf("color-interactive"), hexOf("color-surface")).toFixed(2)}:1, passes AA</span>
+      <span class="float-chip ai" aria-hidden="true"><i></i>AI-generated</span>
+      <figcaption>tokens.json, excerpt. Press "Show the spec" to see it on the page, or <a href="/spec/">read the full spec</a>.</figcaption>
     </figure>`;
 })();
 
@@ -302,7 +313,7 @@ function specBody() {
 
     <section id="gradients" class="flow" aria-labelledby="gradients-h">
       <h2 id="gradients-h">Gradient and pattern</h2>
-      <p>The brand gradient appears only where the brand is the subject, in the AI disclosure recreations, and as the 2px rule at the top of the header. No text sits on it.</p>
+      <p>The brand sweeps from teal through blue to pink. It runs along the top of the header, borders the chosen cards and colours one phrase per headline. Every stop clears 3:1 against navy, so gradient type stays readable as large text. Soft aurora glows sit behind the navy bands and run the length of each page.</p>
       <ul class="spec-list">
         ${Object.entries(tokens.gradient).map(([k, v]) => `<li class="spec-gradient"><span style="background:var(--gradient-${k})"></span><code>--gradient-${k}</code><span class="spec-note">${v.note}</span></li>`).join("\n        ")}
         ${Object.entries(tokens.pattern).map(([k, v]) => `<li class="spec-gradient"><span class="spec-pattern" style="background:var(--pattern-${k})"></span><code>--pattern-${k}</code><span class="spec-note">${v.note}</span></li>`).join("\n        ")}
@@ -311,13 +322,13 @@ function specBody() {
 
     <section id="elevation" class="flow" aria-labelledby="elevation-h">
       <h2 id="elevation-h">Elevation and borders</h2>
-      <p>One shadow, <code>--shadow-overlay</code>, lifts the menu and contents sheets above the page. Everything else sits flat, and a 1px <code>--color-hairline</code> border separates kinds of content.</p>
+      <p>Three shadows do three jobs. <code>--shadow-overlay</code> lifts the menu and contents sheets, <code>--shadow-card</code> lifts a card you point at, and <code>--shadow-glow</code> marks the one action or piece of work that matters most. A 1px <code>--color-hairline</code> border separates kinds of content.</p>
       <div class="spec-shadows">${Object.keys(tokens.shadow).map((k) => `<div class="spec-shadow" style="box-shadow:var(--shadow-${k})"><code>--shadow-${k}</code></div>`).join("")}</div>
     </section>
 
     <section id="motion" class="flow" aria-labelledby="motion-h">
       <h2 id="motion-h">Motion</h2>
-      <p>Motion happens when you act. The spec fades in and its measurements draw top to bottom; menus and the contents sheet open and close. With reduced motion set, every duration becomes 0ms.</p>
+      <p>Motion adds a little joy without getting in the way of reading. Aurora glows drift slowly, headlines sharpen into focus, sections ease in as they arrive and figures count up once. "Show the spec" fades in a grid, then draws each measurement top to bottom. With reduced motion set, every duration becomes 0ms and nothing moves.</p>
       ${table("Motion tokens", ["Token", "Value", "Use"], motionRows)}
     </section>`;
 }

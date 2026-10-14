@@ -388,3 +388,17 @@ Matt reviewed v2 live and found it too quiet. It read like a blog, not a portfol
 | Boxed icons above the three "What I built" cards repeated each heading and said nothing | Removed, with their styles |
 | The gate demo card stretched to the panel's height, leaving a gap above the button | The card's rows now align to the top |
 | The browser's default h5 margin gave the demo card heading 30.06px of off-scale spacing | h5 joined the margin reset |
+
+## Version 4: the v4 look with v3 content (14 October 2026)
+
+Matt reviewed brief 4's flat version live and preferred the 13 October look. The flat backgrounds made the spacing feel worse.
+
+| Brought back from the 13 October look | Kept from brief 4 |
+| --- | --- |
+| Aurora bands, page glows, gradient text, glow borders and the orbiting feature border | The 2px gradient bar, nav on the right and the name without a dot |
+| Card lift, the pointer spotlight, tilt, scroll reveals, count-up figures and the typed excerpt | The "Break a rule" gate demo, now in terminal chrome, and the "Follow a bug" demo |
+| The landing stat row, floating chips, window chrome and read card art | All brief 4 content: redactions, About, team history, EU AI Act text, contact without calls to action, footer and changelog |
+| Pink and violet accents, through new `accent-pink` and `accent-violet` roles | Primitives and roles, the danger role and the generated token excerpt |
+
+- The pass chip's ratio is now computed from the tokens, at 8.35:1.
+- `scripts/check-v3.mjs` no longer checks idle motion or `grad-text`, because the motion is back by choice.

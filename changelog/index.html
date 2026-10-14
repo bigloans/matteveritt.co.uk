@@ -42,14 +42,21 @@ document.documentElement.classList.add('js');
 <!-- /build:header -->
 
 <main id="main" tabindex="-1">
+<div class="band">
 <div class="article-hero page" data-spec="space" data-spec-prop="padding-top" data-spec-priority="2">
-  <h1 class="article-title" data-spec="type" data-spec-priority="1">Changelog</h1>
+  <h1 class="article-title reveal blur" data-spec="type" data-spec-priority="1">Changelog</h1>
   <p class="article-lede" data-spec="space" data-spec-prop="margin-top" data-spec-priority="1">Each release of this site, newest first.</p>
+</div>
 </div>
 <div class="article-body no-contents page">
   <div class="article-main">
 <!-- build:changelog -->
 <ol class="changelog" reversed>
+      <li class="changelog-entry" data-spec-component="Entry / Release" data-spec-priority="3">
+        <h2>Version 4</h2>
+        <p class="meta-line"><time datetime="2026-10-14">14 October 2026</time></p>
+        <p>The gradients, navy bands and motion are back, after version 3 felt too flat. The version 3 content, header, footer and gate demo stay.</p>
+      </li>
       <li class="changelog-entry" data-spec-component="Entry / Release" data-spec-priority="3">
         <h2>Version 3</h2>
         <p class="meta-line"><time datetime="2026-10-14">14 October 2026</time></p>
@@ -85,7 +92,7 @@ document.documentElement.classList.add('js');
         <li><a href="/spec/">Read this site's spec</a></li>
         <li><a href="/changelog/">Changelog</a></li>
       </ul>
-      <p>Site version 3, updated 14 October 2026</p>
+      <p>Site version 4, updated 14 October 2026</p>
     </div>
   </div>
 </footer>
