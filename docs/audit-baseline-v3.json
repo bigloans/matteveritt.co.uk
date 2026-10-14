@@ -1,0 +1,1499 @@
+[
+  {
+    "url": "/",
+    "viewport": "1444x862",
+    "theme": "dark",
+    "spec": false,
+    "sizes": [
+      "14px",
+      "16px",
+      "18px",
+      "20px",
+      "28px",
+      "40px",
+      "64px"
+    ],
+    "spacing": [
+      "-12px",
+      "4px",
+      "8px",
+      "12px",
+      "16px",
+      "24px",
+      "32px",
+      "48px",
+      "64px",
+      "96px"
+    ],
+    "radii": [
+      "10px",
+      "16px",
+      "20px",
+      "50%",
+      "999px"
+    ],
+    "small": [],
+    "lowContrast": [],
+    "foldOK": "Timeline label not found",
+    "hScroll": false,
+    "caps": 0,
+    "middots": 0,
+    "arrows": 0,
+    "dashes": 0,
+    "words": 460,
+    "fonts": [
+      "Atkinson Hyperlegible Next",
+      "Atkinson Hyperlegible Mono"
+    ],
+    "docH": 3321,
+    "specShown": 0,
+    "untokenised": 0,
+    "fold": true,
+    "contentsReachable": false
+  },
+  {
+    "url": "/",
+    "viewport": "1444x862",
+    "theme": "dark",
+    "spec": true,
+    "sizes": [
+      "14px",
+      "16px",
+      "18px",
+      "20px",
+      "28px",
+      "40px",
+      "64px"
+    ],
+    "spacing": [
+      "-12px",
+      "4px",
+      "8px",
+      "12px",
+      "16px",
+      "24px",
+      "32px",
+      "48px",
+      "64px",
+      "96px"
+    ],
+    "radii": [
+      "10px",
+      "16px",
+      "20px",
+      "50%",
+      "999px"
+    ],
+    "small": [],
+    "lowContrast": [],
+    "foldOK": "Timeline label not found",
+    "hScroll": false,
+    "caps": 0,
+    "middots": 0,
+    "arrows": 0,
+    "dashes": 0,
+    "words": 596,
+    "fonts": [
+      "Atkinson Hyperlegible Next",
+      "Atkinson Hyperlegible Mono"
+    ],
+    "docH": 3321,
+    "specShown": 20,
+    "untokenised": 0,
+    "fold": true,
+    "contentsReachable": false
+  },
+  {
+    "url": "/",
+    "viewport": "390x844",
+    "theme": "dark",
+    "spec": false,
+    "sizes": [
+      "14px",
+      "16px",
+      "18px",
+      "20px",
+      "28px",
+      "40px"
+    ],
+    "spacing": [
+      "-12px",
+      "4px",
+      "8px",
+      "12px",
+      "16px",
+      "24px",
+      "32px",
+      "48px",
+      "64px"
+    ],
+    "radii": [
+      "10px",
+      "16px",
+      "20px",
+      "50%",
+      "999px"
+    ],
+    "small": [],
+    "lowContrast": [],
+    "foldOK": "Timeline label not found",
+    "hScroll": false,
+    "caps": 0,
+    "middots": 0,
+    "arrows": 0,
+    "dashes": 0,
+    "words": 455,
+    "fonts": [
+      "Atkinson Hyperlegible Next",
+      "Atkinson Hyperlegible Mono"
+    ],
+    "docH": 5764,
+    "specShown": 0,
+    "untokenised": 0,
+    "fold": true,
+    "contentsReachable": false
+  },
+  {
+    "url": "/",
+    "viewport": "390x844",
+    "theme": "dark",
+    "spec": true,
+    "sizes": [
+      "14px",
+      "16px",
+      "18px",
+      "20px",
+      "28px",
+      "40px"
+    ],
+    "spacing": [
+      "-12px",
+      "4px",
+      "8px",
+      "12px",
+      "16px",
+      "24px",
+      "32px",
+      "48px",
+      "64px"
+    ],
+    "radii": [
+      "10px",
+      "16px",
+      "20px",
+      "50%",
+      "999px"
+    ],
+    "small": [],
+    "lowContrast": [],
+    "foldOK": "Timeline label not found",
+    "hScroll": false,
+    "caps": 0,
+    "middots": 0,
+    "arrows": 0,
+    "dashes": 0,
+    "words": 480,
+    "fonts": [
+      "Atkinson Hyperlegible Next",
+      "Atkinson Hyperlegible Mono"
+    ],
+    "docH": 5764,
+    "specShown": 4,
+    "untokenised": 0,
+    "fold": true,
+    "contentsReachable": false
+  },
+  {
+    "url": "/",
+    "viewport": "320x568",
+    "theme": "dark",
+    "spec": false,
+    "sizes": [
+      "14px",
+      "16px",
+      "18px",
+      "20px",
+      "28px",
+      "40px"
+    ],
+    "spacing": [
+      "-12px",
+      "4px",
+      "8px",
+      "12px",
+      "16px",
+      "24px",
+      "32px",
+      "48px",
+      "64px"
+    ],
+    "radii": [
+      "10px",
+      "16px",
+      "20px",
+      "50%",
+      "999px"
+    ],
+    "small": [],
+    "lowContrast": [],
+    "foldOK": "Timeline label not found",
+    "hScroll": false,
+    "caps": 0,
+    "middots": 0,
+    "arrows": 0,
+    "dashes": 0,
+    "words": 455,
+    "fonts": [
+      "Atkinson Hyperlegible Next",
+      "Atkinson Hyperlegible Mono"
+    ],
+    "docH": 6523,
+    "specShown": 0,
+    "untokenised": 0,
+    "fold": true,
+    "contentsReachable": false
+  },
+  {
+    "url": "/",
+    "viewport": "320x568",
+    "theme": "dark",
+    "spec": true,
+    "sizes": [
+      "14px",
+      "16px",
+      "18px",
+      "20px",
+      "28px",
+      "40px"
+    ],
+    "spacing": [
+      "-12px",
+      "4px",
+      "8px",
+      "12px",
+      "16px",
+      "24px",
+      "32px",
+      "48px",
+      "64px"
+    ],
+    "radii": [
+      "10px",
+      "16px",
+      "20px",
+      "50%",
+      "999px"
+    ],
+    "small": [],
+    "lowContrast": [],
+    "foldOK": "Timeline label not found",
+    "hScroll": false,
+    "caps": 0,
+    "middots": 0,
+    "arrows": 0,
+    "dashes": 0,
+    "words": 480,
+    "fonts": [
+      "Atkinson Hyperlegible Next",
+      "Atkinson Hyperlegible Mono"
+    ],
+    "docH": 6519,
+    "specShown": 4,
+    "untokenised": 0,
+    "fold": true,
+    "contentsReachable": false
+  },
+  {
+    "url": "/work/replacing-the-component-library/",
+    "viewport": "1444x862",
+    "theme": "dark",
+    "spec": false,
+    "sizes": [
+      "14px",
+      "16px",
+      "18px",
+      "20px",
+      "28px",
+      "40px",
+      "64px"
+    ],
+    "spacing": [
+      "4px",
+      "8px",
+      "12px",
+      "16px",
+      "24px",
+      "32px",
+      "48px",
+      "64px",
+      "96px"
+    ],
+    "radii": [
+      "10px",
+      "16px",
+      "20px",
+      "50%",
+      "999px"
+    ],
+    "small": [],
+    "lowContrast": [
+      "3.34:1 Ghost button",
+      "3.34:1 Ghost button"
+    ],
+    "foldOK": true,
+    "hScroll": false,
+    "caps": 0,
+    "middots": 0,
+    "arrows": 0,
+    "dashes": 0,
+    "words": 1651,
+    "fonts": [
+      "Atkinson Hyperlegible Next",
+      "Atkinson Hyperlegible Mono"
+    ],
+    "docH": 9383,
+    "specShown": 0,
+    "untokenised": 0,
+    "fold": true,
+    "contentsReachable": true
+  },
+  {
+    "url": "/work/replacing-the-component-library/",
+    "viewport": "1444x862",
+    "theme": "dark",
+    "spec": true,
+    "sizes": [
+      "14px",
+      "16px",
+      "18px",
+      "20px",
+      "28px",
+      "40px",
+      "64px"
+    ],
+    "spacing": [
+      "4px",
+      "8px",
+      "12px",
+      "16px",
+      "24px",
+      "32px",
+      "48px",
+      "64px",
+      "96px"
+    ],
+    "radii": [
+      "10px",
+      "16px",
+      "20px",
+      "50%",
+      "999px"
+    ],
+    "small": [],
+    "lowContrast": [
+      "3.34:1 Ghost button",
+      "3.34:1 Ghost button"
+    ],
+    "foldOK": true,
+    "hScroll": false,
+    "caps": 0,
+    "middots": 0,
+    "arrows": 0,
+    "dashes": 0,
+    "words": 1784,
+    "fonts": [
+      "Atkinson Hyperlegible Next",
+      "Atkinson Hyperlegible Mono"
+    ],
+    "docH": 9383,
+    "specShown": 8,
+    "untokenised": 0,
+    "fold": true,
+    "contentsReachable": true
+  },
+  {
+    "url": "/work/replacing-the-component-library/",
+    "viewport": "390x844",
+    "theme": "dark",
+    "spec": false,
+    "sizes": [
+      "14px",
+      "16px",
+      "18px",
+      "20px",
+      "28px",
+      "40px"
+    ],
+    "spacing": [
+      "4px",
+      "8px",
+      "12px",
+      "16px",
+      "24px",
+      "32px",
+      "48px",
+      "64px"
+    ],
+    "radii": [
+      "10px",
+      "16px",
+      "20px",
+      "50%",
+      "999px"
+    ],
+    "small": [],
+    "lowContrast": [
+      "3.34:1 Ghost button",
+      "3.34:1 Ghost button"
+    ],
+    "foldOK": false,
+    "hScroll": false,
+    "caps": 0,
+    "middots": 0,
+    "arrows": 0,
+    "dashes": 0,
+    "words": 1635,
+    "fonts": [
+      "Atkinson Hyperlegible Next",
+      "Atkinson Hyperlegible Mono"
+    ],
+    "docH": 13682,
+    "specShown": 0,
+    "untokenised": 0,
+    "fold": true,
+    "contentsReachable": true
+  },
+  {
+    "url": "/work/replacing-the-component-library/",
+    "viewport": "390x844",
+    "theme": "dark",
+    "spec": true,
+    "sizes": [
+      "14px",
+      "16px",
+      "18px",
+      "20px",
+      "28px",
+      "40px"
+    ],
+    "spacing": [
+      "4px",
+      "8px",
+      "12px",
+      "16px",
+      "24px",
+      "32px",
+      "48px",
+      "64px"
+    ],
+    "radii": [
+      "10px",
+      "16px",
+      "20px",
+      "50%",
+      "999px"
+    ],
+    "small": [],
+    "lowContrast": [
+      "3.34:1 Ghost button",
+      "3.34:1 Ghost button"
+    ],
+    "foldOK": false,
+    "hScroll": false,
+    "caps": 0,
+    "middots": 0,
+    "arrows": 0,
+    "dashes": 0,
+    "words": 1651,
+    "fonts": [
+      "Atkinson Hyperlegible Next",
+      "Atkinson Hyperlegible Mono"
+    ],
+    "docH": 13682,
+    "specShown": 2,
+    "untokenised": 0,
+    "fold": true,
+    "contentsReachable": true
+  },
+  {
+    "url": "/work/replacing-the-component-library/",
+    "viewport": "320x568",
+    "theme": "dark",
+    "spec": false,
+    "sizes": [
+      "14px",
+      "16px",
+      "18px",
+      "20px",
+      "28px",
+      "40px"
+    ],
+    "spacing": [
+      "4px",
+      "8px",
+      "12px",
+      "16px",
+      "24px",
+      "32px",
+      "48px",
+      "64px"
+    ],
+    "radii": [
+      "10px",
+      "16px",
+      "20px",
+      "50%",
+      "999px"
+    ],
+    "small": [],
+    "lowContrast": [
+      "3.34:1 Ghost button",
+      "3.34:1 Ghost button"
+    ],
+    "foldOK": false,
+    "hScroll": false,
+    "caps": 0,
+    "middots": 0,
+    "arrows": 0,
+    "dashes": 0,
+    "words": 1635,
+    "fonts": [
+      "Atkinson Hyperlegible Next",
+      "Atkinson Hyperlegible Mono"
+    ],
+    "docH": 15734,
+    "specShown": 0,
+    "untokenised": 0,
+    "fold": false,
+    "contentsReachable": true
+  },
+  {
+    "url": "/work/replacing-the-component-library/",
+    "viewport": "320x568",
+    "theme": "dark",
+    "spec": true,
+    "sizes": [
+      "14px",
+      "16px",
+      "18px",
+      "20px",
+      "28px",
+      "40px"
+    ],
+    "spacing": [
+      "4px",
+      "8px",
+      "12px",
+      "16px",
+      "24px",
+      "32px",
+      "48px",
+      "64px"
+    ],
+    "radii": [
+      "10px",
+      "16px",
+      "20px",
+      "50%",
+      "999px"
+    ],
+    "small": [],
+    "lowContrast": [
+      "3.34:1 Ghost button",
+      "3.34:1 Ghost button"
+    ],
+    "foldOK": false,
+    "hScroll": false,
+    "caps": 0,
+    "middots": 0,
+    "arrows": 0,
+    "dashes": 0,
+    "words": 1651,
+    "fonts": [
+      "Atkinson Hyperlegible Next",
+      "Atkinson Hyperlegible Mono"
+    ],
+    "docH": 15730,
+    "specShown": 2,
+    "untokenised": 0,
+    "fold": false,
+    "contentsReachable": true
+  },
+  {
+    "url": "/work/visual-rules-for-agents/",
+    "viewport": "1444x862",
+    "theme": "dark",
+    "spec": false,
+    "sizes": [
+      "14px",
+      "16px",
+      "18px",
+      "20px",
+      "40px"
+    ],
+    "spacing": [
+      "4px",
+      "8px",
+      "12px",
+      "16px",
+      "24px",
+      "32px",
+      "48px",
+      "64px",
+      "96px"
+    ],
+    "radii": [
+      "10px",
+      "16px",
+      "20px",
+      "50%",
+      "999px"
+    ],
+    "small": [],
+    "lowContrast": [],
+    "foldOK": true,
+    "hScroll": false,
+    "caps": 0,
+    "middots": 0,
+    "arrows": 0,
+    "dashes": 0,
+    "words": 683,
+    "fonts": [
+      "Atkinson Hyperlegible Next",
+      "Atkinson Hyperlegible Mono"
+    ],
+    "docH": 3760,
+    "specShown": 0,
+    "untokenised": 0,
+    "fold": true,
+    "contentsReachable": false
+  },
+  {
+    "url": "/work/visual-rules-for-agents/",
+    "viewport": "1444x862",
+    "theme": "dark",
+    "spec": true,
+    "sizes": [
+      "14px",
+      "16px",
+      "18px",
+      "20px",
+      "40px"
+    ],
+    "spacing": [
+      "4px",
+      "8px",
+      "12px",
+      "16px",
+      "24px",
+      "32px",
+      "48px",
+      "64px",
+      "96px"
+    ],
+    "radii": [
+      "10px",
+      "16px",
+      "20px",
+      "50%",
+      "999px"
+    ],
+    "small": [],
+    "lowContrast": [],
+    "foldOK": true,
+    "hScroll": false,
+    "caps": 0,
+    "middots": 0,
+    "arrows": 0,
+    "dashes": 0,
+    "words": 766,
+    "fonts": [
+      "Atkinson Hyperlegible Next",
+      "Atkinson Hyperlegible Mono"
+    ],
+    "docH": 3760,
+    "specShown": 7,
+    "untokenised": 0,
+    "fold": true,
+    "contentsReachable": false
+  },
+  {
+    "url": "/work/visual-rules-for-agents/",
+    "viewport": "390x844",
+    "theme": "dark",
+    "spec": false,
+    "sizes": [
+      "14px",
+      "16px",
+      "18px",
+      "28px"
+    ],
+    "spacing": [
+      "4px",
+      "8px",
+      "12px",
+      "16px",
+      "24px",
+      "32px",
+      "48px",
+      "64px"
+    ],
+    "radii": [
+      "10px",
+      "16px",
+      "20px",
+      "50%",
+      "999px"
+    ],
+    "small": [],
+    "lowContrast": [],
+    "foldOK": true,
+    "hScroll": false,
+    "caps": 0,
+    "middots": 0,
+    "arrows": 0,
+    "dashes": 0,
+    "words": 683,
+    "fonts": [
+      "Atkinson Hyperlegible Next",
+      "Atkinson Hyperlegible Mono"
+    ],
+    "docH": 4873,
+    "specShown": 0,
+    "untokenised": 0,
+    "fold": true,
+    "contentsReachable": false
+  },
+  {
+    "url": "/work/visual-rules-for-agents/",
+    "viewport": "390x844",
+    "theme": "dark",
+    "spec": true,
+    "sizes": [
+      "14px",
+      "16px",
+      "18px",
+      "28px"
+    ],
+    "spacing": [
+      "4px",
+      "8px",
+      "12px",
+      "16px",
+      "24px",
+      "32px",
+      "48px",
+      "64px"
+    ],
+    "radii": [
+      "10px",
+      "16px",
+      "20px",
+      "50%",
+      "999px"
+    ],
+    "small": [],
+    "lowContrast": [],
+    "foldOK": true,
+    "hScroll": false,
+    "caps": 0,
+    "middots": 0,
+    "arrows": 0,
+    "dashes": 0,
+    "words": 699,
+    "fonts": [
+      "Atkinson Hyperlegible Next",
+      "Atkinson Hyperlegible Mono"
+    ],
+    "docH": 4873,
+    "specShown": 2,
+    "untokenised": 0,
+    "fold": true,
+    "contentsReachable": false
+  },
+  {
+    "url": "/work/visual-rules-for-agents/",
+    "viewport": "320x568",
+    "theme": "dark",
+    "spec": false,
+    "sizes": [
+      "14px",
+      "16px",
+      "18px",
+      "28px"
+    ],
+    "spacing": [
+      "4px",
+      "8px",
+      "12px",
+      "16px",
+      "24px",
+      "32px",
+      "48px",
+      "64px"
+    ],
+    "radii": [
+      "10px",
+      "16px",
+      "20px",
+      "50%",
+      "999px"
+    ],
+    "small": [],
+    "lowContrast": [],
+    "foldOK": false,
+    "hScroll": false,
+    "caps": 0,
+    "middots": 0,
+    "arrows": 0,
+    "dashes": 0,
+    "words": 683,
+    "fonts": [
+      "Atkinson Hyperlegible Next",
+      "Atkinson Hyperlegible Mono"
+    ],
+    "docH": 5542,
+    "specShown": 0,
+    "untokenised": 0,
+    "fold": true,
+    "contentsReachable": false
+  },
+  {
+    "url": "/work/visual-rules-for-agents/",
+    "viewport": "320x568",
+    "theme": "dark",
+    "spec": true,
+    "sizes": [
+      "14px",
+      "16px",
+      "18px",
+      "28px"
+    ],
+    "spacing": [
+      "4px",
+      "8px",
+      "12px",
+      "16px",
+      "24px",
+      "32px",
+      "48px",
+      "64px"
+    ],
+    "radii": [
+      "10px",
+      "16px",
+      "20px",
+      "50%",
+      "999px"
+    ],
+    "small": [],
+    "lowContrast": [],
+    "foldOK": false,
+    "hScroll": false,
+    "caps": 0,
+    "middots": 0,
+    "arrows": 0,
+    "dashes": 0,
+    "words": 699,
+    "fonts": [
+      "Atkinson Hyperlegible Next",
+      "Atkinson Hyperlegible Mono"
+    ],
+    "docH": 5538,
+    "specShown": 2,
+    "untokenised": 0,
+    "fold": true,
+    "contentsReachable": false
+  },
+  {
+    "url": "/work/design-system-with-agents/",
+    "viewport": "1444x862",
+    "theme": "dark",
+    "spec": false,
+    "sizes": [
+      "14px",
+      "16px",
+      "18px",
+      "20px",
+      "40px",
+      "64px"
+    ],
+    "spacing": [
+      "4px",
+      "8px",
+      "12px",
+      "16px",
+      "24px",
+      "32px",
+      "48px",
+      "64px",
+      "96px"
+    ],
+    "radii": [
+      "10px",
+      "16px",
+      "20px",
+      "999px"
+    ],
+    "small": [],
+    "lowContrast": [],
+    "foldOK": true,
+    "hScroll": false,
+    "caps": 0,
+    "middots": 0,
+    "arrows": 0,
+    "dashes": 0,
+    "words": 367,
+    "fonts": [
+      "Atkinson Hyperlegible Next",
+      "Atkinson Hyperlegible Mono"
+    ],
+    "docH": 2730,
+    "specShown": 0,
+    "untokenised": 0,
+    "fold": true,
+    "contentsReachable": false
+  },
+  {
+    "url": "/work/design-system-with-agents/",
+    "viewport": "1444x862",
+    "theme": "dark",
+    "spec": true,
+    "sizes": [
+      "14px",
+      "16px",
+      "18px",
+      "20px",
+      "40px",
+      "64px"
+    ],
+    "spacing": [
+      "4px",
+      "8px",
+      "12px",
+      "16px",
+      "24px",
+      "32px",
+      "48px",
+      "64px",
+      "96px"
+    ],
+    "radii": [
+      "10px",
+      "16px",
+      "20px",
+      "50%",
+      "999px"
+    ],
+    "small": [],
+    "lowContrast": [],
+    "foldOK": true,
+    "hScroll": false,
+    "caps": 0,
+    "middots": 0,
+    "arrows": 0,
+    "dashes": 0,
+    "words": 441,
+    "fonts": [
+      "Atkinson Hyperlegible Next",
+      "Atkinson Hyperlegible Mono"
+    ],
+    "docH": 2730,
+    "specShown": 7,
+    "untokenised": 0,
+    "fold": true,
+    "contentsReachable": false
+  },
+  {
+    "url": "/work/design-system-with-agents/",
+    "viewport": "390x844",
+    "theme": "dark",
+    "spec": false,
+    "sizes": [
+      "14px",
+      "16px",
+      "18px",
+      "20px",
+      "28px",
+      "40px"
+    ],
+    "spacing": [
+      "4px",
+      "8px",
+      "12px",
+      "16px",
+      "24px",
+      "32px",
+      "48px",
+      "64px"
+    ],
+    "radii": [
+      "10px",
+      "16px",
+      "20px",
+      "999px"
+    ],
+    "small": [],
+    "lowContrast": [],
+    "foldOK": true,
+    "hScroll": false,
+    "caps": 0,
+    "middots": 0,
+    "arrows": 0,
+    "dashes": 0,
+    "words": 367,
+    "fonts": [
+      "Atkinson Hyperlegible Next",
+      "Atkinson Hyperlegible Mono"
+    ],
+    "docH": 3475,
+    "specShown": 0,
+    "untokenised": 0,
+    "fold": true,
+    "contentsReachable": false
+  },
+  {
+    "url": "/work/design-system-with-agents/",
+    "viewport": "390x844",
+    "theme": "dark",
+    "spec": true,
+    "sizes": [
+      "14px",
+      "16px",
+      "18px",
+      "20px",
+      "28px",
+      "40px"
+    ],
+    "spacing": [
+      "4px",
+      "8px",
+      "12px",
+      "16px",
+      "24px",
+      "32px",
+      "48px",
+      "64px"
+    ],
+    "radii": [
+      "10px",
+      "16px",
+      "20px",
+      "999px"
+    ],
+    "small": [],
+    "lowContrast": [],
+    "foldOK": true,
+    "hScroll": false,
+    "caps": 0,
+    "middots": 0,
+    "arrows": 0,
+    "dashes": 0,
+    "words": 383,
+    "fonts": [
+      "Atkinson Hyperlegible Next",
+      "Atkinson Hyperlegible Mono"
+    ],
+    "docH": 3475,
+    "specShown": 2,
+    "untokenised": 0,
+    "fold": true,
+    "contentsReachable": false
+  },
+  {
+    "url": "/work/design-system-with-agents/",
+    "viewport": "320x568",
+    "theme": "dark",
+    "spec": false,
+    "sizes": [
+      "14px",
+      "16px",
+      "18px",
+      "20px",
+      "28px",
+      "40px"
+    ],
+    "spacing": [
+      "4px",
+      "8px",
+      "12px",
+      "16px",
+      "24px",
+      "32px",
+      "48px",
+      "64px"
+    ],
+    "radii": [
+      "10px",
+      "16px",
+      "20px",
+      "999px"
+    ],
+    "small": [],
+    "lowContrast": [],
+    "foldOK": false,
+    "hScroll": false,
+    "caps": 0,
+    "middots": 0,
+    "arrows": 0,
+    "dashes": 0,
+    "words": 367,
+    "fonts": [
+      "Atkinson Hyperlegible Next",
+      "Atkinson Hyperlegible Mono"
+    ],
+    "docH": 3881,
+    "specShown": 0,
+    "untokenised": 0,
+    "fold": true,
+    "contentsReachable": false
+  },
+  {
+    "url": "/work/design-system-with-agents/",
+    "viewport": "320x568",
+    "theme": "dark",
+    "spec": true,
+    "sizes": [
+      "14px",
+      "16px",
+      "18px",
+      "20px",
+      "28px",
+      "40px"
+    ],
+    "spacing": [
+      "4px",
+      "8px",
+      "12px",
+      "16px",
+      "24px",
+      "32px",
+      "48px",
+      "64px"
+    ],
+    "radii": [
+      "10px",
+      "16px",
+      "20px",
+      "999px"
+    ],
+    "small": [],
+    "lowContrast": [],
+    "foldOK": false,
+    "hScroll": false,
+    "caps": 0,
+    "middots": 0,
+    "arrows": 0,
+    "dashes": 0,
+    "words": 383,
+    "fonts": [
+      "Atkinson Hyperlegible Next",
+      "Atkinson Hyperlegible Mono"
+    ],
+    "docH": 3877,
+    "specShown": 2,
+    "untokenised": 0,
+    "fold": true,
+    "contentsReachable": false
+  },
+  {
+    "url": "/spec/",
+    "viewport": "1444x862",
+    "theme": "dark",
+    "spec": false,
+    "sizes": [
+      "14px",
+      "16px",
+      "18px",
+      "20px",
+      "28px",
+      "40px",
+      "64px"
+    ],
+    "spacing": [
+      "4px",
+      "8px",
+      "12px",
+      "16px",
+      "24px",
+      "32px",
+      "64px",
+      "96px"
+    ],
+    "radii": [
+      "10px",
+      "16px",
+      "20px",
+      "50%",
+      "999px"
+    ],
+    "small": [],
+    "lowContrast": [],
+    "foldOK": "Timeline label not found",
+    "hScroll": false,
+    "caps": 0,
+    "middots": 0,
+    "arrows": 0,
+    "dashes": 0,
+    "words": 790,
+    "fonts": [
+      "Atkinson Hyperlegible Next",
+      "Atkinson Hyperlegible Mono"
+    ],
+    "docH": 6918,
+    "specShown": 0,
+    "untokenised": 0,
+    "fold": true,
+    "contentsReachable": false
+  },
+  {
+    "url": "/spec/",
+    "viewport": "1444x862",
+    "theme": "dark",
+    "spec": true,
+    "sizes": [
+      "14px",
+      "16px",
+      "18px",
+      "20px",
+      "28px",
+      "40px",
+      "64px"
+    ],
+    "spacing": [
+      "4px",
+      "8px",
+      "12px",
+      "16px",
+      "24px",
+      "32px",
+      "64px",
+      "96px"
+    ],
+    "radii": [
+      "10px",
+      "16px",
+      "20px",
+      "50%",
+      "999px"
+    ],
+    "small": [],
+    "lowContrast": [],
+    "foldOK": "Timeline label not found",
+    "hScroll": false,
+    "caps": 0,
+    "middots": 0,
+    "arrows": 0,
+    "dashes": 0,
+    "words": 879,
+    "fonts": [
+      "Atkinson Hyperlegible Next",
+      "Atkinson Hyperlegible Mono"
+    ],
+    "docH": 6918,
+    "specShown": 3,
+    "untokenised": 0,
+    "fold": true,
+    "contentsReachable": false
+  },
+  {
+    "url": "/spec/",
+    "viewport": "390x844",
+    "theme": "dark",
+    "spec": false,
+    "sizes": [
+      "14px",
+      "16px",
+      "18px",
+      "20px",
+      "28px",
+      "40px",
+      "64px"
+    ],
+    "spacing": [
+      "4px",
+      "8px",
+      "12px",
+      "16px",
+      "24px",
+      "32px",
+      "48px",
+      "64px"
+    ],
+    "radii": [
+      "10px",
+      "16px",
+      "20px",
+      "50%",
+      "999px"
+    ],
+    "small": [],
+    "lowContrast": [],
+    "foldOK": "Timeline label not found",
+    "hScroll": false,
+    "caps": 0,
+    "middots": 0,
+    "arrows": 0,
+    "dashes": 0,
+    "words": 790,
+    "fonts": [
+      "Atkinson Hyperlegible Next",
+      "Atkinson Hyperlegible Mono"
+    ],
+    "docH": 7898,
+    "specShown": 0,
+    "untokenised": 0,
+    "fold": true,
+    "contentsReachable": false
+  },
+  {
+    "url": "/spec/",
+    "viewport": "390x844",
+    "theme": "dark",
+    "spec": true,
+    "sizes": [
+      "14px",
+      "16px",
+      "18px",
+      "20px",
+      "28px",
+      "40px",
+      "64px"
+    ],
+    "spacing": [
+      "4px",
+      "8px",
+      "12px",
+      "16px",
+      "24px",
+      "32px",
+      "48px",
+      "64px"
+    ],
+    "radii": [
+      "10px",
+      "16px",
+      "20px",
+      "50%",
+      "999px"
+    ],
+    "small": [],
+    "lowContrast": [],
+    "foldOK": "Timeline label not found",
+    "hScroll": false,
+    "caps": 0,
+    "middots": 0,
+    "arrows": 0,
+    "dashes": 0,
+    "words": 806,
+    "fonts": [
+      "Atkinson Hyperlegible Next",
+      "Atkinson Hyperlegible Mono"
+    ],
+    "docH": 7898,
+    "specShown": 2,
+    "untokenised": 0,
+    "fold": true,
+    "contentsReachable": false
+  },
+  {
+    "url": "/spec/",
+    "viewport": "320x568",
+    "theme": "dark",
+    "spec": false,
+    "sizes": [
+      "14px",
+      "16px",
+      "18px",
+      "20px",
+      "28px",
+      "40px",
+      "64px"
+    ],
+    "spacing": [
+      "4px",
+      "8px",
+      "12px",
+      "16px",
+      "24px",
+      "32px",
+      "48px",
+      "64px"
+    ],
+    "radii": [
+      "10px",
+      "16px",
+      "20px",
+      "50%",
+      "999px"
+    ],
+    "small": [],
+    "lowContrast": [],
+    "foldOK": "Timeline label not found",
+    "hScroll": false,
+    "caps": 0,
+    "middots": 0,
+    "arrows": 0,
+    "dashes": 0,
+    "words": 790,
+    "fonts": [
+      "Atkinson Hyperlegible Next",
+      "Atkinson Hyperlegible Mono"
+    ],
+    "docH": 8608,
+    "specShown": 0,
+    "untokenised": 0,
+    "fold": true,
+    "contentsReachable": false
+  },
+  {
+    "url": "/spec/",
+    "viewport": "320x568",
+    "theme": "dark",
+    "spec": true,
+    "sizes": [
+      "14px",
+      "16px",
+      "18px",
+      "20px",
+      "28px",
+      "40px",
+      "64px"
+    ],
+    "spacing": [
+      "4px",
+      "8px",
+      "12px",
+      "16px",
+      "24px",
+      "32px",
+      "48px",
+      "64px"
+    ],
+    "radii": [
+      "10px",
+      "16px",
+      "20px",
+      "50%",
+      "999px"
+    ],
+    "small": [],
+    "lowContrast": [],
+    "foldOK": "Timeline label not found",
+    "hScroll": false,
+    "caps": 0,
+    "middots": 0,
+    "arrows": 0,
+    "dashes": 0,
+    "words": 806,
+    "fonts": [
+      "Atkinson Hyperlegible Next",
+      "Atkinson Hyperlegible Mono"
+    ],
+    "docH": 8604,
+    "specShown": 2,
+    "untokenised": 0,
+    "fold": true,
+    "contentsReachable": false
+  }
+]

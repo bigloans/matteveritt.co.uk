@@ -154,7 +154,7 @@ All values live in `tokens.json`. Names carry the value for scales, so a label r
 | I'm looking for a role as ...                                    |
 | [Email me]  [LinkedIn]                                           |
 +------------------------------------------------------------------+
-| Figures are published with ...   Set in Atkinson ...             |
+| Set in Atkinson ...                                              |
 | Read this site's spec                                            |
 +------------------------------------------------------------------+
 ```
@@ -340,3 +340,24 @@ Matt reviewed v2 live and found it too quiet. It read like a blog, not a portfol
 - Every value still comes from `getComputedStyle` and the token names from `tokens.css`.
 - About 20 groups on the landing page and 8 to 10 per article. Below 520px, priority 1 only and no rulers.
 - Hiding fades the whole canvas out. Reduced motion shows the final state at once.
+
+## Brief 4: correct, calm and specific (14 October 2026)
+
+### Phase 0 inspection
+
+- Branch: `portfolio-v3`, fast-forwarded to `main` so it carries the 13 October motion work that brief 4 removes.
+- Baseline: `docs/audit-baseline-v3.json`, from `scripts/audit.js` (brief 1 script with the brief 2 checks) on all five pages at 1444 × 862, 390 × 844 and 320 × 568, with "Show the spec" off and on.
+- Baseline result: 7 or fewer sizes, Atkinson families only, `small` empty, `hScroll` false, no middle dots, arrows or dashes outside artefacts. `lowContrast` lists only the ghost button demo.
+- The employer permission line no longer appears on any page. The footer that held it was removed on 13 October.
+- The £94k saving survives only in the CV.
+
+### Phase 0 answers
+
+| Question | Matt's answer |
+| --- | --- |
+| 1. When did the team end, and what disciplines were on it? | February 2026. A front-end engineer and a UI designer |
+| 2. Is the public team history wording right? | Yes, as written |
+| 3. What do colleagues come to you for? | Everything concerning the design system |
+| 4. Which product skills would you defend? | Roadmapping, backlog ownership, prioritisation, discovery, stakeholder management, metrics and release planning. Remove Figma and release management. Replace WCAG 2.2 AA with accessibility |
+| 5. Which piece of work outside the spec would you point to? | Left for now |
+| 6. Anything outside work? | Skipped |
