@@ -47,7 +47,7 @@ document.documentElement.classList.add('js');
   <h1 class="article-title" data-spec="type" data-spec-priority="1">I replaced my own component library with a spec AI builds from</h1>
   <p class="article-lede" data-spec="space" data-spec-prop="margin-top" data-spec-priority="1">I built the component library for a portfolio of 60+ products. The evidence said it couldn't keep up, so I replaced it with a versioned specification that teams' AI coding agents build from, and a gate that checks the result. I run it as a product, and strategy, roadmap, releases and adoption are mine.</p>
   <!-- build:meta -->
-<p class="meta-line" data-spec="color" data-spec-priority="3">Case study, 2026, 7 minute read</p>
+<p class="meta-line" data-spec="color" data-spec-priority="3">Case study, 2026, 8 minute read</p>
 <!-- /build:meta -->
   <dl class="summary" data-spec="space" data-spec-prop="margin-top" data-spec-priority="2">
     <div data-spec-component="Tile / Summary" data-spec-priority="2"><dt>Role</dt><dd>Product owner, designer and front-end lead</dd></div>
@@ -84,7 +84,7 @@ document.documentElement.classList.add('js');
       <p class="figures-intro">I bet that if AI agents generate every component, a design system needs no component library. It needs rules precise enough for a machine to follow and check.</p>
       <ul class="stat-grid three block">
         <li class="card stat" data-spec-component="Card / Stat" data-spec-priority="3"><span class="stat-figure">117</span><p>accessibility failures blocked before merge, since July 2026</p></li>
-        <li class="card stat"><span class="stat-figure">&lt;1 day</span><p>Time to first gate pass fell from 9 days for the first pilot to under 1 for the latest (median 2.5 across 9 pilots)</p></li>
+        <li class="card stat"><span class="stat-figure">2.5 days</span><p>median time to first gate pass across 9 pilots, down from 9 days for the first to under 1 for the latest</p></li>
         <li class="card stat"><span class="stat-figure">71%</span><p>first-run gate pass rate, n = 186 pilot builds</p></li>
         <li class="panel stat stat-wide">
           <span class="stat-figure">3</span>
@@ -100,6 +100,7 @@ document.documentElement.classList.add('js');
     <section id="problem" class="flow" aria-labelledby="problem-h">
       <h2 id="problem-h">The problem</h2>
       <p id="customers">My first design system was a component library I built. It had 45 components, with React, Vue and Angular built simultaneously. I delivered it in four stages against a roadmap I presented at CTO level.</p>
+      <p>For three years I led a multidisciplinary team on our first design system. When both team members moved on, I was running it alone, and a library that needed every component built three times stopped being feasible for one person.</p>
       <p>Running the static gate against existing products found hundreds of rule violations per product. Over six years, 6 products adopted it, to varying degrees, across three frameworks. Each of its components cost about 3.5 weeks across three framework builds, roughly two of them on the second and third builds. And nothing told an AI coding agent what on-brand or accessible meant.</p>
       <div class="panel lanes block">
         <div class="card lane">
@@ -130,7 +131,7 @@ document.documentElement.classList.add('js');
       <h2 id="options-h">Options</h2>
       <p>I judged three options on five criteria: framework coverage, time to ship, drift control, maintenance cost and dependence on a central team.</p>
       <div class="option-grid block">
-        <div class="card"><p class="pill">Option A</p><h3>Keep the first design system</h3><p>Keep the library and its three framework builds.</p><p><strong>Why it lost.</strong> One person would build every component three times, for low adoption.</p></div>
+        <div class="card"><p class="pill">Option A</p><h3>Keep the first design system</h3><p>Keep the library and its three framework builds.</p><p><strong>Why it lost.</strong> With both team members gone, one person would have built every component three times, for low adoption.</p></div>
         <div class="card"><p class="pill">Option B</p><h3>Generate code from Figma</h3><p>Generate components from Figma through a framework-agnostic JSON contract I piloted.</p><p><strong>Why it lost.</strong> It generates from a picture, so the rules never reach the code.</p></div>
         <div class="card chosen"><p class="pill teal">Option C, chosen</p><h3>Specify and verify</h3><p>A specification that teams' agents build from, and a gate that checks the result.</p></div>
       </div>
@@ -145,7 +146,7 @@ document.documentElement.classList.add('js');
 
     <section id="product" class="flow" aria-labelledby="product-h">
       <h2 id="product-h">What I built</h2>
-      <p>The spec covers 21 components and 6 layout primitives, with 90 releases in 14 weeks before 1.0.</p>
+      <p>The spec covers 21 components and 6 layout primitives, with more than 90 releases since July 2026.</p>
       <div class="feature-grid block">
         <div class="card"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h10l6 6v10H4z"/><path d="M14 4v6h6"/><path d="M8 14h8M8 17h5"/></svg></span><h3>One spec, any framework</h3><p>Tokens, component rules and the definition of done live in three plain-text files.</p></div>
         <div class="card"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg></span><h3>Accessibility lives in the tokens</h3><p>Every colour pairing the spec allows is tested against WCAG 2.2 AA in both themes, and a failing pair blocks the release.</p></div>
@@ -171,6 +172,7 @@ document.documentElement.classList.add('js');
         <li class="card"><p class="pill blue">Rendered</p><p><strong>Opens a real browser before merge.</strong> It measures contrast on real pixels in both themes and tabs through every control.</p></li>
         <li class="card"><p class="pill">Human</p><p><strong>Says where automation stops.</strong> A screen can pass the gate and still be the wrong screen, so reviewers spend their time there.</p></li>
       </ol>
+      <p>When the accessibility engine could not run on a page, the gate used to report a pass, so now a file the gate can't evaluate fails the run as incomplete. <a href="/work/design-system-with-agents/#decision-log">Read the full decision log entry</a> in Running a design system with 15 agents.</p>
 <!-- /words -->
       <details class="artefact">
         <summary>See a real gate run</summary>
@@ -273,8 +275,8 @@ Exceptions applied (1) — auditable, deliberate opt-outs:
         <div class="card metric"><span class="label">First-run gate pass rate</span><span class="stat-figure">71%</span><span class="note">Over 186 pilot builds, mostly failing on spacing</span></div>
         <div class="card metric"><span class="label">Drift on governed files</span><span class="stat-figure">Zero</span><span class="note">Drift across whole codebases of the 12 pilot products is about a third lower than the baseline in The problem</span></div>
         <div class="card metric"><span class="label">AA failures blocked before merge</span><span class="stat-figure">117</span><span class="note">Since July 2026</span></div>
-        <div class="card metric"><span class="label">Critical fix to every adopter</span><span class="stat-figure">6 days</span><span class="note">Under 1 working day to tag, 6 working days to reach all three products</span></div>
       </div>
+      <p><strong>Guardrail.</strong> I watch how long a critical fix takes to reach every adopter. Tagging one takes under 1 working day, and reaching all three products took 6 working days.</p>
       <p id="roadmap" class="callout">Next: reach 1.0. Four of six exit criteria are met; still open are a first-run pass rate of 75% or more over 100 builds and one quarter with no token contract change.</p>
 
       <h3 id="tradeoffs">Trade-offs</h3>
@@ -283,6 +285,7 @@ Exceptions applied (1) — auditable, deliberate opt-outs:
         <div class="trade-grid">
           <div class="card"><h4>AI output varies from run to run</h4><p class="label cost">Cost</p><p>Three runs from one brief used the same tokens and values but structured the code differently, from 407 to 930 lines.</p><p class="label fix">Contained by governing the contract, not the code</p><p>The gate checks tokens, contrast and behaviour, which held steady. Product teams own generated code through their own reviews and tests.</p></div>
           <div class="card"><h4>Existing products weren't built for this</h4><p class="label cost">Cost</p><p>Most early adopters have a shipping product, its own CSS and a designer with expectations.</p><p class="label fix">Contained by writing the guide for existing products first</p><p>It names the four problems they hit, in order. Server-rendered legacy products take about 2 to 3 weeks to a first screen.</p></div>
+          <div class="card"><h4>The gate can't prove complex widgets behave correctly</h4><p class="label cost">Cost</p><p>The gate checks tokens, contrast, focus and ARIA, but not whether a complex widget behaves as users expect.</p><p class="label fix">Contained by splitting the checks between the gate and people</p><p>Six of the contracts are complex widgets. The gate checks all six for tokens, type scale and static ARIA, and its rendered checks cover names, roles and text contrast. For the modal it also tests the focus trap, Escape and focus return. People check the rest, such as announcement order, typeahead, arrow-key focus and dismissal.</p></div>
           <div class="card"><h4>Pinning slows critical fixes</h4><p class="label cost">Cost</p><p>Pinning protects teams from unplanned changes, so a critical fix waits for each team to update its pin. That wait grows with every adopter.</p><p class="label fix">Contained by updating pins through automated pull requests</p><p>Every tagged fix opens one for each adopter. Teams still review and merge it, so the pin keeps protecting them.</p></div>
         </div>
       </div>
