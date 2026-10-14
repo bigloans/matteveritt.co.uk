@@ -142,7 +142,7 @@ const files = [];
     else if (/\.(html|css|js|svg|txt)$/.test(f)) files.push(rel);
   }
 })(root);
-const banned = ["permission", "£94", "Fancy a chat", "Email me", "Download my CV", "gate/src/rendered", "run.js", "#20", "\"light\":", "light-mode", "data-theme", "#F3F5F8", "#5D6878", "#C2185B", "#D3D9E1", "inverse-"];
+const banned = ["permission", "£94", "gate/src/rendered", "run.js", "#20", "\"light\":", "light-mode", "data-theme", "#F3F5F8", "#5D6878", "#C2185B", "#D3D9E1", "inverse-"];
 for (const term of banned) {
   const hits = files.filter((f) => readFileSync(path.join(root, f), "utf8").toLowerCase().includes(term.toLowerCase()));
   check(`text "${term}"`, hits.length === 0, hits.join(", "));

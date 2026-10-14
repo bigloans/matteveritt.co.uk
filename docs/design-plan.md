@@ -402,3 +402,15 @@ Matt reviewed brief 4's flat version live and preferred the 13 October look. The
 
 - The pass chip's ratio is now computed from the tokens, at 8.35:1.
 - `scripts/check-v3.mjs` no longer checks idle motion or `grad-text`, because the motion is back by choice.
+
+### Changes after Matt's review of version 4 (15 October 2026)
+
+| Request | Change |
+| --- | --- |
+| End the page after Contact | The footer is gone from every page. The build's footer region now holds only the spec live region |
+| A nicer contact section with buttons and an invitation | A gradient-bordered card with "Fancy a chat?", Email me and LinkedIn buttons, and the address underneath |
+| CV download in About | "Download my CV" sits at the foot of the timeline card |
+| A more visual Follow a bug | A rail of five agent nodes. A bug marker travels along it as the fill grows, wiggles as it moves and turns into a check once the fix is verified. Previous, Play and Next drive it |
+| Build, Measure and Fix circles too big, gradient not working | 32px outlined teal circles with 16px below them |
+| Gradients clipped inside containers | The aurora is now a fixed page background. Panels, the feature card, bands and read card art lost their own aurora, and panels are translucent |
+| Reflection boxes harsh, gradient border not rounded | Reflection cards and the roadmap callout use a 1px rounded gradient border |

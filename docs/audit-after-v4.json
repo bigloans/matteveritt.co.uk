@@ -40,12 +40,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 502,
+    "words": 491,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 3616,
+    "docH": 3488,
     "specShown": 0,
     "untokenised": 0,
     "fold": true,
@@ -92,13 +92,13 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 635,
+    "words": 630,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 3616,
-    "specShown": 18,
+    "docH": 3488,
+    "specShown": 19,
     "untokenised": 0,
     "fold": true,
     "contentsReachable": false
@@ -142,12 +142,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 492,
+    "words": 481,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 6258,
+    "docH": 6139,
     "specShown": 0,
     "untokenised": 0,
     "fold": true,
@@ -192,12 +192,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 492,
+    "words": 481,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 7061,
+    "docH": 6949,
     "specShown": 0,
     "untokenised": 0,
     "fold": true,
@@ -246,12 +246,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 1901,
+    "words": 1870,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 10956,
+    "docH": 10584,
     "specShown": 0,
     "untokenised": 0,
     "fold": true,
@@ -300,12 +300,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 2047,
+    "words": 2013,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 10956,
+    "docH": 10584,
     "specShown": 8,
     "untokenised": 0,
     "fold": true,
@@ -352,12 +352,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 1880,
+    "words": 1849,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 15470,
+    "docH": 15029,
     "specShown": 0,
     "untokenised": 0,
     "fold": true,
@@ -404,12 +404,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 1880,
+    "words": 1849,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 17749,
+    "docH": 17284,
     "specShown": 0,
     "untokenised": 0,
     "fold": false,
@@ -453,12 +453,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 815,
+    "words": 784,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 4320,
+    "docH": 3949,
     "specShown": 0,
     "untokenised": 0,
     "fold": true,
@@ -502,12 +502,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 903,
+    "words": 869,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 4320,
+    "docH": 3949,
     "specShown": 7,
     "untokenised": 0,
     "fold": true,
@@ -549,12 +549,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 810,
+    "words": 779,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 5596,
+    "docH": 5159,
     "specShown": 0,
     "untokenised": 0,
     "fold": true,
@@ -596,12 +596,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 810,
+    "words": 779,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 6381,
+    "docH": 5920,
     "specShown": 0,
     "untokenised": 0,
     "fold": true,
@@ -635,6 +635,7 @@
       "10px",
       "16px",
       "20px",
+      "50%",
       "999px"
     ],
     "small": [],
@@ -645,11 +646,11 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 455,
+    "words": 447,
     "fonts": [
       "Atkinson Hyperlegible Next"
     ],
-    "docH": 3474,
+    "docH": 3325,
     "specShown": 0,
     "untokenised": 0,
     "fold": true,
@@ -694,12 +695,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 535,
+    "words": 526,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 3474,
+    "docH": 3325,
     "specShown": 7,
     "untokenised": 0,
     "fold": true,
@@ -732,6 +733,7 @@
       "10px",
       "16px",
       "20px",
+      "50%",
       "999px"
     ],
     "small": [],
@@ -742,11 +744,11 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 450,
+    "words": 442,
     "fonts": [
       "Atkinson Hyperlegible Next"
     ],
-    "docH": 4525,
+    "docH": 4322,
     "specShown": 0,
     "untokenised": 0,
     "fold": true,
@@ -779,6 +781,7 @@
       "10px",
       "16px",
       "20px",
+      "50%",
       "999px"
     ],
     "small": [],
@@ -789,11 +792,11 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 450,
+    "words": 442,
     "fonts": [
       "Atkinson Hyperlegible Next"
     ],
-    "docH": 5052,
+    "docH": 4796,
     "specShown": 0,
     "untokenised": 0,
     "fold": true,
@@ -820,7 +823,6 @@
       "16px",
       "24px",
       "32px",
-      "48px",
       "64px",
       "96px"
     ],
@@ -839,12 +841,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 1011,
+    "words": 980,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 8055,
+    "docH": 7685,
     "specShown": 0,
     "untokenised": 0,
     "fold": true,
@@ -871,7 +873,6 @@
       "16px",
       "24px",
       "32px",
-      "48px",
       "64px",
       "96px"
     ],
@@ -890,12 +891,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 1109,
+    "words": 1075,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 8055,
+    "docH": 7685,
     "specShown": 3,
     "untokenised": 0,
     "fold": true,
@@ -940,12 +941,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 1006,
+    "words": 975,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 9077,
+    "docH": 8640,
     "specShown": 0,
     "untokenised": 0,
     "fold": true,
@@ -990,12 +991,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 1006,
+    "words": 975,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 9856,
+    "docH": 9395,
     "specShown": 0,
     "untokenised": 0,
     "fold": true,
@@ -1020,7 +1021,6 @@
       "16px",
       "24px",
       "32px",
-      "48px",
       "64px",
       "96px"
     ],
@@ -1035,11 +1035,11 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 169,
+    "words": 138,
     "fonts": [
       "Atkinson Hyperlegible Next"
     ],
-    "docH": 1559,
+    "docH": 1188,
     "specShown": 0,
     "untokenised": 0,
     "fold": true,
@@ -1065,7 +1065,6 @@
       "16px",
       "24px",
       "32px",
-      "48px",
       "64px",
       "96px"
     ],
@@ -1080,12 +1079,12 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 244,
+    "words": 210,
     "fonts": [
       "Atkinson Hyperlegible Next",
       "Atkinson Hyperlegible Mono"
     ],
-    "docH": 1559,
+    "docH": 1188,
     "specShown": 7,
     "untokenised": 0,
     "fold": true,
@@ -1122,11 +1121,11 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 164,
+    "words": 133,
     "fonts": [
       "Atkinson Hyperlegible Next"
     ],
-    "docH": 1581,
+    "docH": 1144,
     "specShown": 0,
     "untokenised": 0,
     "fold": true,
@@ -1163,11 +1162,11 @@
     "middots": 0,
     "arrows": 0,
     "dashes": 0,
-    "words": 164,
+    "words": 133,
     "fonts": [
       "Atkinson Hyperlegible Next"
     ],
-    "docH": 1752,
+    "docH": 1291,
     "specShown": 0,
     "untokenised": 0,
     "fold": true,

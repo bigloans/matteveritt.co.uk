@@ -2,7 +2,7 @@
   {
     "version": 4,
     "date": "2026-10-14",
-    "notes": "The gradients, navy bands and motion are back, after version 3 felt too flat. The version 3 content, header, footer and gate demo stay."
+    "notes": "The gradients and motion are back, with the aurora now running behind the whole page. The version 3 content, header and gate demo stay, and the bug demo now animates the bug's route through the harness."
   },
   {
     "version": 3,

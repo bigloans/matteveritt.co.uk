@@ -117,28 +117,10 @@ const header = `<a class="skip" href="#main">Skip to content</a>
   </div>
 </header>`;
 
-// Footer. The version line comes from the newest changelog entry.
+// Pages end after their content. The footer region carries only the spec live region.
 
 const longDate = (iso) => new Date(`${iso}T12:00:00Z`).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
-const [latest] = changelog;
-const footer = `<footer class="site-footer">
-  <div class="page">
-    <ul class="footer-links" aria-label="Contact">
-      <li><a href="mailto:matt.m.everitt@gmail.com">matt.m.everitt@gmail.com</a></li>
-      <li><a href="https://www.linkedin.com/in/matteveritt92/">LinkedIn</a></li>
-      <li><a href="/assets/matt-everitt-cv.pdf">CV (PDF)</a></li>
-    </ul>
-    <div class="footer-meta">
-      <p>Set in Atkinson Hyperlegible Next, a typeface from the Braille Institute built for low-vision readers.</p>
-      <ul class="footer-links" aria-label="About this site">
-        <li><a href="/spec/">Read this site's spec</a></li>
-        <li><a href="/changelog/">Changelog</a></li>
-      </ul>
-      <p>Site version ${latest.version}, updated ${longDate(latest.date)}</p>
-    </div>
-  </div>
-</footer>
-<p class="sr-only" role="status" aria-live="polite" data-spec-status></p>`;
+const footer = `<p class="sr-only" role="status" aria-live="polite" data-spec-status></p>`;
 
 // Read times and project index
 
@@ -313,7 +295,7 @@ function specBody() {
 
     <section id="gradients" class="flow" aria-labelledby="gradients-h">
       <h2 id="gradients-h">Gradient and pattern</h2>
-      <p>The brand sweeps from teal through blue to pink. It runs along the top of the header, borders the chosen cards and colours one phrase per headline. Every stop clears 3:1 against navy, so gradient type stays readable as large text. Soft aurora glows sit behind the navy bands and run the length of each page.</p>
+      <p>The brand sweeps from teal through blue to pink. It runs along the top of the header, borders the chosen cards and colours one phrase per headline. Every stop clears 3:1 against navy, so gradient type stays readable as large text. A soft aurora sits behind the whole page and stays put as you scroll, so no section cuts it off.</p>
       <ul class="spec-list">
         ${Object.entries(tokens.gradient).map(([k, v]) => `<li class="spec-gradient"><span style="background:var(--gradient-${k})"></span><code>--gradient-${k}</code><span class="spec-note">${v.note}</span></li>`).join("\n        ")}
         ${Object.entries(tokens.pattern).map(([k, v]) => `<li class="spec-gradient"><span class="spec-pattern" style="background:var(--pattern-${k})"></span><code>--pattern-${k}</code><span class="spec-note">${v.note}</span></li>`).join("\n        ")}

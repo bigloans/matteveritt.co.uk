@@ -110,6 +110,9 @@ for (const [width, height] of [[1444, 862], [390, 844], [320, 568]]) {
       if (r.skipped) bad.push("skipped heading level");
       if (!r.skip) bad.push("no skip link");
       if (!r.landmarks) bad.push("missing landmark");
+      // Let entrance animations settle, so axe measures resting colours.
+
+      await p.waitForTimeout(2500);
       await p.addScriptTag({ content: axeSource });
       const axe = await p.evaluate(() => window.axe.run({ exclude: [["[data-contrast-exempt]"]] }, { runOnly: ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa", "best-practice"] }));
       for (const v of axe.violations) bad.push(`axe ${v.id} (${v.nodes.length})`);

@@ -758,32 +758,102 @@
     boxes.forEach(function (b) { b.addEventListener("change", render); });
   }
 
-  // Follow a bug. Previous and Next move a highlight through the steps.
+  // Follow a bug. A marker carries the bug from agent to agent along a rail.
+  // Previous, Next and Play move it. Positions are measured, so the rail works across or down.
 
   var bugDemo = document.querySelector("[data-bug-demo]");
   if (bugDemo) {
+    var rail = bugDemo.querySelector(".bug-rail"), track = bugDemo.querySelector(".bug-track"), fill = bugDemo.querySelector(".bug-fill"), marker = bugDemo.querySelector(".bug-marker");
     var steps = [].slice.call(bugDemo.querySelectorAll("[data-step]"));
-    var sentence = bugDemo.querySelector("[data-bug-sentence]");
-    var prev = bugDemo.querySelector("[data-bug-prev]"), next = bugDemo.querySelector("[data-bug-next]");
+    var nodes = steps.map(function (s) { return s.querySelector(".bug-node"); });
+    var detail = bugDemo.querySelector("[data-bug-detail]");
+    var count = bugDemo.querySelector("[data-bug-count]"), roleEl = bugDemo.querySelector("[data-bug-role]"), sentence = bugDemo.querySelector("[data-bug-sentence]");
+    var prev = bugDemo.querySelector("[data-bug-prev]"), next = bugDemo.querySelector("[data-bug-next]"), play = bugDemo.querySelector("[data-bug-play]");
     var bugStatus = bugDemo.querySelector("[data-bug-status]");
-    var at = 0;
+    var at = 0, timer = null, moveTimer = null;
+    var stepMs = 1800;
+
+    var centres = function () {
+      var r = rail.getBoundingClientRect();
+      return nodes.map(function (n) {
+        var b = n.getBoundingClientRect();
+        return { x: b.left - r.left + b.width / 2, y: b.top - r.top + b.height / 2 };
+      });
+    };
+    var place = function () {
+      var c = centres(), first = c[0], last = c[c.length - 1], here = c[at];
+      var across = Math.abs(last.y - first.y) < 2;
+      var rule = 2;
+      track.style.left = first.x - (across ? 0 : rule / 2) + "px";
+      track.style.top = first.y - (across ? rule / 2 : 0) + "px";
+      track.style.width = (across ? last.x - first.x : rule) + "px";
+      track.style.height = (across ? rule : last.y - first.y) + "px";
+      fill.style.setProperty("--fill-w", (across ? here.x - first.x : rule) + "px");
+      fill.style.setProperty("--fill-h", (across ? rule : here.y - first.y) + "px");
+      marker.style.setProperty("--mx", here.x + "px");
+      marker.style.setProperty("--my", here.y + "px");
+    };
     var show = function (i, announce) {
+      var moved = i !== at;
       at = i;
       steps.forEach(function (s, j) {
+        s.classList.toggle("is-done", j < i);
         if (j === i) s.setAttribute("aria-current", "step");
         else s.removeAttribute("aria-current");
       });
+      bugDemo.classList.toggle("is-pass", steps[i].getAttribute("data-tone") === "pass");
+      if (moved && !still) {
+        bugDemo.classList.add("is-moving");
+        clearTimeout(moveTimer);
+        moveTimer = setTimeout(function () { bugDemo.classList.remove("is-moving"); }, 700);
+      }
       var text = steps[i].querySelector(".bug-text").textContent;
+      count.textContent = "Step " + (i + 1) + " of " + steps.length;
+      roleEl.textContent = steps[i].querySelector(".bug-role").textContent;
       sentence.textContent = text;
+      detail.classList.remove("swap");
+      detail.getBoundingClientRect();
+      detail.classList.add("swap");
       prev.setAttribute("aria-disabled", i === 0);
       next.setAttribute("aria-disabled", i === steps.length - 1);
+      place();
       if (announce) bugStatus.textContent = "Step " + (i + 1) + " of " + steps.length + ". " + text;
     };
-    prev.addEventListener("click", function () { if (at > 0) show(at - 1, true); });
-    next.addEventListener("click", function () { if (at < steps.length - 1) show(at + 1, true); });
-    sentence.hidden = false;
+    var stop = function () {
+      clearInterval(timer);
+      timer = null;
+      play.setAttribute("aria-pressed", "false");
+      play.textContent = "Play";
+    };
+    prev.addEventListener("click", function () { stop(); if (at > 0) show(at - 1, true); });
+    next.addEventListener("click", function () { stop(); if (at < steps.length - 1) show(at + 1, true); });
+    play.addEventListener("click", function () {
+      if (timer) { stop(); return; }
+      if (at === steps.length - 1) show(0, true);
+      play.setAttribute("aria-pressed", "true");
+      play.textContent = "Pause";
+      timer = setInterval(function () {
+        if (at < steps.length - 1) show(at + 1, true);
+        if (at === steps.length - 1) stop();
+      }, stepMs);
+    });
+    detail.hidden = false;
     bugDemo.querySelector(".bug-controls").hidden = false;
+    bugDemo.classList.add("instant");
     show(0, false);
+    requestAnimationFrame(function () { bugDemo.classList.remove("instant"); });
+    var queuedBug = false;
+    window.addEventListener("resize", function () {
+      if (queuedBug) return;
+      queuedBug = true;
+      requestAnimationFrame(function () {
+        queuedBug = false;
+        bugDemo.classList.add("instant");
+        place();
+        requestAnimationFrame(function () { bugDemo.classList.remove("instant"); });
+      });
+    });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(place);
   }
 
   // Contrast ratios. The HTML carries them already; this recalculates from the colours.

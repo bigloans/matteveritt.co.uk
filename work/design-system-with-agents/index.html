@@ -48,7 +48,7 @@ document.documentElement.classList.add('js');
   <h1 class="article-title reveal blur" data-spec="type" data-spec-priority="1">Running a design system with 15 agents</h1>
   <p class="article-lede" data-spec="space" data-spec-prop="margin-top" data-spec-priority="1">I run the design system as a team of one, with a harness of 15 specialist agents and 7 contributing designers. Agents do measurable work, but spec and release decisions stay with me.</p>
   <!-- build:meta -->
-<p class="meta-line" data-spec="color" data-spec-priority="3">Short read, 2 minutes</p>
+<p class="meta-line" data-spec="color" data-spec-priority="3">Short read, 3 minutes</p>
 <!-- /build:meta -->
   <dl class="summary" data-spec="space" data-spec-prop="margin-top" data-spec-priority="2">
     <div data-spec-component="Tile / Summary" data-spec-priority="2"><dt>Role</dt><dd>Product owner, designer and front-end lead</dd></div>
@@ -67,16 +67,30 @@ document.documentElement.classList.add('js');
       <h3 id="bug-h">Follow a bug</h3>
       <figure class="bug-demo block" data-bug-demo aria-labelledby="bug-h">
         <!-- TODO(matt): confirm the step order and which agents act at each step. -->
-        <ol class="bug-steps">
-          <li data-step><span class="bug-role">Reproduction writer</span><p class="bug-text">The reproduction writer proves the bug before anyone fixes it.</p></li>
-          <li data-step><span class="bug-role">Check author</span><p class="bug-text">The check author writes the failing test first.</p></li>
-          <li data-step><span class="bug-role">Scope warden</span><p class="bug-text">The fix goes in, and the scope warden asks whether it is the smallest one.</p></li>
-          <li data-step><span class="bug-role">Verifier</span><p class="bug-text">The verifier, a different agent from the one that reproduced the bug, checks that the fix fixes the defect.</p></li>
-          <li data-step><span class="bug-role">Release steward</span><p class="bug-text">The release steward checks that the release procedure was followed before the fix ships.</p></li>
-        </ol>
-        <p class="bug-sentence" data-bug-sentence hidden></p>
+        <div class="bug-stage">
+          <div class="bug-rail">
+            <span class="bug-track" aria-hidden="true"><span class="bug-fill"></span></span>
+            <ol class="bug-steps">
+            <li data-step data-tone="fail"><span class="bug-node" aria-hidden="true">1</span><span class="bug-role">Reproduction writer</span><span class="bug-chip">Bug reproduced</span><p class="bug-text">The reproduction writer proves the bug before anyone fixes it.</p></li>
+            <li data-step data-tone="fail"><span class="bug-node" aria-hidden="true">2</span><span class="bug-role">Check author</span><span class="bug-chip">Failing test written</span><p class="bug-text">The check author writes the failing test first.</p></li>
+            <li data-step data-tone="fail"><span class="bug-node" aria-hidden="true">3</span><span class="bug-role">Scope warden</span><span class="bug-chip">Smallest fix</span><p class="bug-text">The fix goes in, and the scope warden asks whether it is the smallest one.</p></li>
+            <li data-step data-tone="pass"><span class="bug-node" aria-hidden="true">4</span><span class="bug-role">Verifier</span><span class="bug-chip">Fix verified</span><p class="bug-text">The verifier, a different agent from the one that reproduced the bug, checks that the fix fixes the defect.</p></li>
+            <li data-step data-tone="pass"><span class="bug-node" aria-hidden="true">5</span><span class="bug-role">Release steward</span><span class="bug-chip">Procedure followed</span><p class="bug-text">The release steward checks that the release procedure was followed before the fix ships.</p></li>
+            </ol>
+            <span class="bug-marker" aria-hidden="true">
+              <svg class="bug-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="14" rx="5" ry="6"/><path d="M12 8V5M9 6l-2-2M15 6l2-2M7 12H4M20 12h-3M7 16l-3 2M17 16l3 2M12 9v11"/></svg>
+              <svg class="bug-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+            </span>
+          </div>
+          <div class="bug-detail" data-bug-detail hidden>
+            <p class="bug-count" data-bug-count></p>
+            <p class="bug-detail-role" data-bug-role></p>
+            <p class="bug-sentence" data-bug-sentence></p>
+          </div>
+        </div>
         <div class="actions bug-controls" hidden>
           <button class="btn btn-secondary" type="button" data-bug-prev>Previous step</button>
+          <button class="btn btn-primary" type="button" data-bug-play aria-pressed="false">Play</button>
           <button class="btn btn-secondary" type="button" data-bug-next>Next step</button>
         </div>
         <p class="sr-only" role="status" aria-live="polite" data-bug-status></p>
@@ -176,23 +190,6 @@ document.documentElement.classList.add('js');
 </main>
 
 <!-- build:footer -->
-<footer class="site-footer">
-  <div class="page">
-    <ul class="footer-links" aria-label="Contact">
-      <li><a href="mailto:matt.m.everitt@gmail.com">matt.m.everitt@gmail.com</a></li>
-      <li><a href="https://www.linkedin.com/in/matteveritt92/">LinkedIn</a></li>
-      <li><a href="/assets/matt-everitt-cv.pdf">CV (PDF)</a></li>
-    </ul>
-    <div class="footer-meta">
-      <p>Set in Atkinson Hyperlegible Next, a typeface from the Braille Institute built for low-vision readers.</p>
-      <ul class="footer-links" aria-label="About this site">
-        <li><a href="/spec/">Read this site's spec</a></li>
-        <li><a href="/changelog/">Changelog</a></li>
-      </ul>
-      <p>Site version 4, updated 14 October 2026</p>
-    </div>
-  </div>
-</footer>
 <p class="sr-only" role="status" aria-live="polite" data-spec-status></p>
 <!-- /build:footer -->
 </body>
