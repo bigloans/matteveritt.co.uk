@@ -46,38 +46,33 @@ document.documentElement.classList.add('js');
 <!-- /build:header -->
 
 <main id="main" tabindex="-1">
-<section class="band hero-band" aria-labelledby="hero-h" data-spec="space" data-spec-prop="padding-top" data-spec-priority="2">
+<section class="hero" aria-labelledby="hero-h" data-spec="space" data-spec-prop="padding-top" data-spec-priority="2">
   <div class="page hero-grid">
     <div class="hero-copy">
-      <p class="pill status-pill"><span class="dot"></span>Design operations manager, Nottingham</p>
       <h1 class="display" id="hero-h" data-spec="type" data-spec-priority="1">I run design systems as products.</h1>
+      <p class="hero-byline">Matt Everitt, design operations manager in Nottingham.</p>
       <p class="hero-lede" data-spec="space" data-spec-prop="margin-top" data-spec-priority="1">My latest replaced a component library with a specification that AI coding agents build from, across a portfolio of 60+ products.</p>
-      <div class="actions" data-spec="space" data-spec-prop="column-gap" data-spec-priority="3">
+      <div class="actions">
         <a class="btn btn-primary" href="/work/replacing-the-component-library/" data-spec="radius" data-spec-component="Button / Primary" data-spec-priority="1">Read the case study</a>
       </div>
     </div>
-    <figure class="hero-visual">
-      <div class="code-block" aria-hidden="true" data-spec="radius" data-spec-component="Window / Code" data-spec-priority="2">
-        <pre><span class="c">{</span>
-  <span class="k">"interactive"</span>: {
-    <span class="k">"light"</span>: <span class="s">"#0B6B63"</span>,
-    <span class="k">"dark"</span>:  <span class="s">"#2EC4B6"</span>
+    <!-- build:hero-excerpt -->
+<figure class="hero-excerpt" data-spec-component="Code / Excerpt" data-spec-priority="2">
+      <div class="code-block" data-spec="radius" data-spec-priority="2"><pre tabindex="0" aria-label="tokens.json excerpt">{
+  <span class="k">"primitive"</span>: {
+    <span class="k">"teal-400"</span>: { <span class="k">"value"</span>: <span class="s">"#2EC4B6"</span> }
   },
-  <span class="k">"radius"</span>: { <span class="k">"control"</span>: <span class="n">"10px"</span> },
-  <span class="k">"space"</span>: [<span class="n">4, 8, 12, 16, 24, 32, 48</span>]
-<span class="c">}</span>
-</pre>
-      </div>
-      <figcaption>An excerpt from the one token file this site is built from. Press "Show the spec" to see it on the page, or <a href="/spec/">read the full spec</a>.</figcaption>
+  <span class="k">"color"</span>: {
+    <span class="k">"interactive"</span>: { <span class="k">"ref"</span>: <span class="s">"teal-400"</span> }
+  },
+  <span class="k">"radius"</span>: {
+    <span class="k">"control"</span>: { <span class="k">"value"</span>: <span class="s">"10px"</span> }
+  },
+  <span class="k">"space"</span>: [4, 8, 12, 16, 24, 32, 48, 64, 96]
+}</pre></div>
+      <figcaption>tokens.json, excerpt</figcaption>
     </figure>
-  </div>
-  <div class="page">
-    <ul class="stat-grid four" aria-label="Headline figures" data-spec="space" data-spec-prop="column-gap" data-spec-priority="3">
-      <li class="card stat" data-spec-component="Card / Stat" data-spec-priority="2"><span class="stat-figure">60+</span><p>products in the portfolio the spec serves</p></li>
-      <li class="card stat"><span class="stat-figure">117</span><p>accessibility failures blocked before merge since July 2026</p></li>
-      <li class="card stat"><span class="stat-figure">71%</span><p>first-run gate pass rate across 186 pilot builds</p></li>
-      <li class="card stat"><span class="stat-figure">3</span><p>products in production on a pinned release</p></li>
-    </ul>
+<!-- /build:hero-excerpt -->
   </div>
 </section>
 
@@ -137,15 +132,22 @@ gate — validated against pinned spec v0.31.0 (manifest sha256 verified)
   <div class="about-grid">
     <div class="flow">
       <h2 id="about-h">About</h2>
-      <p class="about-lede" data-spec="type" data-spec-priority="2">I'm a design operations manager in Nottingham who loves getting stuck into a project. In about 6 years I've grown from junior UI designer to leading a design system and managing a multidisciplinary team.</p>
-      <p>I built our first design system, a component library of 45 components in React, Vue and Angular, and delivered it in four stages against a roadmap I presented at CTO level. When the evidence showed it couldn't keep up, I retired my own work and replaced it with a specification that AI coding agents build from. I own its strategy, roadmap, releases and adoption, and I run it like a product.</p>
-      <p>I'm a team player who keeps things fun, and I'm always eager to learn, whether that's a new framework, a regulation like the EU AI Act or a better way to work alongside AI agents.</p>
-      <ul class="facts" aria-label="Tools and practices">
-        <li class="pill teal">Design tokens</li>
-        <li class="pill blue">WCAG 2.2 AA</li>
-        <li class="pill pink">Claude Code</li>
-        <li class="pill">Release management</li>
-        <li class="pill">Figma</li>
+      <p class="about-lede" data-spec="type" data-spec-priority="2">I'm a design operations manager in Nottingham. I started as a junior UI designer in March 2020, and I now run the design system for a portfolio of 60+ products.</p>
+      <p>For three years I led a multidisciplinary team on our first design system. When both team members moved on, I was running it alone, and a library that needed every component built three times stopped being feasible for one person.</p>
+      <p>That library had 45 components in React, Vue and Angular, and I delivered it in four stages against a roadmap I presented at CTO level. I retired it and replaced it with a specification that AI coding agents build from. I own its strategy, roadmap, backlog, releases and adoption, and colleagues come to me for anything concerning the design system.</p>
+      <!-- TODO(matt): which piece of work outside the spec would you point to, and what changed because of it? You chose to leave this for now. -->
+      <p class="skills-label" id="skills-h">Skills I use in my role</p>
+      <ul class="facts" aria-labelledby="skills-h">
+        <li class="pill">Roadmapping</li>
+        <li class="pill">Backlog ownership</li>
+        <li class="pill">Prioritisation</li>
+        <li class="pill">Discovery</li>
+        <li class="pill">Stakeholder management</li>
+        <li class="pill">Metrics</li>
+        <li class="pill">Release planning</li>
+        <li class="pill">Design tokens</li>
+        <li class="pill">Accessibility</li>
+        <li class="pill">Claude Code</li>
       </ul>
     </div>
     <div class="card" data-spec-component="Card / Timeline" data-spec-priority="3">
@@ -153,7 +155,8 @@ gate — validated against pinned spec v0.31.0 (manifest sha256 verified)
       <ol class="timeline">
         <li><span class="year">March 2020</span><p class="what">Junior UI designer</p><p class="muted">Started the company design system</p></li>
         <li><span class="year">June 2021</span><p class="what">UX/UI designer</p><p class="muted">Designed and documented our first design system</p></li>
-        <li><span class="year">August 2022</span><p class="what">Design operations manager</p><p class="muted">Leading the design system team and its roadmap</p></li>
+        <li><span class="year">August 2022 to February 2026</span><p class="what">Design operations manager</p><p class="muted">Led a front-end engineer and a UI designer on the design system and its roadmap</p></li>
+        <li><span class="year">From July 2026</span><p class="what">Design operations manager</p><p class="muted">Running the spec solo, with a 15-agent harness</p></li>
       </ol>
     </div>
   </div>

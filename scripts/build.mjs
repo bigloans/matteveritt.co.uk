@@ -174,11 +174,38 @@ const workReads = reads
       </li>`)
   .join("\n      ");
 
+// Hero excerpt, generated from tokens.json so it can't drift from the real file.
+
+const heroExcerpt = (() => {
+  const esc = (v) => JSON.stringify(v).replace(/&/g, "&amp;").replace(/</g, "&lt;");
+  const k = (v) => `<span class="k">${esc(v)}</span>`;
+  const str = (v) => `<span class="s">${esc(v)}</span>`;
+  const ref = tokens.color.interactive.ref;
+  const lines = [
+    "{",
+    `  ${k("primitive")}: {`,
+    `    ${k(ref)}: { ${k("value")}: ${str(tokens.primitive[ref].value)} }`,
+    "  },",
+    `  ${k("color")}: {`,
+    `    ${k("interactive")}: { ${k("ref")}: ${str(ref)} }`,
+    "  },",
+    `  ${k("radius")}: {`,
+    `    ${k("control")}: { ${k("value")}: ${str(tokens.radius.control.value)} }`,
+    "  },",
+    `  ${k("space")}: [${tokens.space.join(", ")}]`,
+    "}",
+  ];
+  return `<figure class="hero-excerpt" data-spec-component="Code / Excerpt" data-spec-priority="2">
+      <div class="code-block" data-spec="radius" data-spec-priority="2"><pre tabindex="0" aria-label="tokens.json excerpt">${lines.join("\n")}</pre></div>
+      <figcaption>tokens.json, excerpt</figcaption>
+    </figure>`;
+})();
+
 // Page regions
 
 const regions = (file) => {
   const r = { head, header, footer };
-  if (file === "index.html") Object.assign(r, { "work-feature": workFeature, "work-reads": workReads });
+  if (file === "index.html") Object.assign(r, { "hero-excerpt": heroExcerpt, "work-feature": workFeature, "work-reads": workReads });
   if (file === "spec/index.html") r.spec = specBody();
   const i = projects.findIndex((p) => p.file === file);
   if (i >= 0) {
