@@ -1,0 +1,9 @@
+__pycache__/
+docs/screenshots/
+scripts/__pycache__/
+.DS_Store
+docs/videos/
+portfolio-handoff*.md
+case-study-brief.md
+docs/redaction-log.md
+scripts/banned.local.json

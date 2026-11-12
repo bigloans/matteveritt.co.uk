@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Matt Everitt, design operations manager</title>
+<link rel="canonical" href="https://matteveritt.co.uk/">
+<meta name="description" content="Matt Everitt runs design systems as products. His latest replaced a component library with a specification that AI coding agents build from, across a portfolio of 60+ products.">
+<meta property="og:title" content="Matt Everitt, design operations manager">
+<meta property="og:description" content="Matt Everitt runs design systems as products. His latest replaced a component library with a specification that AI coding agents build from, across a portfolio of 60+ products.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://matteveritt.co.uk/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Matt Everitt",
+  "jobTitle": "Design operations manager",
+  "url": "https://matteveritt.co.uk/",
+  "address": { "@type": "PostalAddress", "addressLocality": "Nottingham", "addressCountry": "GB" },
+  "sameAs": ["https://www.linkedin.com/in/matteveritt92/"]
+}
+</script>
+<script>
+// Old single-page anchors move to the piece that now holds the section.
+(function(){var h=location.hash.slice(1),reads={visual:"visual-rules-for-agents","visual-language":"visual-rules-for-agents",designers:"design-system-with-agents",team:"design-system-with-agents",reversed:"design-system-with-agents"},main=["glance","customers","problem","options","product","gate","evidence","story","adoption","changed-mind","metrics","tradeoffs","trade-offs","roadmap","reflection"];if(reads[h])location.replace("/work/"+reads[h]+"/#"+h);else if(main.indexOf(h)>=0)location.replace("/work/replacing-the-component-library/#"+h)})();
+</script>
+<!-- build:head -->
+<link rel="preload" href="/fonts/atkinson-hyperlegible-next-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/atkinson-hyperlegible-next-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/tokens.css">
+<link rel="stylesheet" href="/assets/site.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='10' fill='%232EC4B6'/%3E%3C/svg%3E">
+<script>
+(function(){var r=document.documentElement,m=null;r.classList.add('js');try{m=localStorage.getItem('motion')}catch(e){}r.setAttribute('data-motion',m==='reduce'||m==='full'?m:matchMedia('(prefers-reduced-motion: reduce)').matches?'reduce':'full')})();
+</script>
+<script src="/assets/site.js" defer></script>
+<!-- /build:head -->
+</head>
+<body>
+<!-- build:header -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-header-in">
+    <a class="site-name" href="/">Matt Everitt</a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-menu" hidden>Menu</button>
+    <nav class="site-menu" id="site-menu" aria-label="Site">
+      <a href="/#work">Work</a>
+      <a href="/#about">About</a>
+      <a href="/#contact">Contact</a>
+      <button class="spec-toggle" type="button" aria-pressed="false" data-spec-toggle hidden>Show the spec</button>
+      <button class="motion-toggle" type="button" aria-pressed="false" data-motion-toggle hidden>Reduce motion</button>
+    </nav>
+  </div>
+</header>
+<!-- /build:header -->
+
+<main id="main" tabindex="-1">
+<section class="band hero-band" aria-labelledby="hero-h" data-spec="space" data-spec-prop="padding-top" data-spec-priority="2">
+  <div class="page hero-grid">
+    <div class="hero-copy">
+      <h1 class="display reveal blur" id="hero-h" data-spec="type" data-spec-priority="1">I run design systems <span class="grad-text">as products.</span></h1>
+      <p class="hero-byline reveal" style="--i:1">Matt Everitt, design operations manager in Nottingham.</p>
+      <p class="hero-lede reveal" style="--i:2" data-spec="space" data-spec-prop="margin-top" data-spec-priority="1">My latest replaced a component library with a specification that AI coding agents build from, across a portfolio of 60+ products.</p>
+      <div class="actions reveal" style="--i:3">
+        <a class="btn btn-primary" href="/work/replacing-the-component-library/" data-spec="radius" data-spec-component="Button / Primary" data-spec-priority="1">Read the case study</a>
+      </div>
+    </div>
+    <!-- build:hero-excerpt -->
+<figure class="hero-visual reveal" style="--i:2">
+      <div class="window" data-spec="radius" data-spec-component="Window / Code" data-spec-priority="2">
+        <div class="window-bar" aria-hidden="true"><i></i><i></i><i></i><span>tokens.json</span></div>
+<pre class="typed" tabindex="0" aria-label="tokens.json excerpt"><span class="ln" style="--i:0">{</span><span class="ln" style="--i:1">  <span class="k">"primitive"</span>: {</span><span class="ln" style="--i:2">    <span class="k">"teal-400"</span>: { <span class="k">"value"</span>: <span class="s">"#2EC4B6"</span> }</span><span class="ln" style="--i:3">  },</span><span class="ln" style="--i:4">  <span class="k">"color"</span>: {</span><span class="ln" style="--i:5">    <span class="k">"interactive"</span>: { <span class="k">"ref"</span>: <span class="s">"teal-400"</span> }</span><span class="ln" style="--i:6">  },</span><span class="ln" style="--i:7">  <span class="k">"radius"</span>: {</span><span class="ln" style="--i:8">    <span class="k">"control"</span>: { <span class="k">"value"</span>: <span class="s">"10px"</span> }</span><span class="ln" style="--i:9">  },</span><span class="ln" style="--i:10">  <span class="k">"space"</span>: [4, 8, 12, 16, 24, 32, 48, 64, 96]</span><span class="ln" style="--i:11">}<span class="caret"></span></span></pre>
+      </div>
+      <span class="float-chip pass" aria-hidden="true">✓ 8.35:1, passes AA</span>
+      <figcaption>tokens.json, excerpt. Press "Show the spec" to see it on the page, or <a href="/spec/">read the full spec</a>.</figcaption>
+    </figure>
+<!-- /build:hero-excerpt -->
+  </div>
+  <div class="page">
+    <ul class="stat-grid four" aria-label="Headline figures" data-spec="space" data-spec-prop="column-gap" data-spec-priority="3">
+      <li class="card stat spot reveal" style="--i:0" data-spec-component="Card / Stat" data-spec-priority="2"><span class="stat-figure">60+</span><p>products in the portfolio the spec serves</p></li>
+      <li class="card stat spot reveal" style="--i:1"><span class="stat-figure">117</span><p>accessibility failures blocked before merge since July 2026</p></li>
+      <li class="card stat spot reveal" style="--i:2"><span class="stat-figure">71%</span><p>first-run gate pass rate across 186 pilot builds</p></li>
+      <li class="card stat spot reveal" style="--i:3"><span class="stat-figure">6</span><p>products in production on a pinned release</p></li>
+    </ul>
+  </div>
+</section>
+
+<section id="work" class="section page" aria-labelledby="work-h" data-spec="space" data-spec-prop="padding-top" data-spec-priority="2">
+  <div class="section-head reveal">
+    <h2 id="work-h" data-spec="type" data-spec-priority="2">Work</h2>
+    <p>One case study and two short reads, all from the same project.</p>
+  </div>
+  <article class="feature-card glow-border reveal" data-tilt data-spec-component="Card / Feature" data-spec-priority="2">
+    <div class="work-text">
+      <!-- build:work-feature -->
+<h3 class="work-title"><a href="/work/replacing-the-component-library/" data-spec="color" data-spec-priority="1">I replaced my own component library with a spec AI builds from</a></h3>
+        <p class="work-summary">Why I retired the library I built, what replaced it and how teams adopted it.</p>
+        <p class="meta-line" data-spec="color" data-spec-priority="3">Case study, 2026, 9 minute read</p>
+        <div class="actions"><a class="btn btn-primary" href="/work/replacing-the-component-library/">Read the case study</a></div>
+<!-- /build:work-feature -->
+    </div>
+    <figure class="gate-figure" data-artefact>
+      <figcaption>Gate run on a deliberately broken test fixture</figcaption>
+      <div class="window" data-spec="radius" data-spec-priority="3">
+        <div class="window-bar" aria-hidden="true"><i></i><i></i><i></i><span>terminal</span></div>
+<pre class="gate-out typed" tabindex="0" aria-label="Gate output"><span class="ln" style="--i:0"><span class="cmd">$ node src/cli.js --config fixtures/violating/gate.config.json</span></span><span class="ln" style="--i:1"> </span><span class="ln" style="--i:2">gate — validated against pinned spec v0.31.0 (manifest sha256 verified)</span><span class="ln" style="--i:3"><span class="hint">passes: static</span></span><span class="ln" style="--i:4"><span class="hint">checked 7 governed file(s)</span></span><span class="ln" style="--i:5"> </span><span class="ln" style="--i:6"><span class="file">bad.css</span></span><span class="ln" style="--i:7">  bad.css:2  <span class="fail">[colour]</span>  raw hex colour `#ff0000` — use a semantic `--color-*` token</span><span class="ln" style="--i:8">  bad.css:4  <span class="fail">[spacing]</span>  off-scale spacing `15px` — not a scale step; nearest is `16px` (use its `--spacing-*` / `--space-*` token)</span><span class="ln" style="--i:9"><span class="file">bad.html</span></span><span class="ln" style="--i:10">  bad.html:5  <span class="fail">[a11y]</span>  &lt;img&gt; is missing required "alt" attribute (wcag/h37)</span><span class="ln" style="--i:11"><span class="hint">  [… 55 further findings omitted …]</span></span><span class="ln" style="--i:12"> </span><span class="ln" style="--i:13"><span class="fail">FAIL — 58 violation(s): 13 colour, 16 spacing, 15 tokenisable, 3 undefined-token, 6 a11y, 1 bad-exception, 1 ancestor-custom-property, 2 logical-properties, 1 typography</span></span><span class="ln" style="--i:14"><span class="fail">EXIT=1</span></span></pre>
+      </div>
+      <p class="note">Run on 13 October 2026. The fixture pins spec v0.31.0 and the current spec is v0.93.0, so this shows how the gate behaves on a fixed test case. It is not a check of production code. Findings trimmed and product names removed.</p>
+    </figure>
+  </article>
+  <ul class="read-cards" data-spec="space" data-spec-prop="column-gap" data-spec-priority="3">
+      <!-- build:work-reads -->
+<li class="read-card card lift spot reveal" style="--i:0" data-spec-component="Card / Read" data-spec-priority="3">
+        <div class="read-art" aria-hidden="true"><div class="art-radius"><span></span><span></span><span></span></div></div>
+        <h3 class="read-title"><a href="/work/visual-rules-for-agents/">Visual rules an AI agent can follow</a></h3>
+        <p class="read-summary">Radius by role, two themes from one set of tokens and an AI disclosure component designed for the EU AI Act.</p>
+        <p class="meta-line">Short read, 3 minutes</p>
+      </li>
+      <li class="read-card card lift spot reveal" style="--i:1">
+        <div class="read-art" aria-hidden="true"><div class="art-agents"><i style="--d:0"></i><i style="--d:7"></i><i style="--d:14"></i><i style="--d:6"></i><i style="--d:13"></i><i style="--d:5"></i><i style="--d:12"></i><i style="--d:4"></i><i style="--d:11"></i><i style="--d:3"></i><i style="--d:10"></i><i style="--d:2"></i><i style="--d:9"></i><i style="--d:1"></i><i style="--d:8"></i></div></div>
+        <h3 class="read-title"><a href="/work/design-system-with-agents/">Running a design system with 15 agents</a></h3>
+        <p class="read-summary">How a team of one ships releases, keeps a decision log and plans for time away.</p>
+        <p class="meta-line">Short read, 3 minutes</p>
+      </li>
+<!-- /build:work-reads -->
+  </ul>
+</section>
+
+<section id="about" class="section page" aria-labelledby="about-h">
+  <div class="about-grid">
+    <div class="flow reveal">
+      <h2 id="about-h">About</h2>
+      <p class="about-lede" data-spec="type" data-spec-priority="2">I'm a design operations manager in Nottingham. I started as a junior UI designer in March 2020, and I now run the design system for a portfolio of 60+ products.</p>
+      <p>From 2020 to 2026 I built and ran our first design system, a 45-component library in React, Vue and Angular. I led a front-end engineer and a UI designer on it and took its roadmap to CTO level.</p>
+      <p>In July 2026 I replaced it with a specification that AI coding agents build from. I own its strategy, roadmap, backlog, releases and adoption, and colleagues come to me for anything concerning the design system.</p>
+      <p class="skills-label" id="skills-h">Skills, and where the work shows them</p>
+      <ul class="facts" aria-labelledby="skills-h">
+        <li><a class="pill teal" href="/work/replacing-the-component-library/#options">Roadmapping</a></li>
+        <li><a class="pill blue" href="/work/replacing-the-component-library/#adoption">Stakeholder management</a></li>
+        <li><a class="pill violet" href="/work/replacing-the-component-library/#metrics">Metrics</a></li>
+        <li><a class="pill pink" href="/work/replacing-the-component-library/#product">Release planning</a></li>
+        <li><a class="pill teal" href="/work/visual-rules-for-agents/">Design tokens</a></li>
+        <li><a class="pill blue" href="/work/replacing-the-component-library/#gate">Accessibility</a></li>
+        <li><a class="pill pink" href="/work/design-system-with-agents/">Claude Code</a></li>
+      </ul>
+    </div>
+    <div class="card spot reveal" style="--i:1" data-spec-component="Card / Timeline" data-spec-priority="3">
+      <h3>From first component to running the system</h3>
+      <ol class="timeline">
+        <li><span class="year">March 2020</span><p class="what">Junior UI designer</p><p class="muted">Started the company design system</p></li>
+        <li><span class="year">June 2021</span><p class="what">UX/UI designer</p><p class="muted">Designed and documented its components</p></li>
+        <li><span class="year">August 2022 to July 2026</span><p class="what">Design operations manager</p><p class="muted">Led a front-end engineer and a UI designer on the design system until February 2026, then ran it alone</p></li>
+        <li><span class="year">From July 2026</span><p class="what">Design operations manager</p><p class="muted">Running the spec solo, with a 15-agent harness</p></li>
+      </ol>
+      <p class="timeline-cv"><a class="btn btn-secondary" href="/assets/matt-everitt-cv.pdf" download>Download my CV</a></p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="band contact-band" aria-labelledby="contact-h">
+  <div class="page">
+    <div class="contact-card glow-border reveal" data-spec-component="Card / Contact" data-spec-priority="2">
+      <div class="contact-copy">
+        <h2 id="contact-h">Fancy a <span class="grad-text">chat?</span></h2>
+        <p>I'm always happy to talk about anything in product design, development or management.</p>
+      </div>
+      <div class="contact-actions">
+        <div class="actions">
+          <a class="btn btn-primary" href="mailto:matt.m.everitt@gmail.com" data-spec="radius" data-spec-priority="3">Email me</a>
+          <a class="btn btn-secondary" href="https://www.linkedin.com/in/matteveritt92/">LinkedIn</a>
+        </div>
+        <p class="contact-address"><a href="mailto:matt.m.everitt@gmail.com">matt.m.everitt@gmail.com</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- build:footer -->
+<p class="sr-only" role="status" aria-live="polite" data-spec-status></p>
+<!-- /build:footer -->
+</body>
+</html>

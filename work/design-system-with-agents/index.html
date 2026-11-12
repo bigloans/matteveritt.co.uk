@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Running a design system with 15 agents | Matt Everitt</title>
+<link rel="canonical" href="https://matteveritt.co.uk/work/design-system-with-agents/">
+<meta name="description" content="How a team of one ships releases, keeps a decision log and plans for time away.">
+<meta property="og:title" content="Running a design system with 15 agents | Matt Everitt">
+<meta property="og:description" content="How a team of one ships releases, keeps a decision log and plans for time away.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://matteveritt.co.uk/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<!-- build:head -->
+<link rel="preload" href="/fonts/atkinson-hyperlegible-next-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/atkinson-hyperlegible-next-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/tokens.css">
+<link rel="stylesheet" href="/assets/site.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='10' fill='%232EC4B6'/%3E%3C/svg%3E">
+<script>
+(function(){var r=document.documentElement,m=null;r.classList.add('js');try{m=localStorage.getItem('motion')}catch(e){}r.setAttribute('data-motion',m==='reduce'||m==='full'?m:matchMedia('(prefers-reduced-motion: reduce)').matches?'reduce':'full')})();
+</script>
+<script src="/assets/site.js" defer></script>
+<!-- /build:head -->
+</head>
+<body>
+<!-- build:header -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-header-in">
+    <a class="site-name" href="/">Matt Everitt</a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-menu" hidden>Menu</button>
+    <nav class="site-menu" id="site-menu" aria-label="Site">
+      <a href="/#work">Work</a>
+      <a href="/#about">About</a>
+      <a href="/#contact">Contact</a>
+      <button class="spec-toggle" type="button" aria-pressed="false" data-spec-toggle hidden>Show the spec</button>
+      <button class="motion-toggle" type="button" aria-pressed="false" data-motion-toggle hidden>Reduce motion</button>
+    </nav>
+  </div>
+</header>
+<!-- /build:header -->
+
+<main id="main" tabindex="-1">
+<!-- words -->
+<div class="band">
+<div class="article-hero page" data-spec="space" data-spec-prop="padding-top" data-spec-priority="2">
+  <h1 class="article-title reveal blur" data-spec="type" data-spec-priority="1">Running a design system with 15 agents</h1>
+  <p class="article-lede" data-spec="space" data-spec-prop="margin-top" data-spec-priority="1">I run the design system as a team of one, with a harness of 15 specialist agents and 7 contributing designers. Agents do measurable work, but spec and release decisions stay with me.</p>
+  <!-- build:meta -->
+<p class="meta-line" data-spec="color" data-spec-priority="3">Short read, 3 minutes</p>
+<!-- /build:meta -->
+  <dl class="summary" data-spec="space" data-spec-prop="margin-top" data-spec-priority="2">
+    <div data-spec-component="Tile / Summary" data-spec-priority="2"><dt>Role</dt><dd>Product owner, designer and front-end lead</dd></div>
+    <div><dt>Team</dt><dd>Solo, with a 15-agent harness and 7 contributing designers</dd></div>
+    <div><dt>Scope</dt><dd>The operating model behind the spec: agents, designers, releases and continuity</dd></div>
+    <div><dt>Timeline</dt><dd>Spec work from Jul 2026</dd></div>
+  </dl>
+</div>
+</div>
+
+<div class="article-body no-contents page">
+  <article class="article-main">
+    <section id="team" class="flow" aria-labelledby="team-h">
+      <h2 id="team-h">A team of one</h2>
+      <p>Each agent in the harness has one job and a written standard. Any edit that moves a brand value stops until it is explained, and no bug is fixed until one agent reproduces it and another checks the fix.</p>
+      <h3 id="bug-h">Follow a bug</h3>
+      <figure class="bug-demo block" data-bug-demo aria-labelledby="bug-h">
+        <div class="bug-stage">
+          <div class="bug-rail">
+            <span class="bug-track" aria-hidden="true"><span class="bug-fill"></span></span>
+            <ol class="bug-steps">
+            <li data-step data-tone="fail"><span class="bug-node" aria-hidden="true">1</span><span class="bug-role">Reproduction writer</span><span class="bug-chip">Bug reproduced</span><p class="bug-text">The reproduction writer proves the bug before anyone fixes it.</p></li>
+            <li data-step data-tone="fail"><span class="bug-node" aria-hidden="true">2</span><span class="bug-role">Check author</span><span class="bug-chip">Failing test written</span><p class="bug-text">The check author writes the failing test first.</p></li>
+            <li data-step data-tone="fail"><span class="bug-node" aria-hidden="true">3</span><span class="bug-role">Scope warden</span><span class="bug-chip">Smallest fix</span><p class="bug-text">The fix goes in, and the scope warden asks whether it is the smallest one.</p></li>
+            <li data-step data-tone="pass"><span class="bug-node" aria-hidden="true">4</span><span class="bug-role">Verifier</span><span class="bug-chip">Fix verified</span><p class="bug-text">The verifier, a different agent from the one that reproduced the bug, checks that the fix fixes the defect.</p></li>
+            <li data-step data-tone="pass"><span class="bug-node" aria-hidden="true">5</span><span class="bug-role">Release steward</span><span class="bug-chip">Procedure followed</span><p class="bug-text">The release steward checks that the release procedure was followed before the fix ships.</p></li>
+            </ol>
+            <span class="bug-marker" aria-hidden="true">
+              <svg class="bug-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="14" rx="5" ry="6"/><path d="M12 8V5M9 6l-2-2M15 6l2-2M7 12H4M20 12h-3M7 16l-3 2M17 16l3 2M12 9v11"/></svg>
+              <svg class="bug-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+            </span>
+          </div>
+          <div class="bug-detail" data-bug-detail hidden>
+            <p class="bug-count" data-bug-count></p>
+            <p class="bug-detail-role" data-bug-role></p>
+            <p class="bug-sentence" data-bug-sentence></p>
+          </div>
+        </div>
+        <div class="actions bug-controls" hidden>
+          <button class="btn btn-secondary" type="button" data-bug-prev>Previous step</button>
+          <button class="btn btn-primary" type="button" data-bug-play aria-pressed="false">Play</button>
+          <button class="btn btn-secondary" type="button" data-bug-next>Next step</button>
+        </div>
+        <p class="sr-only" role="status" aria-live="polite" data-bug-status></p>
+        <figcaption class="note">A simulation of how a bug moves through the harness, built from the roles and rules on this page.</figcaption>
+      </figure>
+      <details class="agents block">
+        <summary>Meet the 15 agents</summary>
+        <div class="agent-groups">
+          <div class="card"><h3>Design</h3><dl>
+            <div><dt>System architect</dt><dd>Is this token the right shape?</dd></div>
+            <div><dt>Agent-experience designer</dt><dd>Can a rule be read two ways?</dd></div>
+            <div><dt>Adoption designer</dt><dd>Is the route in easy for teams?</dd></div>
+            <div><dt>Prior-art researcher</dt><dd>What do standards say?</dd></div>
+          </dl></div>
+          <div class="card"><h3>Quality</h3><dl>
+            <div><dt>Accessibility gatekeeper</dt><dd>Does it meet WCAG 2.2 AA?</dd></div>
+            <div><dt>Generation prober</dt><dd>Does the spec build correctly?</dd></div>
+            <div><dt>Spec auditor</dt><dd>Does it match the spec?</dd></div>
+            <div><dt>Verifier</dt><dd>Does the fix fix the defect?</dd></div>
+          </dl></div>
+          <div class="card"><h3>Delivery</h3><dl>
+            <div><dt>Check author</dt><dd>Writes the failing test first</dd></div>
+            <div><dt>Reproduction writer</dt><dd>Proves a bug before anyone fixes it</dd></div>
+            <div><dt>Scope warden</dt><dd>Is this the smallest fix?</dd></div>
+            <div><dt>Cross-repo porter</dt><dd>Keeps both repos in step</dd></div>
+          </dl></div>
+          <div class="card"><h3>Release</h3><dl>
+            <div><dt>Release steward</dt><dd>Was the procedure followed?</dd></div>
+            <div><dt>Consumer-impact assessor</dt><dd>What changes for teams?</dd></div>
+            <div><dt>Dependency steward</dt><dd>Are dependencies safe?</dd></div>
+          </dl></div>
+        </div>
+      </details>
+    </section>
+
+    <section id="designers" class="flow" aria-labelledby="designers-h">
+      <h2 id="designers-h">Where designers work now</h2>
+      <p>Without Figma handoff, designers build in the same session as an AI agent, against the pinned spec, so nobody has to memorise a rulebook. So far, 7 designers have contributed 47 catalogue entries.</p>
+      <ol class="steps-row four block">
+        <li class="card lift spot reveal" data-spec-component="Card / Step" data-spec-priority="3"><p class="pill teal">Designer</p><h3>Builds a screen</h3><p>The agent generates it from the designer&#39;s description.</p></li>
+        <li class="card lift spot reveal" style="--i:1"><p class="pill blue">Agent</p><h3>Spots a missing asset</h3><p>No pictogram fits, so the agent offers to draft one in the session.</p></li>
+        <li class="card lift spot reveal" style="--i:2"><p class="pill blue">Agent</p><h3>Applies the rules</h3><p>It checks for duplicates, follows the style guide and opens a review.</p></li>
+        <li class="card lift spot reveal" style="--i:3"><p class="pill pink">Gate</p><h3>Flags the draft</h3><p>It lists the draft without failing the build, so nothing ships unseen.</p></li>
+      </ol>
+      <div class="panel block reveal">
+        <h3>Put guardrails where people work</h3>
+        <p class="big-quote">Rules in the AI session beat a style guide nobody memorises.</p>
+        <p>The agent enforces the style guide, so designers judge meaning.</p>
+      </div>
+    </section>
+
+    <section id="continuity" class="flow" aria-labelledby="continuity-h">
+      <h2 id="continuity-h">Continuity</h2>
+      <ul class="stat-grid block">
+        <li class="card stat spot reveal"><span class="stat-figure grad-text">2 months</span><p>of extended leave covered by a plan I designed, so the system ran without me</p></li>
+        <li class="card stat spot reveal" style="--i:1"><span class="stat-figure grad-text" data-count="150" data-suffix="+">150+</span><p>entries in the dated decision log. A mistake gets corrected in a new entry, never erased.</p></li>
+      </ul>
+<!-- /words -->
+      <details class="artefact" id="decision-log">
+        <summary>Read a decision log entry</summary>
+        <figure data-artefact>
+          <blockquote>
+            <p><strong>11 August 2026: a file the gate could not evaluate is not a pass</strong></p>
+            <p>The defect, measured rather than argued. When the accessibility engine's run for a page threw an error, the rendered check caught it, recorded the page as skipped, put an empty list of violations in its place and carried on. The verdict then read "PASS, 0 violations" and the exit code was 0, even in the mode whose contract is to fail closed. A real browser showed it on a page with a nameless button and an image with no alt text. The same page produced two accessibility findings when the engine could run and none when it could not. Two real violations disappeared and the run reported success.</p>
+            <p>Three meanings of "not checked" now get three outcomes, kept apart on purpose:</p>
+            <ul>
+              <li><strong>Unevaluable.</strong> The gate tried and could not. The run is incomplete and exits with code 2.</li>
+              <li><strong>Unsupported.</strong> The file is outside this checker's scope, such as a Markdown file caught by a broad pattern. It is listed separately and the exit code is unaffected. Treating it as unevaluable would fail a reasonable pattern, and noise is how a gate gets switched off.</li>
+              <li><strong>Skipped.</strong> Nobody asked for this layer to run. The verdict says incomplete but the exit code stays 0, because not asking for a check is not the same as failing to run one.</li>
+            </ul>
+            <p>Exit code 2 outranks exit code 1 when a run has both violations and a file it could not evaluate.</p>
+            <p>Silent under-evaluation is still open. A broken or cross-origin iframe, or a strict script policy, can make the engine report zero violations with nothing recorded anywhere. The documentation for teams now says exit code 0 is nearly sufficient and names that gap, rather than claiming a guarantee the code does not make.</p>
+          </blockquote>
+          <figcaption class="note">Adapted from the decision log, which is append-only. Old entries are never edited, only superseded.</figcaption>
+        </figure>
+      </details>
+<!-- words -->
+    </section>
+
+    <section id="reversed" class="flow" aria-labelledby="reversed-h">
+      <h2 id="reversed-h">A decision I reversed</h2>
+      <ol class="log-timeline block">
+        <li class="card reveal"><p class="pill teal">Decided, 6 to 9 Jul 2026</p><p>Write a skill file for each component, for agents to follow.</p></li>
+        <li class="card reversed reveal" style="--i:1"><p class="pill pink">Reversed, 5 Aug 2026</p><p>Retired them. They had drifted from the canonical contract and told agents to emit a token the gate rejects.</p></li>
+      </ol>
+    </section>
+
+    <div class="article-end flow">
+      <p>This read comes from <a href="/work/replacing-the-component-library/">I replaced my own component library with a spec AI builds from</a>, the full case study.</p>
+    </div>
+<!-- /words -->
+    <!-- build:next -->
+<p class="next"><a href="/work/replacing-the-component-library/">Next: I replaced my own component library with a spec AI builds from</a></p>
+<!-- /build:next -->
+  </article>
+</div>
+</main>
+
+<!-- build:footer -->
+<p class="sr-only" role="status" aria-live="polite" data-spec-status></p>
+<!-- /build:footer -->
+</body>
+</html>

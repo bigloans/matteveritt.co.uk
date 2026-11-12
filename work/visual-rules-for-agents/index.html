@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Visual rules an AI agent can follow | Matt Everitt</title>
+<link rel="canonical" href="https://matteveritt.co.uk/work/visual-rules-for-agents/">
+<meta name="description" content="Radius by role, two themes from one set of tokens and an AI disclosure component designed for the EU AI Act.">
+<meta property="og:title" content="Visual rules an AI agent can follow | Matt Everitt">
+<meta property="og:description" content="Radius by role, two themes from one set of tokens and an AI disclosure component designed for the EU AI Act.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://matteveritt.co.uk/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<!-- build:head -->
+<link rel="preload" href="/fonts/atkinson-hyperlegible-next-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/atkinson-hyperlegible-next-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/tokens.css">
+<link rel="stylesheet" href="/assets/site.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='10' fill='%232EC4B6'/%3E%3C/svg%3E">
+<script>
+(function(){var r=document.documentElement,m=null;r.classList.add('js');try{m=localStorage.getItem('motion')}catch(e){}r.setAttribute('data-motion',m==='reduce'||m==='full'?m:matchMedia('(prefers-reduced-motion: reduce)').matches?'reduce':'full')})();
+</script>
+<script src="/assets/site.js" defer></script>
+<!-- /build:head -->
+</head>
+<body>
+<!-- build:header -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-header-in">
+    <a class="site-name" href="/">Matt Everitt</a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-menu" hidden>Menu</button>
+    <nav class="site-menu" id="site-menu" aria-label="Site">
+      <a href="/#work">Work</a>
+      <a href="/#about">About</a>
+      <a href="/#contact">Contact</a>
+      <button class="spec-toggle" type="button" aria-pressed="false" data-spec-toggle hidden>Show the spec</button>
+      <button class="motion-toggle" type="button" aria-pressed="false" data-motion-toggle hidden>Reduce motion</button>
+    </nav>
+  </div>
+</header>
+<!-- /build:header -->
+
+<main id="main" tabindex="-1">
+<!-- words -->
+<div class="band">
+<div class="article-hero page" data-spec="space" data-spec-prop="padding-top" data-spec-priority="2">
+  <h1 class="article-title reveal blur" data-spec="type" data-spec-priority="1">Visual rules an AI agent can follow</h1>
+  <p class="article-lede" data-spec="space" data-spec-prop="margin-top" data-spec-priority="1">An agent can&#39;t interpret &ldquo;make it feel premium&rdquo;, so each aesthetic decision in the spec is a named rule with a token behind it. These are three of them.</p>
+  <!-- build:meta -->
+<p class="meta-line" data-spec="color" data-spec-priority="3">Short read, 3 minutes</p>
+<!-- /build:meta -->
+  <dl class="summary three" data-spec="space" data-spec-prop="margin-top" data-spec-priority="2">
+    <div data-spec-component="Tile / Summary" data-spec-priority="2"><dt>Role</dt><dd>Product owner, designer and front-end lead</dd></div>
+    <div><dt>Scope</dt><dd>The visual language of a spec for 60+ products</dd></div>
+    <div><dt>Timeline</dt><dd>Spec work from Jul 2026</dd></div>
+  </dl>
+</div>
+</div>
+
+<div class="article-body no-contents page">
+  <article class="article-main">
+    <section id="visual-language" class="flow" aria-labelledby="visual">
+      <h2 id="visual">Two themes from one set of tokens</h2>
+      <p>Dark is the signature theme. Light is the working surface. The same tokens drive both, so an agent never picks colours for a theme. It picks a role, and the theme supplies the value.</p>
+      <figure class="demo recreation block reveal" data-illustrative>
+        <div class="demo-side">
+          <h3>Brand energy where it counts</h3>
+          <p>Switch the preview between the two themes.</p>
+          <p class="toggle-label" id="demo-theme-label">Demo theme, this preview only</p>
+          <div class="toggle" role="group" aria-labelledby="demo-theme-label">
+            <button type="button" aria-pressed="true" data-set="dark">Dark</button>
+            <button type="button" aria-pressed="false" data-set="light">Light</button>
+          </div>
+        </div>
+        <div class="stage" data-reg="dark" id="stage">
+          <div class="ui">
+            <div class="ui-top"><b>Sprint overview</b><span class="chip">On track</span></div>
+            <div class="rows">
+              <div class="row"><span>Research synthesis</span><span class="bar-s"><i style="width:82%"></i></span></div>
+              <div class="row"><span>Prototypes</span><span class="bar-s"><i style="width:64%"></i></span></div>
+              <div class="row"><span>Usability tests</span><span class="bar-s"><i style="width:38%"></i></span></div>
+            </div>
+            <div class="btns"><button class="demo-btn p" type="button" tabindex="-1">Approve</button><button class="demo-btn g" type="button" tabindex="-1">View details</button></div>
+          </div>
+        </div>
+      </figure>
+    </section>
+
+    <section id="radius" class="flow" aria-labelledby="radius-h">
+      <h2 id="radius-h">Radius by role</h2>
+      <p>Components reference a role, never a raw value, so one edit changes every card&#39;s corner. A modal, a surface, a control and a pill each get their own radius, so hierarchy shows in the corners.</p>
+      <figure class="recreation block reveal" data-illustrative>
+        <div class="canvas">
+          <div class="rr-modal">
+            <span class="rr-tag top">modal 20</span>
+            <div class="rr-card"><div><i></i><i></i></div><span class="rr-ctrl">Assign</span></div>
+            <span class="rr-pill">In review</span>
+            <span class="rr-tag bottom">surface 16, control 10, pill</span>
+          </div>
+        </div>
+        <figcaption class="note">Recreation of the spec&#39;s radius roles.</figcaption>
+      </figure>
+    </section>
+
+    <section id="disclosure" class="flow" aria-labelledby="disclosure-h">
+      <h2 id="disclosure-h">AI disclosure, designed for regulation</h2>
+      <p>The AI disclosure badge is the one component unique to this spec. I framed it as a legal disclosure first, so it is persistent and can&#39;t be dismissed. I scoped it first to AI built into products, such as automatic categorisation, AI-suggested values and actions taken on the user&#39;s behalf, rather than to chatbots.</p>
+      <ul>
+        <li>Always visible, never dismissible</li>
+        <li>Always labelled in text, never colour alone</li>
+      </ul>
+      <figure class="recreation block reveal" data-illustrative>
+        <div class="canvas flush">
+          <div class="aid">
+            <div class="l"><div class="field"><small>Suggested category</small><b>Maintenance</b><span class="badge"><i></i>AI-generated</span></div></div>
+            <div class="d"><div class="field"><small>Suggested category</small><b>Maintenance</b><span class="badge"><i></i>AI-generated</span></div></div>
+          </div>
+        </div>
+        <figcaption class="note">Recreation of the disclosure badge in both themes.</figcaption>
+      </figure>
+      <h3>Brand against legibility</h3>
+      <p>The gradient is a brand device, but the badge has to stay legible and can never rely on colour alone. Accessibility settled it. The text label carries the meaning, the gradient is decoration hidden from assistive technology, and a badge that relied on colour alone would fail WCAG 1.4.1.</p>
+      <h3>Three options</h3>
+      <div class="option-grid block">
+        <div class="card lift spot glow-border reveal" data-spec-component="Card / Option, chosen" data-spec-priority="3"><p class="pill teal">Option A, chosen</p><h4>Gradient on the border and dot only</h4><p>The label sits in the text colour on a neutral fill, so no text ever sits on the gradient.</p></div>
+        <div class="card lift spot reveal" style="--i:1"><p class="pill">Option B</p><h4>Gradient fill with dark text</h4><p>It passed AA at both ends of the gradient, but the worst case was about 4.72:1 at the pink end, a thin margin. The gate can&#39;t check text over a gradient either, so this option looks worse now than it did then.</p></div>
+        <div class="card lift spot reveal" style="--i:2"><p class="pill pink">Option C</p><h4>Gradient fill with white text</h4><p>It fails contrast at the light teal end.</p></div>
+      </div>
+      <h3>One state, two variants</h3>
+      <p>The badge has a single state. It is static and persistent, with no hover, focus or dismiss state, and it isn&#39;t interactive unless a variant adds an info control, which then follows the button or tooltip rules.</p>
+      <p>It comes as an inline badge or as a region marker, which is linked to its region with <code>aria-describedby</code>. Each comes in compact and standard sizes. An optional slow gradient animation, about 4 seconds long, is the one exception to the duration tokens, and it falls back to a static gradient when reduced motion is set.</p>
+      <p>Building from the spec found one problem. An agent emitted the primitive radius token instead of the role, so I renamed the role to pill. The gate also can&#39;t see the duration exception yet, and that is logged as an open issue.</p>
+      <h3>What it covers under the EU AI Act</h3>
+      <p>Most of Article 50 applies from 2 August 2026. I scoped the badge to AI built into products. Where AI acts on the user's behalf, the badge supports the Article 50(1) duty to tell people they are dealing with an AI system, which the Commission's guidelines extend to agents that interact with people while performing tasks. Suggested values and automatic categorisation go further than Article 50 requires, so the badge treats them as voluntary transparency. Machine-readable marking under Article 50(2) sits outside the design system, and so does Article 50(4), which covers deepfakes and AI-generated text published on matters of public interest. The spec says so, so nobody oversells the badge as compliance.</p>
+      <p>In June 2026 the Commission's AI Office published optional EU icons for labelling AI-generated content: a basic icon, a fully AI-generated variant and a partially AI-modified variant. They target deepfakes and public-interest text, and displaying one doesn't establish compliance on its own. The AI Office's user testing found people understood the icon better with a short text label, which the badge already has.</p>
+    </section>
+
+    <div class="article-end flow">
+      <p>This read comes from <a href="/work/replacing-the-component-library/">I replaced my own component library with a spec AI builds from</a>, the full case study.</p>
+    </div>
+<!-- /words -->
+    <!-- build:next -->
+<p class="next"><a href="/work/design-system-with-agents/">Next: Running a design system with 15 agents</a></p>
+<!-- /build:next -->
+  </article>
+</div>
+</main>
+
+<!-- build:footer -->
+<p class="sr-only" role="status" aria-live="polite" data-spec-status></p>
+<!-- /build:footer -->
+</body>
+</html>

@@ -1,0 +1,50 @@
+[
+  {
+    "url": "/",
+    "performance": 99,
+    "accessibility": 100,
+    "bestPractices": 100,
+    "seo": 100,
+    "failing": []
+  },
+  {
+    "url": "/work/replacing-the-component-library/",
+    "performance": 99,
+    "accessibility": 100,
+    "bestPractices": 100,
+    "seo": 100,
+    "failing": []
+  },
+  {
+    "url": "/work/visual-rules-for-agents/",
+    "performance": 100,
+    "accessibility": 100,
+    "bestPractices": 100,
+    "seo": 100,
+    "failing": []
+  },
+  {
+    "url": "/work/design-system-with-agents/",
+    "performance": 100,
+    "accessibility": 100,
+    "bestPractices": 100,
+    "seo": 100,
+    "failing": []
+  },
+  {
+    "url": "/spec/",
+    "performance": 99,
+    "accessibility": 100,
+    "bestPractices": 100,
+    "seo": 100,
+    "failing": []
+  },
+  {
+    "url": "/changelog/",
+    "performance": 100,
+    "accessibility": 100,
+    "bestPractices": 100,
+    "seo": 100,
+    "failing": []
+  }
+]

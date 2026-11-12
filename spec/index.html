@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>This site's spec | Matt Everitt</title>
+<link rel="canonical" href="https://matteveritt.co.uk/spec/">
+<meta name="description" content="The tokens behind matteveritt.co.uk: colour roles with contrast in both themes, the type scale, spacing, radius roles, elevation and motion.">
+<meta property="og:title" content="This site's spec | Matt Everitt">
+<meta property="og:description" content="The tokens behind matteveritt.co.uk: colour roles with contrast in both themes, the type scale, spacing, radius roles, elevation and motion.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://matteveritt.co.uk/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<!-- build:head -->
+<link rel="preload" href="/fonts/atkinson-hyperlegible-next-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/atkinson-hyperlegible-next-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/tokens.css">
+<link rel="stylesheet" href="/assets/site.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='10' fill='%232EC4B6'/%3E%3C/svg%3E">
+<script>
+(function(){var r=document.documentElement,m=null;r.classList.add('js');try{m=localStorage.getItem('motion')}catch(e){}r.setAttribute('data-motion',m==='reduce'||m==='full'?m:matchMedia('(prefers-reduced-motion: reduce)').matches?'reduce':'full')})();
+</script>
+<script src="/assets/site.js" defer></script>
+<!-- /build:head -->
+</head>
+<body>
+<!-- build:header -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-header-in">
+    <a class="site-name" href="/">Matt Everitt</a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-menu" hidden>Menu</button>
+    <nav class="site-menu" id="site-menu" aria-label="Site">
+      <a href="/#work">Work</a>
+      <a href="/#about">About</a>
+      <a href="/#contact">Contact</a>
+      <button class="spec-toggle" type="button" aria-pressed="false" data-spec-toggle hidden>Show the spec</button>
+      <button class="motion-toggle" type="button" aria-pressed="false" data-motion-toggle hidden>Reduce motion</button>
+    </nav>
+  </div>
+</header>
+<!-- /build:header -->
+
+<main id="main" tabindex="-1">
+<div class="band">
+<div class="article-hero page" data-spec="space" data-spec-prop="padding-top" data-spec-priority="2">
+  <h1 class="article-title reveal blur" data-spec="type" data-spec-priority="1">This site's spec</h1>
+  <p class="article-lede" data-spec="space" data-spec-prop="margin-top" data-spec-priority="1">Every value on this site comes from one token file. The same file draws the "Show the spec" annotations and this page, so the three can't drift apart.</p>
+</div>
+</div>
+<div class="article-body no-contents page">
+  <div class="article-main">
+<!-- build:spec -->
+<section id="colour" class="flow" aria-labelledby="colour-h">
+      <h2 id="colour-h">Colour</h2>
+      <p>The site has one theme, deep navy, by choice. Each value appears once, as a primitive. Every role the CSS uses references one primitive.</p>
+      <h3>Primitives</h3>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="Colour primitives">
+        <table>
+          <thead><tr><th scope="col">Primitive</th><th scope="col">Value</th><th scope="col">Use</th></tr></thead>
+          <tbody>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--navy-950)"></span><code>--navy-950</code></th><td><code>#060D19</code></td><td>Deepest navy</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--navy-900)"></span><code>--navy-900</code></th><td><code>#0B1628</code></td><td>Page navy</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--navy-800)"></span><code>--navy-800</code></th><td><code>#12223A</code></td><td>Raised navy</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--navy-700)"></span><code>--navy-700</code></th><td><code>#2A3B57</code></td><td>Hairline navy</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--teal-400)"></span><code>--teal-400</code></th><td><code>#2EC4B6</code></td><td>Interaction and the first brand stop</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--pink-400)"></span><code>--pink-400</code></th><td><code>#FF6FB1</code></td><td>Annotation and the last brand stop</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--blue-400)"></span><code>--blue-400</code></th><td><code>#7C9BFF</code></td><td>Accent and the middle brand stop</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--violet-400)"></span><code>--violet-400</code></th><td><code>#A78BFA</code></td><td>Accent</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--orange-400)"></span><code>--orange-400</code></th><td><code>#FF7A45</code></td><td>Danger. Hue 17 degrees, 44 degrees from pink-400</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--grey-100)"></span><code>--grey-100</code></th><td><code>#E8EDF4</code></td><td>Text</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--grey-300)"></span><code>--grey-300</code></th><td><code>#B9C6D8</code></td><td>Muted text</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Roles</h3>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="Colour roles">
+        <table>
+          <thead><tr><th scope="col">Role</th><th scope="col">References</th><th scope="col">Use</th></tr></thead>
+          <tbody>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-surface)"></span><code>--color-surface</code></th><td><code>--navy-900</code></td><td>Page background</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-surface-raised)"></span><code>--color-surface-raised</code></th><td><code>--navy-800</code></td><td>Cards, tables, the menu and contents sheets</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-surface-deep)"></span><code>--color-surface-deep</code></th><td><code>--navy-950</code></td><td>Code blocks and gate output</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-text)"></span><code>--color-text</code></th><td><code>--grey-100</code></td><td>Text and headings</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-text-muted)"></span><code>--color-text-muted</code></th><td><code>--grey-300</code></td><td>Metadata, notes and captions</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-interactive)"></span><code>--color-interactive</code></th><td><code>--teal-400</code></td><td>Links, buttons, focus and selected states</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-on-interactive)"></span><code>--color-on-interactive</code></th><td><code>--navy-900</code></td><td>Text on teal, violet and pink fills</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-hairline)"></span><code>--color-hairline</code></th><td><code>--navy-700</code></td><td>1px borders and separators</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-annotation)"></span><code>--color-annotation</code></th><td><code>--pink-400</code></td><td>"Show the spec" annotations</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-annotation-component)"></span><code>--color-annotation-component</code></th><td><code>--violet-400</code></td><td>Component name tags in "Show the spec"</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-accent)"></span><code>--color-accent</code></th><td><code>--blue-400</code></td><td>File names and keys in code, secondary labels</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-accent-pink)"></span><code>--color-accent-pink</code></th><td><code>--pink-400</code></td><td>Accent text, pills and the brand's warm end</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-accent-violet)"></span><code>--color-accent-violet</code></th><td><code>--violet-400</code></td><td>Accent text and headings</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-danger)"></span><code>--color-danger</code></th><td><code>--orange-400</code></td><td>Failure states: "Fails AA" and gate FAIL lines</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-brand-start)"></span><code>--color-brand-start</code></th><td><code>--teal-400</code></td><td>Brand gradient, first stop</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-brand-middle)"></span><code>--color-brand-middle</code></th><td><code>--blue-400</code></td><td>Brand gradient, middle stop</td></tr>
+          <tr><th scope="row"><span class="swatch-chip" style="background:var(--color-brand-end)"></span><code>--color-brand-end</code></th><td><code>--pink-400</code></td><td>Brand gradient, last stop</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Contrast</h3>
+      <p>The build fails if a text pair drops below 4.5:1, or a large text or UI pair below 3:1. These are the WCAG 2.2 AA minimums.</p>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="Contrast pairs">
+        <table>
+          <thead><tr><th scope="col">Pair</th><th scope="col">Ratio</th><th scope="col">Minimum</th></tr></thead>
+          <tbody>
+          <tr><th scope="row"><code>text</code> on <code>surface</code></th><td>15.39:1</td><td>Text, 4.5:1</td></tr>
+          <tr><th scope="row"><code>text</code> on <code>surface-raised</code></th><td>13.57:1</td><td>Text, 4.5:1</td></tr>
+          <tr><th scope="row"><code>text</code> on <code>surface-deep</code></th><td>16.54:1</td><td>Text, 4.5:1</td></tr>
+          <tr><th scope="row"><code>text-muted</code> on <code>surface</code></th><td>10.46:1</td><td>Text, 4.5:1</td></tr>
+          <tr><th scope="row"><code>text-muted</code> on <code>surface-raised</code></th><td>9.22:1</td><td>Text, 4.5:1</td></tr>
+          <tr><th scope="row"><code>text-muted</code> on <code>surface-deep</code></th><td>11.24:1</td><td>Text, 4.5:1</td></tr>
+          <tr><th scope="row"><code>interactive</code> on <code>surface</code></th><td>8.35:1</td><td>Text, 4.5:1</td></tr>
+          <tr><th scope="row"><code>interactive</code> on <code>surface-raised</code></th><td>7.36:1</td><td>Text, 4.5:1</td></tr>
+          <tr><th scope="row"><code>interactive</code> on <code>surface-deep</code></th><td>8.98:1</td><td>Text, 4.5:1</td></tr>
+          <tr><th scope="row"><code>on-interactive</code> on <code>interactive</code></th><td>8.35:1</td><td>Text, 4.5:1</td></tr>
+          <tr><th scope="row"><code>annotation</code> on <code>surface</code></th><td>7.04:1</td><td>Text, 4.5:1</td></tr>
+          <tr><th scope="row"><code>annotation</code> on <code>surface-raised</code></th><td>6.20:1</td><td>Text, 4.5:1</td></tr>
+          <tr><th scope="row"><code>on-interactive</code> on <code>annotation</code></th><td>7.04:1</td><td>Text, 4.5:1</td></tr>
+          <tr><th scope="row"><code>surface</code> on <code>annotation</code></th><td>7.04:1</td><td>Text, 4.5:1</td></tr>
+          <tr><th scope="row"><code>on-interactive</code> on <code>annotation-component</code></th><td>6.65:1</td><td>Text, 4.5:1</td></tr>
+          <tr><th scope="row"><code>accent</code> on <code>surface</code></th><td>6.89:1</td><td>Text, 4.5:1</td></tr>
+          <tr><th scope="row"><code>accent</code> on <code>surface-raised</code></th><td>6.07:1</td><td>Text, 4.5:1</td></tr>
+          <tr><th scope="row"><code>accent</code> on <code>surface-deep</code></th><td>7.40:1</td><td>Text, 4.5:1</td></tr>
+          <tr><th scope="row"><code>danger</code> on <code>surface</code></th><td>7.00:1</td><td>Text, 4.5:1</td></tr>
+          <tr><th scope="row"><code>danger</code> on <code>surface-raised</code></th><td>6.17:1</td><td>Text, 4.5:1</td></tr>
+          <tr><th scope="row"><code>danger</code> on <code>surface-deep</code></th><td>7.52:1</td><td>Text, 4.5:1</td></tr>
+          <tr><th scope="row"><code>interactive</code> on <code>hairline</code></th><td>5.20:1</td><td>Large text and UI, 3:1</td></tr>
+          <tr><th scope="row"><code>accent-pink</code> on <code>surface</code></th><td>7.04:1</td><td>Text, 4.5:1</td></tr>
+          <tr><th scope="row"><code>accent-pink</code> on <code>surface-raised</code></th><td>6.20:1</td><td>Text, 4.5:1</td></tr>
+          <tr><th scope="row"><code>accent-violet</code> on <code>surface</code></th><td>6.65:1</td><td>Text, 4.5:1</td></tr>
+          <tr><th scope="row"><code>accent-violet</code> on <code>surface-raised</code></th><td>5.87:1</td><td>Text, 4.5:1</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Recreations of product screens use 30 further <code>--demo-</code> colours. They show the product's brand and stay inside the recreations.</p>
+    </section>
+
+    <section id="type" class="flow" aria-labelledby="type-h">
+      <h2 id="type-h">Type</h2>
+      <p>Atkinson Hyperlegible Next sets all text. Atkinson Hyperlegible Mono sets code, gate output and spec annotations. Body text is 18px with line-height 1.55 at 900px and above, and 16px with 1.5 below.</p>
+      <ul class="spec-list">
+        <li class="spec-type"><code>--text-64: 64px</code><span style="font-size:var(--text-64)">I run design systems as products.</span></li>
+        <li class="spec-type"><code>--text-40: 40px</code><span style="font-size:var(--text-40)">I run design systems as products.</span></li>
+        <li class="spec-type"><code>--text-28: 28px</code><span style="font-size:var(--text-28)">I run design systems as products.</span></li>
+        <li class="spec-type"><code>--text-20: 20px</code><span style="font-size:var(--text-20)">I run design systems as products.</span></li>
+        <li class="spec-type"><code>--text-18: 18px</code><span style="font-size:var(--text-18)">I run design systems as products.</span></li>
+        <li class="spec-type"><code>--text-16: 16px</code><span style="font-size:var(--text-16)">I run design systems as products.</span></li>
+        <li class="spec-type"><code>--text-14: 14px</code><span style="font-size:var(--text-14)">I run design systems as products.</span></li>
+      </ul>
+      <div class="spec-pair">
+        <div class="table-scroll" tabindex="0" role="region" aria-label="Line heights">
+        <table>
+          <thead><tr><th scope="col">Line height</th><th scope="col">Value</th></tr></thead>
+          <tbody>
+          <tr><th scope="row"><code>--leading-tight</code></th><td>1.05</td></tr>
+          <tr><th scope="row"><code>--leading-snug</code></th><td>1.15</td></tr>
+          <tr><th scope="row"><code>--leading-body</code></th><td>1.55</td></tr>
+          <tr><th scope="row"><code>--leading-body-compact</code></th><td>1.5</td></tr>
+          </tbody>
+        </table>
+      </div>
+        <div class="table-scroll" tabindex="0" role="region" aria-label="Weights">
+        <table>
+          <thead><tr><th scope="col">Weight</th><th scope="col">Value</th></tr></thead>
+          <tbody>
+          <tr><th scope="row"><code>--weight-regular</code></th><td>400</td></tr>
+          <tr><th scope="row"><code>--weight-medium</code></th><td>500</td></tr>
+          <tr><th scope="row"><code>--weight-semibold</code></th><td>600</td></tr>
+          <tr><th scope="row"><code>--weight-bold</code></th><td>700</td></tr>
+          </tbody>
+        </table>
+      </div>
+      </div>
+    </section>
+
+    <section id="spacing" class="flow" aria-labelledby="spacing-h">
+      <h2 id="spacing-h">Spacing</h2>
+      <p>Every margin, padding and gap uses one of these steps. Below 900px, the gap between sections steps down from 96 to 64 and the gap between blocks from 48 to 32.</p>
+      <ul class="spec-list">
+        <li class="spec-space"><code>--space-4: 4px</code><span style="width:var(--space-4)"></span></li>
+        <li class="spec-space"><code>--space-8: 8px</code><span style="width:var(--space-8)"></span></li>
+        <li class="spec-space"><code>--space-12: 12px</code><span style="width:var(--space-12)"></span></li>
+        <li class="spec-space"><code>--space-16: 16px</code><span style="width:var(--space-16)"></span></li>
+        <li class="spec-space"><code>--space-24: 24px</code><span style="width:var(--space-24)"></span></li>
+        <li class="spec-space"><code>--space-32: 32px</code><span style="width:var(--space-32)"></span></li>
+        <li class="spec-space"><code>--space-48: 48px</code><span style="width:var(--space-48)"></span></li>
+        <li class="spec-space"><code>--space-64: 64px</code><span style="width:var(--space-64)"></span></li>
+        <li class="spec-space"><code>--space-96: 96px</code><span style="width:var(--space-96)"></span></li>
+      </ul>
+    </section>
+
+    <section id="radius" class="flow" aria-labelledby="radius-h">
+      <h2 id="radius-h">Radius</h2>
+      <p>Radius follows the role an element plays, so hierarchy shows in its corners.</p>
+      <ul class="spec-list">
+        <li class="spec-radius"><span style="border-radius:var(--radius-control)"></span><code>--radius-control: 10px</code><span class="spec-note">Buttons, inputs, contents button</span></li>
+        <li class="spec-radius"><span style="border-radius:var(--radius-surface)"></span><code>--radius-surface: 16px</code><span class="spec-note">Gate output, recreation frames, tables</span></li>
+        <li class="spec-radius"><span style="border-radius:var(--radius-modal)"></span><code>--radius-modal: 20px</code><span class="spec-note">Contents sheet, recreated modal</span></li>
+        <li class="spec-radius"><span style="border-radius:var(--radius-pill)"></span><code>--radius-pill: 999px</code><span class="spec-note">Status and disclosure labels</span></li>
+        <li class="spec-radius"><span style="border-radius:var(--radius-circle)"></span><code>--radius-circle: 50%</code><span class="spec-note">Swatches and step markers</span></li>
+      </ul>
+    </section>
+
+    <section id="gradients" class="flow" aria-labelledby="gradients-h">
+      <h2 id="gradients-h">Gradient and pattern</h2>
+      <p>The brand sweeps from teal through blue to pink. It runs along the top of the header, borders the chosen cards and colours one phrase per headline. Every stop clears 3:1 against navy, so gradient type stays readable as large text. A soft aurora sits behind the whole page and stays put as you scroll, so no section cuts it off.</p>
+      <ul class="spec-list">
+        <li class="spec-gradient"><span style="background:var(--gradient-brand)"></span><code>--gradient-brand</code><span class="spec-note">Brand sweep: teal, blue, pink. Used where the brand is the subject, and as the header rule</span></li>
+        <li class="spec-gradient"><span style="background:var(--gradient-text)"></span><code>--gradient-text</code><span class="spec-note">Gradient type. Every stop clears 3:1 for large text on navy</span></li>
+        <li class="spec-gradient"><span style="background:var(--gradient-aurora)"></span><code>--gradient-aurora</code><span class="spec-note">Drifting glow behind navy bands</span></li>
+        <li class="spec-gradient"><span style="background:var(--gradient-surface-glow)"></span><code>--gradient-surface-glow</code><span class="spec-note">Faint glow on page-surface panels</span></li>
+        <li class="spec-gradient"><span style="background:var(--gradient-page-glow)"></span><code>--gradient-page-glow</code><span class="spec-note">Faint glows spread down the whole page, so sections flow into each other</span></li>
+        <li class="spec-gradient"><span class="spec-pattern" style="background:var(--pattern-spec-grid)"></span><code>--pattern-spec-grid</code><span class="spec-note">The grid behind "Show the spec": an 8px baseline and 48px columns</span></li>
+      </ul>
+    </section>
+
+    <section id="elevation" class="flow" aria-labelledby="elevation-h">
+      <h2 id="elevation-h">Elevation and borders</h2>
+      <p>Three shadows do three jobs. <code>--shadow-overlay</code> lifts the menu and contents sheets, <code>--shadow-card</code> lifts a card you point at, and <code>--shadow-glow</code> marks the one action or piece of work that matters most. A 1px <code>--color-hairline</code> border separates kinds of content.</p>
+      <div class="spec-shadows"><div class="spec-shadow" style="box-shadow:var(--shadow-overlay)"><code>--shadow-overlay</code></div><div class="spec-shadow" style="box-shadow:var(--shadow-card)"><code>--shadow-card</code></div><div class="spec-shadow" style="box-shadow:var(--shadow-glow)"><code>--shadow-glow</code></div></div>
+    </section>
+
+    <section id="motion" class="flow" aria-labelledby="motion-h">
+      <h2 id="motion-h">Motion</h2>
+      <p>Motion adds a little joy without getting in the way of reading. Aurora glows drift slowly, headlines sharpen into focus and sections ease in as they arrive. Figures never animate, so they always show their real value. "Show the spec" fades in a grid, then draws each measurement top to bottom. "Reduce motion" in the header, or the reduced motion setting on your device, sets every duration to 0ms so nothing moves. The header button remembers your choice and overrides the device setting.</p>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="Motion tokens">
+        <table>
+          <thead><tr><th scope="col">Token</th><th scope="col">Value</th><th scope="col">Use</th></tr></thead>
+          <tbody>
+          <tr><th scope="row"><code>--motion-fast</code></th><td><code>200ms</code></td><td>Hover, toggles, the menu and contents sheets, the spec reveal and the resize highlight</td></tr>
+          <tr><th scope="row"><code>--motion-medium</code></th><td><code>400ms</code></td><td>Card lift and bars</td></tr>
+          <tr><th scope="row"><code>--motion-reveal</code></th><td><code>700ms</code></td><td>Sections easing in as they scroll into view</td></tr>
+          <tr><th scope="row"><code>--motion-count</code></th><td><code>1400ms</code></td><td>Figures counting up</td></tr>
+          <tr><th scope="row"><code>--motion-ambient</code></th><td><code>24s</code></td><td>The slow drift of the aurora glow</td></tr>
+          <tr><th scope="row"><code>--motion-ease</code></th><td><code>cubic-bezier(0.2, 0.8, 0.2, 1)</code></td><td>One easing curve for everything</td></tr>
+          <tr><th scope="row"><code>--motion-draw</code></th><td><code>600ms</code></td><td>"Show the spec" lines and outlines drawing in</td></tr>
+          <tr><th scope="row"><code>--motion-stagger</code></th><td><code>45ms</code></td><td>Delay between one annotation and the next</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+<!-- /build:spec -->
+  </div>
+</div>
+</main>
+
+<!-- build:footer -->
+<p class="sr-only" role="status" aria-live="polite" data-spec-status></p>
+<!-- /build:footer -->
+</body>
+</html>
