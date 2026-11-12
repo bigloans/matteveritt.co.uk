@@ -14,7 +14,7 @@ const { chromium } = require("playwright");
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const base = process.argv[2] || "http://localhost:8765";
-const pages = ["/", "/work/replacing-the-component-library/", "/work/visual-rules-for-agents/", "/work/design-system-with-agents/", "/spec/", "/changelog/"];
+const pages = ["/", "/work/replacing-the-component-library/", "/work/managing-the-spec-as-a-product/", "/work/visual-rules-for-agents/", "/work/design-system-with-agents/", "/spec/", "/changelog/"];
 const viewports = [[1444, 862], [390, 844], [320, 568]];
 const results = [];
 const check = (name, ok, detail = "") => results.push({ ok, name, detail });

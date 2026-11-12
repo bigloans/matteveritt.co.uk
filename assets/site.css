@@ -1134,3 +1134,16 @@ main > .section, main > .article-body, main > section:not(.band) { position: rel
 .pill.violet { color: var(--color-accent-violet); border-color: currentColor; }
 a.pill { text-decoration: none; }
 a.pill:hover { background: color-mix(in srgb, currentColor 12%, transparent); }
+
+/* Read card art for the product read: four stages, rising */
+
+.art-stages { display: flex; align-items: flex-end; gap: var(--space-12); height: var(--space-96); }
+.art-stages i { width: var(--space-24); border-radius: var(--radius-control) var(--radius-control) 0 0; }
+.art-stages i:nth-child(1) { height: 25%; background: var(--color-interactive); }
+.art-stages i:nth-child(2) { height: 50%; background: var(--color-accent); }
+.art-stages i:nth-child(3) { height: 75%; background: var(--color-accent-violet); }
+.art-stages i:nth-child(4) { height: 100%; background: var(--color-accent-pink); }
+
+@media (min-width: 900px) {
+  .read-cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}

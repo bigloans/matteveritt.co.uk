@@ -1,5 +1,10 @@
 [
   {
+    "version": 6,
+    "date": "2026-11-12",
+    "notes": "A new short read, Managing the spec as a product, covers the product decisions behind the spec. The skills now link to it."
+  },
+  {
     "version": 5,
     "date": "2026-11-12",
     "notes": "A reduce motion button in the header that remembers your choice. Figures show their real value instead of counting up, the skills link to the work that shows them, the case study opens with a short summary and the adoption figures are up to date."

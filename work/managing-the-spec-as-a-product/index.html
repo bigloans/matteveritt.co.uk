@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Managing the spec as a product | Matt Everitt</title>
+<link rel="canonical" href="https://matteveritt.co.uk/work/managing-the-spec-as-a-product/">
+<meta name="description" content="How I framed the problem, tested the bet in stages, chose what to do first, picked the measures and brought leadership and teams with me.">
+<meta property="og:title" content="Managing the spec as a product | Matt Everitt">
+<meta property="og:description" content="How I framed the problem, tested the bet in stages, chose what to do first, picked the measures and brought leadership and teams with me.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://matteveritt.co.uk/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<!-- build:head -->
+<link rel="preload" href="/fonts/atkinson-hyperlegible-next-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/atkinson-hyperlegible-next-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/tokens.css">
+<link rel="stylesheet" href="/assets/site.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='10' fill='%232EC4B6'/%3E%3C/svg%3E">
+<script>
+(function(){var r=document.documentElement,m=null;r.classList.add('js');try{m=localStorage.getItem('motion')}catch(e){}r.setAttribute('data-motion',m==='reduce'||m==='full'?m:matchMedia('(prefers-reduced-motion: reduce)').matches?'reduce':'full')})();
+</script>
+<script src="/assets/site.js" defer></script>
+<!-- /build:head -->
+</head>
+<body>
+<!-- build:header -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-header-in">
+    <a class="site-name" href="/">Matt Everitt</a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-menu" hidden>Menu</button>
+    <nav class="site-menu" id="site-menu" aria-label="Site">
+      <a href="/#work">Work</a>
+      <a href="/#about">About</a>
+      <a href="/#contact">Contact</a>
+      <button class="spec-toggle" type="button" aria-pressed="false" data-spec-toggle hidden>Show the spec</button>
+      <button class="motion-toggle" type="button" aria-pressed="false" data-motion-toggle hidden>Reduce motion</button>
+    </nav>
+  </div>
+</header>
+<!-- /build:header -->
+
+<main id="main" tabindex="-1">
+<!-- words -->
+<div class="band">
+<div class="article-hero page" data-spec="space" data-spec-prop="padding-top" data-spec-priority="2">
+  <h1 class="article-title reveal blur" data-spec="type" data-spec-priority="1">Managing the spec <span class="grad-text">as a product</span></h1>
+  <p class="article-lede" data-spec="space" data-spec-prop="margin-top" data-spec-priority="1">I run the spec as a product, and I own its strategy, roadmap, backlog, releases and adoption. This read covers the product decisions behind it rather than the design system itself.</p>
+  <!-- build:meta -->
+<p class="meta-line" data-spec="color" data-spec-priority="3">Short read, 4 minutes</p>
+<!-- /build:meta -->
+  <dl class="summary" data-spec="space" data-spec-prop="margin-top" data-spec-priority="2">
+    <div data-spec-component="Tile / Summary" data-spec-priority="2"><dt>Role</dt><dd>Product owner</dd></div>
+    <div><dt>Stakeholders</dt><dd>CTO level, engineering leadership and about 60 product teams</dd></div>
+    <div><dt>Scope</dt><dd>Strategy, testing, prioritisation, measures and adoption</dd></div>
+    <div><dt>Timeline</dt><dd>From Jul 2026</dd></div>
+  </dl>
+</div>
+</div>
+
+<div class="article-body no-contents page">
+  <article class="article-main">
+    <section id="framing" class="flow" aria-labelledby="framing-h">
+      <h2 id="framing-h">Framing the problem</h2>
+      <p>The business problem was that the design system served a portfolio of 60+ products, but in six years only 6 had adopted it. I broke that down into four parts I could act on.</p>
+      <ul class="stat-grid block">
+        <li class="card stat spot reveal"><span class="stat-figure grad-text">3.5 weeks</span><p>to build each component, because every one was built three times, in React, Vue and Angular</p></li>
+        <li class="card stat spot reveal" style="--i:1"><span class="stat-figure grad-text">1 person</span><p>left to build them, once both team members moved on</p></li>
+        <li class="card stat spot reveal"><span class="stat-figure grad-text">4 to 6 weeks</span><p>of waiting while a central team built and released each component</p></li>
+        <li class="card stat spot reveal" style="--i:1"><span class="stat-figure grad-text">Nothing</span><p>told an AI coding agent what on-brand or accessible meant</p></li>
+      </ul>
+      <p>I judged three options against five criteria: framework coverage, time to ship, drift control, maintenance cost and dependence on a central team. Keeping the library lost because one person would have built every component three times, for low adoption. Generating code from Figma lost because it generates from a picture, so the rules never reach the code. I chose the third option, a specification that teams' own agents build from, with a gate that checks the result.</p>
+      <p>Choosing it meant retiring my own work. 45 components were set aside, teams had only just migrated, and I had committed the old roadmap at CTO level. <a href="/work/replacing-the-component-library/#options">The case study</a> covers what that pivot cost.</p>
+    </section>
+
+    <section id="stages" class="flow" aria-labelledby="stages-h">
+      <h2 id="stages-h">Testing the bet in stages</h2>
+      <p>My hypothesis was that if AI agents generate every component, a design system needs no component library. It needs rules precise enough for a machine to follow and check. I tested it in four stages, and each stage asks a different question.</p>
+      <ol class="steps-row four block">
+        <li class="card spot reveal" data-spec-component="Card / Stage" data-spec-priority="3">
+          <p class="pill teal">Stage 1</p>
+          <h3>Can an agent build from it?</h3>
+          <p>Three fresh AI sessions built the same components from the pinned spec alone. All three failed on one button state no static check could see. I fixed the rule, and every release that changes a rule now gets this test.</p>
+        </li>
+        <li class="card spot reveal" style="--i:1">
+          <p class="pill blue">Stage 2</p>
+          <h3>Do teams get value?</h3>
+          <p>9 products are piloting it. Median time to a first gate pass is 2.5 days, down from 9 days for the first pilot to under 1 for the latest. A screen takes a median of 1.5 days, against 5 through the old handoff.</p>
+        </li>
+        <li class="card spot reveal" style="--i:2">
+          <p class="pill violet">Stage 3</p>
+          <h3>Do teams keep it?</h3>
+          <p>6 of the 9 are in production on a pinned release, so customers now use screens built from the spec. They include the AI agent and home hub, the entry point to every product.</p>
+        </li>
+        <li class="card spot reveal" style="--i:3">
+          <p class="pill pink">Stage 4</p>
+          <h3>Is the contract stable?</h3>
+          <p>Version 1.0 has six exit criteria and four are met. The first-run pass rate is 71% against a target of 75% over 100 builds, and the spec still needs one quarter with no token contract change.</p>
+        </li>
+      </ol>
+      <p>Stage 1 was small, with three builds and one agent. It supported the method, but only adoption data could test the model, which is why the pilots matter most.</p>
+    </section>
+
+    <section id="priorities" class="flow" aria-labelledby="priorities-h">
+      <h2 id="priorities-h">What I did first, and why</h2>
+      <div class="option-grid block">
+        <div class="card spot reveal"><h3>Pilots before completeness</h3><p>I argued rollout should wait until the component gap list closed. Then a smoke test found six contract defects that review had missed. I changed my mind, and pilots started with the first batch of components. They became the main way to find defects.</p></div>
+        <div class="card spot reveal" style="--i:1"><h3>Existing products before new ones</h3><p>Most early adopters had a shipping product, their own CSS and a designer with expectations. So I wrote the guide for existing products first. It names the four problems teams hit, in the order they hit them.</p></div>
+        <div class="card spot glow-border reveal" style="--i:2"><h3>Do the first implementations myself</h3><p>I built the first three implementations myself, so the early teams carried no cost. Later teams set themselves up with one command. Teams said yes once the implementation work wasn't theirs.</p></div>
+      </div>
+    </section>
+
+    <section id="measures" class="flow" aria-labelledby="measures-h">
+      <h2 id="measures-h">Choosing the measures</h2>
+      <div class="panel block reveal">
+        <p class="pill teal">North star</p>
+        <p class="mt"><strong>Products in production on a pinned release</strong>, counted weekly. It counts products that depend on the spec rather than what I ship, so a release nobody adopts doesn't move it. It stands at 6.</p>
+      </div>
+      <div class="metric-grid block">
+        <div class="card metric spot reveal"><span class="label">Time to first gate pass</span><span class="stat-figure grad-text">2.5 days</span><span class="note">How fast a new team gets started</span></div>
+        <div class="card metric spot reveal" style="--i:1"><span class="label">First-run gate pass rate</span><span class="stat-figure grad-text">71%</span><span class="note">How often an agent gets it right first time, over 186 builds</span></div>
+        <div class="card metric spot reveal" style="--i:2"><span class="label">AA failures blocked</span><span class="stat-figure grad-text">117</span><span class="note">Accessibility failures stopped before merge since July 2026</span></div>
+      </div>
+      <p><strong>Guardrail.</strong> Pinning protects teams from unplanned changes, but it also means a critical fix waits for each team to update. So I watch how long a critical fix takes to reach every adopter. Tagging one takes under 1 working day, and reaching the first three products took 6 working days. Every tagged fix now opens an automated pull request for each adopter. Teams still review and merge it, so the pin keeps protecting them.</p>
+    </section>
+
+    <section id="stakeholders" class="flow" aria-labelledby="stakeholders-h">
+      <h2 id="stakeholders-h">Bringing leadership and teams with me</h2>
+      <p>After the pivot I re-presented the roadmap at CTO level with new milestones. Engineering leadership then made the spec the default for new UI and reskins, with no mandate to rewrite existing screens.</p>
+      <p>Teams who had just migrated asked why they should redo work they had only just finished. Speed and cost changed their minds. In pilots a screen took a median of 1.5 days against 5 through the old handoff, and the first implementations cost the early teams nothing. Migrated teams also kept their assets, because the asset pipeline carried over intact, and they got a token mapping from the old system.</p>
+      <div class="panel block reveal">
+        <p class="big-quote">We love it, but we can't do it right now.</p>
+        <p class="mt">That was the outcome, so rollout follows each team's own roadmap. A funded reskin was what got teams moving. Mandates and demos converted nobody.</p>
+      </div>
+    </section>
+
+    <section id="lessons" class="flow" aria-labelledby="lessons-h">
+      <h2 id="lessons-h">What I'd take to any product</h2>
+      <div class="option-grid block">
+        <div class="card reveal"><h3>Test by building, not by reading</h3><p>I had only checked the spec by reading it. Building from it found a defect, and a smoke test found six that review had missed.</p></div>
+        <div class="card reveal" style="--i:1"><h3>Remove the cost of saying yes</h3><p>Teams said yes once the implementation work wasn't theirs.</p></div>
+        <div class="card reveal" style="--i:2"><h3>Retire your own work when the evidence says so</h3><p>Sunk work is a poor reason to keep a product alive.</p></div>
+      </div>
+    </section>
+<!-- /words -->
+    <!-- build:next -->
+<p class="next"><a href="/work/visual-rules-for-agents/">Next: Visual rules an AI agent can follow</a></p>
+<!-- /build:next -->
+  </article>
+</div>
+</main>
+
+<!-- build:footer -->
+<p class="sr-only" role="status" aria-live="polite" data-spec-status></p>
+<!-- /build:footer -->
+</body>
+</html>

@@ -159,6 +159,7 @@ const workFeature = `<h3 class="work-title"><a href="${feature.url}" data-spec="
         <div class="actions"><a class="btn btn-primary" href="${feature.url}">Read the case study</a></div>`;
 const art = {
   radius: `<div class="read-art" aria-hidden="true"><div class="art-radius"><span></span><span></span><span></span></div></div>`,
+  stages: `<div class="read-art" aria-hidden="true"><div class="art-stages"><i></i><i></i><i></i><i></i></div></div>`,
   agents: `<div class="read-art" aria-hidden="true"><div class="art-agents">${Array.from({ length: 15 }, (_, i) => `<i style="--d:${(i * 7) % 15}"></i>`).join("")}</div></div>`,
 };
 const workReads = reads

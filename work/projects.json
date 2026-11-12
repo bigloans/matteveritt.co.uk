@@ -10,6 +10,17 @@
     "shortTitle": "Replacing my component library"
   },
   {
+    "title": "Managing the spec as a product",
+    "summary": "How I framed the problem, tested the bet in stages, chose what to do first, picked the measures and brought leadership and teams with me.",
+    "type": "Short read",
+    "year": 2026,
+    "url": "/work/managing-the-spec-as-a-product/",
+    "file": "work/managing-the-spec-as-a-product/index.html",
+    "readTime": 4,
+    "shortTitle": "Managing the spec as a product",
+    "art": "stages"
+  },
+  {
     "title": "Visual rules an AI agent can follow",
     "summary": "Radius by role, two themes from one set of tokens and an AI disclosure component designed for the EU AI Act.",
     "type": "Short read",
