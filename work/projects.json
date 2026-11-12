@@ -6,7 +6,7 @@
     "year": 2026,
     "url": "/work/replacing-the-component-library/",
     "file": "work/replacing-the-component-library/index.html",
-    "readTime": 9,
+    "readTime": 10,
     "shortTitle": "Replacing my component library"
   },
   {
@@ -16,9 +16,20 @@
     "year": 2026,
     "url": "/work/managing-the-spec-as-a-product/",
     "file": "work/managing-the-spec-as-a-product/index.html",
-    "readTime": 4,
+    "readTime": 7,
     "shortTitle": "Managing the spec as a product",
     "art": "stages"
+  },
+  {
+    "title": "How I rank the backlog",
+    "summary": "Written rules turn 197 open issues into a ranked queue. A check that lies ranks near the top, and nothing is worked until it can be proved.",
+    "type": "Short read",
+    "year": 2026,
+    "url": "/work/ranking-the-backlog/",
+    "file": "work/ranking-the-backlog/index.html",
+    "readTime": 2,
+    "shortTitle": "How I rank the backlog",
+    "art": "rank"
   },
   {
     "title": "Visual rules an AI agent can follow",
@@ -27,7 +38,7 @@
     "year": 2026,
     "url": "/work/visual-rules-for-agents/",
     "file": "work/visual-rules-for-agents/index.html",
-    "readTime": 3,
+    "readTime": 5,
     "shortTitle": "Visual rules an AI agent can follow",
     "art": "radius"
   },

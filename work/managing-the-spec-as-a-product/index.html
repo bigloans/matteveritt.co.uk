@@ -50,7 +50,7 @@
   <h1 class="article-title reveal blur" data-spec="type" data-spec-priority="1">Managing the spec <span class="grad-text">as a product</span></h1>
   <p class="article-lede" data-spec="space" data-spec-prop="margin-top" data-spec-priority="1">I run the spec as a product, and I own its strategy, roadmap, backlog, releases and adoption. This read covers the product decisions behind it rather than the design system itself.</p>
   <!-- build:meta -->
-<p class="meta-line" data-spec="color" data-spec-priority="3">Short read, 4 minutes</p>
+<p class="meta-line" data-spec="color" data-spec-priority="3">Short read, 7 minutes</p>
 <!-- /build:meta -->
   <dl class="summary" data-spec="space" data-spec-prop="margin-top" data-spec-priority="2">
     <div data-spec-component="Tile / Summary" data-spec-priority="2"><dt>Role</dt><dd>Product owner</dd></div>
@@ -98,10 +98,23 @@
         <li class="card spot reveal" style="--i:3">
           <p class="pill pink">Stage 4</p>
           <h3>Is the contract stable?</h3>
-          <p>Version 1.0 has six exit criteria and four are met. The first-run pass rate is 71% against a target of 75% over 100 builds, and the spec still needs one quarter with no token contract change.</p>
+          <p>Version 1.0 has six exit criteria and four are met. The first-run pass rate is 71% against a target of 75% over 100 builds, and the spec still needs one quarter with no token contract change. <a href="/work/replacing-the-component-library/#roadmap">See the roadmap to 1.0</a>.</p>
         </li>
       </ol>
       <p>Stage 1 was small, with three builds and one agent. It supported the method, but only adoption data could test the model, which is why the pilots matter most.</p>
+    </section>
+
+    <section id="discovery" class="flow" aria-labelledby="discovery-h">
+      <h2 id="discovery-h">What teams told me</h2>
+      <p>I learned what pilot teams needed in four ways. I held calls with them, watched them set up and build, read the issues they filed and reviewed their code and gate runs.</p>
+      <p>Most early adopters weren't building new UI. They had a shipping product, a chosen framework, global CSS and a designer with expectations. The same four problems came up, in the same order.</p>
+      <ol class="steps-row four block">
+        <li class="card spot reveal"><h3>The theme wasn't set</h3><p>A light product that didn't set the theme attribute rendered the dark values.</p></li>
+        <li class="card spot reveal" style="--i:1"><h3>Names clashed</h3><p>A product's own colour and spacing variables could share a name with the spec's, and the later one won without any warning.</p></li>
+        <li class="card spot reveal" style="--i:2"><h3>Themes crossed a boundary</h3><p>A dark panel inside a light product needs its own theme attribute, or it renders in the product's light values.</p></li>
+        <li class="card spot reveal" style="--i:3"><h3>Limits were unclear</h3><p>Teams needed to know what the spec doesn't govern, such as their existing UI and their global CSS.</p></li>
+      </ol>
+      <p>So I wrote the guide for existing products first, and it names the four problems in the order teams hit them. Issues filed by later teams led to the setup fixes in recent releases, such as checkouts on Windows and setup outside GitHub.</p>
     </section>
 
     <section id="priorities" class="flow" aria-labelledby="priorities-h">
@@ -111,6 +124,7 @@
         <div class="card spot reveal" style="--i:1"><h3>Existing products before new ones</h3><p>Most early adopters had a shipping product, their own CSS and a designer with expectations. So I wrote the guide for existing products first. It names the four problems teams hit, in the order they hit them.</p></div>
         <div class="card spot glow-border reveal" style="--i:2"><h3>Do the first implementations myself</h3><p>I built the first three implementations myself, so the early teams carried no cost. Later teams set themselves up with one command. Teams said yes once the implementation work wasn't theirs.</p></div>
       </div>
+      <p>Day to day, a ranked queue decides what I work on next. <a href="/work/ranking-the-backlog/">How I rank the backlog</a> shows the rules behind it.</p>
     </section>
 
     <section id="measures" class="flow" aria-labelledby="measures-h">
@@ -124,6 +138,8 @@
         <div class="card metric spot reveal" style="--i:1"><span class="label">First-run gate pass rate</span><span class="stat-figure grad-text">71%</span><span class="note">How often an agent gets it right first time, over 186 builds</span></div>
         <div class="card metric spot reveal" style="--i:2"><span class="label">AA failures blocked</span><span class="stat-figure grad-text">117</span><span class="note">Accessibility failures stopped before merge since July 2026</span></div>
       </div>
+      <p><strong>Time to market.</strong> Teams have filed 4 component requests so far. The first two took 14 days to reach a tagged release, and the latest two took 1 day. The old path waited 5 to 8 weeks for handoff, build and release.</p>
+      <p><strong>Cost.</strong> Pilots built 144 screens. A screen took a median of 1.5 days against 5 through the old handoff, but that ratio comes from only 5 screens built both ways. If the pilot ratio holds across all 144 screens, the pilots saved about 500 engineering days.</p>
       <p><strong>Guardrail.</strong> Pinning protects teams from unplanned changes, but it also means a critical fix waits for each team to update. So I watch how long a critical fix takes to reach every adopter. Tagging one takes under 1 working day, and reaching the first three products took 6 working days. Every tagged fix now opens an automated pull request for each adopter. Teams still review and merge it, so the pin keeps protecting them.</p>
     </section>
 
@@ -135,19 +151,33 @@
         <p class="big-quote">We love it, but we can't do it right now.</p>
         <p class="mt">That was the outcome, so rollout follows each team's own roadmap. A funded reskin was what got teams moving. Mandates and demos converted nobody.</p>
       </div>
+      <h3 id="reporting">Reporting to leadership</h3>
+      <p>I report progress with a weekly report generated from the issue register and the release tags, so every figure in it can be traced to its source. I also keep an implementation tracker that logs every contact and decision for each pilot team, so I can see each team's last contact, my next step and when to chase.</p>
+      <details class="artefact" id="weekly-report">
+        <summary>Read a weekly report</summary>
+        <figure data-artefact>
+          <blockquote>
+            <p><strong>Weekly report, 8 to 14 September 2026</strong></p>
+            <p><strong>What shipped.</strong> 12 issues closed and 38 pull requests merged. The theme was gate correctness and governance rather than new spec surface. One tagged release reached teams.</p>
+            <p><strong>Register movement.</strong> 30 issues opened against 12 closed. Most arrived in two bursts, 15 in about 80 minutes and 11 in just over two hours. That points to review and test runs finding batches of defects, rather than the backlog falling behind.</p>
+            <p><strong>Standing position.</strong> 39 open issues across the spec and its asset pack. 11 block a team's adoption, and 9 are gate checks that report a false verdict.</p>
+          </blockquote>
+          <figcaption class="note">Adapted from the report generated on 14 September 2026. Names, issue numbers and repository names are removed.</figcaption>
+        </figure>
+      </details>
     </section>
 
     <section id="lessons" class="flow" aria-labelledby="lessons-h">
       <h2 id="lessons-h">What I'd take to any product</h2>
       <div class="option-grid block">
-        <div class="card reveal"><h3>Test by building, not by reading</h3><p>I had only checked the spec by reading it. Building from it found a defect, and a smoke test found six that review had missed.</p></div>
+        <div class="card reveal"><h3>Test by building, not by reading</h3><p>I had only checked the spec by reading it. Building from it found a defect, and a smoke test found six that review had missed. A second smoke test found seven more before v0.97.0 shipped, so every release that changes the spec now gets one.</p></div>
         <div class="card reveal" style="--i:1"><h3>Remove the cost of saying yes</h3><p>Teams said yes once the implementation work wasn't theirs.</p></div>
         <div class="card reveal" style="--i:2"><h3>Retire your own work when the evidence says so</h3><p>Sunk work is a poor reason to keep a product alive.</p></div>
       </div>
     </section>
 <!-- /words -->
     <!-- build:next -->
-<p class="next"><a href="/work/visual-rules-for-agents/">Next: Visual rules an AI agent can follow</a></p>
+<p class="next"><a href="/work/ranking-the-backlog/">Next: How I rank the backlog</a></p>
 <!-- /build:next -->
   </article>
 </div>

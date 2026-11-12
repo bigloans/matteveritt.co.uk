@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How I rank the backlog | Matt Everitt</title>
+<link rel="canonical" href="https://matteveritt.co.uk/work/ranking-the-backlog/">
+<meta name="description" content="Written rules turn 197 open issues into a ranked queue. A check that lies ranks near the top, and nothing is worked until it can be proved.">
+<meta property="og:title" content="How I rank the backlog | Matt Everitt">
+<meta property="og:description" content="Written rules turn 197 open issues into a ranked queue. A check that lies ranks near the top, and nothing is worked until it can be proved.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://matteveritt.co.uk/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<!-- build:head -->
+<link rel="preload" href="/fonts/atkinson-hyperlegible-next-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/atkinson-hyperlegible-next-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/tokens.css">
+<link rel="stylesheet" href="/assets/site.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='10' fill='%232EC4B6'/%3E%3C/svg%3E">
+<script>
+(function(){var r=document.documentElement,m=null;r.classList.add('js');try{m=localStorage.getItem('motion')}catch(e){}r.setAttribute('data-motion',m==='reduce'||m==='full'?m:matchMedia('(prefers-reduced-motion: reduce)').matches?'reduce':'full')})();
+</script>
+<script src="/assets/site.js" defer></script>
+<!-- /build:head -->
+</head>
+<body>
+<!-- build:header -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-header-in">
+    <a class="site-name" href="/">Matt Everitt</a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-menu" hidden>Menu</button>
+    <nav class="site-menu" id="site-menu" aria-label="Site">
+      <a href="/#work">Work</a>
+      <a href="/#about">About</a>
+      <a href="/#contact">Contact</a>
+      <button class="spec-toggle" type="button" aria-pressed="false" data-spec-toggle hidden>Show the spec</button>
+      <button class="motion-toggle" type="button" aria-pressed="false" data-motion-toggle hidden>Reduce motion</button>
+    </nav>
+  </div>
+</header>
+<!-- /build:header -->
+
+<main id="main" tabindex="-1">
+<!-- words -->
+<div class="band">
+<div class="article-hero page" data-spec="space" data-spec-prop="padding-top" data-spec-priority="2">
+  <h1 class="article-title reveal blur" data-spec="type" data-spec-priority="1">How I rank <span class="grad-text">the backlog</span></h1>
+  <p class="article-lede" data-spec="space" data-spec-prop="margin-top" data-spec-priority="1">The spec's backlog holds 197 open issues. I don't rank them by hand. I wrote the ranking rules down, and a script applies them to the issue register at the start of every working session, so the queue always follows the rules.</p>
+  <!-- build:meta -->
+<p class="meta-line" data-spec="color" data-spec-priority="3">Short read, 2 minutes</p>
+<!-- /build:meta -->
+  <dl class="summary" data-spec="space" data-spec-prop="margin-top" data-spec-priority="2">
+    <div data-spec-component="Tile / Summary" data-spec-priority="2"><dt>Role</dt><dd>Product owner</dd></div>
+    <div><dt>Backlog</dt><dd>197 open issues, 93 in the ranked queue</dd></div>
+    <div><dt>Scope</dt><dd>The rules that decide what gets worked on next</dd></div>
+    <div><dt>Measured</dt><dd>12 Nov 2026</dd></div>
+  </dl>
+</div>
+</div>
+
+<div class="article-body no-contents page">
+  <article class="article-main">
+    <section id="rules" class="flow" aria-labelledby="rules-h">
+      <h2 id="rules-h">Seven rules, in order</h2>
+      <p>The first rule an issue matches decides its rank. To change a priority, I move a rule up or down the list. The queue is built from that one list, so the queue and the rules can't disagree.</p>
+      <ol class="rank-list block">
+        <li class="card reveal"><span class="rank-n">1</span><span>An accessibility failure that reached production</span></li>
+        <li class="card reveal"><span class="rank-n">2</span><span>A gate check that reports a false verdict</span></li>
+        <li class="card reveal"><span class="rank-n">3</span><span>A blocker to a team adopting the spec</span></li>
+        <li class="card reveal"><span class="rank-n">4</span><span>A measured gate defect</span></li>
+        <li class="card reveal"><span class="rank-n">5</span><span>A measured spec gap</span></li>
+        <li class="card reveal"><span class="rank-n">6</span><span>A provable spec correction</span></li>
+        <li class="card reveal"><span class="rank-n">7</span><span>Provable tooling or governance work</span></li>
+      </ol>
+    </section>
+
+    <section id="false-verdict" class="flow" aria-labelledby="false-verdict-h">
+      <h2 id="false-verdict-h">A check that lies ranks near the top</h2>
+      <p>A gate check that reports a pass it hasn't earned is worse than a missing check. A missing check is a known gap. A false pass tells a team their screen is fine when it isn't. Only an accessibility failure that has already reached production ranks higher.</p>
+    </section>
+
+    <section id="proof" class="flow" aria-labelledby="proof-h">
+      <h2 id="proof-h">Nothing is worked until it is proved</h2>
+      <p>The queue only offers issues marked provable. Before anyone drafts a fix, the issue needs the <code>measured</code> label and a runnable reproduction in the issue itself. The script checks for both, because a label on its own is only a claim.</p>
+      <p>An accessibility failure in production is the one exception. Teams report it through a form, often without a reproduction, so reproducing it is the first piece of work.</p>
+    </section>
+
+    <section id="today" class="flow" aria-labelledby="today-h">
+      <h2 id="today-h">The backlog today</h2>
+      <p>93 of the 197 open issues match a rule. None is an accessibility failure in production or a blocker to a team adopting the spec.</p>
+      <div class="table-scroll block" tabindex="0" role="region" aria-label="Ranked queue by rule">
+        <table>
+          <thead><tr><th scope="col">Rank</th><th scope="col">Rule</th><th scope="col">Open issues</th></tr></thead>
+          <tbody>
+          <tr><td>1</td><th scope="row">Accessibility failure in production</th><td>0</td></tr>
+          <tr><td>2</td><th scope="row">False verdict</th><td>22</td></tr>
+          <tr><td>3</td><th scope="row">Blocker to adoption</th><td>0</td></tr>
+          <tr><td>4</td><th scope="row">Measured gate defect</th><td>14</td></tr>
+          <tr><td>5</td><th scope="row">Measured spec gap</th><td>32</td></tr>
+          <tr><td>6</td><th scope="row">Provable spec correction</th><td>0</td></tr>
+          <tr><td>7</td><th scope="row">Tooling or governance</th><td>25</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>The other 104 aren't offered. 80 aren't provable yet, 20 haven't been classified, 2 aren't in the to-do column and 2 match no rule. The script reports these as numbers, so the issues it leaves out stay visible.</p>
+      <p class="note">Measured from the issue register and project board on 12 November 2026.</p>
+    </section>
+
+    <section id="fail-closed" class="flow" aria-labelledby="fail-closed-h">
+      <h2 id="fail-closed-h">It stops rather than guess</h2>
+      <p>If the script can't read the whole register, it stops and writes nothing. A partial list ranked as if it were complete would hide work, and an out-of-date queue reported as current is worse than none. So a queue older than its time limit is never shown as today's.</p>
+    </section>
+<!-- /words -->
+    <!-- build:next -->
+<p class="next"><a href="/work/visual-rules-for-agents/">Next: Visual rules an AI agent can follow</a></p>
+<!-- /build:next -->
+  </article>
+</div>
+</main>
+
+<!-- build:footer -->
+<p class="sr-only" role="status" aria-live="polite" data-spec-status></p>
+<!-- /build:footer -->
+</body>
+</html>

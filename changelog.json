@@ -1,5 +1,10 @@
 [
   {
+    "version": 7,
+    "date": "2026-11-12",
+    "notes": "A new CV, figures measured again from the spec, and more product evidence. The case study adds cost, time to market, stalled pilots and a roadmap to 1.0. The product read adds discovery and a weekly report, and a new short read shows how I rank the backlog."
+  },
+  {
     "version": 6,
     "date": "2026-11-12",
     "notes": "A new short read, Managing the spec as a product, covers the product decisions behind the spec. The skills now link to it."

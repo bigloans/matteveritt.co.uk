@@ -50,7 +50,7 @@
   <h1 class="article-title reveal blur" data-spec="type" data-spec-priority="1">Visual rules an AI agent can follow</h1>
   <p class="article-lede" data-spec="space" data-spec-prop="margin-top" data-spec-priority="1">An agent can&#39;t interpret &ldquo;make it feel premium&rdquo;, so each aesthetic decision in the spec is a named rule with a token behind it. These are three of them.</p>
   <!-- build:meta -->
-<p class="meta-line" data-spec="color" data-spec-priority="3">Short read, 3 minutes</p>
+<p class="meta-line" data-spec="color" data-spec-priority="3">Short read, 5 minutes</p>
 <!-- /build:meta -->
   <dl class="summary three" data-spec="space" data-spec-prop="margin-top" data-spec-priority="2">
     <div data-spec-component="Tile / Summary" data-spec-priority="2"><dt>Role</dt><dd>Product owner, designer and front-end lead</dd></div>
@@ -136,6 +136,19 @@
       <h3>What it covers under the EU AI Act</h3>
       <p>Most of Article 50 applies from 2 August 2026. I scoped the badge to AI built into products. Where AI acts on the user's behalf, the badge supports the Article 50(1) duty to tell people they are dealing with an AI system, which the Commission's guidelines extend to agents that interact with people while performing tasks. Suggested values and automatic categorisation go further than Article 50 requires, so the badge treats them as voluntary transparency. Machine-readable marking under Article 50(2) sits outside the design system, and so does Article 50(4), which covers deepfakes and AI-generated text published on matters of public interest. The spec says so, so nobody oversells the badge as compliance.</p>
       <p>In June 2026 the Commission's AI Office published optional EU icons for labelling AI-generated content: a basic icon, a fully AI-generated variant and a partially AI-modified variant. They target deepfakes and public-interest text, and displaying one doesn't establish compliance on its own. The AI Office's user testing found people understood the icon better with a short text label, which the badge already has.</p>
+    </section>
+
+    <section id="charts" class="flow" aria-labelledby="charts-h">
+      <h2 id="charts-h">A chart palette that holds 3:1</h2>
+      <p>A pilot team asked for five chart types, and the spec had no palette for charts. Palettes built from the spec's own colour ramps came out heavy on blue and purple, or near black in light mode, once every colour had to clear 3:1 on white and stay clear of the status and button colours.</p>
+      <p>I rendered every candidate before choosing. I rejected palettes from the spec's ramps in four arrangements, a single warm accent, soft tints with outlines and sets limited to teal and pink. For charts I dropped the rules against status colours and button colours, and kept the 3:1 floor for every series colour.</p>
+      <p>The palette has six series colours in a fixed order, one colour for everything past the sixth and a six-step ramp for heatmaps. The static gate can't yet see a colour written as an SVG attribute or a chart library setting, so that gap sits in the <a href="/work/ranking-the-backlog/">ranked backlog</a> as a false verdict.</p>
+    </section>
+
+    <section id="contribution" class="flow" aria-labelledby="contribution-h">
+      <h2 id="contribution-h">Taking a product team's design into the spec</h2>
+      <p>I was asked to style the spec like a product team's own design system. I compared each component with a copy in their style, side by side and live, and chose component by component.</p>
+      <p>I took their shape and motion for Button, Card, Menu, Tabs, Tooltip and the navigation icon motion. I kept the spec's own colours. Their teal puts a white label at exactly 4.5:1, the AA minimum, while the spec's teal measures 6.35:1. Their colours would have added tokens that sit on the threshold, and products would no longer share one palette. Shape and motion carry no contrast cost.</p>
     </section>
 
     <div class="article-end flow">

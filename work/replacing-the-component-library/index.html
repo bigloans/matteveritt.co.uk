@@ -50,7 +50,7 @@
   <h1 class="article-title reveal blur" data-spec="type" data-spec-priority="1">I replaced my own component library with <span class="grad-text">a spec AI builds from</span></h1>
   <p class="article-lede reveal" style="--i:1" data-spec="space" data-spec-prop="margin-top" data-spec-priority="1">I built the component library for a portfolio of 60+ products. The evidence said it couldn't keep up, so I replaced it with a versioned specification that teams' AI coding agents build from, and a gate that checks the result. I run it as a product, and strategy, roadmap, releases and adoption are mine.</p>
   <!-- build:meta -->
-<p class="meta-line" data-spec="color" data-spec-priority="3">Case study, 2026, 9 minute read</p>
+<p class="meta-line" data-spec="color" data-spec-priority="3">Case study, 2026, 10 minute read</p>
 <!-- /build:meta -->
   <dl class="summary reveal" style="--i:2" data-spec="space" data-spec-prop="margin-top" data-spec-priority="2">
     <div data-spec-component="Tile / Summary" data-spec-priority="2"><dt>Role</dt><dd>Product owner, designer and front-end lead</dd></div>
@@ -287,6 +287,18 @@ Exceptions applied (1) — auditable, deliberate opt-outs:
         </ol>
         <p class="note mt">Of about 60 teams, counted for the weekly report.</p>
       </div>
+      <p>The 3 pilots not yet in production are all waiting on funded work. That fits the rest of what adoption has shown, because teams move when a funded project gives them a reason to.</p>
+      <h3 id="cheaper">Making adoption cheaper</h3>
+      <p>I wrote a tailored handoff for each of the 9 pilot teams. Two of them cover two products merging into one.</p>
+      <p>Teams have filed 4 component requests so far. The first two took 14 days to reach a tagged release, and the latest two took 1 day. The old path waited 5 to 8 weeks for handoff, build and release.</p>
+      <p>Pilot teams also showed me where setup was hard, so recent releases removed those steps.</p>
+      <ul class="flow-list">
+        <li>Teams fetch the gate at their pinned version instead of copying it into their code.</li>
+        <li>Checkouts work on Windows.</li>
+        <li>Setup works for repositories outside GitHub.</li>
+        <li>The gate signs in to reach screens behind a login, and it measures error pages.</li>
+        <li>Teams on Tailwind v4 get a mapping from the spec's tokens into their theme.</li>
+      </ul>
       <p>Designers now build in the same session as the agent. So far, 7 designers have contributed 47 catalogue entries, and <a href="/work/design-system-with-agents/">Running a design system with 15 agents</a> shows how.</p>
       <h3 id="changed-mind">Where I changed my mind</h3>
       <p>I argued rollout should wait until the component gap list closed. Then a smoke test found six contract defects review had missed, so pilots started with the first component batch and became our main way to find them.</p>
@@ -306,8 +318,17 @@ Exceptions applied (1) — auditable, deliberate opt-outs:
         <div class="card metric spot reveal"><span class="label">Drift on governed files</span><span class="stat-figure grad-text">Zero</span><span class="note">Drift across whole codebases of the pilot products is about a third lower than the baseline in The problem</span></div>
         <div class="card metric spot reveal" style="--i:1"><span class="label">AA failures blocked before merge</span><span class="stat-figure grad-text">117</span><span class="note">Since July 2026</span></div>
       </div>
+      <p><strong>Cost.</strong> Pilots built 144 screens. A screen took a median of 1.5 days against 5 through the old handoff, but that ratio comes from only 5 screens built both ways. If the pilot ratio holds across all 144 screens, the pilots saved about 500 engineering days.</p>
       <p><strong>Guardrail.</strong> I watch how long a critical fix takes to reach every adopter. Tagging one takes under 1 working day, and reaching the first three products took 6 working days.</p>
-      <p id="roadmap" class="callout">Next: reach 1.0. Four of six exit criteria are met; still open are a first-run pass rate of 75% or more over 100 builds and one quarter with no token contract change.</p>
+      <div id="roadmap" class="panel block reveal">
+        <h3>Roadmap to 1.0</h3>
+        <p class="exit-bar" role="img" aria-label="4 of 6 exit criteria met"><i class="met"></i><i class="met"></i><i class="met"></i><i class="met"></i><i></i><i></i></p>
+        <p class="mt">Four of the six exit criteria are met. Two are still open.</p>
+        <ul class="exit-list">
+          <li><span class="pill pink">Open</span><span>A first-run pass rate of 75% or more over 100 builds. It stands at 71% over 186 builds.</span></li>
+          <li><span class="pill pink">Open</span><span>One quarter with no token contract change.</span></li>
+        </ul>
+      </div>
 
       <h3 id="tradeoffs">Trade-offs</h3>
       <p id="trade-offs">The decision log records what each major choice costs.</p>
