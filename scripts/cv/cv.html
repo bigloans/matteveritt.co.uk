@@ -2,94 +2,167 @@
 <html lang="en-GB">
 <head>
 <meta charset="utf-8">
-<title>Matt Everitt, CV</title>
-<link rel="stylesheet" href="../../assets/tokens.css">
+<title>Matt Everitt CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-@font-face { font-family: "Atkinson Hyperlegible Next"; font-weight: 400; src: url(../../fonts/atkinson-hyperlegible-next-400.woff2) format("woff2"); }
-@font-face { font-family: "Atkinson Hyperlegible Next"; font-weight: 600; src: url(../../fonts/atkinson-hyperlegible-next-600.woff2) format("woff2"); }
-@font-face { font-family: "Atkinson Hyperlegible Next"; font-weight: 700; src: url(../../fonts/atkinson-hyperlegible-next-700.woff2) format("woff2"); }
-@page { size: A4; margin: 11mm 14mm; }
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: var(--font-text); font-size: 9.6pt; line-height: 1.38; color: var(--color-text); }
-a { color: var(--color-interactive); text-decoration: none; }
-h1 { font-size: 24pt; font-weight: var(--weight-bold); line-height: var(--leading-tight); }
-.role { margin-top: 3pt; font-size: 12pt; font-weight: var(--weight-semibold); color: var(--color-interactive); }
-.contact { display: flex; flex-wrap: wrap; gap: 4pt 16pt; margin-top: 7pt; color: var(--color-text-muted); }
-h2 { margin-top: 10pt; padding-bottom: 3pt; border-bottom: var(--size-hairline) solid var(--color-hairline); font-size: 11pt; font-weight: var(--weight-bold); }
-.profile { margin-top: 6pt; }
-ul { margin-top: 5pt; padding-left: 13pt; }
-li + li { margin-top: 1.5pt; }
-.job { margin-top: 6pt; }
-.job-head { display: flex; justify-content: space-between; gap: 12pt; }
-.job-head h3 { font-size: 10.5pt; font-weight: var(--weight-semibold); }
-.job-head span { color: var(--color-text-muted); white-space: nowrap; }
-.employer { margin-top: 6pt; font-weight: var(--weight-semibold); color: var(--color-text-muted); }
-.cols { display: grid; grid-template-columns: 1fr 1fr; column-gap: 20pt; }
-.cols p { margin-top: 5pt; }
-.muted { color: var(--color-text-muted); }
+  @page { size: A4; margin: 0; }
+  :root {
+    --navy: #0f1c2e;
+    --ink: #1b2433;
+    --body: #3a4556;
+    --muted: #6b7686;
+    --teal: #2bb8aa;
+    --blue: #2f6fe4;
+    --card: #f2f5f9;
+    --rule: #dde3ea;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 210mm; height: 297mm; background: #fff; }
+  body { font-family: Poppins, sans-serif; font-weight: 300; color: var(--body); font-size: 8pt; line-height: 1.42; overflow: hidden; }
+
+  header { background: var(--navy); color: #fff; height: 42mm; display: flex; align-items: center; gap: 9mm; padding: 0 14mm 0 14mm; position: relative; }
+  header::after { content: ""; position: absolute; left: 0; right: 0; bottom: -2mm; height: 2mm; background: linear-gradient(90deg, var(--teal), var(--blue)); }
+  .photo { width: 32mm; height: 32mm; border-radius: 50%; border: 1.6mm solid var(--teal); background: url(photo.jpg) center / cover; flex: none; }
+  h1 { font-weight: 700; font-size: 31pt; line-height: 1.1; letter-spacing: -0.01em; }
+  .title { color: var(--teal); font-weight: 400; font-size: 12.5pt; letter-spacing: 0.22em; margin-top: 1.5mm; }
+  .contact { display: flex; flex-wrap: wrap; gap: 1mm 6mm; margin-top: 4mm; font-size: 8.2pt; color: #dfe6ef; font-weight: 400; }
+  .contact a { color: #fff; text-decoration: none; border-bottom: 0.5mm solid var(--teal); }
+
+  .cols { display: grid; grid-template-columns: 1fr 59mm; gap: 9mm; padding: 8mm 12mm 0 14mm; }
+  h2 { display: flex; align-items: center; gap: 3mm; font-size: 8.6pt; font-weight: 600; letter-spacing: 0.3em; color: var(--ink); margin-bottom: 2.6mm; }
+  h2::after { content: ""; flex: 1; height: 0.3mm; background: var(--rule); }
+  section + section { margin-top: 4.5mm; }
+  .profile p { font-size: 8pt; }
+
+  .role { position: relative; padding-left: 8mm; }
+  .role + .role { margin-top: 3mm; }
+  .role::before { content: ""; position: absolute; left: 0; top: 1.2mm; width: 3.4mm; height: 3.4mm; border-radius: 50%; border: 0.6mm solid var(--teal); background: #fff; z-index: 1; }
+  .timeline { position: relative; }
+  .timeline::before { content: ""; position: absolute; left: 1.7mm; top: 3mm; bottom: 3mm; width: 0.3mm; background: var(--rule); }
+  .role-head { display: flex; justify-content: space-between; align-items: baseline; }
+  h3 { font-size: 10.6pt; font-weight: 600; color: var(--ink); }
+  .dates { font-size: 7.4pt; letter-spacing: 0.08em; color: var(--muted); font-weight: 400; }
+  .org { color: var(--teal); font-weight: 500; font-size: 8.4pt; margin-bottom: 1mm; }
+  ul { list-style: none; }
+  li { position: relative; padding-left: 4mm; margin-top: 0.6mm; }
+  li::before { content: ""; position: absolute; left: 0.6mm; top: 2mm; width: 1.3mm; height: 1.3mm; border-radius: 50%; background: var(--teal); }
+
+  aside .card { background: var(--card); border-radius: 3mm; padding: 4mm 4.5mm; }
+  aside .card + .card { margin-top: 3.5mm; }
+  .edu + .edu { margin-top: 3mm; }
+  .edu b { display: block; font-weight: 600; color: var(--ink); font-size: 8.8pt; }
+  .edu span { display: block; color: var(--muted); font-size: 8pt; }
+  .edu em { display: block; font-style: normal; color: var(--teal); font-weight: 500; font-size: 8pt; }
+  .chips { display: flex; flex-wrap: wrap; gap: 1.4mm 1.2mm; }
+  .chip { font-size: 7pt; font-weight: 400; padding: 0.5mm 2.4mm; border-radius: 4mm; border: 0.3mm solid var(--rule); background: #fff; color: var(--ink); }
+  .core .chip { background: var(--navy); border-color: var(--navy); color: #fff; }
+  .site b { display: block; font-weight: 600; color: var(--ink); font-size: 8.8pt; }
+  .site span { display: block; color: var(--muted); font-size: 8pt; }
 </style>
 </head>
 <body>
 <header>
-  <h1>Matt Everitt</h1>
-  <p class="role">Design Operations Manager</p>
-  <p class="contact"><span>Nottingham, UK</span><a href="mailto:matt.m.everitt@gmail.com">matt.m.everitt@gmail.com</a><a href="https://www.linkedin.com/in/matteveritt92/">linkedin.com/in/matteveritt92</a><a href="https://matteveritt.co.uk/">matteveritt.co.uk</a></p>
+  <div class="photo" role="img" aria-label="Matt Everitt"></div>
+  <div>
+    <h1>Matt Everitt</h1>
+    <div class="title">DESIGN OPERATIONS MANAGER</div>
+    <div class="contact">
+      <span>matt.m.everitt@gmail.com</span>
+      <span>Nottingham, England</span>
+      <a href="https://www.linkedin.com/in/matteveritt92/">linkedin.com/in/matteveritt92</a>
+      <a href="https://matteveritt.co.uk/">matteveritt.co.uk</a>
+    </div>
+  </div>
 </header>
 
-<h2>Profile</h2>
-<p class="profile">I run design systems as products. Over six years I've grown from junior UI designer to leading a design system team, and I've built two generations of system: a component library in three frameworks, then a specification that AI coding agents build from, with an automated gate that checks the result. I'm strongest on governance, release management and accessibility, and on getting designers and engineers to adopt new ways of working.</p>
-
-<h2>Selected outcomes</h2>
-<ul>
-  <li>Replaced my own component library with a specification AI coding agents build from, for a portfolio of 60+ products</li>
-  <li>Built a CI gate that has blocked 117 accessibility failures before merge since July 2026</li>
-  <li>Cut time to first gate pass from 9 days for the first pilot team to under 1 day for the latest</li>
-  <li>Shipped more than 90 releases since July 2026, with semantic versioning, changelogs and a dated decision log of 150+ entries</li>
-  <li>Led a multidisciplinary team, a front-end engineer and a UI designer, until February 2026</li>
-</ul>
-
-<h2>Experience</h2>
-<p class="employer">Ideagen, March 2020 to present</p>
-
-<div class="job">
-  <div class="job-head"><h3>Design Operations Manager</h3><span>Aug 2022 to present</span></div>
-  <ul>
-    <li>Led the design system team and its roadmap until February 2026, setting priorities, allocating resource and keeping delivery aligned with business needs. I have run the spec on my own since July 2026.</li>
-    <li>Created a design system built for AI-assisted development. A written specification of tokens, component rules and a definition of done replaces the component library and Figma handoff, so any team can build consistent, on-brand UI without waiting on a central team.</li>
-    <li>Run it as a product, with tagged releases that teams pin, a documented release process and a dated decision log.</li>
-    <li>Built a validation gate with Claude Code that checks generated code against the pinned release in CI, and kept human review for what automation can't judge.</li>
-    <li>Built WCAG 2.2 AA into the design tokens, so accessibility is the default and failures block a release.</li>
-    <li>Own the icon and pictogram pack, with style rules and a contribution guide, and wrote the adoption guide and one-command setup.</li>
-    <li>Led adoption with 9 pilot teams, 3 products in production and 7 contributing designers. Mentor junior team members and teams adopting AI-assisted workflows.</li>
-  </ul>
-</div>
-
-<div class="job">
-  <div class="job-head"><h3>UX/UI Designer</h3><span>Jun 2021 to Aug 2022</span></div>
-  <ul>
-    <li>Designed and documented the company's first design system and its component library, 45 components built in React, Vue and Angular.</li>
-    <li>Managed design requests from many teams, balancing priorities, and worked closely with developers through handoff and implementation.</li>
-    <li>Tracked how the system performed through feedback and user experience metrics.</li>
-  </ul>
-</div>
-
-<div class="job">
-  <div class="job-head"><h3>Junior UI Designer</h3><span>Mar 2020 to Jun 2021</span></div>
-  <ul>
-    <li>Started the company design system, and completed 10 UX courses alongside the role to apply to it.</li>
-  </ul>
-</div>
-
 <div class="cols">
-  <section>
-    <h2>Education</h2>
-    <p><strong>BA (Hons) Graphic Design</strong><br>Sheffield Hallam University, 2016 to 2019</p>
-    <p><strong>UX design certificates (10)</strong><br>Interaction Design Foundation, 2020 to 2021</p>
-  </section>
-  <section>
-    <h2>Skills</h2>
-    <p>Design system strategy, governance, release management, WCAG 2.2 AA, design tokens, AI-assisted development with Claude Code, CI checks, roadmapping, Agile, Figma and Adobe Creative Suite</p>
-  </section>
+  <main>
+    <section class="profile">
+      <h2>PROFILE</h2>
+      <p>Design system product owner with six years at Ideagen, from founding the system as a junior designer to running it for a portfolio of 60+ products. Owns the strategy, roadmap, backlog, releases and adoption of a versioned specification that AI coding agents build from, with an automated gate that rejects anything that breaks it. Strong on hypothesis testing, prioritisation, product metrics and accessibility, and on getting teams to adopt new ways of working.</p>
+    </section>
+
+    <section>
+      <h2>EXPERIENCE</h2>
+      <div class="timeline">
+        <div class="role">
+          <div class="role-head"><h3>Design Operations Manager</h3><span class="dates">AUG 2022 – PRESENT</span></div>
+          <div class="org">Ideagen</div>
+          <ul>
+            <li>Led a front-end engineer and a UI designer on the design system until February 2026, setting priorities and allocating resource. Sole product owner since.</li>
+            <li>Retired the 45-component library I built for a written specification (tokens, component rules, definition of done) that AI coding agents build from. Judged three options on five criteria and re-presented the roadmap at CTO level.</li>
+            <li>Tested the bet in stages. 9 products are piloting it and 6 are in production on a pinned release, including the AI agent and home hub.</li>
+            <li>Set a north star of products in production, with a guardrail on how fast critical fixes reach adopters. Time to first gate pass fell from 9 days to under 1, and screens take a median 1.5 days against 5.</li>
+            <li>Built a CI gate with Claude Code that has blocked 117 accessibility failures before merge since July 2026, with a 71% first-run pass rate over 186 builds.</li>
+            <li>Shipped 95 tagged releases since July 2026, with semantic versioning, changelogs and a decision log of 170+ entries. Turned the first team requests into released contracts within two weeks.</li>
+            <li>Built WCAG 2.2 AA into the tokens so failing pairs block a release, and designed an AI disclosure component for EU AI Act Article 50.</li>
+            <li>Own the asset pack, with 47 entries from 7 contributing designers, and wrote the adoption guide and one-command setup.</li>
+            <li>Run a 15-agent Claude Code harness that reproduces, tests and verifies every change, and mentor teams adopting AI-assisted workflows.</li>
+          </ul>
+        </div>
+        <div class="role">
+          <div class="role-head"><h3>UX/UI Designer</h3><span class="dates">JUN 2021 – AUG 2022</span></div>
+          <div class="org">Ideagen</div>
+          <ul>
+            <li>Designed and documented the company's first design system and its component library, 45 components built in React, Vue and Angular.</li>
+            <li>Managed design requests from many teams, balancing priorities, and worked with developers through handoff and implementation.</li>
+            <li>Tracked design system performance through feedback and user experience metrics.</li>
+          </ul>
+        </div>
+        <div class="role">
+          <div class="role-head"><h3>Junior UI Designer</h3><span class="dates">MAR 2020 – JUN 2021</span></div>
+          <div class="org">Ideagen</div>
+          <ul>
+            <li>Started the company design system, contributing to long-term product strategy.</li>
+            <li>Completed 10 UX courses alongside the role and applied them to the design system and its workflows.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <aside>
+    <div class="card">
+      <h2>PORTFOLIO</h2>
+      <div class="site"><b>matteveritt.co.uk</b><span>Case study and three short reads on the spec AI builds from</span></div>
+    </div>
+    <div class="card">
+      <h2>EDUCATION</h2>
+      <div class="edu"><b>BA (Hons) Graphic Design</b><span>Sheffield Hallam University</span><em>2016 – 2019</em></div>
+      <div class="edu"><b>UX Design Certificates (10x)</b><span>Interaction Design Foundation</span><em>2020 – 2021</em></div>
+    </div>
+    <div class="card core">
+      <h2>CORE</h2>
+      <div class="chips">
+        <span class="chip">Product ownership</span>
+        <span class="chip">Design system strategy</span>
+        <span class="chip">Roadmapping</span><span class="chip">Prioritisation</span>
+        <span class="chip">Release management</span>
+        <span class="chip">Accessibility WCAG 2.2 AA</span>
+        <span class="chip">AI-assisted development</span>
+      </div>
+    </div>
+    <div class="card">
+      <h2>SKILLS</h2>
+      <div class="chips">
+        <span class="chip">Hypothesis testing</span>
+        <span class="chip">Product metrics</span>
+        <span class="chip">Backlog management</span>
+        <span class="chip">Stakeholder management</span>
+        <span class="chip">Governance</span>
+        <span class="chip">Design tokens</span>
+        <span class="chip">Component contracts</span>
+        <span class="chip">CI checks</span>
+        <span class="chip">Claude Code</span>
+        <span class="chip">Resource management</span>
+        <span class="chip">Agile</span>
+        <span class="chip">Cross-functional collaboration</span>
+        <span class="chip">Figma</span>
+        <span class="chip">Adobe Creative Suite</span>
+      </div>
+    </div>
+  </aside>
 </div>
 </body>
 </html>
