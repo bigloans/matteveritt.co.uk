@@ -1176,3 +1176,7 @@ a.pill:hover { background: color-mix(in srgb, currentColor 12%, transparent); }
 @media (min-width: 900px) {
   .read-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+
+/* A table whose cells may wrap, so every column fits at phone width */
+
+.table-scroll.wrap th, .table-scroll.wrap td { white-space: normal; }
