@@ -156,8 +156,8 @@
 
     <section id="product" class="flow" aria-labelledby="product-h">
       <h2 id="product-h" class="reveal">What I built</h2>
-      <p class="reveal">The spec covers 21 components and 6 layout primitives, with more than 90 releases since July 2026.</p>
-      <p class="reveal">Every token added, removed or changed ships as its own tagged release, so each release is a small step a team can trace. The pace has slowed as the contract settles, from 31 releases in July and 34 in August to 22 in September and 8 in October. Teams pin a release, so nothing changes for them until they update the pin.</p>
+      <p class="reveal">The spec covers 23 components and 6 layout primitives, with 95 tagged releases since July 2026.</p>
+      <p class="reveal">Every token added, removed or changed ships as its own tagged release, so each release is a small step a team can trace. The pace has slowed as the contract settles, from 30 releases in July and 34 in August to 21 in September and 8 in October. Teams pin a release, so nothing changes for them until they update the pin.</p>
       <div class="feature-grid block">
         <div class="card lift spot reveal"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h10l6 6v10H4z"/><path d="M14 4v6h6"/><path d="M8 14h8M8 17h5"/></svg></span><h3>One spec, any framework</h3><p>Tokens, component rules and the definition of done live in three plain-text files.</p></div>
         <div class="card lift spot reveal" style="--i:1"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg></span><h3>Accessibility lives in the tokens</h3><p>Every colour pairing the spec allows is tested against WCAG 2.2 AA in both themes, and a failing pair blocks the release.</p></div>
@@ -171,7 +171,7 @@
             <p>Focus ring rendering. Every focus ring, the outline drawn on <code>:focus-visible</code>, declares the spec's focus ring offset token, whether or not the element has a fill. Leaving the offset undeclared, which hands the gap to the browser's default, is off-contract. So is 0, a negative offset or any other value, even on an element where a flush ring would clear 3:1.</p>
             <p>A flush ring fails WCAG 1.4.11 on filled variants. Measured against each fill, it reaches 1.31:1 on the default interactive fill and 1.51:1 on the accent fill. The offset places the ring on the canvas instead, where it measures 4.39 to 13.04:1 across all four surfaces a focused control may sit on. So the offset rule is what carries 1.4.11, not the colour choice.</p>
           </blockquote>
-          <figcaption class="note">Adapted from the spec's DESIGN.md, section "Focus ring rendering", spec v0.93.0.</figcaption>
+          <figcaption class="note">Adapted from the spec's DESIGN.md, section "Focus ring rendering", spec v0.97.0.</figcaption>
         </figure>
       </details>
 <!-- words -->
@@ -239,7 +239,7 @@ Exceptions applied (1) — auditable, deliberate opt-outs:
 
 <span class="fail">FAIL — 58 violation(s): 13 colour, 16 spacing, 15 tokenisable, 3 undefined-token, 6 a11y, 1 bad-exception, 1 ancestor-custom-property, 2 logical-properties, 1 typography</span>
 <span class="fail">EXIT=1</span></pre></div>
-          <figcaption class="note">Run on 13 October 2026 with gate v0.65.0, against the repo's own fixture of deliberately broken code. The fixture pins spec v0.31.0 and the current spec is v0.93.0, so this shows how the gate behaves on a fixed test case. It is not a check of production code. I trimmed the findings list and replaced product names with generic terms. The header, exceptions, verdict and exit code are otherwise unedited.</figcaption>
+          <figcaption class="note">Run on 13 October 2026 with gate v0.65.0, against the repo's own fixture of deliberately broken code. The fixture pins an early spec version, so this shows how the gate behaves on a fixed test case. It is not a check of production code. I trimmed the findings list and replaced product names with generic terms. The header, exceptions, verdict and exit code are otherwise unedited.</figcaption>
         </figure>
       </details>
 <!-- words -->
