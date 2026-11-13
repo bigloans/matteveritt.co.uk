@@ -1133,53 +1133,31 @@ main > .section, main > .article-body, main > section:not(.band) { position: rel
 a.pill { text-decoration: none; }
 a.pill:hover { background: color-mix(in srgb, currentColor 12%, transparent); }
 
-/* Read card art for the product read: four stages, rising */
+/* Read card art for the product read: a roadmap of four stages to a north star */
 
-.art-stages { position: relative; display: flex; align-items: flex-end; gap: var(--space-12); height: var(--space-96); padding-top: var(--space-24); box-sizing: content-box; }
-.art-stages i { width: var(--space-24); border-radius: var(--radius-control) var(--radius-control) 0 0; background: var(--tint); animation: var(--stage) 4s var(--motion-ease) infinite; }
-.art-stages i:nth-child(1) { --tint: var(--color-interactive); height: 25%; --stage: stage-1; }
-.art-stages i:nth-child(2) { --tint: var(--color-accent); height: 50%; --stage: stage-2; }
-.art-stages i:nth-child(3) { --tint: var(--color-accent-violet); height: 75%; --stage: stage-3; }
-.art-stages i:nth-child(4) { --tint: var(--color-accent-pink); height: 100%; --stage: stage-4; }
+.art-road { position: relative; display: flex; align-items: center; justify-content: space-between; width: min(calc(var(--space-96) * 3), calc(100% - var(--space-48))); height: var(--space-32); }
+.art-road .track { position: absolute; left: var(--space-12); right: var(--space-16); top: 50%; height: var(--size-rule); margin-top: calc(var(--size-rule) / -2); background: var(--color-hairline); }
+.art-road .fill { position: absolute; inset: 0; background: var(--gradient-brand); transform-origin: left; animation: road-fill 4.8s linear infinite; }
+.art-road .fill::after { content: ""; position: absolute; right: calc(var(--space-4) * -1); top: 50%; width: var(--space-8); height: var(--space-8); margin-top: calc(var(--space-4) * -1); border-radius: var(--radius-circle); background: var(--color-text); box-shadow: 0 0 var(--space-12) var(--color-text); animation: road-dot 4.8s var(--motion-ease) infinite; }
+.art-road i { position: relative; width: var(--space-24); height: var(--space-24); border-radius: var(--radius-circle); border: var(--size-rule) solid var(--tint); background: var(--tint); animation: var(--cp) 4.8s var(--motion-ease) infinite; }
+.art-road i::after { content: ""; position: absolute; left: 50%; top: 45%; width: calc(var(--space-12) / 2); height: var(--space-12); border: solid var(--color-surface); border-width: 0 var(--size-rule) var(--size-rule) 0; transform: translate(-50%, -50%) rotate(45deg); }
+.art-road i:nth-of-type(1) { --tint: var(--color-interactive); --cp: road-cp-1; }
+.art-road i:nth-of-type(2) { --tint: var(--color-accent); --cp: road-cp-2; }
+.art-road i:nth-of-type(3) { --tint: var(--color-accent-violet); --cp: road-cp-3; }
+.art-road i:nth-of-type(4) { --tint: var(--color-accent-pink); --cp: road-cp-4; }
+.art-road svg { position: relative; width: var(--space-32); height: var(--space-32); overflow: visible; color: var(--color-accent-pink); filter: drop-shadow(0 0 var(--space-8) var(--color-accent-pink)); animation: road-star 4.8s var(--motion-ease) infinite; }
+.art-road svg path { fill: currentColor; }
 
-/* A marker climbs the stages, and each one lights as the marker reaches it. At rest it sits on the last stage. */
+/* A dot travels the roadmap, ticking each stage as it passes, and the star lights when it arrives. At rest the roadmap is complete. */
 
-.art-stages b { position: absolute; left: 0; bottom: 0; width: var(--space-12); height: var(--space-12); margin-left: calc(var(--space-12) / 2); border-radius: var(--radius-circle); background: var(--color-text); box-shadow: 0 0 var(--space-12) var(--color-text); transform: translate(calc((var(--space-24) + var(--space-12)) * 3), calc((var(--space-96) + var(--space-8)) * -1)); animation: stage-climb 4s var(--motion-ease) infinite; }
-@keyframes stage-1 { 0%, 10% { background: var(--color-hairline); box-shadow: none; } 15%, 82% { background: var(--tint); box-shadow: 0 0 var(--space-12) var(--tint); } 92%, 100% { background: var(--color-hairline); box-shadow: none; } }
-@keyframes stage-2 { 0%, 25% { background: var(--color-hairline); box-shadow: none; } 30%, 82% { background: var(--tint); box-shadow: 0 0 var(--space-12) var(--tint); } 92%, 100% { background: var(--color-hairline); box-shadow: none; } }
-@keyframes stage-3 { 0%, 40% { background: var(--color-hairline); box-shadow: none; } 45%, 82% { background: var(--tint); box-shadow: 0 0 var(--space-12) var(--tint); } 92%, 100% { background: var(--color-hairline); box-shadow: none; } }
-@keyframes stage-4 { 0%, 55% { background: var(--color-hairline); box-shadow: none; } 60%, 82% { background: var(--tint); box-shadow: 0 0 var(--space-12) var(--tint); } 92%, 100% { background: var(--color-hairline); box-shadow: none; } }
-@keyframes stage-climb {
-  0%, 5% { opacity: 0; transform: translate(0, calc((var(--space-24) + var(--space-8)) * -1)); }
-  10%, 15% { opacity: 1; transform: translate(0, calc((var(--space-24) + var(--space-8)) * -1)); }
-  25%, 30% { transform: translate(calc(var(--space-24) + var(--space-12)), calc((var(--space-48) + var(--space-8)) * -1)); }
-  40%, 45% { transform: translate(calc((var(--space-24) + var(--space-12)) * 2), calc((var(--space-64) + var(--space-16)) * -1)); }
-  55%, 80% { opacity: 1; transform: translate(calc((var(--space-24) + var(--space-12)) * 3), calc((var(--space-96) + var(--space-8)) * -1)); }
-  90%, 100% { opacity: 0; transform: translate(calc((var(--space-24) + var(--space-12)) * 3), calc((var(--space-96) + var(--space-8)) * -1)); }
-}
+@keyframes road-fill { 0%, 8% { transform: scaleX(0); opacity: 1; } 70%, 86% { transform: scaleX(1); opacity: 1; } 94% { transform: scaleX(1); opacity: 0; } 100% { transform: scaleX(0); opacity: 0; } }
+@keyframes road-dot { 0%, 6% { opacity: 0; } 10%, 72% { opacity: 1; } 78%, 100% { opacity: 0; } }
+@keyframes road-cp-1 { 0%, 8% { background: var(--color-surface); border-color: var(--color-hairline); box-shadow: none; } 12%, 86% { background: var(--tint); border-color: var(--tint); box-shadow: 0 0 var(--space-8) var(--tint); } 94%, 100% { background: var(--color-surface); border-color: var(--color-hairline); box-shadow: none; } }
+@keyframes road-cp-2 { 0%, 23% { background: var(--color-surface); border-color: var(--color-hairline); box-shadow: none; } 27%, 86% { background: var(--tint); border-color: var(--tint); box-shadow: 0 0 var(--space-8) var(--tint); } 94%, 100% { background: var(--color-surface); border-color: var(--color-hairline); box-shadow: none; } }
+@keyframes road-cp-3 { 0%, 38% { background: var(--color-surface); border-color: var(--color-hairline); box-shadow: none; } 42%, 86% { background: var(--tint); border-color: var(--tint); box-shadow: 0 0 var(--space-8) var(--tint); } 94%, 100% { background: var(--color-surface); border-color: var(--color-hairline); box-shadow: none; } }
+@keyframes road-cp-4 { 0%, 53% { background: var(--color-surface); border-color: var(--color-hairline); box-shadow: none; } 57%, 86% { background: var(--tint); border-color: var(--tint); box-shadow: 0 0 var(--space-8) var(--tint); } 94%, 100% { background: var(--color-surface); border-color: var(--color-hairline); box-shadow: none; } }
+@keyframes road-star { 0%, 68% { color: var(--color-hairline); filter: drop-shadow(0 0 0 transparent); } 74%, 86% { color: var(--color-accent-pink); filter: drop-shadow(0 0 var(--space-8) var(--color-accent-pink)); } 94%, 100% { color: var(--color-hairline); filter: drop-shadow(0 0 0 transparent); } }
 
-@media (min-width: 900px) {
-  .read-cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-}
-
-/* Plain bulleted list inside an article */
-
-.flow-list { padding-inline-start: var(--space-24); display: grid; gap: var(--space-8); list-style: disc; }
-
-/* Roadmap to 1.0: criteria met, as a segmented bar, then the open ones */
-
-.exit-bar { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: var(--space-4); margin-top: var(--space-16); }
-.exit-bar i { height: var(--space-8); border-radius: var(--radius-pill); background: var(--color-hairline); }
-.exit-bar i.met { background: var(--color-interactive); }
-.exit-list { list-style: none; padding: 0; display: grid; gap: var(--space-12); margin-top: var(--space-16); }
-.exit-list li { display: flex; gap: var(--space-12); align-items: baseline; }
-.exit-list .pill { flex: none; }
-
-/* Backlog read: the ranking rules and their card art */
-
-.rank-list { list-style: none; padding: 0; display: grid; gap: var(--space-8); }
-.rank-list li { display: flex; align-items: center; gap: var(--space-16); padding-block: var(--space-12); }
-.rank-n { display: grid; place-items: center; flex: none; width: var(--space-32); height: var(--space-32); border: var(--size-hairline) solid var(--color-interactive); border-radius: var(--radius-circle); color: var(--color-interactive); font-weight: var(--weight-semibold); }
 .art-rank { display: grid; gap: var(--space-8); width: calc(var(--space-96) + var(--space-64)); }
 .art-rank i { height: var(--space-12); border-radius: var(--radius-pill); background: var(--tint); animation: rank-sort 4.8s var(--motion-ease) infinite; }
 
