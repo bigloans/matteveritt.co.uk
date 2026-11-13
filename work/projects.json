@@ -22,7 +22,7 @@
   },
   {
     "title": "How I rank the backlog",
-    "summary": "Written rules turn 197 open issues into a ranked queue. A check that lies ranks near the top, and nothing is worked until it can be proved.",
+    "summary": "Written rules turn the backlog into a ranked queue. A check that lies ranks near the top, and nothing is worked until it can be proved.",
     "type": "Short read",
     "year": 2026,
     "url": "/work/ranking-the-backlog/",

@@ -1004,8 +1004,6 @@ main > .section, main > .article-body, main > section:not(.band) { position: rel
 .contact-card { display: grid; gap: var(--space-32); padding: var(--space-32) var(--space-24); border-radius: var(--radius-modal); background-color: var(--color-surface-raised); }
 .contact-copy > * + * { margin-top: var(--space-16); }
 .contact-copy p { max-width: var(--size-measure); font-size: var(--text-18); color: var(--color-text-muted); }
-.contact-address { margin-top: var(--space-8); font-size: var(--text-16); }
-.contact-address a { display: inline-flex; align-items: center; min-height: var(--size-target); }
 .contact-band .btn { min-width: calc(var(--space-96) + var(--space-32)); }
 
 @media (min-width: 900px) {
@@ -1137,12 +1135,28 @@ a.pill:hover { background: color-mix(in srgb, currentColor 12%, transparent); }
 
 /* Read card art for the product read: four stages, rising */
 
-.art-stages { display: flex; align-items: flex-end; gap: var(--space-12); height: var(--space-96); }
-.art-stages i { width: var(--space-24); border-radius: var(--radius-control) var(--radius-control) 0 0; }
-.art-stages i:nth-child(1) { height: 25%; background: var(--color-interactive); }
-.art-stages i:nth-child(2) { height: 50%; background: var(--color-accent); }
-.art-stages i:nth-child(3) { height: 75%; background: var(--color-accent-violet); }
-.art-stages i:nth-child(4) { height: 100%; background: var(--color-accent-pink); }
+.art-stages { position: relative; display: flex; align-items: flex-end; gap: var(--space-12); height: var(--space-96); padding-top: var(--space-24); box-sizing: content-box; }
+.art-stages i { width: var(--space-24); border-radius: var(--radius-control) var(--radius-control) 0 0; background: var(--tint); animation: var(--stage) 4s var(--motion-ease) infinite; }
+.art-stages i:nth-child(1) { --tint: var(--color-interactive); height: 25%; --stage: stage-1; }
+.art-stages i:nth-child(2) { --tint: var(--color-accent); height: 50%; --stage: stage-2; }
+.art-stages i:nth-child(3) { --tint: var(--color-accent-violet); height: 75%; --stage: stage-3; }
+.art-stages i:nth-child(4) { --tint: var(--color-accent-pink); height: 100%; --stage: stage-4; }
+
+/* A marker climbs the stages, and each one lights as the marker reaches it. At rest it sits on the last stage. */
+
+.art-stages b { position: absolute; left: 0; bottom: 0; width: var(--space-12); height: var(--space-12); margin-left: calc(var(--space-12) / 2); border-radius: var(--radius-circle); background: var(--color-text); box-shadow: 0 0 var(--space-12) var(--color-text); transform: translate(calc((var(--space-24) + var(--space-12)) * 3), calc((var(--space-96) + var(--space-8)) * -1)); animation: stage-climb 4s var(--motion-ease) infinite; }
+@keyframes stage-1 { 0%, 10% { background: var(--color-hairline); box-shadow: none; } 15%, 82% { background: var(--tint); box-shadow: 0 0 var(--space-12) var(--tint); } 92%, 100% { background: var(--color-hairline); box-shadow: none; } }
+@keyframes stage-2 { 0%, 25% { background: var(--color-hairline); box-shadow: none; } 30%, 82% { background: var(--tint); box-shadow: 0 0 var(--space-12) var(--tint); } 92%, 100% { background: var(--color-hairline); box-shadow: none; } }
+@keyframes stage-3 { 0%, 40% { background: var(--color-hairline); box-shadow: none; } 45%, 82% { background: var(--tint); box-shadow: 0 0 var(--space-12) var(--tint); } 92%, 100% { background: var(--color-hairline); box-shadow: none; } }
+@keyframes stage-4 { 0%, 55% { background: var(--color-hairline); box-shadow: none; } 60%, 82% { background: var(--tint); box-shadow: 0 0 var(--space-12) var(--tint); } 92%, 100% { background: var(--color-hairline); box-shadow: none; } }
+@keyframes stage-climb {
+  0%, 5% { opacity: 0; transform: translate(0, calc((var(--space-24) + var(--space-8)) * -1)); }
+  10%, 15% { opacity: 1; transform: translate(0, calc((var(--space-24) + var(--space-8)) * -1)); }
+  25%, 30% { transform: translate(calc(var(--space-24) + var(--space-12)), calc((var(--space-48) + var(--space-8)) * -1)); }
+  40%, 45% { transform: translate(calc((var(--space-24) + var(--space-12)) * 2), calc((var(--space-64) + var(--space-16)) * -1)); }
+  55%, 80% { opacity: 1; transform: translate(calc((var(--space-24) + var(--space-12)) * 3), calc((var(--space-96) + var(--space-8)) * -1)); }
+  90%, 100% { opacity: 0; transform: translate(calc((var(--space-24) + var(--space-12)) * 3), calc((var(--space-96) + var(--space-8)) * -1)); }
+}
 
 @media (min-width: 900px) {
   .read-cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -1167,11 +1181,15 @@ a.pill:hover { background: color-mix(in srgb, currentColor 12%, transparent); }
 .rank-list li { display: flex; align-items: center; gap: var(--space-16); padding-block: var(--space-12); }
 .rank-n { display: grid; place-items: center; flex: none; width: var(--space-32); height: var(--space-32); border: var(--size-hairline) solid var(--color-interactive); border-radius: var(--radius-circle); color: var(--color-interactive); font-weight: var(--weight-semibold); }
 .art-rank { display: grid; gap: var(--space-8); width: calc(var(--space-96) + var(--space-64)); }
-.art-rank i { height: var(--space-12); border-radius: var(--radius-pill); }
-.art-rank i:nth-child(1) { width: 100%; background: var(--color-accent-pink); }
-.art-rank i:nth-child(2) { width: 80%; background: var(--color-accent-violet); }
-.art-rank i:nth-child(3) { width: 60%; background: var(--color-accent); }
-.art-rank i:nth-child(4) { width: 40%; background: var(--color-interactive); }
+.art-rank i { height: var(--space-12); border-radius: var(--radius-pill); background: var(--tint); animation: rank-sort 4.8s var(--motion-ease) infinite; }
+
+/* The bars start out of order and sort into rank, longest first. At rest they show the sorted order. */
+
+.art-rank i:nth-child(1) { --tint: var(--color-accent-pink); width: 100%; --from: calc((var(--space-12) + var(--space-8)) * 2); }
+.art-rank i:nth-child(2) { --tint: var(--color-accent-violet); width: 80%; --from: calc((var(--space-12) + var(--space-8)) * -1); }
+.art-rank i:nth-child(3) { --tint: var(--color-accent); width: 60%; --from: calc(var(--space-12) + var(--space-8)); }
+.art-rank i:nth-child(4) { --tint: var(--color-interactive); width: 40%; --from: calc((var(--space-12) + var(--space-8)) * -2); }
+@keyframes rank-sort { 0%, 20% { transform: translateY(var(--from)); opacity: 0.55; } 40%, 85% { transform: none; opacity: 1; } 100% { transform: translateY(var(--from)); opacity: 0.55; } }
 
 @media (min-width: 900px) {
   .read-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }

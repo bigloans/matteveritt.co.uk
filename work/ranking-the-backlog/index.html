@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>How I rank the backlog | Matt Everitt</title>
 <link rel="canonical" href="https://matteveritt.co.uk/work/ranking-the-backlog/">
-<meta name="description" content="Written rules turn 197 open issues into a ranked queue. A check that lies ranks near the top, and nothing is worked until it can be proved.">
+<meta name="description" content="Written rules turn the backlog into a ranked queue. A check that lies ranks near the top, and nothing is worked until it can be proved.">
 <meta property="og:title" content="How I rank the backlog | Matt Everitt">
-<meta property="og:description" content="Written rules turn 197 open issues into a ranked queue. A check that lies ranks near the top, and nothing is worked until it can be proved.">
+<meta property="og:description" content="Written rules turn the backlog into a ranked queue. A check that lies ranks near the top, and nothing is worked until it can be proved.">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://matteveritt.co.uk/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -48,15 +48,15 @@
 <div class="band">
 <div class="article-hero page" data-spec="space" data-spec-prop="padding-top" data-spec-priority="2">
   <h1 class="article-title reveal blur" data-spec="type" data-spec-priority="1">How I rank <span class="grad-text">the backlog</span></h1>
-  <p class="article-lede" data-spec="space" data-spec-prop="margin-top" data-spec-priority="1">The spec's backlog holds 197 open issues. I don't rank them by hand. I wrote the ranking rules down, and a script applies them to the issue register at the start of every working session, so the queue always follows the rules.</p>
+  <p class="article-lede" data-spec="space" data-spec-prop="margin-top" data-spec-priority="1">I don't rank the spec's backlog by hand. I wrote the ranking rules down, and a script applies them to the issue register at the start of every working session, so the queue always follows the rules.</p>
   <!-- build:meta -->
 <p class="meta-line" data-spec="color" data-spec-priority="3">Short read, 2 minutes</p>
 <!-- /build:meta -->
   <dl class="summary" data-spec="space" data-spec-prop="margin-top" data-spec-priority="2">
     <div data-spec-component="Tile / Summary" data-spec-priority="2"><dt>Role</dt><dd>Product owner</dd></div>
-    <div><dt>Backlog</dt><dd>197 open issues, 93 in the ranked queue</dd></div>
+    <div><dt>Backlog</dt><dd>No accessibility failures in production and no blockers to adoption</dd></div>
     <div><dt>Scope</dt><dd>The rules that decide what gets worked on next</dd></div>
-    <div><dt>Measured</dt><dd>12 Nov 2026</dd></div>
+    <div><dt>Measured</dt><dd>13 Nov 2026</dd></div>
   </dl>
 </div>
 </div>
@@ -90,7 +90,8 @@
 
     <section id="today" class="flow" aria-labelledby="today-h">
       <h2 id="today-h">The backlog today</h2>
-      <p>93 of the 197 open issues match a rule. None is an accessibility failure in production or a blocker to a team adopting the spec.</p>
+      <p>Nothing open is an accessibility failure in production or a blocker to a team adopting the spec, which are two of the top three ranks.</p>
+      <p>Every open issue was filed by me or my agents, rather than reported by a team. Each defect gets its own issue, so review and test runs add them in batches. In one week in September, 15 arrived within 80 minutes. Since August, 661 issues have been filed and 464 closed. 93 of the 197 still open match a rule today.</p>
       <div class="table-scroll wrap block" tabindex="0" role="region" aria-label="Ranked queue by rule">
         <table>
           <thead><tr><th scope="col">Rank</th><th scope="col">Rule</th><th scope="col">Open issues</th></tr></thead>
@@ -106,7 +107,7 @@
         </table>
       </div>
       <p>The other 104 aren't offered. 80 aren't provable yet, 20 haven't been classified, 2 aren't in the to-do column and 2 match no rule. The script reports these as numbers, so the issues it leaves out stay visible.</p>
-      <p class="note">Measured from the issue register and project board on 12 November 2026.</p>
+      <p class="note">Measured from the issue register and project board on 13 November 2026.</p>
     </section>
 
     <section id="fail-closed" class="flow" aria-labelledby="fail-closed-h">
