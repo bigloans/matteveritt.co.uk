@@ -16,7 +16,7 @@
   function readTokens() {
     var names = [];
     [].forEach.call(document.styleSheets, function (sheet) {
-      if (!sheet.href || !/\/tokens\.css$/.test(sheet.href)) return;
+      if (!sheet.href || !/\/tokens\.css(\?|$)/.test(sheet.href)) return;
       var rules;
       try { rules = sheet.cssRules; } catch (e) { return; }
       (function walk(list) {
