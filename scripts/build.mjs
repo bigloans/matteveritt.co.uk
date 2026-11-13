@@ -3,6 +3,7 @@
 // Usage: node scripts/build.mjs          write every output
 //        node scripts/build.mjs --check  exit 1 if any committed output is out of date
 
+import { createHash } from "crypto";
 import { existsSync, readFileSync, writeFileSync } from "fs";
 import { fileURLToPath } from "url";
 import path from "path";
@@ -101,15 +102,19 @@ ${decl(motion.filter(([k]) => k !== "ease").map(([k]) => [`motion-${k}`, "0ms"])
 
 // Shared partials
 
+// Asset links carry a hash of the file, so a browser fetches a changed file instead of reusing its cached copy.
+
+const version = (file) => createHash("sha256").update(outputs.get(file) ?? read(file)).digest("hex").slice(0, 8);
+
 const head = `<link rel="preload" href="/fonts/atkinson-hyperlegible-next-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/atkinson-hyperlegible-next-700.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/tokens.css">
-<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/tokens.css?v=${version("assets/tokens.css")}">
+<link rel="stylesheet" href="/assets/site.css?v=${version("assets/site.css")}">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='10' fill='%23${hexOf("color-interactive").slice(1)}'/%3E%3C/svg%3E">
 <script>
 (function(){var r=document.documentElement,m=null;r.classList.add('js');try{m=localStorage.getItem('motion')}catch(e){}r.setAttribute('data-motion',m==='reduce'||m==='full'?m:matchMedia('(prefers-reduced-motion: reduce)').matches?'reduce':'full')})();
 </script>
-<script src="/assets/site.js" defer></script>`;
+<script src="/assets/site.js?v=${version("assets/site.js")}" defer></script>`;
 
 const header = `<a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
